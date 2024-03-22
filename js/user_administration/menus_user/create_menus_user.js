@@ -1,6 +1,9 @@
 document.getElementById("createButton").addEventListener("click", function () {
     if (token) {
         const user_id = urlParams.get('user_id');
+        if (!user_id) {
+            alert('กรุณาเลือกผู้ใช้');
+        }
         fetch(apiUrl + 'user_administration/menus_user/get_menus_user_not.php?user_id=' + user_id, {
             method: 'GET',
             headers: {

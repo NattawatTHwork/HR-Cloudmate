@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>กำหนดกลุ่มผู้ใช้ | CLOUDMATE</title>
+    <title>จัดการนายจ้าง | CLOUDMATE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>กำหนดกลุ่มผู้ใช้</h1>
+            <h1>จัดการนายจ้าง</h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -38,10 +38,10 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>รหัสกลุ่ม</th>
-                                        <th>ชื่อกลุ่ม</th>
-                                        <th>ผู้บันทึก</th>
-                                        <th>วันที่บันทึก</th>
+                                        <th>อีเมล</th>
+                                        <th>บริษัท/นายจ้าง</th>
+                                        <th>ชื่อ - สกุล</th>
+                                        <th>เบอร์โทร</th>
                                         <th>สถานะ</th>
                                         <th>ตัวเลือก</th>
                                     </tr>
@@ -59,40 +59,6 @@
         </section>
 
         <!-- Modal -->
-        <div class="modal fade" id="form_create_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form id="create_data_form">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_code" id="group_code" placeholder="รหัสกลุ่ม" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_name" id="group_name" placeholder="ชื่อกลุ่ม" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
-                                <select class="form-control" name="statusflag" id="statusflag" required>
-                                    <option value="true" selected>true</option>
-                                    <option value="false">false</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
         <div class="modal fade" id="view_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -103,16 +69,24 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสกลุ่ม</label>
-                                <input type="text" class="form-control" id="group_code_view" placeholder="รหัสกลุ่ม" disabled>
+                                <label for="formGroupExampleInput">อีเมล</label>
+                                <input type="text" class="form-control" id="email_view" placeholder="อีเมล" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อกลุ่ม</label>
-                                <input type="text" class="form-control" id="group_name_view" placeholder="ชื่อกลุ่ม" disabled>
+                                <label for="formGroupExampleInput">รหัสผ่าน</label>
+                                <input type="text" class="form-control" id="employer_password_view" placeholder="รหัสผ่าน" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ผู้บันทึก</label>
-                                <input type="text" class="form-control" id="personcode_view" placeholder="ผู้บันทึก" disabled>
+                                <label for="formGroupExampleInput">บริษัท/นายจ้าง</label>
+                                <input type="text" class="form-control" id="employer_name_view" placeholder="บริษัท/นายจ้าง" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ชื่อ - สกุล</label>
+                                <input type="text" class="form-control" id="fullname_view" placeholder="ชื่อ - สกุล" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">เบอร์โทร</label>
+                                <input type="text" class="form-control" id="phone_number_view" placeholder="เบอร์โทร" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">วันที่บันทึก</label>
@@ -137,14 +111,30 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <input type="hidden" name="group_id" id="group_id_update" required>
+                            <input type="hidden" name="employer_code" id="employer_code_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_code" id="group_code_update" placeholder="รหัสกลุ่ม" required>
+                                <label for="formGroupExampleInput">อีเมล</label>
+                                <input type="text" class="form-control" name="email" id="email_update" placeholder="อีเมล" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_name" id="group_name_update" placeholder="ชื่อกลุ่ม" required>
+                                <label for="formGroupExampleInput">รหัสผ่าน</label>
+                                <input type="text" class="form-control" name="employer_password" id="employer_password_update" placeholder="รหัสผ่าน" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">บริษัท/นายจ้าง</label>
+                                <input type="text" class="form-control" name="employer_name" id="employer_name_update" placeholder="รหัสผ่าน" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ชื่อ</label>
+                                <input type="text" class="form-control" name="firstname" id="firstname_update" placeholder="ชื่อ" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">สกุล</label>
+                                <input type="text" class="form-control" name="lastname" id="lastname_update" placeholder="สกุล" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">เบอร์โทร</label>
+                                <input type="text" class="form-control" name="phone_number" id="phone_number_update" placeholder="เบอร์โทร" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
@@ -172,11 +162,10 @@
     <script src="../js/check_login.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
-    <script src="../js/user_administration/groups/create_group.js"></script>
-    <script src="../js/user_administration/groups/get_group_all.js"></script>
-    <script src="../js/user_administration/groups/get_group.js"></script>
-    <script src="../js/user_administration/groups/update_group.js"></script>
-    <script src="../js/user_administration/groups/delete_group.js"></script>
+    <script src="../js/application/employers/get_employer_all.js"></script>
+    <script src="../js/application/employers/get_employer.js"></script>
+    <script src="../js/application/employers/update_employer.js"></script>
+    <script src="../js/application/employers/delete_employer.js"></script>
 </body>
 
 </html>

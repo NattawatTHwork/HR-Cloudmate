@@ -33,7 +33,6 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">กำหนดเมนู</h5>
 
                             <!-- Table with stripped rows -->
                             <table id="datatables" class="table table-striped" style="width:100%">

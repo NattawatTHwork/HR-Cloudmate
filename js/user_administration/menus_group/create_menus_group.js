@@ -1,6 +1,9 @@
 document.getElementById("createButton").addEventListener("click", function () {
     if (token) {
         const group_id = urlParams.get('group_id');
+        if (!group_id) {
+            alert('กรุณาเลือกผู้ใช้');
+        }
         fetch(apiUrl + 'user_administration/menus_group/get_menus_group_not.php?group_id=' + group_id, {
             method: 'GET',
             headers: {

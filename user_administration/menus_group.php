@@ -25,18 +25,25 @@
 
         <div class="pagetitle">
             <h1>กำหนดเมนูกลุ่มผู้ใช้</h1>
-            <div class="d-sm-flex justify-content-end mb-4">
-                <button type="button" class="btn btn-primary m-2" id="createButton">
+        </div><!-- End Page Title -->
+
+        <div class="d-sm-flex justify-content-center mb-2 row">
+            <div class="col-sm-12 col-md-4">
+                <button type="button" class="btn btn-primary w-100 btn-block" id="createButton">
                     เพิ่มเมนูกลุ่มผู้ใช้
                 </button>
-                <button type="button" class="btn btn-primary m-2" id="updateButton">
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <button type="button" class="btn btn-primary w-100 btn-block" id="updateButton">
                     แก้ไขเมนูกลุ่มผู้ใช้
                 </button>
-                <button type="button" class="btn btn-primary m-2" id="deleteButton">
+            </div>
+            <div class="col-sm-12 col-md-4">
+                <button type="button" class="btn btn-primary w-100 btn-block" id="deleteButton">
                     ลบเมนูกลุ่มผู้ใช้
                 </button>
             </div>
-        </div><!-- End Page Title -->
+        </div>
 
         <div class="d-sm-flex justify-content-end mb-4">
             <select class="form-select" id="select_group">
@@ -50,7 +57,6 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">กำหนดเมนูกลุ่มผู้ใช้</h5>
 
                             <!-- Table with stripped rows -->
                             <table id="datatables" class="table table-striped" style="width:100%">

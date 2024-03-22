@@ -34,7 +34,7 @@ async function displayTables(datas) {
                 <td>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Actions
+                            ตัวเลือก
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" onclick="view_data(${data.group_id})">ดูข้อมูล</a></li>
