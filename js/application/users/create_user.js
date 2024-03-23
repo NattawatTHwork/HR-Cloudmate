@@ -9,10 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         const formData = new FormData(form);
+        const jsonData = {};
 
-        fetch(apiUrl + 'auth/login.php', {
+        formData.forEach(function(value, key){
+            jsonData[key] = value;
+        });
+
+        fetch(apiUrl + 'application/users/create_user.php', {
             method: 'POST',
-            body: formData
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(jsonData)
         })
             .then(response => {
                 return response.json();
@@ -20,15 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.status === 'success') {
                     localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', 'employee');
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Login successful",
+                        title: "Register successful",
                         showConfirmButton: false,
                         timer: 1500
                     }).then(() => {
-                        window.location.href = 'index.php';
+                        window.location.href = 'login.php';
                     });
                 } else {
                     Swal.fire({
