@@ -25,8 +25,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
 
-<script src="/HR-Cloudmate/js/decode_jwt.js"></script>
-<script src="/HR-Cloudmate/js/logout.js"></script>
+<script src="<?= $path ?>/js/decode_jwt.js"></script>
+<script src="<?= $path ?>/js/logout.js"></script>
 
 <!-- Template Main JS File -->
 <script src="<?= $path ?>/assets/js/main.js"></script>

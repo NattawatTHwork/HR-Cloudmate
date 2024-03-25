@@ -1,5 +1,5 @@
 function update_data(experience_code) {
-    if (token) {
+    if (token && role == 'member') {
         fetch(apiUrl + 'application/experiences/get_experience.php?experience_code=' + experience_code, {
             method: 'GET',
             headers: {
@@ -33,7 +33,7 @@ function update_data(experience_code) {
 document.getElementById('update_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token) {
+    if (token && role == 'member') {
         const formData = new FormData(this);
         const jsonData = {};
         formData.forEach((value, key) => {

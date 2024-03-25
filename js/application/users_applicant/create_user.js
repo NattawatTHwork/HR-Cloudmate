@@ -1,5 +1,5 @@
-if (token && role == 'member') {
-    window.location.href = 'index.php';
+if (token && role == 'applicant') {
+    window.location.href = pathUrl + '/application/users/index.php';
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const formData = new FormData(form);
         const jsonData = {};
 
-        formData.forEach(function (value, key) {
+        formData.forEach(function(value, key){
             jsonData[key] = value;
         });
 
-        fetch(apiUrl + 'application/users/login_user.php', {
+        fetch(apiUrl + 'application/users/create_user.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,15 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.status === 'success') {
                     localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', 'applicant');
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Login successful",
+                        title: "Register successful",
                         showConfirmButton: false,
                         timer: 1500
                     }).then(() => {
-                        window.location.href = 'index.php';
+                        window.location.href = 'login.php';
                     });
                 } else {
                     Swal.fire({

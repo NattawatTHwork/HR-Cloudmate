@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.status === 'success') {
                     localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', 'employee');
+                    localStorage.setItem('role', 'member');
                     Swal.fire({
                         position: "center",
                         icon: "success",

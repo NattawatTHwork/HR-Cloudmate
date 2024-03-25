@@ -27,6 +27,14 @@
             <h1>กำหนดกลุ่มผู้ใช้</h1>
         </div><!-- End Page Title -->
 
+        <div class="d-sm-flex justify-content-end mb-2 row">
+            <div class="col-sm-12 col-md-4">
+                <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
+                    เพิ่มกลุ่มผู้ใช้
+                </button>
+            </div>
+        </div>
+
         <section class="section">
             <div class="row">
                 <div class="col-lg-12">

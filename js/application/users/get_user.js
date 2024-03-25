@@ -1,5 +1,5 @@
 function view_data(user_code) {
-    if (token) {
+    if (token && role == 'member') {
         fetch(apiUrl + 'application/users/get_user.php?user_code=' + user_code, {
             method: 'GET',
             headers: {

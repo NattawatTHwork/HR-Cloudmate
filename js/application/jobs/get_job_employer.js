@@ -1,4 +1,4 @@
-if (token) {
+if (token && role == 'member') {
     const urlParams = new URLSearchParams(window.location.search);
     const employer_code = urlParams.get('employer_code');
 

@@ -1,5 +1,5 @@
 function view_data(employer_code) {
-    if (token) {
+    if (token && role == 'member') {
         fetch(apiUrl + 'application/employers/get_employer.php?employer_code=' + employer_code, {
             method: 'GET',
             headers: {

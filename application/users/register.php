@@ -167,7 +167,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../../js/token.js"></script>
     <script src="../../js/api_url.js"></script>
-    <script src="../../js/application/users/create_user.js"></script>
+    <script src="../../js/application/users_applicant/create_user.js"></script>
 
 
 </body>

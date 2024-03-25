@@ -1,4 +1,4 @@
-if (token) {
+if (token && role == 'member') {
     fetch(apiUrl + 'application/employers/get_employer_all.php', {
         method: 'GET',
         headers: {

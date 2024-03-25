@@ -1,5 +1,5 @@
 function update_data(education_code) {
-    if (token) {
+    if (token && role == 'member') {
         fetch(apiUrl + 'application/educations/get_education.php?education_code=' + education_code, {
             method: 'GET',
             headers: {
@@ -35,7 +35,7 @@ function update_data(education_code) {
 document.getElementById('update_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token) {
+    if (token && role == 'member') {
         const formData = new FormData(this);
         const jsonData = {};
         formData.forEach((value, key) => {

@@ -1,5 +1,5 @@
 function update_data(job_code) {
-    if (token) {
+    if (token && role == 'member') {
         fetch(apiUrl + 'application/jobs/get_job.php?job_code=' + job_code, {
             method: 'GET',
             headers: {
@@ -38,7 +38,7 @@ function update_data(job_code) {
 document.getElementById('update_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token) {
+    if (token && role == 'member') {
         const formData = new FormData(this);
         const jsonData = {};
         formData.forEach((value, key) => {

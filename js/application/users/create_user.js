@@ -1,4 +1,4 @@
-if (token) {
+if (token && role == 'member') {
     window.location.href = 'index.php';
 }
 

@@ -71,19 +71,19 @@
 
 </aside><!-- End Sidebar-->
 <script>
-  var navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(function(navLink) {
-    if (navLink.getAttribute('href') === window.location.pathname) {
-      navLink.classList.remove('collapsed');
-    }
-  });
+  // var navLinks = document.querySelectorAll('.nav-link');
+  // navLinks.forEach(function(navLink) {
+  //   if (navLink.getAttribute('href') === window.location.pathname) {
+  //     navLink.classList.remove('collapsed');
+  //   }
+  // });
 
-  var subNavLinks = document.querySelectorAll('.nav-content a');
-  subNavLinks.forEach(function(subNavLink) {
-    if (subNavLink.getAttribute('href') === window.location.pathname) {
-      subNavLink.closest('.nav-item').querySelector('.nav-link').classList.remove('collapsed');
-      subNavLink.classList.add('active');
-      subNavLink.closest('.nav-content').classList.add('show');
-    }
-  });
+  // var subNavLinks = document.querySelectorAll('.nav-content a');
+  // subNavLinks.forEach(function(subNavLink) {
+  //   if (subNavLink.getAttribute('href') === window.location.pathname) {
+  //     subNavLink.closest('.nav-item').querySelector('.nav-link').classList.remove('collapsed');
+  //     subNavLink.classList.add('active');
+  //     subNavLink.closest('.nav-content').classList.add('show');
+  //   }
+  // });
 </script>

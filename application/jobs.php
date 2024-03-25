@@ -24,8 +24,16 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการงานที่รับสมัคร</h1>
+            <h1>จัดการงานที่รับสมัคร <?= $_GET['fullname'] ?></h1>
         </div><!-- End Page Title -->
+
+        <div class="d-sm-flex justify-content-end mb-2 row">
+            <div class="col-sm-12 col-md-4">
+                <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
+                    เพิ่มงาน
+                </button>
+            </div>
+        </div>
 
         <section class="section">
             <div class="row align-items-top" id="cardContainer">
@@ -34,6 +42,70 @@
         </section>
 
         <!-- Modal -->
+        <div class="modal fade" id="form_create_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="create_data_form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ประเภทงาน</label>
+                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_create" required>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ประเภทการจ้างงาน</label>
+                                <select class="form-control" name="employment_type" id="employment_type_create" required>
+                                    <option value="1" selected>Full Time</option>
+                                    <option value="2">Freelance</option>
+                                    <option value="3">Part Time</option>
+                                    <option value="4">Tainee</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">วันทำงาน</label>
+                                <input type="text" class="form-control" name="work_day" id="work_day_create" placeholder="วันทำงาน" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">เวลาเข้างาน</label>
+                                <input type="time" class="form-control" name="time_in" id="time_in_create" placeholder="เวลาเข้างาน" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">เวลาออกงาน</label>
+                                <input type="time" class="form-control" name="time_out" id="time_out_create" placeholder="เวลาออกงาน" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">สถานที่ทำงาน</label>
+                                <input type="text" class="form-control" name="work_location" id="work_location_create" placeholder="สถานที่ทำงาน" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">เงินเดือน</label>
+                                <input type="text" class="form-control" name="salary" id="salary_create" placeholder="เงินเดือน" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">รายละเอียด</label>
+                                <textarea class="form-control" name="description" id="description_create" placeholder="รายละเอียด" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">สถานะ</label>
+                                <select class="form-control" name="statusflag" id="statusflag_create" required>
+                                    <option value="t" selected>true</option>
+                                    <option value="f">false</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <div class="modal fade" id="form_update_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -108,10 +180,11 @@
     <script src="../js/check_login.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
+    <script src="../js/application/jobs/get_job_category_all.js"></script>
     <script src="../js/application/jobs/get_job_employer.js"></script>
+    <script src="../js/application/jobs/create_job.js"></script>
     <script src="../js/application/jobs/update_job.js"></script>
     <script src="../js/application/jobs/delete_job.js"></script>
-    <script src="../js/application/jobs/get_job_category_all.js"></script>
 </body>
 
 </html>

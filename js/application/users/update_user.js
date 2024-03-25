@@ -1,5 +1,5 @@
 function update_data(user_code) {
-    if (token) {
+    if (token && role == 'member') {
         fetch(apiUrl + 'application/users/get_user.php?user_code=' + user_code, {
             method: 'GET',
             headers: {
@@ -41,7 +41,7 @@ function update_data(user_code) {
 document.getElementById('update_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token) {
+    if (token && role == 'member') {
         const formData = new FormData(this);
         const jsonData = {};
         formData.forEach((value, key) => {
