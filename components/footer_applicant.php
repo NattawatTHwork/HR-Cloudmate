@@ -26,7 +26,7 @@
 <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
 
 <script src="<?= $path ?>/js/decode_jwt.js"></script>
-<script src="<?= $path ?>/js/logout.js"></script>
+<script src="<?= $path ?>/js/application/users_applicant/logout.js"></script>
 
 <!-- Template Main JS File -->
 <script src="<?= $path ?>/assets/js/main.js"></script>

@@ -9,23 +9,31 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <?php include_once '../components/head_link.php' ?>
+    <?php include_once '../../components/head_link_applicant.php' ?>
 
 </head>
 
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../components/header.php' ?>
+    <?php include_once '../../components/header_applicant.php' ?>
 
     <!-- ======= Sidebar ======= -->
-    <?php include_once '../components/sidebar.php' ?>
+    <?php include_once '../../components/sidebar_applicant.php' ?>
 
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการงานที่ต้องการ <?= $_GET['fullname'] ?></h1>
+            <h1>จัดการงานที่ต้องการ</h1>
         </div><!-- End Page Title -->
+
+        <div class="d-sm-flex justify-content-end mb-2 row">
+            <div class="col-sm-12 col-md-4">
+                <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
+                    เพิ่มข้อมูล
+                </button>
+            </div>
+        </div>
 
         <section class="section">
             <div class="row align-items-top" id="cardContainer">
@@ -86,7 +94,6 @@
             </div>
         </div>
 
-
         <div class="modal fade" id="form_update_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -144,16 +151,17 @@
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <?php include_once '../components/footer.php' ?>
+    <?php include_once '../../components/footer_applicant.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../js/check_login.js"></script>
-    <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
-    <script src="../js/application/referred_jobs/get_job_category_all.js"></script>
-    <script src="../js/application/referred_jobs/get_referred_job_user.js"></script>
-    <script src="../js/application/referred_jobs/update_referred_job.js"></script>
-    <script src="../js/application/referred_jobs/delete_referred_job.js"></script>
+    <script src="../../js/application/users_applicant/check_login.js"></script>
+    <script src="../../js/token.js"></script>
+    <script src="../../js/api_url.js"></script>
+    <script src="../../js/application/referred_jobs_applicant/get_job_category_all.js"></script>
+    <script src="../../js/application/referred_jobs_applicant/get_referred_job_user.js"></script>
+    <script src="../../js/application/referred_jobs_applicant/create_referred_job.js"></script>
+    <script src="../../js/application/referred_jobs_applicant/update_referred_job.js"></script>
+    <script src="../../js/application/referred_jobs_applicant/delete_referred_job.js"></script>
 </body>
 
 </html>

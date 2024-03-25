@@ -1,5 +1,5 @@
 function update_data(referred_job_code) {
-    if (token && role == 'member') {
+    if (token && role == 'applicant') {
         fetch(apiUrl + 'application/referred_jobs/get_referred_job.php?referred_job_code=' + referred_job_code, {
             method: 'GET',
             headers: {
@@ -34,7 +34,7 @@ function update_data(referred_job_code) {
 document.getElementById('update_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token && role == 'member') {
+    if (token && role == 'applicant') {
         const formData = new FormData(this);
         const jsonData = {};
         formData.forEach((value, key) => {
