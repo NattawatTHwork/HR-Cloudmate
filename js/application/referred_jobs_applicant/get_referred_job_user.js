@@ -1,5 +1,4 @@
 if (token && role == 'applicant') {
-    console.log(data_token);
 
     fetch(apiUrl + 'application/referred_jobs/get_referred_job_user.php?user_code=' + data_token.user_code, {
         method: 'GET',

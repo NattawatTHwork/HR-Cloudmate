@@ -16,6 +16,13 @@
       </a>
     </li><!-- End Referred Jobs Nav -->
 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/application/users_applicant/educations.php">
+        <i class="bi bi-grid"></i>
+        <span>Educations</span>
+      </a>
+    </li><!-- End Educations Nav -->
+
   </ul>
 
 </aside><!-- End Sidebar-->

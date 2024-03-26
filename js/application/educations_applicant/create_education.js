@@ -9,7 +9,7 @@ document.getElementById('create_data_form').addEventListener('submit', function 
             jsonData[key] = value;
         });
 
-        fetch(apiUrl + 'application/referred_jobs/create_referred_job.php', {
+        fetch(apiUrl + 'application/educations/create_education.php', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

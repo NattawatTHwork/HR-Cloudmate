@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>จัดการงานที่ต้องการ | CM WORKFORCE</title>
+    <title>จัดการประวัติการศึกษา | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการงานที่ต้องการ</h1>
+            <h1>จัดการประวัติการศึกษา</h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-end mb-2 row">
@@ -52,30 +52,36 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="position" id="position" placeholder="ตำแหน่ง" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทงาน</label>
-                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_create" required>
+                                <label for="formGroupExampleInput">ระดับการศึกษา</label>
+                                <select class="form-control" name="level" id="level" required>
+                                    <option value="1" selected>มัฐยมศึกษาปีที่ 3</option>
+                                    <option value="2">มัฐยมศึกษาปีที่ 6</option>
+                                    <option value="3">ประกาศนียบัตรวิชาชีพ</option>
+                                    <option value="4">ประกาศนียบัตรวิชาชีพชั้นสูง</option>
+                                    <option value="5">ปริญญาตรี</option>
+                                    <option value="6">ปริญญาโท</option>
+                                    <option value="7">ปริญญาเอก</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทการจ้างงาน</label>
-                                <select class="form-control" name="employment_type" id="employment_type" required>
-                                    <option value="1" selected>Full Time</option>
-                                    <option value="2">Freelance</option>
-                                    <option value="3">Part Time</option>
-                                    <option value="4">Tainee</option>
-                                </select>
+                                <label for="formGroupExampleInput">สถานศึกษา</label>
+                                <input type="text" class="form-control" name="school" id="school" placeholder="สถานศึกษา" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เงินเดือน</label>
-                                <input type="text" class="form-control" name="expect_salary" id="expect_salary" placeholder="สกุล" required>
+                                <label for="formGroupExampleInput">คณะ</label>
+                                <input type="text" class="form-control" name="faculty" id="faculty" placeholder="คณะ" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานที่ทำงาน</label>
-                                <input type="text" class="form-control" name="work_location" id="work_location" placeholder="สถานที่ทำงาน" required>
+                                <label for="formGroupExampleInput">สาขา</label>
+                                <input type="text" class="form-control" name="major" id="major" placeholder="สาขา" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ปีที่สำเร็จการศึกษา</label>
+                                <input type="text" class="form-control" name="graduation_year" id="graduation_year" placeholder="ปีที่สำเร็จการศึกษา" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">GPA</label>
+                                <input type="text" class="form-control" name="gpa" id="gpa" placeholder="GPA" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
@@ -103,32 +109,38 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <input type="hidden" name="referred_job_code" id="referred_job_code_update" required>
+                            <input type="hidden" name="education_code" id="education_code_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="position" id="position_update" placeholder="ตำแหน่ง" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทงาน</label>
-                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" required>
+                                <label for="formGroupExampleInput">ระดับการศึกษา</label>
+                                <select class="form-control" name="level" id="level_update" required>
+                                    <option value="1" selected>มัฐยมศึกษาปีที่ 3</option>
+                                    <option value="2">มัฐยมศึกษาปีที่ 6</option>
+                                    <option value="3">ประกาศนียบัตรวิชาชีพ</option>
+                                    <option value="4">ประกาศนียบัตรวิชาชีพชั้นสูง</option>
+                                    <option value="5">ปริญญาตรี</option>
+                                    <option value="6">ปริญญาโท</option>
+                                    <option value="7">ปริญญาเอก</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทการจ้างงาน</label>
-                                <select class="form-control" name="employment_type" id="employment_type_update" required>
-                                    <option value="1" selected>Full Time</option>
-                                    <option value="2">Freelance</option>
-                                    <option value="3">Part Time</option>
-                                    <option value="4">Tainee</option>
-                                </select>
+                                <label for="formGroupExampleInput">สถานศึกษา</label>
+                                <input type="text" class="form-control" name="school" id="school_update" placeholder="สถานศึกษา" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เงินเดือน</label>
-                                <input type="text" class="form-control" name="expect_salary" id="expect_salary_update" placeholder="สกุล" required>
+                                <label for="formGroupExampleInput">คณะ</label>
+                                <input type="text" class="form-control" name="faculty" id="faculty_update" placeholder="คณะ" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานที่ทำงาน</label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="สถานที่ทำงาน" required>
+                                <label for="formGroupExampleInput">สาขา</label>
+                                <input type="text" class="form-control" name="major" id="major_update" placeholder="สาขา" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ปีที่สำเร็จการศึกษา</label>
+                                <input type="text" class="form-control" name="graduation_year" id="graduation_year_update" placeholder="ปีที่สำเร็จการศึกษา" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">GPA</label>
+                                <input type="text" class="form-control" name="gpa" id="gpa_update" placeholder="GPA" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
@@ -147,7 +159,6 @@
             </div>
         </div>
 
-
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
@@ -157,11 +168,10 @@
     <script src="../../js/check_login_applicant.js"></script>
     <script src="../../js/token.js"></script>
     <script src="../../js/api_url.js"></script>
-    <script src="../../js/application/referred_jobs_applicant/get_job_category_all.js"></script>
-    <script src="../../js/application/referred_jobs_applicant/get_referred_job_user.js"></script>
-    <script src="../../js/application/referred_jobs_applicant/create_referred_job.js"></script>
-    <script src="../../js/application/referred_jobs_applicant/update_referred_job.js"></script>
-    <script src="../../js/application/referred_jobs_applicant/delete_referred_job.js"></script>
+    <script src="../../js/application/educations_applicant/get_education_user.js"></script>
+    <script src="../../js/application/educations_applicant/create_education.js"></script>
+    <script src="../../js/application/educations_applicant/update_education.js"></script>
+    <script src="../../js/application/educations_applicant/delete_education.js"></script>
 </body>
 
 </html>
