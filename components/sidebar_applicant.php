@@ -23,6 +23,13 @@
       </a>
     </li><!-- End Educations Nav -->
 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/application/users_applicant/experiences.php">
+        <i class="bi bi-grid"></i>
+        <span>Experiences</span>
+      </a>
+    </li><!-- End Experiences Nav -->
+
   </ul>
 
 </aside><!-- End Sidebar-->

@@ -1,45 +1,15 @@
-function update_data(experience_code) {
-    if (token && role == 'member') {
-        fetch(apiUrl + 'application/experiences/get_experience.php?experience_code=' + experience_code, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                show_data(data.data);
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
-
-    function show_data(datas) {
-        $("#experience_code_update").val(datas.experience_code);
-        $("#company_name_update").val(datas.company_name);
-        $("#position_update").val(datas.position);
-        $('#job_category_code_dropdown_update option[value="' + datas.job_category_code + '"]').prop('selected', true);
-        $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);
-        $("#form_update_data").modal("show");
-    }
-}
-
-document.getElementById('update_data_form').addEventListener('submit', function (event) {
+document.getElementById('create_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token && role == 'member') {
+    if (token || role != 'applicant') {
         const formData = new FormData(this);
+        formData.append('user_code', data_token.user_code);
         const jsonData = {};
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
 
-        fetch(apiUrl + 'application/experiences/update_experience.php', {
+        fetch(apiUrl + 'application/experiences/create_experience.php', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

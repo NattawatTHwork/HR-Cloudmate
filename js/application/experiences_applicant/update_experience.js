@@ -1,6 +1,6 @@
-function update_data(experience_code) {
-    if (token && role == 'member') {
-        fetch(apiUrl + 'application/experiences/get_experience.php?experience_code=' + experience_code, {
+function update_data(education_code) {
+    if (token && role == 'applicant') {
+        fetch(apiUrl + 'application/experiences/get_experience.php?experience_code=' + education_code, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -32,7 +32,7 @@ function update_data(experience_code) {
 document.getElementById('update_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token && role == 'member') {
+    if (token && role == 'applicant') {
         const formData = new FormData(this);
         const jsonData = {};
         formData.forEach((value, key) => {

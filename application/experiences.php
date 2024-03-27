@@ -54,7 +54,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ประเภทงาน</label>
-                                <input type="text" class="form-control" name="job_category" id="job_category_update" placeholder="ประเภทงาน" required>
+                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" required>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
@@ -82,6 +83,7 @@
     <script src="../js/check_login.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
+    <script src="../js/application/experiences/get_job_category_all.js"></script>
     <script src="../js/application/experiences/get_experience_user.js"></script>
     <script src="../js/application/experiences/update_experience.js"></script>
     <script src="../js/application/experiences/delete_experience.js"></script>

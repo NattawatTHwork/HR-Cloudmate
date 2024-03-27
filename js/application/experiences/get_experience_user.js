@@ -26,9 +26,6 @@ async function displayCards(datas) {
     cardContainer.innerHTML = '';
 
     await datas.forEach(data => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const fullname = urlParams.get('fullname');
-
         let cardHtml = `
             <div class="col-sm-12 col-md-6 mb-4">
                 <div class="card">
