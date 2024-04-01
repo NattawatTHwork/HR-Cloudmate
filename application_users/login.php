@@ -9,7 +9,7 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <?php include_once '../../components/head_link.php' ?>
+    <?php include_once '../components/head_link.php' ?>
 
 </head>
 
@@ -106,9 +106,9 @@
     <script src="<?= $path ?>/assets/js/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../../js/token.js"></script>
-    <script src="../../js/api_url.js"></script>
-    <script src="../../js/application/users_applicant/login_user.js"></script>
+    <script src="../js/token.js"></script>
+    <script src="../js/api_url.js"></script>
+    <script src="../js/application_users/users/login_user.js"></script>
 
 </body>
 

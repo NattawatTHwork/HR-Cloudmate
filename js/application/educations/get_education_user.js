@@ -47,8 +47,10 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>สาขา:</strong> ${data.major}</p>
                         <p class="card-text"><strong>ปีที่สำเร็จการศึกษา:</strong> ${data.graduation_year}</p>
                         <p class="card-text"><strong>GPA:</strong> ${data.gpa}</p>
-                        <button type="button" class="btn btn-warning" onclick="update_data('${data.education_code}')">แก้ไข</button>
-                        <button type="button" class="btn btn-danger" onclick="delete_data('${data.education_code}', '${data.level}')">ลบ</button>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-warning" onclick="update_data('${data.education_code}')">แก้ไข</button>
+                            <button type="button" class="btn btn-danger" onclick="delete_data('${data.education_code}', '${data.level}')">ลบ</button>
+                        </div>
                     </div>
                 </div>
             </div>`;

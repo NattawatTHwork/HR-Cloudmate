@@ -40,7 +40,7 @@ async function displayTables(datas) {
                             <li><a class="dropdown-item" onclick="view_data(${data.group_id})">ดูข้อมูล</a></li>
                             <li><a class="dropdown-item" onclick="update_data(${data.group_id})">แก้ไข</a></li>
                             <li><a class="dropdown-item" onclick="delete_data('${data.group_id}', '${data.group_name}')">ลบ</a></li>
-                            </ul>
+                        </ul>
                     </div>
                 </td>`;
         html += '</tr>';

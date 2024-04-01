@@ -22,6 +22,7 @@ function update_data(job_code) {
 
     function show_data(datas) {
         $("#job_code_update").val(datas.job_code);
+        $("#position_update").val(datas.position);
         $('#job_category_code_dropdown_update option[value="' + datas.job_category_code + '"]').prop('selected', true);
         $('#employment_type_update option[value="' + datas.employment_type + '"]').prop('selected', true);
         $("#work_day_update").val(datas.work_day);

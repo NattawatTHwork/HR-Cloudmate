@@ -5,26 +5,26 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>จัดการประสบการณ์ | CM WORKFORCE</title>
+    <title>จัดการงานที่ต้องการ | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <?php include_once '../../components/head_link_applicant.php' ?>
+    <?php include_once '../components/head_link.php' ?>
 
 </head>
 
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../../components/header_applicant.php' ?>
+    <?php include_once '../components/header.php' ?>
 
     <!-- ======= Sidebar ======= -->
-    <?php include_once '../../components/sidebar_applicant.php' ?>
+    <?php include_once '../components/sidebar_application_users.php' ?>
 
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการประสบการณ์</h1>
+            <h1>จัดการงานที่ต้องการ</h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-end mb-2 row">
@@ -52,12 +52,8 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อบริษัท</label>
-                                <input type="text" class="form-control" name="company_name" id="company_name_create" placeholder="ชื่อบริษัท" required>
-                            </div>
-                            <div class="form-group">
                                 <label for="formGroupExampleInput">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="position" id="position_create" placeholder="ตำแหน่ง" required>
+                                <input type="text" class="form-control" name="position" id="position" placeholder="ตำแหน่ง" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ประเภทงาน</label>
@@ -65,8 +61,25 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="formGroupExampleInput">ประเภทการจ้างงาน</label>
+                                <select class="form-control" name="employment_type" id="employment_type" required>
+                                    <option value="1" selected>Full Time</option>
+                                    <option value="2">Freelance</option>
+                                    <option value="3">Part Time</option>
+                                    <option value="4">Tainee</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">เงินเดือน</label>
+                                <input type="text" class="form-control" name="expect_salary" id="expect_salary" placeholder="สกุล" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">สถานที่ทำงาน</label>
+                                <input type="text" class="form-control" name="work_location" id="work_location" placeholder="สถานที่ทำงาน" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
-                                <select class="form-control" name="statusflag" id="statusflag_create" required>
+                                <select class="form-control" name="statusflag" id="statusflag" required>
                                     <option value="t" selected>true</option>
                                     <option value="f">false</option>
                                 </select>
@@ -90,11 +103,7 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                            <input type="hidden" name="experience_code" id="experience_code_update" required>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อบริษัท</label>
-                                <input type="text" class="form-control" name="company_name" id="company_name_update" placeholder="ชื่อบริษัท" required>
-                            </div>
+                            <input type="hidden" name="referred_job_code" id="referred_job_code_update" required>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ตำแหน่ง</label>
                                 <input type="text" class="form-control" name="position" id="position_update" placeholder="ตำแหน่ง" required>
@@ -103,6 +112,23 @@
                                 <label for="formGroupExampleInput">ประเภทงาน</label>
                                 <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" required>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ประเภทการจ้างงาน</label>
+                                <select class="form-control" name="employment_type" id="employment_type_update" required>
+                                    <option value="1" selected>Full Time</option>
+                                    <option value="2">Freelance</option>
+                                    <option value="3">Part Time</option>
+                                    <option value="4">Tainee</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">เงินเดือน</label>
+                                <input type="text" class="form-control" name="expect_salary" id="expect_salary_update" placeholder="สกุล" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">สถานที่ทำงาน</label>
+                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="สถานที่ทำงาน" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
@@ -121,20 +147,22 @@
             </div>
         </div>
 
+
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <?php include_once '../../components/footer_applicant.php' ?>
+    <?php include_once '../components/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../../js/check_login_applicant.js"></script>
-    <script src="../../js/token.js"></script>
-    <script src="../../js/api_url.js"></script>
-    <script src="../../js/application/experiences_applicant/get_job_category_all.js"></script>
-    <script src="../../js/application/experiences_applicant/get_experience_user.js"></script>
-    <script src="../../js/application/experiences_applicant/create_experience.js"></script>
-    <script src="../../js/application/experiences_applicant/update_experience.js"></script>
-    <script src="../../js/application/experiences_applicant/delete_experience.js"></script>
+    <script src="../js/check_login_application_users.js"></script>
+    <script src="../js/logout_application_users.js"></script>
+    <script src="../js/token.js"></script>
+    <script src="../js/api_url.js"></script>
+    <script src="../js/application_users/referred_jobs/get_job_category_all.js"></script>
+    <script src="../js/application_users/referred_jobs/get_referred_job_user.js"></script>
+    <script src="../js/application_users/referred_jobs/create_referred_job.js"></script>
+    <script src="../js/application_users/referred_jobs/update_referred_job.js"></script>
+    <script src="../js/application_users/referred_jobs/delete_referred_job.js"></script>
 </body>
 
 </html>

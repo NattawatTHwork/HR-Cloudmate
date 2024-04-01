@@ -9,17 +9,17 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <?php include_once '../../components/head_link_applicant.php' ?>
+    <?php include_once '../components/head_link.php' ?>
 
 </head>
 
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../../components/header_applicant.php' ?>
+    <?php include_once '../components/header.php' ?>
 
     <!-- ======= Sidebar ======= -->
-    <?php include_once '../../components/sidebar_applicant.php' ?>
+    <?php include_once '../components/sidebar_application_users.php' ?>
 
     <main id="main" class="main">
 
@@ -162,16 +162,17 @@
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <?php include_once '../../components/footer_applicant.php' ?>
+    <?php include_once '../components/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../../js/check_login_applicant.js"></script>
-    <script src="../../js/token.js"></script>
-    <script src="../../js/api_url.js"></script>
-    <script src="../../js/application/educations_applicant/get_education_user.js"></script>
-    <script src="../../js/application/educations_applicant/create_education.js"></script>
-    <script src="../../js/application/educations_applicant/update_education.js"></script>
-    <script src="../../js/application/educations_applicant/delete_education.js"></script>
+    <script src="../js/check_login_application_users.js"></script>
+    <script src="../js/logout_application_users.js"></script>
+    <script src="../js/token.js"></script>
+    <script src="../js/api_url.js"></script>
+    <script src="../js/application_users/educations/get_education_user.js"></script>
+    <script src="../js/application_users/educations/create_education.js"></script>
+    <script src="../js/application_users/educations/update_education.js"></script>
+    <script src="../js/application_users/educations/delete_education.js"></script>
 </body>
 
 </html>

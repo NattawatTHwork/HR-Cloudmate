@@ -32,8 +32,10 @@ async function displayCards(datas) {
                     <h5 class="card-title">ตำแหน่ง: ${data.position}</h5>
                     <p class="card-text"><strong>ชื่อบริษัท:</strong> ${data.company_name}</p>
                     <p class="card-text"><strong>ประเภทงาน:</strong> ${data.job_category}</p>
-                    <button type="button" class="btn btn-warning" onclick="update_data('${data.experience_code}')">แก้ไข</button>
-                    <button type="button" class="btn btn-danger" onclick="delete_data('${data.experience_code}', '${data.position}')">ลบ</button>
+                    <div class="text-center">
+                        <button type="button" class="btn btn-warning" onclick="update_data('${data.experience_code}')">แก้ไข</button>
+                        <button type="button" class="btn btn-danger" onclick="delete_data('${data.experience_code}', '${data.position}')">ลบ</button>
+                    </div>
                 </div>
             </div>`;
 

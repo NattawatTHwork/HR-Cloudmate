@@ -216,6 +216,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/check_login.js"></script>
+    <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/user_administration/users/get_group_all.js"></script>

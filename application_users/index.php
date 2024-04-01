@@ -9,17 +9,17 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
-    <?php include_once '../../components/head_link_applicant.php' ?>
+    <?php include_once '../components/head_link.php' ?>
 
 </head>
 
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../../components/header_applicant.php' ?>
+    <?php include_once '../components/header.php' ?>
 
     <!-- ======= Sidebar ======= -->
-    <?php include_once '../../components/sidebar_applicant.php' ?>
+    <?php include_once '../components/sidebar_application_users.php' ?>
 
     <main id="main" class="main">
 
@@ -670,12 +670,13 @@
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
-    <?php include_once '../../components/footer_applicant.php' ?>
+    <?php include_once '../components/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../../js/application/users/check_login_applicant.js"></script>
-    <script src="../../js/token.js"></script>
-    <script src="../../js/api_url.js"></script>
+    <script src="../js/check_login_application_users.js"></script>
+    <script src="../js/logout_application_users.js"></script>
+    <script src="../js/token.js"></script>
+    <script src="../js/api_url.js"></script>
 </body>
 
 </html>

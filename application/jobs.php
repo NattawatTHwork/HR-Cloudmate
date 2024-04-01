@@ -52,6 +52,10 @@
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
+                                <label for="formGroupExampleInput">ตำแหน่ง</label>
+                                <input type="text" class="form-control" name="position" id="position_create" placeholder="ตำแหน่ง" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="formGroupExampleInput">ประเภทงาน</label>
                                 <select class="form-control" name="job_category_code" id="job_category_code_dropdown_create" required>
                                 </select>
@@ -117,6 +121,10 @@
                         <div class="modal-body">
                             <input type="hidden" name="job_code" id="job_code_update" required>
                             <div class="form-group">
+                                <label for="formGroupExampleInput">ตำแหน่ง</label>
+                                <input type="text" class="form-control" name="position" id="position_update" placeholder="ตำแหน่ง" required>
+                            </div>
+                            <div class="form-group">
                                 <label for="formGroupExampleInput">ประเภทงาน</label>
                                 <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" required>
                                 </select>
@@ -178,6 +186,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/check_login.js"></script>
+    <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/application/jobs/get_job_category_all.js"></script>

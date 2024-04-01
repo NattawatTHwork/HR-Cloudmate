@@ -22,18 +22,23 @@
       </a>
       <ul id="application-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
-          <a href="<?= $path ?>/application/jobs.php?employer_code=cloudmate&fullname=CM%20WORKFORCE">
+          <a href="<?= $path ?>/application/apply_works.php">
             <i class="bi bi-circle"></i><span>รับสมัครงาน</span>
           </a>
         </li>
         <li>
+          <a href="<?= $path ?>/application/jobs.php?employer_code=cloudmate&fullname=CM%20WORKFORCE">
+            <i class="bi bi-circle"></i><span>จัดการงาน</span>
+          </a>
+        </li>
+        <li>
           <a href="<?= $path ?>/application/employers.php">
-            <i class="bi bi-circle"></i><span>นายจ้าง</span>
+            <i class="bi bi-circle"></i><span>จัดการนายจ้าง</span>
           </a>
         </li>
         <li>
           <a href="<?= $path ?>/application/users.php">
-            <i class="bi bi-circle"></i><span>ผู้สมัคร</span>
+            <i class="bi bi-circle"></i><span>จัดการผู้สมัคร</span>
           </a>
         </li>
       </ul>
