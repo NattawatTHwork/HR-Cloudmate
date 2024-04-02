@@ -20,13 +20,22 @@ function view_data(user_id) {
     }
 
     function show_data(datas) {
+        const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const formattedDateMonth = dateMonthFormatter.format(new Date(datas.dates));
+
+        const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const formattedYear = YearFormatter.format(new Date(datas.dates));
+
+        const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
+        const formattedTime = TimeFormatter.format(new Date(datas.dates));
+
         $("#username_view").val(datas.username);
         $("#user_password_view").val(datas.user_password);
         $("#firstname_view").val(datas.firstname);
         $("#lastname_view").val(datas.lastname);
         $("#group_name_view").val(datas.group_name);
         $("#personcode_view").val(datas.personcode);
-        $("#dates_view").val(new Date(datas.dates).toLocaleString('th-TH'));
+        $("#dates_view").val(formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime + ' น.');
         $("#user_statusflag_view").val(datas.user_statusflag === 't' ? true : false);
         $("#view_data").modal("show");
     }

@@ -20,14 +20,26 @@ function view_data(user_code) {
     }
 
     function show_data(datas) {
+        const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const formattedDateMonth = dateMonthFormatter.format(new Date(datas.dates));
+        const formattedDateMonthBirthday = dateMonthFormatter.format(new Date(datas.birthday));
+
+
+        const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const formattedYear = YearFormatter.format(new Date(datas.dates));
+        const formattedBirthday = YearFormatter.format(new Date(datas.birthday));
+
+        const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
+        const formattedTime = TimeFormatter.format(new Date(datas.dates));
+
         $("#email_view").val(datas.email);
         $("#user_password_view").val(datas.user_password);
         $("#fullname_view").val(datas.firstname+' '+datas.lastname);
         $("#gender_view").val(datas.gender === 1 ? 'ชาย' : datas.gender === 2 ? 'หญิง' : 'อื่นๆ');
-        $("#birthday_view").val(new Date(datas.birthday).toLocaleDateString('th-TH'));
+        $("#birthday_view").val(formattedDateMonthBirthday + ' ' + formattedBirthday);
         $("#phone_number_view").val(datas.phone_number);
         $("#address_view").val(datas.user_address+' ต.'+datas.sub_district+' อ.'+datas.district+' จ.'+datas.province+' '+datas.zip_code);
-        $("#dates_view").val(new Date(datas.dates).toLocaleString('th-TH'));
+        $("#dates_view").val(formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime + ' น.');
         $("#statusflag_view").val(datas.statusflag === 't' ? true : false);
         $("#view_data").modal("show");
     }

@@ -38,11 +38,17 @@ function fetchData(user_id) {
 async function displayTables(datas) {
     let html = '';
     await datas.forEach((data, index, array) => {
+        const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const formattedDateMonth = dateMonthFormatter.format(new Date(data.dates));
+
+        const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const formattedYear = YearFormatter.format(new Date(data.dates));
+        
         html += '<tr>';
         html += `<td>${data.menu_code}</td>
                 <td>${data.menu_name}</td>
                 <td>${data.personcode}</td>
-                <td>${new Date(data.dates).toLocaleDateString('th-TH')}</td>
+                <td>${formattedDateMonth + ' ' + formattedYear}</td>
                 <td>
                     <button class="btn ${data.statusflag == 't' ? 'btn-success' : 'btn-danger'}">
                         ${data.statusflag == 't' ? 'ENABLE' : 'DISABLE'}

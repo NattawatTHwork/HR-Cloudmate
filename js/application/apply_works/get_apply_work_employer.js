@@ -28,6 +28,15 @@ async function displayCards(datas) {
     cardContainer.innerHTML = '';
 
     await datas.forEach(data => {
+        const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const formattedDateMonth = dateMonthFormatter.format(new Date(data.dates));
+
+        const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const formattedYear = YearFormatter.format(new Date(data.dates));
+
+        const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
+        const formattedTime = TimeFormatter.format(new Date(data.dates));
+
         let cardHtml = `
             <div class="col-sm-12">
                 <div class="card">
@@ -39,7 +48,7 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>เพศ:</strong> ${data.gender == 1 ? 'ชาย' : data.gender == 2 ? 'หญิง' : 'อื่นๆ'}</p>
                         <p class="card-text"><strong>อีเมล:</strong> ${data.email}</p>
                         <p class="card-text"><strong>เบอร์โทร:</strong> ${data.phone_number}</p>
-                        <p class="card-text"><strong>วันที่สมัคร:</strong> ${data.dates}</p>
+                        <p class="card-text"><strong>วันที่สมัคร:</strong> ${formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime} น.</p>
                     </div>
                     <div class="text-center">
                         <button type="button" class="btn btn-outline-secondary" onclick="toggleAdditionalInfo('additionalInfo_${data.apply_work_code}', this)">

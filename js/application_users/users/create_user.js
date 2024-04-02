@@ -1,5 +1,5 @@
 if (token && role == 'applicant') {
-    window.location.href = pathUrl + '/application/users/index.php';
+    window.location.href = pathUrl + '/application/users_applicant/index.php';
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -9,9 +9,19 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         const formData = new FormData(form);
-        const jsonData = {};
+        const password = formData.get('user_password');
+        const repeatPassword = formData.get('user_repeat_password');
+        if (password.length < 6) {
+            document.getElementById('alertpassword').style.display = 'block';
+            return;
+        } else if (password !== repeatPassword) {
+            document.getElementById('alertpassword').style.display = 'none';
+            document.getElementById('alertrepeatpassword').style.display = 'block';
+            return;
+        }
 
-        formData.forEach(function(value, key){
+        const jsonData = {};
+        formData.forEach(function (value, key) {
             jsonData[key] = value;
         });
 
@@ -27,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 if (data.status === 'success') {
-                    localStorage.setItem('token', data.token);
                     Swal.fire({
                         position: "center",
                         icon: "success",

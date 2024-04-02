@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Applicant Register | CM WORKFORCE</title>
+    <title>ลงทะเบียนผู้สมัครงาน | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -35,83 +35,78 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Applicant Register</h5>
-                                        <p class="text-center small">Enter your personal details to create account</p>
+                                        <h5 class="card-title text-center pb-0 fs-4">ลงทะเบียนผู้สมัครงาน</h5>
                                     </div>
 
-                                    <form class="row g-3 needs-validation" novalidate method="POST" action="">
+                                    <!-- <form class="row g-3 needs-validation" novalidate method="POST" action=""> -->
+                                    <form class="row g-3" method="POST" action="">
                                         <div class="col-12">
-                                            <label for="yourEmail" class="form-label">Your Email</label>
+                                            <label for="yourEmail" class="form-label">อีเมล</label>
                                             <input type="email" name="email" class="form-control" id="yourEmail" required>
-                                            <div class="invalid-feedback">Please enter a valid Email adddress!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">Password</label>
+                                            <label for="yourPassword" class="form-label">รหัสผ่าน</label>
                                             <input type="password" name="user_password" class="form-control" id="yourPassword" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
+                                            <div id="alertpassword" style="display: none; color: red;">ความยาวรหัสผ่านต้องมากกว่า 6 ตัว</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourFirstname" class="form-label">First Name</label>
+                                            <label for="yourRepeatPassword" class="form-label">ยืนยันรหัสผ่าน</label>
+                                            <input type="password" name="user_repeat_password" class="form-control" id="yourRepeatPassword" required>
+                                            <div id="alertrepeatpassword" style="display: none; color: red;">รหัสผ่านไม่ตรงกัน</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="yourFirstname" class="form-label">ชื่อ</label>
                                             <input type="text" name="firstname" class="form-control" id="yourFirstname" required>
-                                            <div class="invalid-feedback">Please enter first name!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourLastname" class="form-label">Last Name</label>
+                                            <label for="yourLastname" class="form-label">นามสกุล</label>
                                             <input type="text" name="lastname" class="form-control" id="yourLastname" required>
-                                            <div class="invalid-feedback">Please enter last name!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="genderSelect" class="form-label">Gender</label>
+                                            <label for="genderSelect" class="form-label">เพศ</label>
                                             <select class="form-select" id="genderSelect" name="gender" required>
-                                                <option value="">Select Gender</option>
-                                                <option value="1">Male</option>
-                                                <option value="2">Female</option>
-                                                <option value="3">Other</option>
+                                                <option value="">เลือก</option>
+                                                <option value="1">ชาย</option>
+                                                <option value="2">หญิง</option>
+                                                <option value="3">อื่นๆ</option>
                                             </select>
-                                            <div class="invalid-feedback">Please select a gender!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="birthdayInput" class="form-label">Birthday</label>
+                                            <label for="birthdayInput" class="form-label">วัน เดือน ปีเกิด</label>
                                             <input type="date" name="birthday" class="form-control" id="birthdayInput" required>
-                                            <div class="invalid-feedback">Please select a birthday!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPhoneNumber" class="form-label">Phone Number</label>
+                                            <label for="yourPhoneNumber" class="form-label">เบอร์โทร</label>
                                             <input type="text" name="phone_number" class="form-control" id="yourPhoneNumber" required>
-                                            <div class="invalid-feedback">Please enter Phone Number!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourAddress" class="form-label">Address</label>
+                                            <label for="yourAddress" class="form-label">ที่อยู่</label>
                                             <input type="text" name="user_address" class="form-control" id="yourAddress" required>
-                                            <div class="invalid-feedback">Please enter Address!</div>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourSubDistrict" class="form-label">Sub District</label>
+                                            <label for="yourSubDistrict" class="form-label">ตำบล</label>
                                             <input type="text" name="sub_district" class="form-control" id="yourSubDistrict" required>
-                                            <div class="invalid-feedback">Please enter sub district!</div>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourDistrict" class="form-label">District</label>
+                                            <label for="yourDistrict" class="form-label">อำเภอ</label>
                                             <input type="text" name="district" class="form-control" id="yourDistrict" required>
-                                            <div class="invalid-feedback">Please enter district!</div>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourProvince" class="form-label">Province</label>
+                                            <label for="yourProvince" class="form-label">จังหวัด</label>
                                             <input type="text" name="province" class="form-control" id="yourProvince" required>
-                                            <div class="invalid-feedback">Please enter Province!</div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourZipCode" class="form-label">Zip Code</label>
+                                            <label for="yourZipCode" class="form-label">รหัสไปรษณีย์</label>
                                             <input type="text" name="zip_code" class="form-control" id="yourZipCode" required>
-                                            <div class="invalid-feedback">Please enter Zip Code!</div>
                                         </div>
 
                                         <!-- <div class="col-12">
@@ -122,10 +117,10 @@
                                             </div>
                                         </div> -->
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                                            <button class="btn btn-primary w-100" type="submit">สร้างบัญชี</button>
                                         </div>
                                         <div class="col-12">
-                                            <p class="small mb-0">Already have an account? <a href="login.php">Log in</a></p>
+                                            <p class="small mb-0">คุณมีบัญชีแล้วใช่ไหม <a href="login.php">เข้าสู่ระบบ</a></p>
                                         </div>
                                     </form>
 

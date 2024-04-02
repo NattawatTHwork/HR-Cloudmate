@@ -51,16 +51,21 @@ async function displayTables(datas) {
     const month = selectMonth.value;
     const year = selectYear.value;
     const daysInMonth = new Date(year, month, 0).getDate(); // หาจำนวนวันในเดือนที่เลือก
-    let timeInDays = datas.map(data => new Date(data.time_in).getDate());
 
     let html = '';
 
     for (let day = 1; day <= daysInMonth; day++) {
-        date = new Date(year + '-' + month + '-' + day).toLocaleDateString('th-TH');
+        const date = new Date(year, month - 1, day);
+        const dateFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const formattedDate = dateFormatter.format(date);
+
+        const dateFormatterYear = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const formattedDateYear = dateFormatterYear.format(date);
+
         let dataForDay = datas.find(data => new Date(data.time_in).getDate() === day);
         if (dataForDay) {
             html += '<tr>';
-            html += `<td>${date}</td>
+            html += `<td>${formattedDate + ' ' + formattedDateYear}</td>
                     <td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH')}</td>
                     <td>${new Date(dataForDay.time_out).toLocaleTimeString('th-TH')}</td>
                     <td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH') >= '09:00:00' ? 'สาย' : ''} ${new Date(dataForDay.time_out).toLocaleTimeString('th-TH') <= '17:00:00' ? 'ออกก่อน' : ''}</td>
@@ -69,7 +74,7 @@ async function displayTables(datas) {
             html += '</tr>';
         } else {
             html += '<tr>';
-            html += `<td>${date}</td>
+            html += `<td>${formattedDate + ' ' + formattedDateYear}</td>
                     <td></td>
                     <td></td>
                     <td></td>

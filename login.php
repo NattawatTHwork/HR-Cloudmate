@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>Login</title>
+    <title>เข้าสู่ระบบ</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -35,25 +35,24 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
-                                        <p class="text-center small">Enter your username & password to login</p>
+                                        <h5 class="card-title text-center pb-0 fs-4">เข้าสู่ระบบ</h5>
                                     </div>
 
                                     <form class="row g-3 needs-validation" novalidate method="POST" action="">
 
                                         <div class="col-12">
-                                            <label for="yourUsername" class="form-label">Username</label>
+                                            <label for="yourUsername" class="form-label">ชื่อผู้ใช้</label>
                                             <div class="input-group has-validation">
                                                 <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
                                                 <input type="text" name="username" class="form-control" id="yourUsername" required>
-                                                <div class="invalid-feedback">Please enter your username.</div>
+                                                <div class="invalid-feedback">กรุณากรอกชื่อผู้ใช้</div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">Password</label>
+                                            <label for="yourPassword" class="form-label">รหัสผ่าน</label>
                                             <input type="password" name="user_password" class="form-control" id="yourPassword" required>
-                                            <div class="invalid-feedback">Please enter your password!</div>
+                                            <div class="invalid-feedback">กรุณากรอกรหัสผ่าน</div>
                                         </div>
 
                                         <!-- <div class="col-12">

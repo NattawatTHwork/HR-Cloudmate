@@ -71,7 +71,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">เงินเดือน</label>
-                                <input type="text" class="form-control" name="expect_salary" id="expect_salary" placeholder="สกุล" required>
+                                <input type="text" class="form-control" name="expect_salary" id="expect_salary" placeholder="เงินเดือน" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานที่ทำงาน</label>
@@ -124,7 +124,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">เงินเดือน</label>
-                                <input type="text" class="form-control" name="expect_salary" id="expect_salary_update" placeholder="สกุล" required>
+                                <input type="text" class="form-control" name="expect_salary" id="expect_salary_update" placeholder="เงินเดือน" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานที่ทำงาน</label>

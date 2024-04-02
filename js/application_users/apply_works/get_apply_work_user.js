@@ -43,7 +43,7 @@ async function displayCards(datas) {
                         <div id="additionalInfo_${data.apply_work_code}" style="display:none;">
                             <p class="card-text"><strong>ประเภทการจ้างงาน:</strong> ${employment_type}</p>
                             <p class="card-text"><strong>วันทำงาน:</strong> ${data.work_day}</p>
-                            <p class="card-text"><strong>เวลาเข้า/ออกงาน:</strong> ${data.time_in} - ${data.time_out}</p>
+                            <p class="card-text"><strong>เวลาเข้า/ออกงาน:</strong> ${data.time_in.slice(0, 5)} - ${data.time_out.slice(0, 5)} น.</p>
                             <p class="card-text"><strong>สถานที่ทำงาน:</strong> ${data.work_location}</p>
                             <p class="card-text"><strong>เงินเดือน:</strong> ${data.salary}</p>
                             <p class="card-text"><strong>อีเมล:</strong> ${data.email}</p>

@@ -21,11 +21,17 @@ if (token) {
 async function displayTables(datas) {
     let html = '';
     await datas.forEach((data, index, array) => {
+        const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const formattedDateMonth = dateMonthFormatter.format(new Date(data.dates));
+
+        const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const formattedYear = YearFormatter.format(new Date(data.dates));
+
         html += '<tr>';
         html += `<td>${data.username}</td>
                 <td>${data.firstname+' '+data.lastname}</td>
                 <td>${data.group_name}</td>
-                <td>${new Date(data.dates).toLocaleDateString('th-TH')}</td>
+                <td>${formattedDateMonth + ' ' + formattedYear}</td>
                 <td>
                     <button class="btn ${data.user_statusflag == 't' ? 'btn-success' : 'btn-danger'}">
                         ${data.user_statusflag == 't' ? 'ENABLE' : 'DISABLE'}

@@ -20,12 +20,21 @@ function view_data(employer_code) {
     }
 
     function show_data(datas) {
+        const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const formattedDateMonth = dateMonthFormatter.format(new Date(datas.dates));
+
+        const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const formattedYear = YearFormatter.format(new Date(datas.dates));
+
+        const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
+        const formattedTime = TimeFormatter.format(new Date(datas.dates));
+
         $("#email_view").val(datas.email);
         $("#employer_password_view").val(datas.employer_password);
         $("#employer_name_view").val(datas.employer_name);
-        $("#fullname_view").val(datas.firstname+' '+datas.lastname);
+        $("#fullname_view").val(datas.firstname + ' ' + datas.lastname);
         $("#phone_number_view").val(datas.phone_number);
-        $("#dates_view").val(new Date(datas.dates).toLocaleString('th-TH'));
+        $("#dates_view").val(formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime + ' น.');
         $("#statusflag_view").val(datas.statusflag === 't' ? true : false);
         $("#view_data").modal("show");
     }
