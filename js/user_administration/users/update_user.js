@@ -22,7 +22,6 @@ function update_data(user_id) {
     function show_data(datas) {
         $("#user_id_update").val(datas.user_id);
         $("#username_update").val(datas.username);
-        $("#user_password_update").val(datas.user_password);
         $("#firstname_update").val(datas.firstname);
         $("#lastname_update").val(datas.lastname);
         $('#group_name_dropdown_update option[value="' + datas.group_id + '"]').prop('selected', true);

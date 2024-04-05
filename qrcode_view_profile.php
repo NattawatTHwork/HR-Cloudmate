@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>User Profile</title>
+    <title>Dashboard - NiceAdmin Bootstrap Template</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -43,18 +43,27 @@
                     <img src="" class="m-4" alt="User Image" id="image_data" style="max-width: 100%; height: auto;">
                 </div>
 
-                <div id="profile-info">
-                    <div class="m-4">
-                        <div class="card">
-                            <div class="card-body m-4">
-                                <h2 id="memfullname"></h2>
-                                <h4>อีเมล: <span id="mememail"></span></h4>
-                                <h4>เบอร์โทร: <span id="memtel"></span></h4>
-                                <h4>ตำแหน่ง: <span id="memposition"></span></h4>
+                <div class="col-12">
+
+                    <div class="card info-card customers-card">
+
+                        <div class="card-body">
+                            <h4 class="card-title" id="memfullname"></h4>
+
+                            <div class="d-flex align-items-center">
+                                <div class="ps-3">
+                                    <h3 id="memfullname"></h3>
+                                    <h5>อีเมล: <span id="mememail"></span></h5>
+                                    <h5>เบอร์โทร: <span id="memtel"></span></h5>
+                                    <h5>ตำแหน่ง: <span id="memposition"></span></h5>
+                                </div>
                             </div>
+
                         </div>
                     </div>
-                </div>
+
+                </div><!-- End Customers Card -->
+
             </section>
 
         </div>
@@ -63,9 +72,12 @@
     <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
 
     <script src="js/api_url.js"></script>
 

@@ -30,7 +30,6 @@ function view_data(employer_code) {
         const formattedTime = TimeFormatter.format(new Date(datas.dates));
 
         $("#email_view").val(datas.email);
-        $("#employer_password_view").val(datas.employer_password);
         $("#employer_name_view").val(datas.employer_name);
         $("#fullname_view").val(datas.firstname + ' ' + datas.lastname);
         $("#phone_number_view").val(datas.phone_number);

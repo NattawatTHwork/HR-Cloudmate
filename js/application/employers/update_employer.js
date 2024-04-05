@@ -22,7 +22,6 @@ function update_data(employer_code) {
     function show_data(datas) {
         $("#employer_code_update").val(datas.employer_code);
         $("#email_update").val(datas.email);
-        $("#employer_password_update").val(datas.employer_password);
         $("#employer_name_update").val(datas.employer_name);
         $("#firstname_update").val(datas.firstname);
         $("#lastname_update").val(datas.lastname);

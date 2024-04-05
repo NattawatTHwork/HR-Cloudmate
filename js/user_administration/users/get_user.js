@@ -30,7 +30,6 @@ function view_data(user_id) {
         const formattedTime = TimeFormatter.format(new Date(datas.dates));
 
         $("#username_view").val(datas.username);
-        $("#user_password_view").val(datas.user_password);
         $("#firstname_view").val(datas.firstname);
         $("#lastname_view").val(datas.lastname);
         $("#group_name_view").val(datas.group_name);

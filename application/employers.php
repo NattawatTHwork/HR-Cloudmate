@@ -73,10 +73,6 @@
                                 <input type="text" class="form-control" id="email_view" placeholder="อีเมล" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสผ่าน</label>
-                                <input type="text" class="form-control" id="employer_password_view" placeholder="รหัสผ่าน" disabled>
-                            </div>
-                            <div class="form-group">
                                 <label for="formGroupExampleInput">บริษัท/นายจ้าง</label>
                                 <input type="text" class="form-control" id="employer_name_view" placeholder="บริษัท/นายจ้าง" disabled>
                             </div>
@@ -115,10 +111,6 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">อีเมล</label>
                                 <input type="text" class="form-control" name="email" id="email_update" placeholder="อีเมล" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสผ่าน</label>
-                                <input type="text" class="form-control" name="employer_password" id="employer_password_update" placeholder="รหัสผ่าน" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">บริษัท/นายจ้าง</label>

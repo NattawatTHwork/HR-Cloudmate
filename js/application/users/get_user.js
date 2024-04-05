@@ -33,7 +33,6 @@ function view_data(user_code) {
         const formattedTime = TimeFormatter.format(new Date(datas.dates));
 
         $("#email_view").val(datas.email);
-        $("#user_password_view").val(datas.user_password);
         $("#fullname_view").val(datas.firstname+' '+datas.lastname);
         $("#gender_view").val(datas.gender === 1 ? 'ชาย' : datas.gender === 2 ? 'หญิง' : 'อื่นๆ');
         $("#birthday_view").val(formattedDateMonthBirthday + ' ' + formattedBirthday);

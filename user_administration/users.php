@@ -81,10 +81,6 @@
                                 <input type="text" class="form-control" name="username" id="username" placeholder="ชื่อผู้ใช้" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสผ่าน</label>
-                                <input type="password" class="form-control" name="user_password" id="user_password" placeholder="รหัสผ่าน" required>
-                            </div>
-                            <div class="form-group">
                                 <label for="formGroupExampleInput">ชื่อ</label>
                                 <input type="text" class="form-control" name="firstname" id="firstname" placeholder="ชื่อ" required>
                             </div>
@@ -126,10 +122,6 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ชื่อผู้ใช้</label>
                                 <input type="text" class="form-control" id="username_view" placeholder="ชื่อผู้ใช้" disabled>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสผ่าน</label>
-                                <input type="password" class="form-control" id="user_password_view" placeholder="รหัสผ่าน" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ชื่อ</label>
@@ -174,10 +166,6 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ชื่อผู้ใช้</label>
                                 <input type="text" class="form-control" name="username" id="username_update" placeholder="ชื่อผู้ใช้" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสผ่าน</label>
-                                <input type="password" class="form-control" name="user_password" id="user_password_update" placeholder="รหัสผ่าน" required>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ชื่อ</label>
