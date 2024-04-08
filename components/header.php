@@ -60,15 +60,15 @@
                     <hr class="dropdown-divider">
                 </li> -->
 
-                <!-- <li>
-                    <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <li>
+                    <a class="dropdown-item d-flex align-items-center" onclick="change_password_link()">
                         <i class="bi bi-question-circle"></i>
-                        <span>Need Help?</span>
+                        <span>Change Password</span>
                     </a>
                 </li>
                 <li>
                     <hr class="dropdown-divider">
-                </li> -->
+                </li>
 
                 <li>
                     <a class="dropdown-item d-flex align-items-center" onclick="logout()">

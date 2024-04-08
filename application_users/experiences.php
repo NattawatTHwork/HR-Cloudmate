@@ -129,6 +129,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/check_login_application_users.js"></script>
     <script src="../js/logout_application_users.js"></script>
+    <script src="../js/application_users/users/change_password_link.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/application_users/experiences/get_job_category_all.js"></script>

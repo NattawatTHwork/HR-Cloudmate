@@ -20,7 +20,7 @@ if (token && role == 'member') {
 
 async function displayTables(datas) {
     let html = '';
-    await datas.forEach((data, index, array) => {
+    for (const data of datas) {
         html += '<tr>';
         html += `<td>${data.email}</td>
                 <td>${data.employer_name}</td>
@@ -39,14 +39,17 @@ async function displayTables(datas) {
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" onclick="view_data('${data.employer_code}')">ดูข้อมูล</a></li>
                             <li><a class="dropdown-item" onclick="update_data('${data.employer_code}')">แก้ไข</a></li>
-                            <li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>
-                            <div class="dropdown-divider"></div>
+                            <li><a class="dropdown-item" onclick="change_password('${data.employer_code}')">เปลี่ยนรหัสผ่าน</a></li>`;
+                            if (data.employer_code != 'cloudmate') {
+                                html += `<li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>`;
+                            }
+                            html += `<div class="dropdown-divider"></div>
                             <li><a class="dropdown-item" href="jobs.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">งานที่รับสมัคร</a></li>
                         </ul>
                     </div>
                 </td>`;
         html += '</tr>';
-    })
+    }
     document.querySelector('tbody').innerHTML = await html;
     $(document).ready(function () {
         $('#datatables').DataTable({

@@ -45,6 +45,7 @@ async function displayTables(datas) {
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" onclick="view_data(${data.user_id})">ดูข้อมูล</a></li>
                             <li><a class="dropdown-item" onclick="update_data(${data.user_id})">แก้ไข</a></li>
+                            <li><a class="dropdown-item" onclick="change_password('${data.user_id}')">เปลี่ยนรหัสผ่าน</a></li>
                             <li><a class="dropdown-item" onclick="delete_data('${data.user_id}', '${data.username}')">ลบ</a></li>
                         </ul>
                     </div>

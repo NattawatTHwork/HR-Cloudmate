@@ -181,6 +181,34 @@
             </div>
         </div>
 
+        <div class="modal fade" id="form_change_password_data" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="change_password_data_form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">เปลี่ยนรหัสผ่าน</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="hidden" name="user_code" id="user_code_change" required>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">รหัสผ่านใหม่</label>
+                                <input type="text" class="form-control" name="new_password" id="new_password_change" placeholder="รหัสผ่านใหม่" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ยืนยันรหัสผ่าน</label>
+                                <input type="text" class="form-control" name="repeat_new_password" id="repeat_new_password_change" placeholder="ยืนยันรหัสผ่าน" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
     </main><!-- End #main -->
 
     <!-- ======= Footer ======= -->
@@ -194,6 +222,7 @@
     <script src="../js/application/users/get_user_all.js"></script>
     <script src="../js/application/users/get_user.js"></script>
     <script src="../js/application/users/update_user.js"></script>
+    <script src="../js/application/users/change_password.js"></script>
     <script src="../js/application/users/delete_user.js"></script>
 </body>
 
