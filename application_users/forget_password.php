@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>เข้าสู่ระบบผู้สมัครงาน | CM WORKFORCE</title>
+    <title>ลืมรหัสผ่าน | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -35,34 +35,21 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">เข้าสู่ระบบผู้สมัครงาน</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4">ลืมรหัสผ่าน</h5>
                                     </div>
 
-                                    <form class="row g-3 needs-validation" novalidate method="POST" action="">
+                                    <form class="row g-3" method="POST" id="recovery">
 
                                         <div class="col-12">
                                             <label for="yourEmail" class="form-label">อีเมล</label>
                                             <div class="input-group has-validation">
-                                                <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
                                                 <input type="email" name="email" class="form-control" id="yourEmail" required>
                                                 <div class="invalid-feedback">กรุณากรอกอีเมล</div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">รหัสผ่าน</label>
-                                            <input type="password" name="user_password" class="form-control" id="yourPassword" required>
-                                            <div class="invalid-feedback">กรุณากรอกรหัสผ่าน</div>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <p class="small mb-0"><a href="forget_password.php">ลืมรหัสผ่าน</a></p>
-                                        </div>
-                                        <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">เข้าสู่ระบบ</button>
-                                        </div>
-                                        <div class="col-12">
-                                            <p class="small mb-0">คุณยังไม่มีบัญชีใช่ไหม <a href="register.php">สร้างบัญชี</a></p>
+                                            <button class="btn btn-primary w-100" type="submit">ขอรหัสกู้คืนรหัสผ่าน</button>
                                         </div>
                                     </form>
 
@@ -104,7 +91,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
-    <script src="../js/application_users/users/login_user.js"></script>
+    <script src="../js/application_users/users/recovery.js"></script>
 
 </body>
 
