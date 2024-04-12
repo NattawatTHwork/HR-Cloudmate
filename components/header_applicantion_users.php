@@ -40,15 +40,15 @@
                     <hr class="dropdown-divider">
                 </li>
 
-                <!-- <li>
-                    <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <li>
+                    <a class="dropdown-item d-flex align-items-center" href="<?= $path ?>/application_users/profile.php">
                         <i class="bi bi-person"></i>
                         <span>My Profile</span>
                     </a>
                 </li>
                 <li>
                     <hr class="dropdown-divider">
-                </li> -->
+                </li>
 
                 <!-- <li>
                     <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
@@ -61,7 +61,7 @@
                 </li> -->
 
                 <li>
-                    <a class="dropdown-item d-flex align-items-center" href="<?= $path ?>/user_administration/change_password_user.php">
+                    <a class="dropdown-item d-flex align-items-center" href="<?= $path ?>/application_users/change_password_user.php">
                         <i class="bi bi-question-circle"></i>
                         <span>Change Password</span>
                     </a>

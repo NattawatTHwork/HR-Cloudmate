@@ -16,7 +16,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../components/header.php' ?>
+    <?php include_once '../components/header_applicantion_users.php' ?>
 
     <!-- ======= Sidebar ======= -->
     <?php include_once '../components/sidebar_application_users.php' ?>
@@ -41,7 +41,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/check_login_application_users.js"></script>
     <script src="../js/logout_application_users.js"></script>
-    <script src="../js/application_users/users/change_password_link.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/application_users/apply_works/get_apply_work_user.js"></script>
