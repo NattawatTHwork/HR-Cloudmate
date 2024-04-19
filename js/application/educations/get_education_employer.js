@@ -2,7 +2,7 @@ if (token && role == 'member') {
     const urlParams = new URLSearchParams(window.location.search);
     const user_code = urlParams.get('user_code');
 
-    fetch(apiUrl + 'application/educations/get_education_user.php?user_code=' + user_code, {
+    fetch(apiUrl + 'application/educations/get_education_employer.php?user_code=' + user_code, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -34,8 +34,6 @@ async function displayCards(datas) {
                             data.level == 6 ? 'ปริญญาโท' :
                                 data.level == 7 ? 'ปริญญาเอก' :
                                     'อื่นๆ';
-        const urlParams = new URLSearchParams(window.location.search);
-        const fullname = urlParams.get('fullname');
 
         let cardHtml = `
             <div class="col-sm-12 col-md-6 mb-4">
@@ -47,10 +45,6 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>สาขา:</strong> ${data.major}</p>
                         <p class="card-text"><strong>ปีที่สำเร็จการศึกษา:</strong> ${data.graduation_year}</p>
                         <p class="card-text"><strong>GPA:</strong> ${data.gpa}</p>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-warning" onclick="update_data('${data.education_code}')">แก้ไข</button>
-                            <button type="button" class="btn btn-danger" onclick="delete_data('${data.education_code}', '${data.level}')">ลบ</button>
-                        </div>
                     </div>
                 </div>
             </div>`;

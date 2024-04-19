@@ -3,14 +3,11 @@ document.getElementById('create_data_form').addEventListener('submit', function 
 
     if (token) {
         const formData = new FormData(this);
-        const urlParams = new URLSearchParams(window.location.search);
-        formData.append('employer_code', urlParams.get('employer_code'));
+        formData.append('employer_code', 'cloudmate');
         const jsonData = {};
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
-
-        console.log(jsonData);
 
         fetch(apiUrl + 'application/jobs/create_job.php', {
             method: 'POST',

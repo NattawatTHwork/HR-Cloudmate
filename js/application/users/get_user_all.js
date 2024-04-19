@@ -42,9 +42,9 @@ async function displayTables(datas) {
                             <li><a class="dropdown-item" onclick="change_password('${data.user_code}')">เปลี่ยนรหัสผ่าน</a></li>
                             <li><a class="dropdown-item" onclick="delete_data('${data.user_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>
                             <div class="dropdown-divider"></div>
-                            <li><a class="dropdown-item" href="referred_jobs.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">งานที่ต้องการ</a></li>
-                            <li><a class="dropdown-item" href="educations.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">ประวัติการศึกษา</a></li>
-                            <li><a class="dropdown-item" href="experiences.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">ประสบการณ์</a></li>
+                            <li><a class="dropdown-item" href="referred_jobs_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">งานที่ต้องการ</a></li>
+                            <li><a class="dropdown-item" href="educations_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">ประวัติการศึกษา</a></li>
+                            <li><a class="dropdown-item" href="experiences_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">ประสบการณ์</a></li>
                         </ul>
                     </div>
                 </td>`;

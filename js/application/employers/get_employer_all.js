@@ -38,10 +38,10 @@ async function displayTables(datas) {
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" onclick="view_data('${data.employer_code}')">ดูข้อมูล</a></li>
-                            <li><a class="dropdown-item" onclick="update_data('${data.employer_code}')">แก้ไข</a></li>
-                            <li><a class="dropdown-item" onclick="change_password('${data.employer_code}')">เปลี่ยนรหัสผ่าน</a></li>`;
+                            <li><a class="dropdown-item" onclick="update_data('${data.employer_code}')">แก้ไข</a></li>`;
                             if (data.employer_code != 'cloudmate') {
-                                html += `<li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>`;
+                                html += `<li><a class="dropdown-item" onclick="change_password('${data.employer_code}')">เปลี่ยนรหัสผ่าน</a></li>
+                                <li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>`;
                             }
                             html += `<div class="dropdown-divider"></div>
                             <li><a class="dropdown-item" href="jobs.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">งานที่รับสมัคร</a></li>

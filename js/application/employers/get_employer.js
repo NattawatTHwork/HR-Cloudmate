@@ -34,7 +34,7 @@ function view_data(employer_code) {
         $("#fullname_view").val(datas.firstname + ' ' + datas.lastname);
         $("#phone_number_view").val(datas.phone_number);
         $("#dates_view").val(formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime + ' น.');
-        $("#statusflag_view").val(datas.statusflag === 't' ? true : false);
+        $("#statusflag_view").val(datas.statusflag === 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน');
         $("#view_data").modal("show");
     }
 }

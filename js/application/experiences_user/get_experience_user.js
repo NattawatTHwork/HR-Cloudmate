@@ -1,6 +1,8 @@
-if (token && role == 'applicant') {
+if (token && role == 'member') {
+    const urlParams = new URLSearchParams(window.location.search);
+    const user_code = urlParams.get('user_code');
 
-    fetch(apiUrl + 'application/referred_jobs/get_referred_job_user.php?user_code=' + data_token.user_code, {
+    fetch(apiUrl + 'application/experiences/get_experience_user.php?user_code=' + user_code, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -24,8 +26,6 @@ async function displayCards(datas) {
     cardContainer.innerHTML = '';
 
     await datas.forEach(data => {
-        let employment_type = data.employment_type == 1 ? 'Full Time' : data.employment_type == 2 ? 'Freelance' : data.employment_type == 3 ? 'Part Time' : 'Trainee';
-
         let statusflag = data.statusflag == 't' ? 'เปิดใช้งาน' :
             data.statusflag == 'f' ? 'ปิดใช้งาน' : '';
 
@@ -36,14 +36,12 @@ async function displayCards(datas) {
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">ตำแหน่ง: ${data.position}</h5>
+                        <p class="card-text"><strong>ชื่อบริษัท:</strong> ${data.company_name}</p>
                         <p class="card-text"><strong>ประเภทงาน:</strong> ${data.job_category}</p>
-                        <p class="card-text"><strong>ประเภทการจ้างงาน:</strong> ${employment_type}</p>
-                        <p class="card-text"><strong>เงินเดือน:</strong> ${data.expect_salary}</p>
-                        <p class="card-text"><strong>สถานที่ทำงาน:</strong> ${data.work_location}</p>
                         <p class="card-text"><strong>สถานะ:</strong> <span class="${statusStyle}">${statusflag}</span></p>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" onclick="update_data('${data.referred_job_code}')">แก้ไข</button>
-                            <button type="button" class="btn btn-danger" onclick="delete_data('${data.referred_job_code}', '${data.position}')">ลบ</button>
+                            <button type="button" class="btn btn-warning" onclick="update_data('${data.experience_code}')">แก้ไข</button>
+                            <button type="button" class="btn btn-danger" onclick="delete_data('${data.experience_code}', '${data.position}')">ลบ</button>
                         </div>
                     </div>
                 </div>

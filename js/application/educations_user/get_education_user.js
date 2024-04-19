@@ -1,6 +1,8 @@
-if (token && role == 'applicant') {
+if (token && role == 'member') {
+    const urlParams = new URLSearchParams(window.location.search);
+    const user_code = urlParams.get('user_code');
 
-    fetch(apiUrl + 'application/educations/get_education_user.php?user_code=' + data_token.user_code, {
+    fetch(apiUrl + 'application/educations/get_education_user.php?user_code=' + user_code, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -37,6 +39,7 @@ async function displayCards(datas) {
             data.statusflag == 'f' ? 'ปิดใช้งาน' : '';
 
         let statusStyle = data.statusflag == 't' ? 'text-success' : 'text-danger';
+
 
         let cardHtml = `
             <div class="col-sm-12 col-md-6 mb-4">

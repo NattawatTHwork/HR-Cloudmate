@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการงานที่รับสมัคร <?= $_GET['fullname'] ?></h1>
+            <h1>จัดการงานที่รับสมัคร</h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-end mb-2 row">
@@ -96,8 +96,8 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
                                 <select class="form-control" name="statusflag" id="statusflag_create" required>
-                                    <option value="t" selected>true</option>
-                                    <option value="f">false</option>
+                                    <option value="t" selected>เปิดใช้งาน</option>
+                                    <option value="f">ปิดใช้งาน</option>
                                 </select>
                             </div>
                         </div>
@@ -165,8 +165,8 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>true</option>
-                                    <option value="f">false</option>
+                                    <option value="t" selected>เปิดใช้งาน</option>
+                                    <option value="f">ปิดใช้งาน</option>
                                 </select>
                             </div>
                         </div>
