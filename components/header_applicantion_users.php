@@ -1,7 +1,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
 <div class="d-flex align-items-center justify-content-between">
-    <a href="<?= $path ?>/index.php" class="logo d-flex align-items-center">
+    <a href="<?= $path ?>/application_users/index.php" class="logo d-flex align-items-center">
         <img src="<?= $path ?>/assets/img/logo_cloudmate.png" alt="">
         <span class="d-none d-lg-block">CM WORKFORCE</span>
     </a>

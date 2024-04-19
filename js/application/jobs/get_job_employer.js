@@ -22,15 +22,31 @@ if (token && role == 'member') {
 }
 
 async function displayCards(datas) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const status = urlParams.get('status');
+
+
+    if (status == 'true') {
+        datas = datas.filter(data => data.statusflag === 't');
+    } else if (status == 'false') {
+        datas = datas.filter(data => data.statusflag === 'f');
+    }
+
+    console.log(status)
+
     let cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
-    await datas.forEach(data => {
+    for (let data of datas) {
         let employment_type = data.employment_type == 1 ? 'Full Time' :
             data.employment_type == 2 ? 'Freelance' :
                 data.employment_type == 3 ? 'Part Time' :
                     data.employment_type == 4 ? 'Tainee' :
                         'อื่นๆ';
+
+        let statusflag = data.statusflag == 't' ? 'เปิดรับสมัคร' :
+            data.statusflag == 'f' ? 'ปิดรับสมัคร' : '';
+        let statusStyle = data.statusflag == 't' ? 'text-success' : 'text-danger';
         let cardHtml = `
             <div class="col-sm-12 col-md-6 mb-4">
                 <div class="card">
@@ -43,7 +59,7 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>สถานที่ทำงาน:</strong> ${data.work_location}</p>
                         <p class="card-text"><strong>เงินเดือน:</strong> ${data.salary}</p>
                         <p class="card-text"><strong>รายละเอียด:</strong> ${data.description}</p>
-                        <div class="text-center">
+                        <p class="card-text"><strong>สถานะ:</strong> <span class="${statusStyle}">${statusflag}</span></p>                        <div class="text-center">
                             <button type="button" class="btn btn-warning" onclick="update_data('${data.job_code}')">แก้ไข</button>
                             <button type="button" class="btn btn-danger" onclick="delete_data('${data.job_code}', '${data.job_category}')">ลบ</button>
                         </div>
@@ -52,5 +68,5 @@ async function displayCards(datas) {
             </div>`;
 
         cardContainer.innerHTML += cardHtml;
-    });
+    }
 }

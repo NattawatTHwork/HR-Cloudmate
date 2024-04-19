@@ -1,39 +1,26 @@
-document.getElementById('searchButton').addEventListener('click', function () {
-    const selectedJobCategory = document.getElementById('select_job_category').value;
-    if (selectedJobCategory) {
-        window.location.href = `apply_works.php?job_category_code=${selectedJobCategory}`;
-    }
-});
 
-const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.has('job_category_code')) {
-    const job_category_code = urlParams.get('job_category_code');
-    fetchData(job_category_code);
-}
-
-function fetchData(job_category_code) {
-    if (token && role == 'applicant') {
-        fetch(apiUrl + 'application/jobs/get_job_by_job_category.php?job_category_code=' + job_category_code, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
+if (token && role == 'applicant') {
+    fetch(apiUrl + 'application/index/get_jobs.php', {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${token}`
+        },
+    })
+        .then(response => {
+            return response.json();
         })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    displayCards(data.data);
-                }
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
+        .then(data => {
+            if (data.status === 'success') {
+                displayCards(data.data);
+            }
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+        });
+} else {
+    console.error('Token not found in local storage');
 }
+
 
 async function displayCards(datas) {
     let cardContainer = document.getElementById('cardContainer');
