@@ -1,5 +1,5 @@
-if (token && role == 'applicant') {
-    window.location.href = pathUrl + '/application_users/index.php';
+if (token && role == 'employer') {
+    window.location.href = pathUrl + '/application_employers/index.php';
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -9,13 +9,25 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
 
         const formData = new FormData(form);
-        const jsonData = {};
+        const password = formData.get('employer_password');
+        const repeatPassword = formData.get('employer_repeat_password');
+        if (password.length < 6) {
+            document.getElementById('alertpassword').style.display = 'block';
+            return;
+        } else if (password !== repeatPassword) {
+            document.getElementById('alertpassword').style.display = 'none';
+            document.getElementById('alertrepeatpassword').style.display = 'block';
+            return;
+        }
 
+        const jsonData = {};
         formData.forEach(function (value, key) {
             jsonData[key] = value;
         });
 
-        fetch(apiUrl + 'application/users/login_user.php', {
+        console.log(jsonData)
+
+        fetch(apiUrl + 'application/employers/create_employer.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -27,16 +39,14 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 if (data.status === 'success') {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', 'applicant');
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Login successful",
+                        title: "Register successful",
                         showConfirmButton: false,
                         timer: 1500
                     }).then(() => {
-                        window.location.href = 'index.php';
+                        window.location.href = 'login.php';
                     });
                 } else {
                     Swal.fire({

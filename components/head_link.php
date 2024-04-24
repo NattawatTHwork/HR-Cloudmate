@@ -1,4 +1,5 @@
     <?php $path = '/HR-Cloudmate' ?>
+    
     <!-- Favicons -->
     <link href="<?= $path ?>/assets/img/logo_cloudmate.png" rel="icon">
     <link href="<?= $path ?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">

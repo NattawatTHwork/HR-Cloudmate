@@ -1,5 +1,5 @@
-if (token && role == 'applicant') {
-    fetch(apiUrl + 'application/users/get_user.php?user_code=' + data_token.user_code, {
+if (token && role == 'employer') {
+    fetch(apiUrl + 'application/employers/get_employer.php?employer_code=' + data_token.employer_code, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -19,30 +19,26 @@ if (token && role == 'applicant') {
 }
 
 function show_data(datas) {
-    $("#user_code").val(datas.user_code);
+    $("#employer_code").val(datas.employer_code);
+    $("#employer_name").val(datas.employer_name);
     $("#firstname").val(datas.firstname);
     $("#lastname").val(datas.lastname);
-    $("#gender").val(datas.gender);
-    $("#birthday").val(datas.birthday);
     $("#phone_number").val(datas.phone_number);
-    $("#user_address").val(datas.user_address);
-    $("#sub_district").val(datas.sub_district);
-    $("#district").val(datas.district);
-    $("#province").val(datas.province);
-    $("#zip_code").val(datas.zip_code);
 }
 
 document.getElementById('update_profile_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
 
-    if (token && role == 'applicant') {
+    if (token && role == 'employer') {
         const formData = new FormData(this);
         const jsonData = {};
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
 
-        fetch(apiUrl + 'application/users/update_profile.php', {
+        console.log(jsonData)
+
+        fetch(apiUrl + 'application/employers/update_profile.php', {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${token}`,

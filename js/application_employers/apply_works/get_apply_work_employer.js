@@ -1,6 +1,6 @@
 
-if (token && role == 'member') {
-    fetch(apiUrl + 'application/apply_works/get_apply_work_employer.php?employer_code=cloudmate', {
+if (token && role == 'employer') {
+    fetch(apiUrl + 'application/apply_works/get_apply_work_employer.php?employer_code=' + data_token.employer_code, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -27,14 +27,17 @@ async function displayCards(datas) {
     cardContainer.innerHTML = '';
 
     await datas.forEach(data => {
+        const date = new Date(data.dates);
+        date.setHours(date.getHours() + 5);
+
         const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
-        const formattedDateMonth = dateMonthFormatter.format(new Date(data.dates));
+        const formattedDateMonth = dateMonthFormatter.format(new Date(date));
 
         const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
-        const formattedYear = YearFormatter.format(new Date(data.dates));
+        const formattedYear = YearFormatter.format(new Date(date));
 
         const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
-        const formattedTime = TimeFormatter.format(new Date(data.dates));
+        const formattedTime = TimeFormatter.format(new Date(date));
 
         let cardHtml = `
             <div class="col-sm-12">

@@ -1,5 +1,5 @@
 if (token && role == 'applicant') {
-    window.location.href = pathUrl + '/application/users_applicant/index.php';
+    window.location.href = pathUrl + '/application_users/index.php';
 }
 
 document.addEventListener("DOMContentLoaded", function () {

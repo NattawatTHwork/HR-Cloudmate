@@ -16,10 +16,10 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../components/header.php' ?>
+    <?php include_once '../components/header_applicantion_employers.php' ?>
 
     <!-- ======= Sidebar ======= -->
-    <?php include_once '../components/sidebar.php' ?>
+    <?php include_once '../components/sidebar_application_employers.php' ?>
 
     <main id="main" class="main">
 
@@ -185,15 +185,15 @@
     <?php include_once '../components/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../js/check_login.js"></script>
-    <script src="../js/logout.js"></script>
+    <script src="../js/check_login_application_employers.js"></script>
+    <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
-    <script src="../js/application/jobs/get_job_category_all.js"></script>
-    <script src="../js/application/jobs/get_job_employer.js"></script>
-    <script src="../js/application/jobs/create_job.js"></script>
-    <script src="../js/application/jobs/update_job.js"></script>
-    <script src="../js/application/jobs/delete_job.js"></script>
+    <script src="../js/application_employers/jobs/get_job_category_all.js"></script>
+    <script src="../js/application_employers/jobs/get_job_employer.js"></script>
+    <script src="../js/application_employers/jobs/create_job.js"></script>
+    <script src="../js/application_employers/jobs/update_job.js"></script>
+    <script src="../js/application_employers/jobs/delete_job.js"></script>
 </body>
 
 </html>

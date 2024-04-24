@@ -1,5 +1,5 @@
-if (token && role == 'applicant') {
-    window.location.href = pathUrl + '/application_users/index.php';
+if (token && role == 'employer') {
+    window.location.href = pathUrl + '/application_employers/index.php';
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             jsonData[key] = value;
         });
 
-        fetch(apiUrl + 'application/users/login_user.php', {
+        fetch(apiUrl + 'application/employers/login_employer.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(data => {
                 if (data.status === 'success') {
                     localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', 'applicant');
+                    localStorage.setItem('role', 'employer');
                     Swal.fire({
                         position: "center",
                         icon: "success",
