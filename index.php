@@ -33,75 +33,124 @@
                 <div class="col-lg-12">
                     <div class="row">
 
-                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application/jobs.php?employer_code=cloudmate&fullname=CM%20WORKFORCE">
+                        <a class="col-xxl-3 col-md-12" href="<?= $path ?>/application/employers.php">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">ALL <span>| Jobs</span></h5>
+                                    <h5 class="card-title">EMPLOYERS ALL</h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-person-workspace"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6 id="all_jobs"></h6>
-                                            <span class="text-primary small pt-1 fw-bold">งาน</span>
+                                            <h6 id="total_employers"></h6>
+                                            <span class="text-primary small pt-1 fw-bold">คน</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
 
-                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application/jobs.php?employer_code=cloudmate&fullname=CM%20WORKFORCE&status=true">
+                        <a class="col-xxl-3 col-md-12">
                             <div class="card info-card revenue-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Active <span>| Jobs</span></h5>
+                                    <h5 class="card-title">EMPLOYERS ENABLE</h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-person-workspace"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6 id="active_jobs"></h6>
-                                            <span class="text-success small pt-1 fw-bold">งาน</span>
+                                            <h6 id="status_enable_employers"></h6>
+                                            <span class="text-success small pt-1 fw-bold">คน</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </a>
 
-                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application/jobs.php?employer_code=cloudmate&fullname=CM%20WORKFORCE&status=false">
+                        <a class="col-xxl-3 col-md-12">
                             <div class="card info-card customers-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inactive <span>| Jobs</span></h5>
+                                    <h5 class="card-title">EMPLOYERS VIEW</span></h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-person-workspace"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6 id="inactive_jobs"></h6>
-                                            <span class="text-danger small pt-1 fw-bold">งาน</span>
+                                            <h6 id="status_view_employers"></h6>
+                                            <span class="text-warning small pt-1 fw-bold">คน</span>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </a>
 
+                        <a class="col-xxl-3 col-md-12">
+                            <div class="card info-card red-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">EMPLOYERS DISABLE</span></h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-person-workspace"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6 id="status_disable_employers"></h6>
+                                            <span class="text-danger small pt-1 fw-bold">คน</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
                 <div class="col-lg-12">
                     <div class="row">
 
-                        <a class="col-12" href="<?= $path ?>/application/apply_works.php?employer_code=cloudmate&fullname=CM%20WORKFORCE">
+                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application/users.php">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Apply Works</h5>
+                                    <h5 class="card-title">USERS ALL</h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
-                                            <h6 id="total_apply_works"></h6>
-                                            <span class="text-primary small pt-1 fw-bold">ใบสมัคร</span>
+                                            <h6 id="total_users"></h6>
+                                            <span class="text-primary small pt-1 fw-bold">คน</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="col-xxl-4 col-md-12">
+                            <div class="card info-card revenue-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">USERS ENABLE</h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6 id="status_enable_users"></h6>
+                                            <span class="text-success small pt-1 fw-bold">คน</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                        <a class="col-xxl-4 col-md-12">
+                            <div class="card info-card red-card">
+                                <div class="card-body">
+                                    <h5 class="card-title">USERS DISABLE</h5>
+                                    <div class="d-flex align-items-center">
+                                        <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                            <i class="bi bi-people"></i>
+                                        </div>
+                                        <div class="ps-3">
+                                            <h6 id="status_disable_users"></h6>
+                                            <span class="text-danger small pt-1 fw-bold">คน</span>
                                         </div>
                                     </div>
                                 </div>
@@ -124,8 +173,8 @@
     <script src="js/logout.js"></script>
     <script src="js/token.js"></script>
     <script src="js/api_url.js"></script>
-    <script src="js/index/jobs.js"></script>
-    <script src="js/index/apply_works.js"></script>
+    <script src="js/index/employers.js"></script>
+    <script src="js/index/users.js"></script>
 </body>
 
 </html>

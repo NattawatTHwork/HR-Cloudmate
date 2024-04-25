@@ -68,7 +68,7 @@
                         </a>
 
                         <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=false">
-                            <div class="card info-card customers-card">
+                            <div class="card info-card red-card">
                                 <div class="card-body">
                                     <h5 class="card-title">Inactive <span>| Jobs</span></h5>
                                     <div class="d-flex align-items-center">

@@ -20,17 +20,20 @@ function view_data(user_code) {
     }
 
     function show_data(datas) {
+        const date = new Date(datas.dates);
+        date.setHours(date.getHours() + 5);
+        
         const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
-        const formattedDateMonth = dateMonthFormatter.format(new Date(datas.dates));
+        const formattedDateMonth = dateMonthFormatter.format(new Date(date));
         const formattedDateMonthBirthday = dateMonthFormatter.format(new Date(datas.birthday));
 
 
         const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
-        const formattedYear = YearFormatter.format(new Date(datas.dates));
+        const formattedYear = YearFormatter.format(new Date(date));
         const formattedBirthday = YearFormatter.format(new Date(datas.birthday));
 
         const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
-        const formattedTime = TimeFormatter.format(new Date(datas.dates));
+        const formattedTime = TimeFormatter.format(new Date(date));
 
         $("#email_view").val(datas.email);
         $("#fullname_view").val(datas.firstname+' '+datas.lastname);

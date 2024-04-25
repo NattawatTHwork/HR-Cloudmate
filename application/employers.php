@@ -131,8 +131,9 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="1" selected>เปิดใช้งาน</option>
+                                    <option value="2">ไม่แสดง</option>
+                                    <option value="3">ปิดใช้งาน</option>
                                 </select>
                             </div>
                         </div>

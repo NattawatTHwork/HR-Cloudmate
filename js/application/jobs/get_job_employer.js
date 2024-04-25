@@ -1,5 +1,8 @@
 if (token && role == 'member') {
-    fetch(apiUrl + 'application/jobs/get_job_employer.php?employer_code=cloudmate', {
+    const urlParams = new URLSearchParams(window.location.search);
+    const employer_code = urlParams.get('employer_code');
+
+    fetch(apiUrl + 'application/jobs/get_job_employer.php?employer_code=' + employer_code, {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`

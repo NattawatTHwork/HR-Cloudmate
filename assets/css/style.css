@@ -831,8 +831,13 @@ h6 {
 }
 
 .dashboard .customers-card .card-icon {
-  color: #ff771d;
-  background: #ffecdf;
+  color: #ffb71d;
+  background: #fff8df;
+}
+
+.dashboard .red-card .card-icon {
+  color: #ff0000; /* สีแดง */
+  background: #ffedec; /* สีเหลืองอ่อน */
 }
 
 /* Activity */

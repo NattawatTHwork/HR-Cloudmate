@@ -20,21 +20,24 @@ function view_data(employer_code) {
     }
 
     function show_data(datas) {
+        const date = new Date(datas.dates);
+        date.setHours(date.getHours() + 5);
+
         const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
-        const formattedDateMonth = dateMonthFormatter.format(new Date(datas.dates));
+        const formattedDateMonth = dateMonthFormatter.format(new Date(date));
 
         const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
-        const formattedYear = YearFormatter.format(new Date(datas.dates));
+        const formattedYear = YearFormatter.format(new Date(date));
 
         const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
-        const formattedTime = TimeFormatter.format(new Date(datas.dates));
+        const formattedTime = TimeFormatter.format(new Date(date));
 
         $("#email_view").val(datas.email);
         $("#employer_name_view").val(datas.employer_name);
         $("#fullname_view").val(datas.firstname + ' ' + datas.lastname);
         $("#phone_number_view").val(datas.phone_number);
         $("#dates_view").val(formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime + ' น.');
-        $("#statusflag_view").val(datas.statusflag === 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน');
+        $("#statusflag_view").val(datas.statusflag == 1 ? 'เปิดใช้งาน' : datas.statusflag == 2 ? 'ไม่แสดง' : 'ปิดใช้งาน');
         $("#view_data").modal("show");
     }
 }

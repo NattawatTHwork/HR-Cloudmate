@@ -1,5 +1,5 @@
 if (token && role == 'member') {
-    fetch(apiUrl + 'application/index/apply_works.php?employer_code=cloudmate', {
+    fetch(apiUrl + 'application/index/users.php', {
         method: 'GET',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -19,5 +19,7 @@ if (token && role == 'member') {
 }
 
 async function display_apply_works(datas) {
-    document.getElementById('total_apply_works').textContent = datas.total_apply_works;
+    document.getElementById('total_users').textContent = datas.total_users;
+    document.getElementById('status_enable_users').textContent = datas.status_enable_users;
+    document.getElementById('status_disable_users').textContent = datas.status_disable_users;
 }

@@ -27,8 +27,8 @@ async function displayTables(datas) {
                 <td>${data.firstname} ${data.lastname}</td>
                 <td>${data.phone_number}</td>
                 <td>
-                    <button class="btn ${data.statusflag == 't' ? 'btn-success' : 'btn-danger'}">
-                        ${data.statusflag == 't' ? 'ENABLE' : 'DISABLE'}
+                    <button class="btn ${data.statusflag == 1 ? 'btn-success' : data.statusflag == 2 ? 'btn-warning' : 'btn-danger'}">
+                        ${data.statusflag == 1 ? 'เปิดใช้งาน' : data.statusflag == 2 ? 'ไม่แสดง' : 'ปิดใช้งาน'}
                     </button>
                 </td>
                 <td>
@@ -44,7 +44,7 @@ async function displayTables(datas) {
                                 <li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>`;
                             }
                             html += `<div class="dropdown-divider"></div>
-                            <li><a class="dropdown-item" href="jobs.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">งานที่รับสมัคร</a></li>
+                            <li><a class="dropdown-item" href="jobs_employer.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">งานที่รับสมัคร</a></li>
                         </ul>
                     </div>
                 </td>`;

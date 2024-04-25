@@ -44,7 +44,6 @@
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/application_employers/apply_works/get_apply_work_employer.js"></script>
-    <!-- <script src="../js/application_users/apply_works/delete_apply_work.js"></script> -->
 </body>
 
 </html>
