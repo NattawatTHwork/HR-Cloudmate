@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>จัดการนายจ้าง | CM WORKFORCE</title>
+    <title>จัดการผู้ประกอบการ | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการนายจ้าง</h1>
+            <h1>จัดการผู้ประกอบการ</h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -39,7 +39,7 @@
                                 <thead>
                                     <tr>
                                         <th>อีเมล</th>
-                                        <th>บริษัท/นายจ้าง</th>
+                                        <th>บริษัท/ผู้ประกอบการ</th>
                                         <th>ชื่อ - สกุล</th>
                                         <th>เบอร์โทร</th>
                                         <th>สถานะ</th>
@@ -73,8 +73,8 @@
                                 <input type="text" class="form-control" id="email_view" placeholder="อีเมล" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">บริษัท/นายจ้าง</label>
-                                <input type="text" class="form-control" id="employer_name_view" placeholder="บริษัท/นายจ้าง" disabled>
+                                <label for="formGroupExampleInput">บริษัท/ผู้ประกอบการ</label>
+                                <input type="text" class="form-control" id="employer_name_view" placeholder="บริษัท/ผู้ประกอบการ" disabled>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput">ชื่อ - สกุล</label>
@@ -113,7 +113,7 @@
                                 <input type="text" class="form-control" name="email" id="email_update" placeholder="อีเมล" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">บริษัท/นายจ้าง</label>
+                                <label for="formGroupExampleInput">บริษัท/ผู้ประกอบการ</label>
                                 <input type="text" class="form-control" name="employer_name" id="employer_name_update" placeholder="รหัสผ่าน" required>
                             </div>
                             <div class="form-group">

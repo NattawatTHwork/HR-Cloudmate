@@ -53,7 +53,7 @@ async function displayCards(data) {
                     <div class="card-body">
                         <h5 class="card-title">${data.position}</h5>
                         <p class="card-text"><strong>ประเภทงาน:</strong> ${data.job_category}</p>
-                        <p class="card-text"><strong>บริษัท/นายจ้าง:</strong> ${data.employer_name}</p>
+                        <p class="card-text"><strong>บริษัท/ผู้ประกอบการ:</strong> ${data.employer_name}</p>
                         <p class="card-text"><strong>ประเภทการจ้างงาน:</strong> ${employment_type}</p>
                         <p class="card-text"><strong>วันทำงาน:</strong> ${data.work_day}</p>
                         <p class="card-text"><strong>เวลาเข้า/ออกงาน:</strong> ${data.time_in.slice(0, 5)} - ${data.time_out.slice(0, 5)} น.</p>

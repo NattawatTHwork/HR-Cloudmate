@@ -38,7 +38,7 @@ async function displayCards(datas) {
                     <div class="card-body">
                         <h5 class="card-title">${data.position}</h5>
                         <p class="card-text"><strong>ประเภทการจ้างงาน:</strong> ${employment_type}</p>
-                        <p class="card-text"><strong>บริษัท/นายจ้าง:</strong> ${data.employer_name}</p>
+                        <p class="card-text"><strong>บริษัท/ผู้ประกอบการ:</strong> ${data.employer_name}</p>
                         <div class="text-center">
                             <a type="button" class="btn btn-primary" href="${pathUrl}/application_users/apply_work_detail.php?job_code=${data.job_code}")">ดูรายละเอียด</a>
                         </div>

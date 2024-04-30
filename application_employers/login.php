@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>เข้าสู่ระบบผู้จ้างงาน | CM WORKFORCE</title>
+    <title>เข้าสู่ระบบผู้ประกอบการ | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -35,7 +35,7 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">เข้าสู่ระบบผู้จ้างงาน</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4">เข้าสู่ระบบผู้ประกอบการ</h5>
                                     </div>
 
                                     <form class="row g-3 needs-validation" novalidate method="POST" action="">

@@ -23,7 +23,7 @@
       <ul id="application-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
         <li>
           <a href="<?= $path ?>/application/employers.php">
-            <i class="bi bi-circle"></i><span>จัดการนายจ้าง</span>
+            <i class="bi bi-circle"></i><span>จัดการผู้ประกอบการ</span>
           </a>
         </li>
         <li>
