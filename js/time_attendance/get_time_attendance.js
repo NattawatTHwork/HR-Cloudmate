@@ -4,28 +4,28 @@ const selectMonth = document.getElementById('select_month');
 const selectYear = document.getElementById('select_year');
 
 searchButton.addEventListener('click', function (event) {
-    const personId = selectPersonal.value;
+    const Id = selectPersonal.value;
     const month = selectMonth.value;
     const year = selectYear.value;
 
-    if (personId && month && year) {
-        window.location.href = `time_attendance.php?personid=${personId}&month=${month}&year=${year}`;
+    if (Id && month && year) {
+        window.location.href = `time_attendance.php?id=${Id}&month=${month}&year=${year}`;
     } else {
         alert('กรุณาเลือกผู้ใช้, เดือน และปี');
     }
 });
 
 const urlParams = new URLSearchParams(window.location.search);
-if (urlParams.has('personid') && urlParams.has('month') && urlParams.has('year')) {
-    const personid = urlParams.get('personid');
+if (urlParams.has('id') && urlParams.has('month') && urlParams.has('year')) {
+    const id = urlParams.get('id');
     const month = urlParams.get('month');
     const year = urlParams.get('year');
-    fetchData(personid, month, year);
+    fetchData(id, month, year);
 }
 
-function fetchData(personid, month, year) {
+function fetchData(id, month, year) {
     if (token) {
-        fetch(apiUrl + `time_attendance/get_time_attendance.php?personid=${personid}&month=${month}&year=${year}`, {
+        fetch(apiUrl + `time_attendance/get_time_attendance.php?id=${id}&month=${month}&year=${year}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -63,23 +63,36 @@ async function displayTables(datas) {
         const formattedDateYear = dateFormatterYear.format(date);
 
         let dataForDay = datas.find(data => new Date(data.time_in).getDate() === day);
+        console.log(dataForDay)
         if (dataForDay) {
             html += '<tr>';
-            html += `<td>${formattedDate + ' ' + formattedDateYear}</td>
-                    <td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH')}</td>
-                    <td>${new Date(dataForDay.time_out).toLocaleTimeString('th-TH')}</td>
-                    <td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH') >= '09:00:00' ? 'สาย' : ''} ${new Date(dataForDay.time_out).toLocaleTimeString('th-TH') <= '17:00:00' ? 'ออกก่อน' : ''}</td>
-                    <td></td>
-                    `;
+            // html += `<td>${formattedDate + ' ' + formattedDateYear}</td>
+            //         <td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH')}</td>
+            //         <td>${new Date(dataForDay.time_out).toLocaleTimeString('th-TH')}</td>
+            //         <td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH') >= '09:00:00' ? 'สาย' : ''} ${new Date(dataForDay.time_out).toLocaleTimeString('th-TH') <= '17:00:00' ? 'ออกก่อน' : ''}</td>
+            //         <td></td>
+            //         `;
+            html += `<td>${formattedDate + ' ' + formattedDateYear}</td>`;
+            html += `<td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH')}</td>`;
+
+            if (dataForDay.time_out) {
+                html += `<td>${new Date(dataForDay.time_out).toLocaleTimeString('th-TH')}</td>`;
+            } else {
+                html += `<td></td>`;
+            }
             html += '</tr>';
         } else {
             html += '<tr>';
+            // html += `<td>${formattedDate + ' ' + formattedDateYear}</td>
+            //         <td></td>
+            //         <td></td>
+            //         <td></td>
+            //         <td></td>
+            //         `;
             html += `<td>${formattedDate + ' ' + formattedDateYear}</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    `;
+            <td></td>
+            <td></td>
+            `;
             html += '</tr>';
         }
     }

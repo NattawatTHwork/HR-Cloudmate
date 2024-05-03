@@ -22,12 +22,12 @@ function displaySelect(datas) {
     const selectGroup = document.getElementById('select_personal');
     datas.forEach(data => {
         const option = document.createElement('option');
-        option.value = data.personid;
+        option.value = data.id;
         option.text = data.memfullname;
         const urlParams = new URLSearchParams(window.location.search);
-        if (urlParams.has('personid')) {
-            const personid = urlParams.get('personid');
-            if (data.personid === personid) {
+        if (urlParams.has('id')) {
+            const id = urlParams.get('id');
+            if (data.id === id) {
                 option.selected = true;
             }
         }
