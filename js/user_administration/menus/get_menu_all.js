@@ -35,7 +35,7 @@ async function displayTables(datas) {
     document.querySelector('tbody').innerHTML = await html;
     $(document).ready(function () {
         $('#datatables').DataTable({
-            "scrollX": true
+            // "scrollX": true
         });
     });
 }

@@ -29,7 +29,7 @@
 
         <div class="d-sm-flex justify-content-end mb-2 row">
             <div class="col-sm-12 col-md-4">
-                <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
+                <button type="button" class="btn btn-warning w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
                     เพิ่มกลุ่มผู้ใช้
                 </button>
             </div>
@@ -94,7 +94,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="submit" class="btn btn-warning">บันทึก</button>
                         </div>
                     </form>
                 </div>
@@ -164,7 +164,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="submit" class="btn btn-warning">บันทึก</button>
                         </div>
                     </form>
                 </div>

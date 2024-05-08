@@ -117,7 +117,7 @@
                                             </div>
                                         </div> -->
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">สร้างบัญชี</button>
+                                            <button class="btn btn-warning w-100" type="submit">สร้างบัญชี</button>
                                         </div>
                                         <div class="col-12">
                                             <p class="small mb-0">คุณมีบัญชีแล้วใช่ไหม <a href="login.php">เข้าสู่ระบบ</a></p>

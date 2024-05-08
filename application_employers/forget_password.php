@@ -49,7 +49,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">ขอรหัสกู้คืนรหัสผ่าน</button>
+                                            <button class="btn btn-warning w-100" type="submit">ขอรหัสกู้คืนรหัสผ่าน</button>
                                         </div>
                                     </form>
 

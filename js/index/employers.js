@@ -19,7 +19,6 @@ if (token && role == 'member') {
 }
 
 async function display_jobs(datas) {
-    console.log(datas)
     document.getElementById('total_employers').textContent = datas.total_employers;
     document.getElementById('status_enable_employers').textContent = datas.status_enable_employers;
     document.getElementById('status_view_employers').textContent = datas.status_view_employers;

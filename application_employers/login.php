@@ -59,7 +59,7 @@
                                             <p class="small mb-0"><a href="forget_password.php">ลืมรหัสผ่าน</a></p>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">เข้าสู่ระบบ</button>
+                                            <button class="btn btn-warning w-100" type="submit">เข้าสู่ระบบ</button>
                                         </div>
                                         <div class="col-12">
                                             <p class="small mb-0">คุณยังไม่มีบัญชีใช่ไหม <a href="register.php">สร้างบัญชี</a></p>

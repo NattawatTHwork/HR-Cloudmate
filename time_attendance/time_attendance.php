@@ -35,9 +35,10 @@
                 <option value="">เลือกเดือน</option>
                 <?php
                 $months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+                $selectedMonth = isset($_GET['month']) ? $_GET['month'] : date('n');
                 foreach ($months as $index => $monthName) {
                     $value = $index + 1;
-                    $selected = ($_GET['month'] == $value) ? 'selected' : '';
+                    $selected = ($selectedMonth == $value) ? 'selected' : '';
                     echo "<option value='$value' $selected>$monthName</option>";
                 }
                 ?>
@@ -54,7 +55,7 @@
                 }
                 ?>
             </select>
-            <button class="btn btn-primary" type="button" id="search_button">ค้นหา</button>
+            <button class="btn btn-warning" type="button" id="search_button">ค้นหา</button>
         </div>
 
         <section class="section">
