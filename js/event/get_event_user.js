@@ -70,6 +70,7 @@ async function displayTables(datas) {
     document.querySelector('tbody').innerHTML = await html;
     $(document).ready(function () {
         $('#datatables').DataTable({
+            "order": [[1, 'desc']]
             // "scrollX": true
         });
     });

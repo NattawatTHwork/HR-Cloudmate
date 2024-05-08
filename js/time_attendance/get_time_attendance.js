@@ -63,7 +63,7 @@ async function displayTables(datas) {
         const formattedDateYear = dateFormatterYear.format(date);
 
         let dataForDay = datas.find(data => new Date(data.time_in).getDate() === day);
-        console.log(dataForDay)
+
         if (dataForDay) {
             html += '<tr>';
             // html += `<td>${formattedDate + ' ' + formattedDateYear}</td>

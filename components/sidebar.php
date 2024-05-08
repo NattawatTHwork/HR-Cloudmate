@@ -17,6 +17,13 @@
     </li><!-- End Time Attendance Nav -->
 
     <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/event/event.php">
+        <i class="bi bi-grid"></i>
+        <span>Job Activity</span>
+      </a>
+    </li><!-- End Job Activity Nav -->
+
+    <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#application-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-journal-text"></i><span>Application</span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
