@@ -23,7 +23,7 @@ function displaySelect(datas) {
     datas.forEach(data => {
         const option = document.createElement('option');
         option.value = data.id;
-        option.text = data.memfullname;
+        option.text = data.mem_fullname;
         const urlParams = new URLSearchParams(window.location.search);
         if (urlParams.has('id')) {
             const id = urlParams.get('id');
