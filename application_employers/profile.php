@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <a type="button" class="btn btn-warning" href="<?= $path ?>/application_employers/update_profile.php">แก้ไขข้อมูลส่วนตัว</a>
+                                        <a type="button" class="btn btn-primary" href="<?= $path ?>/application_employers/update_profile.php">แก้ไขข้อมูลส่วนตัว</a>
                                     </div>
                                 </div>
                             </form>

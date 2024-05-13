@@ -29,7 +29,7 @@
 
         <div class="d-sm-flex justify-content-end mb-2 row">
             <div class="col-sm-12 col-md-4">
-                <button type="button" class="btn btn-warning w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
+                <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
                     เพิ่มชื่อผู้ใช้
                 </button>
             </div>
@@ -89,6 +89,16 @@
                                 <input type="text" class="form-control" name="lastname" id="lastname" placeholder="นามสกุล" required>
                             </div>
                             <div class="form-group">
+                                <label for="formGroupExampleInput">รหัสผ่าน</label>
+                                <input type="text" class="form-control" name="user_password" id="user_password" placeholder="รหัสผ่าน" required>
+                                <div id="alertpassword" style="display: none; color: red;">ความยาวรหัสผ่านต้องมากกว่า 6 ตัว</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput">ยืนยันรหัสผ่าน</label>
+                                <input type="text" class="form-control" name="user_repeat_password" id="user_repeat_password" placeholder="ยืนยันรหัสผ่าน" required>
+                                <div id="alertrepeatpassword" style="display: none; color: red;">รหัสผ่านไม่ตรงกัน</div>
+                            </div>
+                            <div class="form-group">
                                 <label for="formGroupExampleInput">กลุ่มผู้ใช้</label>
                                 <select class="form-control" name="group_id" id="group_name_dropdown_create" required>
                                 </select>
@@ -96,14 +106,14 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
                                 <select class="form-control" name="statusflag" id="statusflag" required>
-                                    <option value="t" selected>true</option>
-                                    <option value="f">false</option>
+                                    <option value="t" selected>เปิดใช้งาน</option>
+                                    <option value="f">ปิดใช้งาน</option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>
@@ -183,14 +193,14 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>true</option>
-                                    <option value="f">false</option>
+                                    <option value="t" selected>เปิดใช้งาน</option>
+                                    <option value="f">ปิดใช้งาน</option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>
@@ -218,7 +228,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>

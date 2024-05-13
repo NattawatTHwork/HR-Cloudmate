@@ -31,7 +31,7 @@
             <select class="form-select me-2" id="select_job_category">
                 <option value="">เลือกประเภทงาน</option>
             </select>
-            <button type="submit" id="searchButton" class="btn btn-warning">ค้นหา</button>
+            <button type="submit" id="searchButton" class="btn btn-primary">ค้นหา</button>
         </div>
 
         <section class="section">

@@ -21,11 +21,14 @@ if (token) {
 async function displayTables(datas) {
     let html = '';
     await datas.forEach((data, index, array) => {
+        const date = new Date(data.dates);
+        date.setHours(date.getHours() + 5);
+
         const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
-        const formattedDateMonth = dateMonthFormatter.format(new Date(data.dates));
+        const formattedDateMonth = dateMonthFormatter.format(new Date(date));
 
         const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
-        const formattedYear = YearFormatter.format(new Date(data.dates));
+        const formattedYear = YearFormatter.format(new Date(date));
         
         html += '<tr>';
         html += `<td>${data.group_code}</td>
@@ -34,7 +37,7 @@ async function displayTables(datas) {
                 <td>${formattedDateMonth + ' ' + formattedYear}</td>
                 <td>
                     <button class="btn ${data.statusflag == 't' ? 'btn-success' : 'btn-danger'}">
-                        ${data.statusflag == 't' ? 'ENABLE' : 'DISABLE'}
+                        ${data.statusflag == 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน'}
                     </button>
                 </td>
                 <td>

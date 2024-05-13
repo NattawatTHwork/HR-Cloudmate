@@ -42,7 +42,7 @@ function view_data(user_code) {
         $("#phone_number_view").val(datas.phone_number);
         $("#address_view").val(datas.user_address+' ต.'+datas.sub_district+' อ.'+datas.district+' จ.'+datas.province+' '+datas.zip_code);
         $("#dates_view").val(formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime + ' น.');
-        $("#statusflag_view").val(datas.statusflag === 't' ? true : false);
+        $("#statusflag_view").val(datas.statusflag === 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน');
         $("#view_data").modal("show");
     }
 }

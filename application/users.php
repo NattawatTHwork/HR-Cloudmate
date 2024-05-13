@@ -167,14 +167,14 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>true</option>
-                                    <option value="f">false</option>
+                                    <option value="t" selected>เปิดใช้งาน</option>
+                                    <option value="f">ปิดใช้งาน</option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>
@@ -202,7 +202,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>

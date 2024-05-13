@@ -29,17 +29,17 @@
 
         <div class="d-sm-flex justify-content-center mb-2 row">
             <div class="col-sm-12 col-md-4">
-                <button type="button" class="btn btn-warning w-100 btn-block" id="createButton">
+                <button type="button" class="btn btn-primary w-100 btn-block" id="createButton">
                     เพิ่มเมนูผู้ใช้
                 </button>
             </div>
             <div class="col-sm-12 col-md-4">
-                <button type="button" class="btn btn-warning w-100 btn-block" id="updateButton">
+                <button type="button" class="btn btn-primary w-100 btn-block" id="updateButton">
                     แก้ไขเมนูผู้ใช้
                 </button>
             </div>
             <div class="col-sm-12 col-md-4">
-                <button type="button" class="btn btn-warning w-100 btn-block" id="deleteButton">
+                <button type="button" class="btn btn-primary w-100 btn-block" id="deleteButton">
                     ลบเมนูผู้ใช้
                 </button>
             </div>
@@ -95,7 +95,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>
@@ -115,7 +115,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-warning">บันทึก</button>
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </form>
                 </div>

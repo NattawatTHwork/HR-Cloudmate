@@ -28,7 +28,7 @@ async function displayTables(datas) {
                 <td>${data.phone_number}</td>
                 <td>
                     <button class="btn ${data.statusflag == 't' ? 'btn-success' : 'btn-danger'}">
-                        ${data.statusflag == 't' ? 'ENABLE' : 'DISABLE'}
+                        ${data.statusflag == 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน'}
                     </button>
                 </td>
                 <td>

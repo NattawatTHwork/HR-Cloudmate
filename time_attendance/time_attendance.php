@@ -55,7 +55,7 @@
                 }
                 ?>
             </select>
-            <button class="btn btn-warning" type="button" id="search_button">ค้นหา</button>
+            <button class="btn btn-primary" type="button" id="search_button">ค้นหา</button>
         </div>
 
         <section class="section">

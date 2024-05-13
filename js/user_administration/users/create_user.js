@@ -3,6 +3,16 @@ document.getElementById('create_data_form').addEventListener('submit', function(
 
     if (token) {
         const formData = new FormData(this);
+        const password = formData.get('user_password');
+        const repeatPassword = formData.get('user_repeat_password');
+        if (password.length < 6) {
+            document.getElementById('alertpassword').style.display = 'block';
+            return;
+        } else if (password !== repeatPassword) {
+            document.getElementById('alertpassword').style.display = 'none';
+            document.getElementById('alertrepeatpassword').style.display = 'block';
+            return;
+        }
         formData.append('personcode', data_token.username);
 
         fetch(apiUrl + 'user_administration/users/create_user.php', {
@@ -16,6 +26,7 @@ document.getElementById('create_data_form').addEventListener('submit', function(
                 return response.json();
             })
             .then(data => {
+                console.log(data)
                 if (data.status === 'success') {
                     Swal.fire({
                         icon: 'success',

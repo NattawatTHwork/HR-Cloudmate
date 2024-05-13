@@ -2,6 +2,10 @@ if (token && role == 'applicant') {
     window.location.href = pathUrl + '/application_users/index.php';
 }
 
+document.getElementById("acceptTerms").addEventListener("change", function () {
+    document.getElementById("submitBtn").disabled = !this.checked;
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form');
 

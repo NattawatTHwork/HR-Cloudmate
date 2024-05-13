@@ -64,7 +64,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-warning">บันทึก</button>
+                                        <button type="submit" class="btn btn-primary">บันทึก</button>
                                     </div>
                                 </div>
                             </form>

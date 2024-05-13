@@ -74,7 +74,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <button class="btn btn-warning w-100" type="submit">เปลี่ยนรหัสผ่าน</button>
+                                            <button class="btn btn-primary w-100" type="submit">เปลี่ยนรหัสผ่าน</button>
                                         </div>
                                     </form>
 

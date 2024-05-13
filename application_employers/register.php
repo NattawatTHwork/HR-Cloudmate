@@ -76,9 +76,14 @@
                                             <label for="yourPhoneNumber" class="form-label">เบอร์โทร</label>
                                             <input type="text" name="phone_number" class="form-control" id="yourPhoneNumber" required>
                                         </div>
-
                                         <div class="col-12">
-                                            <button class="btn btn-warning w-100" type="submit">สร้างบัญชี</button>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="pdpa" type="checkbox" value="true" id="acceptTerms" required>
+                                                <label class="form-check-label" for="acceptTerms">ฉันยอมรับ <a href="../policy.php">นโยบายความเป็นส่วนตัว</a></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" type="submit" id="submitBtn" disabled>สร้างบัญชี</button>
                                         </div>
                                         <div class="col-12">
                                             <p class="small mb-0">คุณมีบัญชีแล้วใช่ไหม <a href="login.php">เข้าสู่ระบบ</a></p>

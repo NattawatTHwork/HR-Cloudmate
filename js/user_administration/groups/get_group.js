@@ -20,20 +20,22 @@ function view_data(group_id) {
     }
 
     function show_data(datas) {
+        const date = new Date(datas.dates);
+        date.setHours(date.getHours() + 5);
+
         const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
-        const formattedDateMonth = dateMonthFormatter.format(new Date(datas.dates));
+        const formattedDateMonth = dateMonthFormatter.format(new Date(date));
 
         const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
-        const formattedYear = YearFormatter.format(new Date(datas.dates));
+        const formattedYear = YearFormatter.format(new Date(date));
 
         const TimeFormatter = new Intl.DateTimeFormat('th-TH', { hour: 'numeric', minute: 'numeric' });
-        const formattedTime = TimeFormatter.format(new Date(datas.dates));
-
+        const formattedTime = TimeFormatter.format(new Date(date));
         $("#group_code_view").val(datas.group_code);
         $("#group_name_view").val(datas.group_name);
         $("#personcode_view").val(datas.personcode);
         $("#dates_view").val(formattedDateMonth + ' ' + formattedYear + ' เวลา ' + formattedTime + ' น.');
-        $("#statusflag_view").val(datas.statusflag === 't' ? true : false);
+        $("#statusflag_view").val(datas.statusflag === 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน');
         $("#view_data").modal("show");
     }
 }

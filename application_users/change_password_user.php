@@ -57,7 +57,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-warning">ยืนยันการเปลี่ยนรหัสผ่าน</button>
+                                        <button type="submit" class="btn btn-primary">ยืนยันการเปลี่ยนรหัสผ่าน</button>
                                     </div>
                                 </div>
                             </form>

@@ -103,21 +103,18 @@
                                             <label for="yourProvince" class="form-label">จังหวัด</label>
                                             <input type="text" name="province" class="form-control" id="yourProvince" required>
                                         </div>
-
                                         <div class="col-12">
                                             <label for="yourZipCode" class="form-label">รหัสไปรษณีย์</label>
                                             <input type="text" name="zip_code" class="form-control" id="yourZipCode" required>
                                         </div>
-
-                                        <!-- <div class="col-12">
-                                            <div class="form-check">
-                                                <input class="form-check-input" name="terms" type="checkbox" value="" id="acceptTerms" required>
-                                                <label class="form-check-label" for="acceptTerms">I agree and accept the <a href="#">terms and conditions</a></label>
-                                                <div class="invalid-feedback">You must agree before submitting.</div>
-                                            </div>
-                                        </div> -->
                                         <div class="col-12">
-                                            <button class="btn btn-warning w-100" type="submit">สร้างบัญชี</button>
+                                            <div class="form-check">
+                                                <input class="form-check-input" name="pdpa" type="checkbox" value="true" id="acceptTerms" required>
+                                                <label class="form-check-label" for="acceptTerms">ฉันยอมรับ <a href="../policy.php">นโยบายความเป็นส่วนตัว</a></label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="btn btn-primary w-100" type="submit" id="submitBtn" disabled>สร้างบัญชี</button>
                                         </div>
                                         <div class="col-12">
                                             <p class="small mb-0">คุณมีบัญชีแล้วใช่ไหม <a href="login.php">เข้าสู่ระบบ</a></p>
