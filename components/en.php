@@ -1,0 +1,32 @@
+<?php
+return [
+    'dashboard' => 'Dashboard',
+    'employers_all' => 'EMPLOYERS ALL',
+    'employers_enable' => 'EMPLOYERS ENABLE',
+    'employers_view' => 'EMPLOYERS VIEW',
+    'employers_disable' => 'EMPLOYERS DISABLE',
+    'users_all' => 'USERS ALL',
+    'users_enable' => 'USERS ENABLE',
+    'users_disable' => 'USERS DISABLE',
+    'people' => 'People',
+    'attendance_title' => 'Time Attendance',
+    'select_user' => 'Select User',
+    'select_month' => 'Select Month',
+    'select_year' => 'Select Year',
+    'search_button' => 'Search',
+    'date' => 'Date',
+    'check_in_time' => 'Check-In Time',
+    'check_out_time' => 'Check-Out Time',
+    'months' => [
+        "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"
+    ],
+    'activities_title' => 'Activities',
+    'event_name_label' => 'Event Name',
+    'event_detail_label' => 'Event Detail',
+    'start_date_label' => 'Start Date',
+    'end_date_label' => 'End Date',
+    'progress_label' => 'Progress',
+    'status_label' => 'Status',
+    'view_data_modal_title' => 'View Data',
+    'options_label' => 'Options',
+];

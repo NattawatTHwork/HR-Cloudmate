@@ -56,7 +56,7 @@ async function displayTables(datas) {
 
     for (let day = 1; day <= daysInMonth; day++) {
         const date = new Date(year, month - 1, day);
-        const dateFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const dateFormatter = new Intl.DateTimeFormat(texts.format, { day: 'numeric', month: 'long' });
         const formattedDate = dateFormatter.format(date);
 
         const dateFormatterYear = new Intl.DateTimeFormat('us-US', { year: 'numeric' });

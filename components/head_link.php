@@ -1,5 +1,5 @@
     <?php $path = '/HR-Cloudmate' ?>
-    
+
     <!-- Favicons -->
     <link href="<?= $path ?>/assets/img/logo_cloudmate.jpg" rel="icon">
     <link href="<?= $path ?>/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -28,3 +28,27 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+    <?php
+    session_start();
+    if (!isset($_SESSION['language'])) {
+      $_SESSION['language'] = 'th';
+    }
+    if (isset($_GET['language'])) {
+      $_SESSION['language'] = $_GET['language'];
+    }
+
+    $language_file = $_SERVER['DOCUMENT_ROOT'] . $path . '/components/' . $_SESSION['language'] . '.php';
+
+    if (file_exists($language_file)) {
+      $texts = include $language_file;
+    } else {
+      echo "Error: Language file not found.";
+    }
+    ?>
+
+    <?php if ($_SESSION['language'] == 'th') { ?>
+      <script src="<?= $path ?>/components/th.js"></script>
+    <?php } else { ?>
+      <script src="<?= $path ?>/components/en.js"></script>
+    <?php } ?>

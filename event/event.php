@@ -24,14 +24,14 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>กิจกรรม</h1>
+            <h1><?= $texts['activities_title'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex align-items-center justify-content-end mb-4">
             <select class="form-select me-2" id="select_personal">
-                <option value="">เลือกผู้ใช้</option>
+                <option value=""><?= $texts['select_user'] ?></option>
             </select>
-            <button class="btn btn-primary" type="button" id="search_button">ค้นหา</button>
+            <button class="btn btn-primary" type="button" id="search_button"><?= $texts['search_button'] ?></button>
         </div>
 
         <section class="section">
@@ -45,12 +45,12 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>ชื่อเรื่อง</th>
-                                        <th>วันที่เริ่ม</th>
-                                        <th>วันที่เสร็จ</th>
-                                        <th>ความคืบหน้า</th>
-                                        <th>สถานะ</th>
-                                        <th>ตัวเลือก</th>
+                                        <th><?= $texts['event_name_label'] ?></th>
+                                        <th><?= $texts['start_date_label'] ?></th>
+                                        <th><?= $texts['end_date_label'] ?></th>
+                                        <th><?= $texts['progress_label'] ?></th>
+                                        <th><?= $texts['status_label'] ?></th>
+                                        <th><?= $texts['options_label'] ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,33 +71,33 @@
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">ดูข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['view_data_modal_title'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อเรื่อง</label>
-                                <input type="text" class="form-control" id="event_name_view" placeholder="ชื่อเรื่อง" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['event_name_label'] ?></label>
+                                <input type="text" class="form-control" id="event_name_view" placeholder="<?= $texts['event_name_label'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รายละเอียด</label>
-                                <input type="text" class="form-control" id="event_detail_view" placeholder="รายละเอียด" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['event_detail_label'] ?></label>
+                                <input type="text" class="form-control" id="event_detail_view" placeholder="<?= $texts['event_detail_label'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">วันที่เริ่ม</label>
-                                <input type="text" class="form-control" id="event_date_view" placeholder="วันที่เริ่ม" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['start_date_label'] ?></label>
+                                <input type="text" class="form-control" id="event_date_view" placeholder="<?= $texts['start_date_label'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">วันที่เสร็จ</label>
-                                <input type="text" class="form-control" id="event_date_to_view" placeholder="วันที่เสร็จ" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['end_date_label'] ?></label>
+                                <input type="text" class="form-control" id="event_date_to_view" placeholder="<?= $texts['end_date_label'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ความคืบหน้า</label>
-                                <input type="text" class="form-control" id="percent_view" placeholder="ความคืบหน้า" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['progress_label'] ?></label>
+                                <input type="text" class="form-control" id="percent_view" placeholder="<?= $texts['progress_label'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
-                                <input type="text" class="form-control" id="status_view" placeholder="สถานะ" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['status_label'] ?></label>
+                                <input type="text" class="form-control" id="status_view" placeholder="<?= $texts['status_label'] ?>" disabled>
                             </div>
                         </div>
                     </form>

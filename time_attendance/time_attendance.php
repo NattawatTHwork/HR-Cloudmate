@@ -24,19 +24,19 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>เวลาเข้าออกงาน</h1>
+            <h1><?= $texts['attendance_title'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex align-items-center justify-content-end mb-4">
             <select class="form-select me-2" id="select_personal">
-                <option value="">เลือกผู้ใช้</option>
+                <option value=""><?= $texts['select_user'] ?></option>
             </select>
             <select class="form-select me-2" id="select_month">
-                <option value="">เลือกเดือน</option>
+                <option value=""><?= $texts['select_month'] ?></option>
                 <?php
-                $months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+                // $months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
                 $selectedMonth = isset($_GET['month']) ? $_GET['month'] : date('n');
-                foreach ($months as $index => $monthName) {
+                foreach ($texts['months'] as $index => $monthName) {
                     $value = $index + 1;
                     $selected = ($selectedMonth == $value) ? 'selected' : '';
                     echo "<option value='$value' $selected>$monthName</option>";
@@ -44,7 +44,7 @@
                 ?>
             </select>
             <select class="form-select me-2" id="select_year">
-                <option value="">เลือกปี</option>
+                <option value=""><?= $texts['select_year'] ?></option>
                 <?php
                 $startYear = 2024;
                 $currentYear = date('Y');
@@ -55,7 +55,7 @@
                 }
                 ?>
             </select>
-            <button class="btn btn-primary" type="button" id="search_button">ค้นหา</button>
+            <button class="btn btn-primary" type="button" id="search_button"><?= $texts['search_button'] ?></button>
         </div>
 
         <section class="section">
@@ -69,9 +69,9 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>วันที่</th>
-                                        <th>เวลาเข้างาน</th>
-                                        <th>เวลาออกงาน</th>
+                                        <th><?= $texts['date'] ?></th>
+                                        <th><?= $texts['check_in_time'] ?></th>
+                                        <th><?= $texts['check_out_time'] ?></th>
                                         <!-- <th>สถานะ</th> -->
                                         <!-- <th>ตัวเลือก</th> -->
                                     </tr>

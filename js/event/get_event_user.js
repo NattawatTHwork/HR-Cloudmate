@@ -7,7 +7,7 @@ searchButton.addEventListener('click', function (event) {
     if (personal_id) {
         window.location.href = `event.php?personal_id=${personal_id}`;
     } else {
-        alert('กรุณาเลือกผู้ใช้');
+        alert(texts.select_user);
     }
 });
 
@@ -43,7 +43,7 @@ function fetchData(personal_id) {
 
 async function displayTables(datas) {
     let html = '';
-    await datas.forEach((data, index, array) => {
+    for (const data of datas) {
         html += '<tr>';
         html += `<td>${data.event_name}</td>
                 <td>${data.event_date}</td>
@@ -51,23 +51,24 @@ async function displayTables(datas) {
                 <td>${data.percent}</td>
                 <td>
                     <button class="btn ${data.status == 'Inprogress' ? 'btn-danger' : 'btn-success'}">
-                        ${data.status == 'Inprogress' ? 'Inprogress' : 'Completed'}
+                        ${data.status == 'Inprogress' ? texts.inprogress : texts.completed}
                     </button>
                 </td>
                 <td>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ตัวเลือก
+                            ${texts.option}
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" onclick="view_data('${data.event_id}')">ดูข้อมูล</a></li>
-                            <li><a class="dropdown-item" href="${pathUrl}/event/event_detail.php?event_id=${data.event_id}&personal_id=${data.personal_id}">ดูความคืบหน้า</a></li>
+                            <li><a class="dropdown-item" onclick="view_data('${data.event_id}')">${texts.view_data}</a></li>
+                            <li><a class="dropdown-item" href="${pathUrl}/event/event_detail.php?event_id=${data.event_id}&personal_id=${data.personal_id}">${texts.view_progress}</a></li>
                         </ul>
                     </div>
                 </td>`;
         html += '</tr>';
-    })
-    document.querySelector('tbody').innerHTML = await html;
+    }
+    document.querySelector('tbody').innerHTML = html;
+    
     $(document).ready(function () {
         $('#datatables').DataTable({
             "order": [[1, 'desc']]

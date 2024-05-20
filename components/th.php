@@ -1,0 +1,32 @@
+<?php
+return [
+    'dashboard' => 'แดชบอร์ด',
+    'employers_all' => 'นายจ้างทั้งหมด',
+    'employers_enable' => 'นายจ้างที่เปิดใช้งาน',
+    'employers_view' => 'ดูนายจ้าง',
+    'employers_disable' => 'นายจ้างที่ปิดใช้งาน',
+    'users_all' => 'ผู้ใช้ทั้งหมด',
+    'users_enable' => 'ผู้ใช้ที่เปิดใช้งาน',
+    'users_disable' => 'ผู้ใช้ที่ปิดใช้งาน',
+    'people' => 'คน',
+    'attendance_title' => 'บันทึกเวลาเข้าออก',
+    'select_user' => 'เลือกผู้ใช้',
+    'select_month' => 'เลือกเดือน',
+    'select_year' => 'เลือกปี',
+    'search_button' => 'ค้นหา',
+    'date' => 'วันที่',
+    'check_in_time' => 'เวลาเข้า',
+    'check_out_time' => 'เวลาออก',
+    'months' => [
+        "มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"
+    ],
+    'activities_title' => 'กิจกรรม',
+    'event_name_label' => 'ชื่อกิจกรรม',
+    'event_detail_label' => 'รายละเอียดกิจกรรม',
+    'start_date_label' => 'วันที่เริ่ม',
+    'end_date_label' => 'วันที่สิ้นสุด',
+    'progress_label' => 'ความคืบหน้า',
+    'status_label' => 'สถานะ',
+    'view_data_modal_title' => 'ดูข้อมูล',
+    'options_label' => 'ตัวเลือก',
+];
