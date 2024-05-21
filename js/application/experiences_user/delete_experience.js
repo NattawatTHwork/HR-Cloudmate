@@ -1,11 +1,11 @@
 function delete_data(experience_code, position) {
     Swal.fire({
         title: position,
-        text: 'คุณต้องการลบใช่ไหม',
+        text: texts.want_delete,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'ลบ',
-        cancelButtonText: 'ยกเลิก'
+        confirmButtonText: texts.delete,
+        cancelButtonText: texts.cancel
     }).then((result) => {
         if (result.isConfirmed) {
             fetch(apiUrl + 'application/experiences/delete_experience.php', {

@@ -1,21 +1,21 @@
 function delete_data(education_code, level) {
     const levelMap = {
-        1: 'มัธยมศึกษาปีที่ 3',
-        2: 'มัธยมศึกษาปีที่ 6',
-        3: 'ประกาศนียบัตรวิชาชีพ',
-        4: 'ประกาศนียบัตรวิชาชีพชั้นสูง',
-        5: 'ปริญญาตรี',
-        6: 'ปริญญาโท',
-        7: 'ปริญญาเอก'
+        1: texts.m3,
+        2: texts.m6,
+        3: texts.vc,
+        4: texts.hvc,
+        5: texts.bd,
+        6: texts.md,
+        7: texts.dd
     };
     const levelText = levelMap[level] || 'ไม่ระบุ';
     Swal.fire({
         title: levelText,
-        text: 'คุณต้องการลบใช่ไหม',
+        text: texts.want_delete,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'ลบ',
-        cancelButtonText: 'ยกเลิก'
+        confirmButtonText: texts.delete,
+        cancelButtonText: texts.cancel
     }).then((result) => {
         if (result.isConfirmed) {
             fetch(apiUrl + 'application/educations/delete_education.php', {

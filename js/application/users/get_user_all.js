@@ -24,27 +24,27 @@ async function displayTables(datas) {
         html += '<tr>';
         html += `<td>${data.email}</td>
                 <td>${data.firstname} ${data.lastname}</td>
-                <td>${data.gender == 1 ? 'ชาย' : data.gender == 2 ? 'หญิง' : 'อื่นๆ'}</td>
+                <td>${data.gender == 1 ? texts.male : data.gender == 2 ? texts.female : texts.other}</td>
                 <td>${data.phone_number}</td>
                 <td>
                     <button class="btn ${data.statusflag == 't' ? 'btn-success' : 'btn-danger'}">
-                        ${data.statusflag == 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน'}
+                        ${data.statusflag == 't' ? texts.enable : texts.disable}
                     </button>
                 </td>
                 <td>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ตัวเลือก
+                            ${texts.option}
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" onclick="view_data('${data.user_code}')">ดูข้อมูล</a></li>
-                            <li><a class="dropdown-item" onclick="update_data('${data.user_code}')">แก้ไข</a></li>
-                            <li><a class="dropdown-item" onclick="change_password('${data.user_code}')">เปลี่ยนรหัสผ่าน</a></li>
-                            <li><a class="dropdown-item" onclick="delete_data('${data.user_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>
+                            <li><a class="dropdown-item" onclick="view_data('${data.user_code}')">${texts.view_data}</a></li>
+                            <li><a class="dropdown-item" onclick="update_data('${data.user_code}')">${texts.edit}</a></li>
+                            <li><a class="dropdown-item" onclick="change_password('${data.user_code}')">${texts.change_password}</a></li>
+                            <li><a class="dropdown-item" onclick="delete_data('${data.user_code}', '${data.firstname} ${data.lastname}')">${texts.delete}</a></li>
                             <div class="dropdown-divider"></div>
-                            <li><a class="dropdown-item" href="referred_jobs_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">งานที่ต้องการ</a></li>
-                            <li><a class="dropdown-item" href="educations_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">ประวัติการศึกษา</a></li>
-                            <li><a class="dropdown-item" href="experiences_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">ประสบการณ์</a></li>
+                            <li><a class="dropdown-item" href="referred_jobs_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.referred_job}</a></li>
+                            <li><a class="dropdown-item" href="educations_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.education}</a></li>
+                            <li><a class="dropdown-item" href="experiences_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.experience}</a></li>
                         </ul>
                     </div>
                 </td>`;

@@ -11,7 +11,7 @@ searchButton.addEventListener('click', function (event) {
     if (Id && month && year) {
         window.location.href = `time_attendance.php?id=${Id}&month=${month}&year=${year}`;
     } else {
-        alert('กรุณาเลือกผู้ใช้, เดือน และปี');
+        alert(texts.select_user);
     }
 });
 

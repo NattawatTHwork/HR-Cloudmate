@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการงานที่ต้องการ <?= $_GET['fullname'] ?></h1>
+            <h1><?= $texts['manage_referred_job'] ?> <?= $_GET['fullname'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -39,22 +39,22 @@
                 <div class="modal-content">
                     <form id="update_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['edit_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="referred_job_code" id="referred_job_code_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="position" id="position_update" placeholder="ตำแหน่ง" required>
+                                <label for="formGroupExampleInput"><?= $texts['position'] ?></label>
+                                <input type="text" class="form-control" name="position" id="position_update" placeholder="<?= $texts['position'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทงาน</label>
-                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" required>
+                                <label for="formGroupExampleInput"><?= $texts['job_category'] ?></label>
+                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" placeholder="<?= $texts['job_category'] ?>" required>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทการจ้างงาน</label>
+                                <label for="formGroupExampleInput"><?= $texts['employment_type'] ?></label>
                                 <select class="form-control" name="employment_type" id="employment_type_update" required>
                                     <option value="1" selected>Full Time</option>
                                     <option value="2">Freelance</option>
@@ -63,24 +63,24 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เงินเดือน</label>
-                                <input type="text" class="form-control" name="expect_salary" id="expect_salary_update" placeholder="เงินเดือน" required>
+                                <label for="formGroupExampleInput"><?= $texts['expect_salary'] ?></label>
+                                <input type="text" class="form-control" name="expect_salary" id="expect_salary_update" placeholder="<?= $texts['expect_salary'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานที่ทำงาน</label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="สถานที่ทำงาน" required>
+                                <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
+                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="<?= $texts['work_location'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="t" selected><?= $texts['manage_referred_job'] ?></option>
+                                    <option value="f"><?= $texts['manage_referred_job'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>

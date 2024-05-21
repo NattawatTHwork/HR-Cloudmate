@@ -27,13 +27,13 @@
             <h1><span id="event_name"></span></h1>
         </div>
         <div>
-            <h5>รายละเอียดงาน : <span id="event_detail"></span></h5>
+            <h5><?= $texts['event_description'] ?> : <span id="event_detail"></span></h5>
         </div>
         <div>
-            <h5>วันที่เริ่ม : <span id="event_date"></span></h5>
+            <h5><?= $texts['start_date'] ?> : <span id="event_date"></span></h5>
         </div>
         <div>
-            <h5>กำหนดเสร็จวันที่ : <span id="event_date_to"></span></h5>
+            <h5><?= $texts['end_date'] ?> : <span id="event_date_to"></span></h5>
         </div>
 
         <section class="section">

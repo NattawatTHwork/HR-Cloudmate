@@ -1,11 +1,11 @@
 function delete_data(user_code, fullname) {
     Swal.fire({
         title: fullname,
-        text: 'คุณต้องการลบใช่ไหม',
+        text: texts.want_delete,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'ลบ',
-        cancelButtonText: 'ยกเลิก'
+        confirmButtonText: texts.delete,
+        cancelButtonText: texts.cancel
     }).then((result) => {
         if (result.isConfirmed) {
             fetch(apiUrl + 'application/users/delete_user.php', {

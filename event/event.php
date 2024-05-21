@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1><?= $texts['activities_title'] ?></h1>
+            <h1><?= $texts['event'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex align-items-center justify-content-end mb-4">
@@ -45,12 +45,12 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th><?= $texts['event_name_label'] ?></th>
-                                        <th><?= $texts['start_date_label'] ?></th>
-                                        <th><?= $texts['end_date_label'] ?></th>
-                                        <th><?= $texts['progress_label'] ?></th>
-                                        <th><?= $texts['status_label'] ?></th>
-                                        <th><?= $texts['options_label'] ?></th>
+                                        <th><?= $texts['event_name'] ?></th>
+                                        <th><?= $texts['start_date'] ?></th>
+                                        <th><?= $texts['end_date'] ?></th>
+                                        <th><?= $texts['progress'] ?></th>
+                                        <th><?= $texts['status'] ?></th>
+                                        <th><?= $texts['option'] ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -71,33 +71,33 @@
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['view_data_modal_title'] ?></h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['view_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['event_name_label'] ?></label>
-                                <input type="text" class="form-control" id="event_name_view" placeholder="<?= $texts['event_name_label'] ?>" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['event_name'] ?></label>
+                                <input type="text" class="form-control" id="event_name_view" placeholder="<?= $texts['event_name'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['event_detail_label'] ?></label>
-                                <input type="text" class="form-control" id="event_detail_view" placeholder="<?= $texts['event_detail_label'] ?>" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['event_description'] ?></label>
+                                <input type="text" class="form-control" id="event_detail_view" placeholder="<?= $texts['event_description'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['start_date_label'] ?></label>
-                                <input type="text" class="form-control" id="event_date_view" placeholder="<?= $texts['start_date_label'] ?>" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['start_date'] ?></label>
+                                <input type="text" class="form-control" id="event_date_view" placeholder="<?= $texts['start_date'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['end_date_label'] ?></label>
-                                <input type="text" class="form-control" id="event_date_to_view" placeholder="<?= $texts['end_date_label'] ?>" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['end_date'] ?></label>
+                                <input type="text" class="form-control" id="event_date_to_view" placeholder="<?= $texts['end_date'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['progress_label'] ?></label>
-                                <input type="text" class="form-control" id="percent_view" placeholder="<?= $texts['progress_label'] ?>" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['progress'] ?></label>
+                                <input type="text" class="form-control" id="percent_view" placeholder="<?= $texts['progress'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['status_label'] ?></label>
-                                <input type="text" class="form-control" id="status_view" placeholder="<?= $texts['status_label'] ?>" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
+                                <input type="text" class="form-control" id="status_view" placeholder="<?= $texts['status'] ?>" disabled>
                             </div>
                         </div>
                     </form>

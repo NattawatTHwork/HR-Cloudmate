@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการงานที่รับสมัคร</h1>
+            <h1><?= $texts['manage_job'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -39,23 +39,23 @@
                 <div class="modal-content">
                     <form id="update_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['edit_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="job_code" id="job_code_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="position" id="position_update" placeholder="ตำแหน่ง" required>
+                                <label for="formGroupExampleInput"><?= $texts['position'] ?></label>
+                                <input type="text" class="form-control" name="position" id="position_update" placeholder="<?= $texts['position'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทงาน</label>
-                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" required>
+                                <label for="formGroupExampleInput"><?= $texts['job_category'] ?></label>
+                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" placeholder="<?= $texts['job_category'] ?>" required>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทการจ้างงาน</label>
-                                <select class="form-control" name="employment_type" id="employment_type_update" required>
+                                <label for="formGroupExampleInput"><?= $texts['employment_type'] ?></label>
+                                <select class="form-control" name="employment_type" id="employment_type_update" placeholder="<?= $texts['employment_type'] ?>" required>
                                     <option value="1" selected>Full Time</option>
                                     <option value="2">Freelance</option>
                                     <option value="3">Part Time</option>
@@ -63,40 +63,40 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">วันทำงาน</label>
-                                <input type="text" class="form-control" name="work_day" id="work_day_update" placeholder="วันทำงาน" required>
+                                <label for="formGroupExampleInput"><?= $texts['work_day'] ?></label>
+                                <input type="text" class="form-control" name="work_day" id="work_day_update" placeholder="<?= $texts['work_day'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เวลาเข้างาน</label>
-                                <input type="time" class="form-control" name="time_in" id="time_in_update" placeholder="เวลาเข้างาน" required>
+                                <label for="formGroupExampleInput"><?= $texts['time_in'] ?></label>
+                                <input type="time" class="form-control" name="time_in" id="time_in_update" placeholder="<?= $texts['time_in'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เวลาออกงาน</label>
-                                <input type="time" class="form-control" name="time_out" id="time_out_update" placeholder="เวลาออกงาน" required>
+                                <label for="formGroupExampleInput"><?= $texts['time_out'] ?></label>
+                                <input type="time" class="form-control" name="time_out" id="time_out_update" placeholder="<?= $texts['time_out'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานที่ทำงาน</label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="สถานที่ทำงาน" required>
+                                <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
+                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="<?= $texts['work_location'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เงินเดือน</label>
-                                <input type="text" class="form-control" name="salary" id="salary_update" placeholder="เงินเดือน" required>
+                                <label for="formGroupExampleInput"><?= $texts['salary'] ?></label>
+                                <input type="text" class="form-control" name="salary" id="salary_update" placeholder="<?= $texts['salary'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รายละเอียด</label>
-                                <textarea class="form-control" name="description" id="description_update" placeholder="รายละเอียด" required></textarea>
+                                <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
+                                <textarea class="form-control" name="description" id="description_update" placeholder="<?= $texts['description'] ?>" required></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>

@@ -43,9 +43,9 @@ async function displayCards(datas) {
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${data.title}</h5>
-                        <p class="card-text"><strong>รายละเอียด:</strong> ${data.detail}</p>
-                        <p class="card-text"><strong>วันที่สร้าง:</strong> ${data.create_at}</p>
-                        <p class="card-text"><strong>ความคืบหน้า:</strong> ${data.percent} %</p>
+                        <p class="card-text"><strong>${texts.event_detail}:</strong> ${data.detail}</p>
+                        <p class="card-text"><strong>${texts.create_date}:</strong> ${data.create_at}</p>
+                        <p class="card-text"><strong>${texts.progress}:</strong> ${data.percent} %</p>
                     </div>
                 </div>
             </div>`;
@@ -59,11 +59,11 @@ function toggleAdditionalInfo(elementId, button) {
     let arrow = button.querySelector('.arrow');
     if (additionalInfo.style.display === "none") {
         additionalInfo.style.display = "block";
-        arrow.innerHTML = "▲ ซ่อนข้อมูล";
+        arrow.innerHTML = texts.hide;
         arrow.style.transform = "rotate(180deg)";
     } else {
         additionalInfo.style.display = "none";
-        arrow.innerHTML = "▼ ดูข้อมูลเพิ่มเติม";
+        arrow.innerHTML = texts.view;
         arrow.style.transform = "rotate(0deg)";
     }
 }

@@ -28,7 +28,7 @@ async function displayTables(datas) {
                 <td>${data.phone_number}</td>
                 <td>
                     <button class="btn ${data.statusflag == 1 ? 'btn-success' : data.statusflag == 2 ? 'btn-warning' : 'btn-danger'}">
-                        ${data.statusflag == 1 ? 'เปิดใช้งาน' : data.statusflag == 2 ? 'ไม่แสดง' : 'ปิดใช้งาน'}
+                        ${data.statusflag == 1 ? texts.enable : data.statusflag == 2 ? texts.on_hold : texts.disble}
                     </button>
                 </td>
                 <td>
@@ -37,14 +37,14 @@ async function displayTables(datas) {
                             ตัวเลือก
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" onclick="view_data('${data.employer_code}')">ดูข้อมูล</a></li>
-                            <li><a class="dropdown-item" onclick="update_data('${data.employer_code}')">แก้ไข</a></li>`;
+                            <li><a class="dropdown-item" onclick="view_data('${data.employer_code}')">${texts.view_data}</a></li>
+                            <li><a class="dropdown-item" onclick="update_data('${data.employer_code}')">${texts.edit}</a></li>`;
                             if (data.employer_code != 'cloudmate') {
-                                html += `<li><a class="dropdown-item" onclick="change_password('${data.employer_code}')">เปลี่ยนรหัสผ่าน</a></li>
-                                <li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">ลบ</a></li>`;
+                                html += `<li><a class="dropdown-item" onclick="change_password('${data.employer_code}')">${texts.change_password}</a></li>
+                                <li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">${texts.delete}</a></li>`;
                             }
                             html += `<div class="dropdown-divider"></div>
-                            <li><a class="dropdown-item" href="jobs_employer.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">งานที่รับสมัคร</a></li>
+                            <li><a class="dropdown-item" href="jobs_employer.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">${texts.referred_job}</a></li>
                         </ul>
                     </div>
                 </td>`;

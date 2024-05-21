@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>จัดการผู้สมัคร | CM WORKFORCE</title>
+    <title>จัดการผู้สมัครงาน | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการผู้สมัคร</h1>
+            <h1><?= $texts['manage_applicant'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -38,12 +38,12 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>อีเมล</th>
-                                        <th>ชื่อ - สกุล</th>
-                                        <th>เพศ</th>
-                                        <th>เบอร์โทร</th>
-                                        <th>สถานะ</th>
-                                        <th>ตัวเลือก</th>
+                                        <th><?= $texts['email'] ?></th>
+                                        <th><?= $texts['name'] ?></th>
+                                        <th><?= $texts['gender'] ?></th>
+                                        <th><?= $texts['tel'] ?></th>
+                                        <th><?= $texts['status'] ?></th>
+                                        <th><?= $texts['option'] ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -64,41 +64,41 @@
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">ดูข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['view_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">อีเมล</label>
-                                <input type="text" class="form-control" id="email_view" placeholder="อีเมล" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['email'] ?></label>
+                                <input type="text" class="form-control" id="email_view" placeholder="<?= $texts['email'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อ - สกุล</label>
-                                <input type="text" class="form-control" id="fullname_view" placeholder="ชื่อ - สกุล" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['name'] ?></label>
+                                <input type="text" class="form-control" id="fullname_view" placeholder="<?= $texts['name'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เพศ</label>
-                                <input type="text" class="form-control" id="gender_view" placeholder="เพศ" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['gender'] ?></label>
+                                <input type="text" class="form-control" id="gender_view" placeholder="<?= $texts['gender'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">วันเกิด</label>
-                                <input type="text" class="form-control" id="birthday_view" placeholder="วันเกิด" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['birthday'] ?></label>
+                                <input type="text" class="form-control" id="birthday_view" placeholder="<?= $texts['birthday'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เบอร์โทร</label>
-                                <input type="text" class="form-control" id="phone_number_view" placeholder="เบอร์โทร" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['tel'] ?></label>
+                                <input type="text" class="form-control" id="phone_number_view" placeholder="<?= $texts['tel'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ที่อยู่</label>
-                                <input type="text" class="form-control" id="address_view" placeholder="ที่อยู่" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['address'] ?></label>
+                                <input type="text" class="form-control" id="address_view" placeholder="<?= $texts['address'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">วันที่บันทึก</label>
-                                <input type="text" class="form-control" id="dates_view" placeholder="วันที่บันทึก" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['create_date'] ?></label>
+                                <input type="text" class="form-control" id="dates_view" placeholder="<?= $texts['create_date'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
-                                <input type="text" class="form-control" id="statusflag_view" placeholder="สถานะ" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
+                                <input type="text" class="form-control" id="statusflag_view" placeholder="<?= $texts['status'] ?>" disabled>
                             </div>
                         </div>
                     </form>
@@ -111,70 +111,70 @@
                 <div class="modal-content">
                     <form id="update_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['edit_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="user_code" id="user_code_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">อีเมล</label>
-                                <input type="text" class="form-control" name="email" id="email_update" placeholder="อีเมล" required>
+                                <label for="formGroupExampleInput"><?= $texts['email'] ?></label>
+                                <input type="text" class="form-control" name="email" id="email_update" placeholder="<?= $texts['email'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อ</label>
-                                <input type="text" class="form-control" name="firstname" id="firstname_update" placeholder="ชื่อ" required>
+                                <label for="formGroupExampleInput"><?= $texts['firstname'] ?></label>
+                                <input type="text" class="form-control" name="firstname" id="firstname_update" placeholder="<?= $texts['firstname'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สกุล</label>
-                                <input type="text" class="form-control" name="lastname" id="lastname_update" placeholder="สกุล" required>
+                                <label for="formGroupExampleInput"><?= $texts['lastname'] ?></label>
+                                <input type="text" class="form-control" name="lastname" id="lastname_update" placeholder="<?= $texts['lastname'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เพศ</label>
+                                <label for="formGroupExampleInput"><?= $texts['gender'] ?></label>
                                 <select class="form-control" name="gender" id="gender_update" required>
-                                    <option value="1">ชาย</option>
-                                    <option value="2">หญิง</option>
-                                    <option value="3">อื่นๆ</option>
+                                    <option value="1"><?= $texts['male'] ?></option>
+                                    <option value="2"><?= $texts['female'] ?></option>
+                                    <option value="3"><?= $texts['other'] ?></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">วันเกิด</label>
-                                <input type="date" class="form-control" name="birthday" id="birthday_update" placeholder="วันเกิด" required>
+                                <label for="formGroupExampleInput"><?= $texts['birthday'] ?></label>
+                                <input type="date" class="form-control" name="birthday" id="birthday_update" placeholder="<?= $texts['birthday'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">เบอร์โทร</label>
-                                <input type="text" class="form-control" name="phone_number" id="phone_number_update" placeholder="เบอร์โทร" required>
+                                <label for="formGroupExampleInput"><?= $texts['tel'] ?></label>
+                                <input type="text" class="form-control" name="phone_number" id="phone_number_update" placeholder="<?= $texts['tel'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ที่อยู่</label>
-                                <input type="text" class="form-control" name="user_address" id="user_address_update" placeholder="ที่อยู่" required>
+                                <label for="formGroupExampleInput"><?= $texts['address'] ?></label>
+                                <input type="text" class="form-control" name="user_address" id="user_address_update" placeholder="<?= $texts['address'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ตำบล</label>
-                                <input type="text" class="form-control" name="sub_district" id="sub_district_update" placeholder="ตำบล" required>
+                                <label for="formGroupExampleInput"><?= $texts['sub_district'] ?></label>
+                                <input type="text" class="form-control" name="sub_district" id="sub_district_update" placeholder="<?= $texts['sub_district'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">อำเภอ</label>
-                                <input type="text" class="form-control" name="district" id="district_update" placeholder="อำเภอ" required>
+                                <label for="formGroupExampleInput"><?= $texts['district'] ?></label>
+                                <input type="text" class="form-control" name="district" id="district_update" placeholder="<?= $texts['district'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">จังหวัด</label>
-                                <input type="text" class="form-control" name="province" id="province_update" placeholder="จังหวัด" required>
+                                <label for="formGroupExampleInput"><?= $texts['province'] ?></label>
+                                <input type="text" class="form-control" name="province" id="province_update" placeholder="<?= $texts['province'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสไปรษณีย์</label>
-                                <input type="text" class="form-control" name="zip_code" id="zip_code_update" placeholder="รหัสไปรษณีย์" required>
+                                <label for="formGroupExampleInput"><?= $texts['zip_code'] ?></label>
+                                <input type="text" class="form-control" name="zip_code" id="zip_code_update" placeholder="<?= $texts['zip_code'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -186,23 +186,23 @@
                 <div class="modal-content">
                     <form id="change_password_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">เปลี่ยนรหัสผ่าน</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['change_password'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="user_code" id="user_code_change" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสผ่านใหม่</label>
-                                <input type="text" class="form-control" name="new_password" id="new_password_change" placeholder="รหัสผ่านใหม่" required>
+                                <label for="formGroupExampleInput"><?= $texts['new_password'] ?></label>
+                                <input type="text" class="form-control" name="new_password" id="new_password_change" placeholder="<?= $texts['new_password'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ยืนยันรหัสผ่าน</label>
-                                <input type="text" class="form-control" name="repeat_new_password" id="repeat_new_password_change" placeholder="ยืนยันรหัสผ่าน" required>
+                                <label for="formGroupExampleInput"><?= $texts['confirm_password'] ?></label>
+                                <input type="text" class="form-control" name="repeat_new_password" id="repeat_new_password_change" placeholder="<?= $texts['confirm_password'] ?>" required>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
