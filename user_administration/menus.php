@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>กำหนดเมนู</h1>
+            <h1><?= $texts['manage_menu'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -38,9 +38,9 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>รหัสเมนู</th>
-                                        <th>ชื่อเมนู</th>
-                                        <th>สถานะ</th>
+                                        <th><?= $texts['menu_code'] ?></th>
+                                        <th><?= $texts['menu_name'] ?></th>
+                                        <th><?= $texts['status'] ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>

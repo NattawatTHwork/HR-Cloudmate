@@ -52,4 +52,7 @@ texts = {
   'graduation_year': 'ปีที่สำเร็จการศึกษา',
   'gpa': 'GPA',
   'company_name': 'ชื่อบริษัท',
+  'select': 'เลือก',
+  'menu_code': 'รหัสเมนู',
+  'menu_name': 'ชื่อเมนู',
 };

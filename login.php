@@ -35,24 +35,24 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">เข้าสู่ระบบ</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4"><?= $texts['login'] ?></h5>
                                     </div>
 
                                     <form class="row g-3 needs-validation" novalidate method="POST" action="">
 
                                         <div class="col-12">
-                                            <label for="yourUsername" class="form-label">ชื่อผู้ใช้</label>
+                                            <label for="yourUsername" class="form-label"><?= $texts['username'] ?></label>
                                             <div class="input-group has-validation">
                                                 <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
                                                 <input type="text" name="username" class="form-control" id="yourUsername" required>
-                                                <div class="invalid-feedback">กรุณากรอกชื่อผู้ใช้</div>
+                                                <div class="invalid-feedback"><?= $texts['enter_username'] ?></div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">รหัสผ่าน</label>
+                                            <label for="yourPassword" class="form-label"><?= $texts['password'] ?></label>
                                             <input type="password" name="user_password" class="form-control" id="yourPassword" required>
-                                            <div class="invalid-feedback">กรุณากรอกรหัสผ่าน</div>
+                                            <div class="invalid-feedback"><?= $texts['enter_password'] ?></div>
                                         </div>
 
                                         <!-- <div class="col-12">
@@ -62,7 +62,7 @@
                                             </div>
                                         </div> -->
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">Login</button>
+                                            <button class="btn btn-primary w-100" type="submit"><?= $texts['login'] ?></button>
                                         </div>
                                         <!-- <div class="col-12">
                                             <p class="small mb-0">Don't have account? <a href="pages-register.html">Create an account</a></p>

@@ -26,7 +26,7 @@ async function displayTables(datas) {
                 <td>${data.menu_name}</td>
                 <td>
                     <button class="btn ${data.statusflag == 't' ? 'btn-success' : 'btn-danger'}">
-                        ${data.statusflag == 't' ? 'ENABLE' : 'DISABLE'}
+                        ${data.statusflag == 't' ? texts.enable : texts.disable}
                     </button>
                 </td>
                 `;

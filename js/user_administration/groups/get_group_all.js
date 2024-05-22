@@ -24,10 +24,10 @@ async function displayTables(datas) {
         const date = new Date(data.dates);
         date.setHours(date.getHours() + 5);
 
-        const dateMonthFormatter = new Intl.DateTimeFormat('th-TH', { day: 'numeric', month: 'long' });
+        const dateMonthFormatter = new Intl.DateTimeFormat(texts.format, { day: 'numeric', month: 'long' });
         const formattedDateMonth = dateMonthFormatter.format(new Date(date));
 
-        const YearFormatter = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const YearFormatter = new Intl.DateTimeFormat(texts.format, { year: 'numeric' });
         const formattedYear = YearFormatter.format(new Date(date));
         
         html += '<tr>';
@@ -37,18 +37,18 @@ async function displayTables(datas) {
                 <td>${formattedDateMonth + ' ' + formattedYear}</td>
                 <td>
                     <button class="btn ${data.statusflag == 't' ? 'btn-success' : 'btn-danger'}">
-                        ${data.statusflag == 't' ? 'เปิดใช้งาน' : 'ปิดใช้งาน'}
+                        ${data.statusflag == 't' ? texts.enable : texts.disable}
                     </button>
                 </td>
                 <td>
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ตัวเลือก
+                            ${texts.option}
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" onclick="view_data(${data.group_id})">ดูข้อมูล</a></li>
-                            <li><a class="dropdown-item" onclick="update_data(${data.group_id})">แก้ไข</a></li>
-                            <li><a class="dropdown-item" onclick="delete_data('${data.group_id}', '${data.group_name}')">ลบ</a></li>
+                            <li><a class="dropdown-item" onclick="view_data(${data.group_id})">${texts.view_data}</a></li>
+                            <li><a class="dropdown-item" onclick="update_data(${data.group_id})">${texts.edit}</a></li>
+                            <li><a class="dropdown-item" onclick="delete_data('${data.group_id}', '${data.group_name}')">${texts.delete}</a></li>
                         </ul>
                     </div>
                 </td>`;

@@ -24,30 +24,30 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>กำหนดเมนูผู้ใช้</h1>
+            <h1><?= $texts['manage_menu_user'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-center mb-2 row">
             <div class="col-sm-12 col-md-4">
                 <button type="button" class="btn btn-primary w-100 btn-block" id="createButton">
-                    เพิ่มเมนูผู้ใช้
+                    <?= $texts['add_menu_user'] ?>
                 </button>
             </div>
             <div class="col-sm-12 col-md-4">
                 <button type="button" class="btn btn-primary w-100 btn-block" id="updateButton">
-                    แก้ไขเมนูผู้ใช้
+                    <?= $texts['edit_menu_user'] ?>
                 </button>
             </div>
             <div class="col-sm-12 col-md-4">
                 <button type="button" class="btn btn-primary w-100 btn-block" id="deleteButton">
-                    ลบเมนูผู้ใช้
+                    <?= $texts['delete_menu_user'] ?>
                 </button>
             </div>
         </div>
 
         <div class="d-sm-flex justify-content-end mb-4">
             <select class="form-select" id="select_group">
-                <option value="">เลือกผู้ใช้</option>
+                <option value=""><?= $texts['select_user'] ?></option>
             </select>
         </div>
 
@@ -62,11 +62,11 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>รหัสเมนู</th>
-                                        <th>ชื่อเมนู</th>
-                                        <th>ผู้บันทึก</th>
-                                        <th>วันที่บันทึก</th>
-                                        <th>สถานะ</th>
+                                        <th><?= $texts['menu_code'] ?></th>
+                                        <th><?= $texts['menu_name'] ?></th>
+                                        <th><?= $texts['recorder'] ?></th>
+                                        <th><?= $texts['create_date'] ?></th>
+                                        <th><?= $texts['option'] ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -87,15 +87,15 @@
                 <div class="modal-content">
                     <form id="create_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['add_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="checkbox-container"></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -107,15 +107,15 @@
                 <div class="modal-content">
                     <form id="update_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['edit_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="checkbox-container"></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -127,15 +127,15 @@
                 <div class="modal-content">
                     <form id="delete_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">ลบข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['delete_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="checkbox-container"></div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>

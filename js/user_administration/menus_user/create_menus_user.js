@@ -2,7 +2,7 @@ document.getElementById("createButton").addEventListener("click", function () {
     if (token) {
         const user_id = urlParams.get('user_id');
         if (!user_id) {
-            alert('กรุณาเลือกผู้ใช้');
+            alert(texts.select_user);
         }
         fetch(apiUrl + 'user_administration/menus_user/get_menus_user_not.php?user_id=' + user_id, {
             method: 'GET',
@@ -33,7 +33,7 @@ document.getElementById("createButton").addEventListener("click", function () {
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
 
-        const headers = ['เลือก', 'รหัสเมนู', 'ชื่อเมนู'];
+        const headers = [texts.select, texts.menu_code, texts.menu_name];
         headers.forEach(headerText => {
             const header = document.createElement('th');
             header.textContent = headerText;

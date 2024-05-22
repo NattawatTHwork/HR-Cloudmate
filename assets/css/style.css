@@ -36,7 +36,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Nunito", sans-serif; */
+  font-family: 'Prompt', sans-serif;
+
 }
 
 /*--------------------------------------------------------------
@@ -238,7 +240,8 @@ h6 {
   font-size: 18px;
   font-weight: 500;
   color: #012970;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Prompt', sans-serif;
 }
 
 .card-title span {
@@ -258,7 +261,8 @@ h6 {
 /* Alerts */
 .alert-heading {
   font-weight: 500;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
+  font-family: 'Prompt', sans-serif;
   font-size: 20px;
 }
 
@@ -307,7 +311,8 @@ h6 {
 /* Breadcrumbs */
 .breadcrumb {
   font-size: 14px;
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Nunito", sans-serif; */
+  font-family: 'Prompt', sans-serif;
   color: #899bbd;
   font-weight: 600;
 }
@@ -374,7 +379,8 @@ h6 {
   font-size: 26px;
   font-weight: 700;
   color: #012970;
-  font-family: "Nunito", sans-serif;
+  /* font-family: "Nunito", sans-serif; */
+  font-family: 'Prompt', sans-serif;
 }
 
 .header {
@@ -837,8 +843,10 @@ h6 {
 }
 
 .dashboard .red-card .card-icon {
-  color: #ff0000; /* สีแดง */
-  background: #ffedec; /* สีเหลืองอ่อน */
+  color: #ff0000;
+  /* สีแดง */
+  background: #ffedec;
+  /* สีเหลืองอ่อน */
 }
 
 /* Activity */

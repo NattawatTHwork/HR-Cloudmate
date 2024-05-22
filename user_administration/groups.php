@@ -24,13 +24,13 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>กำหนดกลุ่มผู้ใช้</h1>
+            <h1><?= $texts['manage_group'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-end mb-2 row">
             <div class="col-sm-12 col-md-4">
                 <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
-                    เพิ่มกลุ่มผู้ใช้
+                    <?= $texts['add_group'] ?>
                 </button>
             </div>
         </div>
@@ -46,12 +46,12 @@
                             <table id="datatables" class="table table-striped" style="width:100%">
                                 <thead>
                                     <tr>
-                                        <th>รหัสกลุ่ม</th>
-                                        <th>ชื่อกลุ่ม</th>
-                                        <th>ผู้บันทึก</th>
-                                        <th>วันที่บันทึก</th>
-                                        <th>สถานะ</th>
-                                        <th>ตัวเลือก</th>
+                                        <th><?= $texts['group_code'] ?></th>
+                                        <th><?= $texts['group_name'] ?></th>
+                                        <th><?= $texts['recorder'] ?></th>
+                                        <th><?= $texts['create_date'] ?></th>
+                                        <th><?= $texts['status'] ?></th>
+                                        <th><?= $texts['option'] ?></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -72,29 +72,29 @@
                 <div class="modal-content">
                     <form id="create_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['add_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_code" id="group_code" placeholder="รหัสกลุ่ม" required>
+                                <label for="formGroupExampleInput"><?= $texts['group_code'] ?></label>
+                                <input type="text" class="form-control" name="group_code" id="group_code" placeholder="<?= $texts['group_code'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_name" id="group_name" placeholder="ชื่อกลุ่ม" required>
+                                <label for="formGroupExampleInput"><?= $texts['group_name'] ?></label>
+                                <input type="text" class="form-control" name="group_name" id="group_name" placeholder="<?= $texts['group_name'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag" required>
-                                    <option value="true" selected>เปิดใช้งาน</option>
-                                    <option value="false">ปิดใช้งาน</option>
+                                    <option value="true" selected><?= $texts['enable'] ?></option>
+                                    <option value="false"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -106,29 +106,29 @@
                 <div class="modal-content">
                     <form>
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">ดูข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['view_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสกลุ่ม</label>
-                                <input type="text" class="form-control" id="group_code_view" placeholder="รหัสกลุ่ม" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['group_code'] ?></label>
+                                <input type="text" class="form-control" id="group_code_view" placeholder="<?= $texts['group_code'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อกลุ่ม</label>
-                                <input type="text" class="form-control" id="group_name_view" placeholder="ชื่อกลุ่ม" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['group_name'] ?></label>
+                                <input type="text" class="form-control" id="group_name_view" placeholder="<?= $texts['group_name'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ผู้บันทึก</label>
-                                <input type="text" class="form-control" id="personcode_view" placeholder="ผู้บันทึก" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['recorder'] ?></label>
+                                <input type="text" class="form-control" id="personcode_view" placeholder="<?= $texts['recorder'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">วันที่บันทึก</label>
-                                <input type="text" class="form-control" id="dates_view" placeholder="วันที่บันทึก" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['create_date'] ?></label>
+                                <input type="text" class="form-control" id="dates_view" placeholder="<?= $texts['create_date'] ?>" disabled>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
-                                <input type="text" class="form-control" id="statusflag_view" placeholder="สถานะ" disabled>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
+                                <input type="text" class="form-control" id="statusflag_view" placeholder="<?= $texts['status'] ?>" disabled>
                             </div>
                         </div>
                     </form>
@@ -141,30 +141,30 @@
                 <div class="modal-content">
                     <form id="update_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['edit_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="group_id" id="group_id_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">รหัสกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_code" id="group_code_update" placeholder="รหัสกลุ่ม" required>
+                                <label for="formGroupExampleInput"><?= $texts['group_code'] ?></label>
+                                <input type="text" class="form-control" name="group_code" id="group_code_update" placeholder="<?= $texts['group_code'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อกลุ่ม</label>
-                                <input type="text" class="form-control" name="group_name" id="group_name_update" placeholder="ชื่อกลุ่ม" required>
+                                <label for="formGroupExampleInput"><?= $texts['group_name'] ?></label>
+                                <input type="text" class="form-control" name="group_name" id="group_name_update" placeholder="<?= $texts['group_name'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>

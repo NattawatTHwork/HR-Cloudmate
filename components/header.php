@@ -78,7 +78,7 @@
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="<?= $path ?>/user_administration/change_password_user.php">
                             <i class="bi bi-question-circle"></i>
-                            <span>Change Password</span>
+                            <span><?= $texts['change_password'] ?></span>
                         </a>
                     </li>
                     <li>
@@ -88,7 +88,7 @@
                     <li>
                         <a class="dropdown-item d-flex align-items-center" onclick="logout()">
                             <i class="bi bi-box-arrow-right"></i>
-                            <span>Sign Out</span>
+                            <span><?= $texts['logout'] ?></span>
                         </a>
                     </li>
 

@@ -1,11 +1,11 @@
 function delete_data(user_id, username) {
     Swal.fire({
         title: username,
-        text: 'คุณต้องการลบใช่ไหม',
+        text: texts.want_delete,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'ลบ',
-        cancelButtonText: 'ยกเลิก'
+        confirmButtonText: texts.delete,
+        cancelButtonText: texts.cancel
     }).then((result) => {
         if (result.isConfirmed) {
             const formData = new FormData();

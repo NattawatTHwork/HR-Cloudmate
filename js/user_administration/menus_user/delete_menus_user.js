@@ -30,7 +30,7 @@ document.getElementById("deleteButton").addEventListener("click", function () {
         const thead = document.createElement('thead');
         const headerRow = document.createElement('tr');
 
-        const headers = ['เลือก', 'รหัสเมนู', 'ชื่อเมนู'];
+        const headers = [texts.select, texts.menu_code, texts.menu_name];
         headers.forEach(headerText => {
             const header = document.createElement('th');
             header.textContent = headerText;

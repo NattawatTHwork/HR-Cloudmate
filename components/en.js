@@ -6,7 +6,7 @@ texts = {
     'view_data': 'View Data',
     'view_progress': 'View Progress',
     'select_user': 'Select User',
-    'event_detail': 'Event Detail',
+    'event_detail': 'Activity Detail',
     'create_date': 'Create Date',
     'progress': 'Progress',
     'hide': '▲ Hide',
@@ -52,5 +52,7 @@ texts = {
     'graduation_year': 'Graduation Year',
     'gpa': 'GPA',
     'company_name': 'Company Name',
-
+    'select': 'Select',
+    'menu_code': 'Menu Code',
+    'menu_name': 'Menu Name',
 }
