@@ -24,13 +24,13 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการประวัติการศึกษา</h1>
+            <h1><?= $texts['manage_education'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-end mb-2 row">
             <div class="col-sm-12 col-md-4">
                 <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
-                    เพิ่มข้อมูล
+                    <?= $texts['add_data'] ?>
                 </button>
             </div>
         </div>
@@ -47,53 +47,53 @@
                 <div class="modal-content">
                     <form id="create_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['add_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ระดับการศึกษา</label>
+                                <label for="formGroupExampleInput"><?= $texts['level'] ?></label>
                                 <select class="form-control" name="level" id="level" required>
-                                    <option value="1" selected>มัฐยมศึกษาปีที่ 3</option>
-                                    <option value="2">มัฐยมศึกษาปีที่ 6</option>
-                                    <option value="3">ประกาศนียบัตรวิชาชีพ</option>
-                                    <option value="4">ประกาศนียบัตรวิชาชีพชั้นสูง</option>
-                                    <option value="5">ปริญญาตรี</option>
-                                    <option value="6">ปริญญาโท</option>
-                                    <option value="7">ปริญญาเอก</option>
+                                    <option value="1" selected><?= $texts['m3'] ?></option>
+                                    <option value="2"><?= $texts['m6'] ?></option>
+                                    <option value="3"><?= $texts['vc'] ?></option>
+                                    <option value="4"><?= $texts['hvc'] ?></option>
+                                    <option value="5"><?= $texts['bd'] ?></option>
+                                    <option value="6"><?= $texts['md'] ?></option>
+                                    <option value="7"><?= $texts['dd'] ?></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานศึกษา</label>
-                                <input type="text" class="form-control" name="school" id="school" placeholder="สถานศึกษา" required>
+                                <label for="formGroupExampleInput"><?= $texts['school'] ?></label>
+                                <input type="text" class="form-control" name="school" id="school" placeholder="<?= $texts['school'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">คณะ</label>
-                                <input type="text" class="form-control" name="faculty" id="faculty" placeholder="คณะ" required>
+                                <label for="formGroupExampleInput"><?= $texts['faculty'] ?></label>
+                                <input type="text" class="form-control" name="faculty" id="faculty" placeholder="<?= $texts['faculty'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สาขา</label>
-                                <input type="text" class="form-control" name="major" id="major" placeholder="สาขา" required>
+                                <label for="formGroupExampleInput"><?= $texts['major'] ?></label>
+                                <input type="text" class="form-control" name="major" id="major" placeholder="<?= $texts['major'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ปีที่สำเร็จการศึกษา</label>
-                                <input type="text" class="form-control" name="graduation_year" id="graduation_year" placeholder="ปีที่สำเร็จการศึกษา" required>
+                                <label for="formGroupExampleInput"><?= $texts['graduation_year'] ?></label>
+                                <input type="text" class="form-control" name="graduation_year" id="graduation_year" placeholder="<?= $texts['graduation_year'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">GPA</label>
-                                <input type="text" class="form-control" name="gpa" id="gpa" placeholder="GPA" required>
+                                <label for="formGroupExampleInput"><?= $texts['gpa'] ?></label>
+                                <input type="text" class="form-control" name="gpa" id="gpa" placeholder="<?= $texts['gpa'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -105,54 +105,54 @@
                 <div class="modal-content">
                     <form id="update_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['edit_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="education_code" id="education_code_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ระดับการศึกษา</label>
+                                <label for="formGroupExampleInput"><?= $texts['level'] ?></label>
                                 <select class="form-control" name="level" id="level_update" required>
-                                    <option value="1" selected>มัฐยมศึกษาปีที่ 3</option>
-                                    <option value="2">มัฐยมศึกษาปีที่ 6</option>
-                                    <option value="3">ประกาศนียบัตรวิชาชีพ</option>
-                                    <option value="4">ประกาศนียบัตรวิชาชีพชั้นสูง</option>
-                                    <option value="5">ปริญญาตรี</option>
-                                    <option value="6">ปริญญาโท</option>
-                                    <option value="7">ปริญญาเอก</option>
+                                    <option value="1" selected><?= $texts['m3'] ?></option>
+                                    <option value="2"><?= $texts['m6'] ?></option>
+                                    <option value="3"><?= $texts['vc'] ?></option>
+                                    <option value="4"><?= $texts['hvc'] ?></option>
+                                    <option value="5"><?= $texts['bd'] ?></option>
+                                    <option value="6"><?= $texts['md'] ?></option>
+                                    <option value="7"><?= $texts['dd'] ?></option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานศึกษา</label>
-                                <input type="text" class="form-control" name="school" id="school_update" placeholder="สถานศึกษา" required>
+                                <label for="formGroupExampleInput"><?= $texts['school'] ?></label>
+                                <input type="text" class="form-control" name="school" id="school_update" placeholder="<?= $texts['school'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">คณะ</label>
-                                <input type="text" class="form-control" name="faculty" id="faculty_update" placeholder="คณะ" required>
+                                <label for="formGroupExampleInput"><?= $texts['faculty'] ?></label>
+                                <input type="text" class="form-control" name="faculty" id="faculty_update" placeholder="<?= $texts['faculty'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สาขา</label>
-                                <input type="text" class="form-control" name="major" id="major_update" placeholder="สาขา" required>
+                                <label for="formGroupExampleInput"><?= $texts['major'] ?></label>
+                                <input type="text" class="form-control" name="major" id="major_update" placeholder="<?= $texts['major'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ปีที่สำเร็จการศึกษา</label>
-                                <input type="text" class="form-control" name="graduation_year" id="graduation_year_update" placeholder="ปีที่สำเร็จการศึกษา" required>
+                                <label for="formGroupExampleInput"><?= $texts['graduation_year'] ?></label>
+                                <input type="text" class="form-control" name="graduation_year" id="graduation_year_update" placeholder="<?= $texts['graduation_year'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">GPA</label>
-                                <input type="text" class="form-control" name="gpa" id="gpa_update" placeholder="GPA" required>
+                                <label for="formGroupExampleInput"><?= $texts['gpa'] ?></label>
+                                <input type="text" class="form-control" name="gpa" id="gpa_update" placeholder="<?= $texts['gpa'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>

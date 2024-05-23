@@ -1,11 +1,11 @@
-function delete_data(job_code, job_category) {
+function delete_data(job_code, position) {
     Swal.fire({
-        title: job_category,
-        text: 'คุณต้องการลบใช่ไหม',
+        title: position,
+        text: texts.want_delete,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'ลบ',
-        cancelButtonText: 'ยกเลิก'
+        confirmButtonText: texts.delete,
+        cancelButtonText: texts.cancel
     }).then((result) => {
         if (result.isConfirmed) {
             fetch(apiUrl + 'application/jobs/delete_job.php', {

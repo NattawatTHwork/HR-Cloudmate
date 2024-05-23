@@ -24,17 +24,17 @@ async function displayCards(datas) {
     cardContainer.innerHTML = '';
 
     await datas.forEach(data => {
-        let level = data.level == 1 ? 'มัฐยมศึกษาปีที่ 3' :
-            data.level == 2 ? 'มัฐยมศึกษาปีที่ 6' :
-                data.level == 3 ? 'ประกาศนียบัตรวิชาชีพ' :
-                    data.level == 4 ? 'ประกาศนียบัตรวิชาชีพชั้นสูง' :
-                        data.level == 5 ? 'ปริญญาตรี' :
-                            data.level == 6 ? 'ปริญญาโท' :
-                                data.level == 7 ? 'ปริญญาเอก' :
-                                    'อื่นๆ';
+        let level_class = data.level == 1 ? texts.m3 :
+            data.level == 2 ? texts.m6 :
+                data.level == 3 ? texts.vc :
+                    data.level == 4 ? texts.hvc :
+                        data.level == 5 ? texts.bd :
+                            data.level == 6 ? texts.md :
+                                data.level == 7 ? texts.dd :
+                                    '';
 
-        let statusflag = data.statusflag == 't' ? 'เปิดใช้งาน' :
-            data.statusflag == 'f' ? 'ปิดใช้งาน' : '';
+        let statusflag = data.statusflag == 't' ? texts.enable :
+            data.statusflag == 'f' ? texts.disable : '';
 
         let statusStyle = data.statusflag == 't' ? 'text-success' : 'text-danger';
 
@@ -42,16 +42,16 @@ async function displayCards(datas) {
             <div class="col-sm-12 col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">ระดับการศึกษา: ${level}</h5>
-                        <p class="card-text"><strong>สถานศึกษา:</strong> ${data.school}</p>
-                        <p class="card-text"><strong>คณะ:</strong> ${data.faculty}</p>
-                        <p class="card-text"><strong>สาขา:</strong> ${data.major}</p>
-                        <p class="card-text"><strong>ปีที่สำเร็จการศึกษา:</strong> ${data.graduation_year}</p>
-                        <p class="card-text"><strong>GPA:</strong> ${data.gpa}</p>
-                        <p class="card-text"><strong>สถานะ:</strong> <span class="${statusStyle}">${statusflag}</span></p>
+                        <h5 class="card-title">${texts.level}: ${level_class}</h5>
+                        <p class="card-text"><strong>${texts.school}:</strong> ${data.school}</p>
+                        <p class="card-text"><strong>${texts.faculty}:</strong> ${data.faculty}</p>
+                        <p class="card-text"><strong>${texts.major}:</strong> ${data.major}</p>
+                        <p class="card-text"><strong>${texts.graduation_year}:</strong> ${data.graduation_year}</p>
+                        <p class="card-text"><strong>${texts.gpa}:</strong> ${data.gpa}</p>
+                        <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>
                         <div class="text-center">
-                            <button type="button" class="btn btn-warning" onclick="update_data('${data.education_code}')">แก้ไข</button>
-                            <button type="button" class="btn btn-danger" onclick="delete_data('${data.education_code}', '${data.level}')">ลบ</button>
+                            <button type="button" class="btn btn-warning" onclick="update_data('${data.education_code}')">${texts.edit}</button>
+                            <button type="button" class="btn btn-danger" onclick="delete_data('${data.education_code}', '${data.level}')">${texts.delete}</button>
                         </div>
                     </div>
                 </div>

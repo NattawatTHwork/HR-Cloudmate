@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>งานแนะนำ</h1>
+            <h1><?= $texts['recommended_job'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">

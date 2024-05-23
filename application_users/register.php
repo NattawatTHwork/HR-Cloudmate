@@ -35,89 +35,89 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">ลงทะเบียนผู้สมัครงาน</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4"><?= $texts['applicant_register'] ?></h5>
                                     </div>
 
                                     <!-- <form class="row g-3 needs-validation" novalidate method="POST" action=""> -->
                                     <form class="row g-3" method="POST" action="">
                                         <div class="col-12">
-                                            <label for="yourEmail" class="form-label">อีเมล</label>
+                                            <label for="yourEmail" class="form-label"><?= $texts['email'] ?></label>
                                             <input type="email" name="email" class="form-control" id="yourEmail" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">รหัสผ่าน</label>
+                                            <label for="yourPassword" class="form-label"><?= $texts['password'] ?></label>
                                             <input type="password" name="user_password" class="form-control" id="yourPassword" required>
-                                            <div id="alertpassword" style="display: none; color: red;">ความยาวรหัสผ่านต้องมากกว่า 6 ตัว</div>
+                                            <div id="alertpassword" style="display: none; color: red;"><?= $texts['more_6'] ?></div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourRepeatPassword" class="form-label">ยืนยันรหัสผ่าน</label>
+                                            <label for="yourRepeatPassword" class="form-label"><?= $texts['confirm_paasword'] ?></label>
                                             <input type="password" name="user_repeat_password" class="form-control" id="yourRepeatPassword" required>
-                                            <div id="alertrepeatpassword" style="display: none; color: red;">รหัสผ่านไม่ตรงกัน</div>
+                                            <div id="alertrepeatpassword" style="display: none; color: red;"><?= $texts['not_match'] ?></div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourFirstname" class="form-label">ชื่อ</label>
+                                            <label for="yourFirstname" class="form-label"><?= $texts['firstname'] ?></label>
                                             <input type="text" name="firstname" class="form-control" id="yourFirstname" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourLastname" class="form-label">นามสกุล</label>
+                                            <label for="yourLastname" class="form-label"><?= $texts['lastname'] ?></label>
                                             <input type="text" name="lastname" class="form-control" id="yourLastname" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="genderSelect" class="form-label">เพศ</label>
+                                            <label for="genderSelect" class="form-label"><?= $texts['gender'] ?></label>
                                             <select class="form-select" id="genderSelect" name="gender" required>
-                                                <option value="">เลือก</option>
-                                                <option value="1">ชาย</option>
-                                                <option value="2">หญิง</option>
-                                                <option value="3">อื่นๆ</option>
+                                                <option value=""><?= $texts['select'] ?></option>
+                                                <option value="1"><?= $texts['male'] ?></option>
+                                                <option value="2"><?= $texts['female'] ?></option>
+                                                <option value="3"><?= $texts['other'] ?></option>
                                             </select>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="birthdayInput" class="form-label">วัน เดือน ปีเกิด</label>
+                                            <label for="birthdayInput" class="form-label"><?= $texts['birthday'] ?></label>
                                             <input type="date" name="birthday" class="form-control" id="birthdayInput" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPhoneNumber" class="form-label">เบอร์โทร</label>
+                                            <label for="yourPhoneNumber" class="form-label"><?= $texts['tel'] ?></label>
                                             <input type="text" name="phone_number" class="form-control" id="yourPhoneNumber" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourAddress" class="form-label">ที่อยู่</label>
+                                            <label for="yourAddress" class="form-label"><?= $texts['address'] ?></label>
                                             <input type="text" name="user_address" class="form-control" id="yourAddress" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourSubDistrict" class="form-label">ตำบล</label>
+                                            <label for="yourSubDistrict" class="form-label"><?= $texts['sub_district'] ?></label>
                                             <input type="text" name="sub_district" class="form-control" id="yourSubDistrict" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourDistrict" class="form-label">อำเภอ</label>
+                                            <label for="yourDistrict" class="form-label"><?= $texts['district'] ?></label>
                                             <input type="text" name="district" class="form-control" id="yourDistrict" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourProvince" class="form-label">จังหวัด</label>
+                                            <label for="yourProvince" class="form-label"><?= $texts['province'] ?></label>
                                             <input type="text" name="province" class="form-control" id="yourProvince" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourZipCode" class="form-label">รหัสไปรษณีย์</label>
+                                            <label for="yourZipCode" class="form-label"><?= $texts['zip_code'] ?></label>
                                             <input type="text" name="zip_code" class="form-control" id="yourZipCode" required>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
                                                 <input class="form-check-input" name="pdpa" type="checkbox" value="true" id="acceptTerms" required>
-                                                <label class="form-check-label" for="acceptTerms">ฉันยอมรับ <a href="../policy.php">นโยบายความเป็นส่วนตัว</a></label>
+                                                <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../policy.php"><?= $texts['privacy_policy'] ?></a></label>
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit" id="submitBtn" disabled>สร้างบัญชี</button>
+                                            <button class="btn btn-primary w-100" type="submit" id="submitBtn" disabled><?= $texts['create_account'] ?></button>
                                         </div>
                                         <div class="col-12">
-                                            <p class="small mb-0">คุณมีบัญชีแล้วใช่ไหม <a href="login.php">เข้าสู่ระบบ</a></p>
+                                            <p class="small mb-0"><?= $texts['have_account'] ?> <a href="login.php"><?= $texts['login'] ?></a></p>
                                         </div>
                                     </form>
 

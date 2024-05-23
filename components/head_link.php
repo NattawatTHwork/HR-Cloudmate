@@ -32,7 +32,7 @@
     <?php
     session_start();
     if (!isset($_SESSION['language'])) {
-      $_SESSION['language'] = 'th';
+      $_SESSION['language'] = 'en';
     }
     if (isset($_GET['language'])) {
       $_SESSION['language'] = $_GET['language'];

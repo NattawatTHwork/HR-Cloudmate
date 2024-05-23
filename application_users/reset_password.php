@@ -42,7 +42,7 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">ตั้งรหัสผ่านใหม่</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4"><?= $texts['set_new_password'] ?></h5>
                                     </div>
 
                                     <form class="row g-3" method="POST" id="reset_password">
@@ -50,31 +50,31 @@
                                         <input type="hidden" name="email" class="form-control" id="email" value="<?= $_POST['email'] ?>" required>
 
                                         <div class="col-12">
-                                            <label for="recovery_code" class="form-label">รหัสผ่านสำหรับกู้คืน</label>
+                                            <label for="recovery_code" class="form-label"><?= $texts['recovery_key'] ?></label>
                                             <div class="input-group has-validation">
                                                 <input type="text" name="recovery_code" class="form-control" id="recovery_code" required>
-                                                <div class="invalid-feedback">กรุณากรอกรหัสผ่านสำหรับกู้คืน</div>
+                                                <div class="invalid-feedback"><?= $texts['enter_recovery_key'] ?></div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="new_password" class="form-label">รหัสผ่านใหม่</label>
+                                            <label for="new_password" class="form-label"><?= $texts['new_password'] ?></label>
                                             <div class="input-group has-validation">
                                                 <input type="text" name="new_password" class="form-control" id="new_password" required>
-                                                <div class="invalid-feedback">กรุณากรอกรหัสผ่านใหม่</div>
+                                                <div class="invalid-feedback"><?= $texts['enter_new_password'] ?></div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="repeat_new_password" class="form-label">ยืนยันรหัสผ่าน</label>
+                                            <label for="repeat_new_password" class="form-label"><?= $texts['confirm_password'] ?></label>
                                             <div class="input-group has-validation">
                                                 <input type="text" name="repeat_new_password" class="form-control" id="repeat_new_password" required>
-                                                <div class="invalid-feedback">กรุณากรอกยืนยันรหัสผ่าน</div>
+                                                <div class="invalid-feedback"><?= $texts['enter_confirm_password'] ?></div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">เปลี่ยนรหัสผ่าน</button>
+                                            <button class="btn btn-primary w-100" type="submit"><?= $texts['confirm_change_password'] ?></button>
                                         </div>
                                     </form>
 

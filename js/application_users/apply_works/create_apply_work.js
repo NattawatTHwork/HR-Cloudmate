@@ -1,11 +1,11 @@
 function apply_work(job_code, position) {
     Swal.fire({
         title: position,
-        text: 'คุณต้องการสมัครงานนี้ใช่ไหม',
+        text: texts.want_apply,
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'ตกลง',
-        cancelButtonText: 'ยกเลิก'
+        confirmButtonText: texts.okay,
+        cancelButtonText: texts.cancel
     }).then((result) => {
         if (result.isConfirmed) {
             fetch(apiUrl + 'application/apply_works/create_apply_work.php', {

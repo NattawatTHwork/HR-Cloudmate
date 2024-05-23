@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>ข้อมูลส่วนตัว</h1>
+            <h1><?= $texts['profile'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -39,72 +39,72 @@
                             <form id="update_profile_data_form">
                                 <input type="hidden" class="form-control" name="user_code" id="user_code" disabled>
                                 <div class="row mb-3">
-                                    <label for="firstname" class="col-sm-2 col-form-label">ชื่อ</label>
+                                    <label for="firstname" class="col-sm-2 col-form-label"><?= $texts['firstname'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="firstname" id="firstname" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="lastname" class="col-sm-2 col-form-label">นามสกุล</label>
+                                    <label for="lastname" class="col-sm-2 col-form-label"><?= $texts['lastname'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="lastname" id="lastname" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="gender" class="col-sm-2 col-form-label">เพศ</label>
+                                    <label for="gender" class="col-sm-2 col-form-label"><?= $texts['gender'] ?></label>
                                     <div class="col-sm-10">
                                         <select class="form-control" name="gender" id="gender" disabled>
-                                            <option value="1">ชาย</option>
-                                            <option value="2">หญิง</option>
-                                            <option value="3">อื่นๆ</option>
+                                            <option value="1"><?= $texts['male'] ?></option>
+                                            <option value="2"><?= $texts['female'] ?></option>
+                                            <option value="3"><?= $texts['other'] ?></option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="birthday" class="col-sm-2 col-form-label">วันเกิด</label>
+                                    <label for="birthday" class="col-sm-2 col-form-label"><?= $texts['birthday'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="date" class="form-control" name="birthday" id="birthday" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="phone_number" class="col-sm-2 col-form-label">เบอร์โทร</label>
+                                    <label for="phone_number" class="col-sm-2 col-form-label"><?= $texts['tel'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="phone_number" id="phone_number" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="user_address" class="col-sm-2 col-form-label">ที่อยู่</label>
+                                    <label for="user_address" class="col-sm-2 col-form-label"><?= $texts['address'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="user_address" id="user_address" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="sub_district" class="col-sm-2 col-form-label">ตำบล</label>
+                                    <label for="sub_district" class="col-sm-2 col-form-label"><?= $texts['sub_district'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="sub_district" id="sub_district" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="district" class="col-sm-2 col-form-label">อำเภอ</label>
+                                    <label for="district" class="col-sm-2 col-form-label"><?= $texts['district'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="district" id="district" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="province" class="col-sm-2 col-form-label">จังหวัด</label>
+                                    <label for="province" class="col-sm-2 col-form-label"><?= $texts['province'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="province" id="province" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="zip_code" class="col-sm-2 col-form-label">รหัสไปรษณีย์</label>
+                                    <label for="zip_code" class="col-sm-2 col-form-label"><?= $texts['zip_code'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="zip_code" id="zip_code" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <a type="button" class="btn btn-primary" href="<?= $path ?>/application_users/update_profile.php">แก้ไขข้อมูลส่วนตัว</a>
+                                        <a type="button" class="btn btn-primary" href="<?= $path ?>/application_users/update_profile.php"><?= $texts['edit_profile'] ?></a>
                                     </div>
                                 </div>
                             </form>

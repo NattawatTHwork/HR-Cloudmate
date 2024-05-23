@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>แก้ไขข้อมูลส่วนตัว</h1>
+            <h1><?= $texts['edit_profile'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -39,32 +39,32 @@
                             <form id="update_profile_data_form">
                                 <input type="hidden" class="form-control" name="employer_code" id="employer_code" required>
                                 <div class="row mb-3">
-                                    <label for="employer_name" class="col-sm-2 col-form-label">ชื่อบริษัท</label>
+                                    <label for="employer_name" class="col-sm-2 col-form-label"><?= $texts['company'] ?>/<?= $texts['entrepreneur'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="employer_name" id="employer_name" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="firstname" class="col-sm-2 col-form-label">ชื่อ</label>
+                                    <label for="firstname" class="col-sm-2 col-form-label"><?= $texts['firstname'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="firstname" id="firstname" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="lastname" class="col-sm-2 col-form-label">นามสกุล</label>
+                                    <label for="lastname" class="col-sm-2 col-form-label"><?= $texts['lastname'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="lastname" id="lastname" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="phone_number" class="col-sm-2 col-form-label">เบอร์โทร</label>
+                                    <label for="phone_number" class="col-sm-2 col-form-label"><?= $texts['tel'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" name="phone_number" id="phone_number" required>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">บันทึก</button>
+                                        <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                                     </div>
                                 </div>
                             </form>

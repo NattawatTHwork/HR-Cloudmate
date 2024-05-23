@@ -24,13 +24,13 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>จัดการประสบการณ์</h1>
+            <h1><?= $texts['manage_experience'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-end mb-2 row">
             <div class="col-sm-12 col-md-4">
                 <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
-                    เพิ่มข้อมูล
+                    <?= $texts['add_data'] ?>
                 </button>
             </div>
         </div>
@@ -47,34 +47,34 @@
                 <div class="modal-content">
                     <form id="create_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['add_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อบริษัท</label>
-                                <input type="text" class="form-control" name="company_name" id="company_name_create" placeholder="ชื่อบริษัท" required>
+                                <label for="formGroupExampleInput"><?= $texts['company_name'] ?></label>
+                                <input type="text" class="form-control" name="company_name" id="company_name_create" placeholder="<?= $texts['company_name'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="position" id="position_create" placeholder="ตำแหน่ง" required>
+                                <label for="formGroupExampleInput"><?= $texts['position'] ?></label>
+                                <input type="text" class="form-control" name="position" id="position_create" placeholder="<?= $texts['position'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทงาน</label>
-                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_create" required>
+                                <label for="formGroupExampleInput"><?= $texts['job_category'] ?></label>
+                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_create" placeholder="<?= $texts['job_category'] ?>" required>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_create" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -86,35 +86,35 @@
                 <div class="modal-content">
                     <form id="update_data_form">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">แก้ไขข้อมูล</h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['edit_data'] ?></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="experience_code" id="experience_code_update" required>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ชื่อบริษัท</label>
-                                <input type="text" class="form-control" name="company_name" id="company_name_update" placeholder="ชื่อบริษัท" required>
+                                <label for="formGroupExampleInput"><?= $texts['company_name'] ?></label>
+                                <input type="text" class="form-control" name="company_name" id="company_name_update" placeholder="<?= $texts['company_name'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ตำแหน่ง</label>
-                                <input type="text" class="form-control" name="position" id="position_update" placeholder="ตำแหน่ง" required>
+                                <label for="formGroupExampleInput"><?= $texts['position'] ?></label>
+                                <input type="text" class="form-control" name="position" id="position_update" placeholder="<?= $texts['position'] ?>" required>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">ประเภทงาน</label>
-                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" required>
+                                <label for="formGroupExampleInput"><?= $texts['job_category'] ?></label>
+                                <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" placeholder="<?= $texts['job_category'] ?>" required>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="formGroupExampleInput">สถานะ</label>
+                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected>เปิดใช้งาน</option>
-                                    <option value="f">ปิดใช้งาน</option>
+                                <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>                                
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button>
-                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>

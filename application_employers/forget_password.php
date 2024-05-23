@@ -35,21 +35,21 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">ลืมรหัสผ่าน</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4"><?= $texts['forget_password'] ?></h5>
                                     </div>
 
                                     <form class="row g-3" method="POST" id="recovery">
 
                                         <div class="col-12">
-                                            <label for="yourEmail" class="form-label">อีเมล</label>
+                                            <label for="yourEmail" class="form-label"><?= $texts['email'] ?></label>
                                             <div class="input-group has-validation">
                                                 <input type="email" name="email" class="form-control" id="yourEmail" required>
-                                                <div class="invalid-feedback">กรุณากรอกอีเมล</div>
+                                                <div class="invalid-feedback"><?= $texts['enter_email'] ?></div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">ขอรหัสกู้คืนรหัสผ่าน</button>
+                                            <button class="btn btn-primary w-100" type="submit"><?= $texts['req_key'] ?></button>
                                         </div>
                                     </form>
 

@@ -5,42 +5,42 @@
     <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/index.php">
         <i class="bi bi-grid"></i>
-        <span>Dashboard</span>
+        <span><?= $texts['dashboard'] ?></span>
       </a>
     </li><!-- End Dashboard Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/referred_jobs.php">
         <i class="bi bi-grid"></i>
-        <span>Referred Jobs</span>
+        <span><?= $texts['referred_job'] ?></span>
       </a>
     </li><!-- End Referred Jobs Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/educations.php">
         <i class="bi bi-grid"></i>
-        <span>Educations</span>
+        <span><?= $texts['education'] ?></span>
       </a>
     </li><!-- End Educations Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/experiences.php">
         <i class="bi bi-grid"></i>
-        <span>Experiences</span>
+        <span><?= $texts['experience'] ?></span>
       </a>
     </li><!-- End Experiences Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/apply_works.php">
         <i class="bi bi-grid"></i>
-        <span>Apply Work</span>
+        <span><?= $texts['apply_job'] ?></span>
       </a>
     </li><!-- End Apply Work Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/apply_works_history.php">
         <i class="bi bi-grid"></i>
-        <span>Apply Work History</span>
+        <span><?= $texts['job_application_history'] ?></span>
       </a>
     </li><!-- End Apply Work History Nav -->
 

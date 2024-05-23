@@ -36,14 +36,14 @@
                         <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">ALL <span>| Jobs</span></h5>
+                                    <h5 class="card-title"><?= $texts['all'] ?> <span>| <?= $texts['job'] ?></span></h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-person-workspace"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6 id="all_jobs"></h6>
-                                            <span class="text-primary small pt-1 fw-bold">งาน</span>
+                                            <span class="text-primary small pt-1 fw-bold"><?= $texts['job'] ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -53,14 +53,14 @@
                         <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=true">
                             <div class="card info-card revenue-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Active <span>| Jobs</span></h5>
+                                    <h5 class="card-title"><?= $texts['active'] ?> <span>| <?= $texts['job'] ?></span></h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-person-workspace"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6 id="active_jobs"></h6>
-                                            <span class="text-success small pt-1 fw-bold">งาน</span>
+                                            <span class="text-success small pt-1 fw-bold"><?= $texts['job'] ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -70,14 +70,14 @@
                         <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=false">
                             <div class="card info-card red-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Inactive <span>| Jobs</span></h5>
+                                    <h5 class="card-title"><?= $texts['inactive'] ?> <span>| <?= $texts['job'] ?></span></h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-person-workspace"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6 id="inactive_jobs"></h6>
-                                            <span class="text-danger small pt-1 fw-bold">งาน</span>
+                                            <span class="text-danger small pt-1 fw-bold"><?= $texts['job'] ?></span>
                                         </div>
                                     </div>
 
@@ -94,14 +94,14 @@
                         <a class="col-12" href="<?= $path ?>/application_employers/apply_works.php">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
-                                    <h5 class="card-title">Apply Works</h5>
+                                    <h5 class="card-title"><?= $texts['job_application'] ?></h5>
                                     <div class="d-flex align-items-center">
                                         <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
                                             <i class="bi bi-people"></i>
                                         </div>
                                         <div class="ps-3">
                                             <h6 id="total_apply_works"></h6>
-                                            <span class="text-primary small pt-1 fw-bold">ใบสมัคร</span>
+                                            <span class="text-primary small pt-1 fw-bold"><?= $texts['applications'] ?></span>
                                         </div>
                                     </div>
                                 </div>

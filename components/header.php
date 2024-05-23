@@ -43,7 +43,7 @@
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="<?= $path ?>/assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-                    <span class="d-none d-md-block dropdown-toggle ps-2" id="fullname">K. Anderson</span>
+                    <span class="d-none d-md-block dropdown-toggle ps-2" id="fullname"></span>
                 </a><!-- End Profile Iamge Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
@@ -100,18 +100,4 @@
 
 </header><!-- End Header -->
 
-<script>
-    document.getElementById('lang-th').addEventListener('click', function() {
-        setLanguage('th');
-    });
-
-    document.getElementById('lang-en').addEventListener('click', function() {
-        setLanguage('en');
-    });
-
-    function setLanguage(language) {
-        const currentUrl = new URL(window.location.href);
-        currentUrl.searchParams.set('language', language);
-        window.location.href = currentUrl.toString();
-    }
-</script>
+<script src="<?= $path ?>/js/language.js"></script>

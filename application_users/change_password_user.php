@@ -24,7 +24,7 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>เปลี่ยนรหัสผ่าน</h1>
+            <h1><?= $texts['change_password'] ?></h1>
         </div><!-- End Page Title -->
 
         <section class="section">
@@ -38,26 +38,26 @@
                             <!-- General Form Elements -->
                             <form id="change_password_data_form">
                                 <div class="row mb-3">
-                                    <label for="old_password" class="col-sm-2 col-form-label">รหัสผ่านเดิม</label>
+                                    <label for="old_password" class="col-sm-2 col-form-label"><?= $texts['old_password'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" name="old_password">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="new_password" class="col-sm-2 col-form-label">รหัสผ่านใหม่</label>
+                                    <label for="new_password" class="col-sm-2 col-form-label"><?= $texts['new_password'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" name="new_password">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="repeat_new_password" class="col-sm-2 col-form-label">ยืนยันรหัสผ่าน</label>
+                                    <label for="repeat_new_password" class="col-sm-2 col-form-label"><?= $texts['confirm_password'] ?></label>
                                     <div class="col-sm-10">
                                         <input type="password" class="form-control" name="repeat_new_password">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">ยืนยันการเปลี่ยนรหัสผ่าน</button>
+                                        <button type="submit" class="btn btn-primary"><?= $texts['confirm_change_password'] ?></button>
                                     </div>
                                 </div>
                             </form>

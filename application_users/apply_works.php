@@ -24,14 +24,14 @@
     <main id="main" class="main">
 
         <div class="pagetitle">
-            <h1>หางาน</h1>
+            <h1><?= $texts['find_job'] ?></h1>
         </div><!-- End Page Title -->
 
         <div class="d-sm-flex justify-content-end mb-4">
             <select class="form-select me-2" id="select_job_category">
-                <option value="">เลือกประเภทงาน</option>
+                <option value=""><?= $texts['select_job_category'] ?></option>
             </select>
-            <button type="submit" id="searchButton" class="btn btn-primary">ค้นหา</button>
+            <button type="submit" id="searchButton" class="btn btn-primary"><?= $texts['search_button'] ?></button>
         </div>
 
         <section class="section">

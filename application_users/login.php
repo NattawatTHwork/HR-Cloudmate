@@ -35,34 +35,34 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4">เข้าสู่ระบบผู้สมัครงาน</h5>
+                                        <h5 class="card-title text-center pb-0 fs-4"><?= $texts['applicant_login'] ?></h5>
                                     </div>
 
                                     <form class="row g-3 needs-validation" novalidate method="POST" action="">
 
                                         <div class="col-12">
-                                            <label for="yourEmail" class="form-label">อีเมล</label>
+                                            <label for="yourEmail" class="form-label"><?= $texts['email'] ?></label>
                                             <div class="input-group has-validation">
                                                 <!-- <span class="input-group-text" id="inputGroupPrepend">@</span> -->
                                                 <input type="email" name="email" class="form-control" id="yourEmail" required>
-                                                <div class="invalid-feedback">กรุณากรอกอีเมล</div>
+                                                <div class="invalid-feedback"><?= $texts['enter_email'] ?></div>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label">รหัสผ่าน</label>
+                                            <label for="yourPassword" class="form-label"><?= $texts['password'] ?></label>
                                             <input type="password" name="user_password" class="form-control" id="yourPassword" required>
-                                            <div class="invalid-feedback">กรุณากรอกรหัสผ่าน</div>
+                                            <div class="invalid-feedback"><?= $texts['enter_password'] ?></div>
                                         </div>
 
                                         <div class="col-12">
-                                            <p class="small mb-0"><a href="forget_password.php">ลืมรหัสผ่าน</a></p>
+                                            <p class="small mb-0"><a href="forget_password.php"><?= $texts['forget_password'] ?></a></p>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit">เข้าสู่ระบบ</button>
+                                            <button class="btn btn-primary w-100" type="submit"><?= $texts['login'] ?></button>
                                         </div>
                                         <div class="col-12">
-                                            <p class="small mb-0">คุณยังไม่มีบัญชีใช่ไหม <a href="register.php">สร้างบัญชี</a></p>
+                                            <p class="small mb-0"><?= $texts['not_account'] ?> <a href="register.php"><?= $texts['create_account'] ?></a></p>
                                         </div>
                                     </form>
 

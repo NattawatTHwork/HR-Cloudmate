@@ -30,9 +30,9 @@ async function displayCards(datas) {
             <div class="col-sm-12 col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">ตำแหน่ง: ${data.position}</h5>
-                        <p class="card-text"><strong>ชื่อบริษัท:</strong> ${data.company_name}</p>
-                        <p class="card-text"><strong>ประเภทงาน:</strong> ${data.job_category}</p>
+                        <h5 class="card-title">${texts.position}: ${data.position}</h5>
+                        <p class="card-text"><strong>${texts.company_name}:</strong> ${data.company_name}</p>
+                        <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
                     </div>
                 </div>
             </div>`;
