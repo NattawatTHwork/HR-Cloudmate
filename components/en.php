@@ -140,6 +140,7 @@ return [
     'select' => 'Select',
     'i_accept' => 'I accept',
     'privacy_policy' => 'privacy policy.',
+    'privacy_policy_head' => 'privacy policy',
     'have_account' => 'Do you already have an account?',
     'set_new_password' => 'Set New Password',
     'recovery_key' => 'Recovery Key',
@@ -159,4 +160,5 @@ return [
     'applications' => 'Applications',
     'entrepreneur_login' => 'Entrepreneur Sign In',
     'entrepreneur_register' => 'Entrepreneur Register',
+    'policy_data' => 'Company requests permission to inform you and request your consent to the collection of personal data and rights to access your personal information under the Personal Data Protection Act B.E. 2562, which comes into effect on June 1, B.E. 2565. This may include, but is not limited to, name, address, telephone number, photograph, bank account, email, LINE ID, and health history, for the purpose of using the application, including the transmission of specific data for the employer to verify employment history, age, and gender. If we are not compliant and you wish to delete, you may proceed to amend your personal history. If you have any questions, please contact us.',
 ];

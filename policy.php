@@ -16,12 +16,25 @@
 
     <main>
         <div class="container">
-
+            <div class="d-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown pe-3">
+                        <a id="languageDropdown" class="nav-link d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?= $_SESSION['language'] == 'th' ? 'ไทย' : 'English' ?>
+                            <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="list-style-type: none;">
+                            <li><a id="lang-th" class="dropdown-item" href="#">ไทย</a></li>
+                            <li><a id="lang-en" class="dropdown-item" href="#">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
             <section class="section error-404 d-flex flex-column align-items-center justify-content-center">
                 <div class="card">
                     <div class="card-body p-4">
-                        <h2 style="font-size:xx-large">นโยบายความเป็นส่วนตัว</h2>
-                        <p>บริษัท ขออนุญาตแจ้งให้ทราบและขอความยินยอมในการเก็บข้อมูลส่วนบุคคลและสิทธิในการเข้าถึงข้อมูลส่วนตัวของคุณภายใต้พระราชบัญญัติคุ้มครองข้อมูลส่วนบุคคล พ.ศ.2562 ซึ่งบังคับใช้ตั้งแต่ 1 มิถุนายน พ.ศ.2565 ไม่ว่าจะเป็น ชื่อ ที่อยู่ เบอรโทรศัพท์ รูปถ่าย บัญชีธนาคาร อีเมล ไอดีไลน์ ประวัติสุขภาพ ในวัตถุประสงค์เพื่อการใช้งานแอพพลิเคชั่น รวมไปถึงส่งต่อข้อมูลซึ่งเฉพาะเจาะจงให้ผู้ว่าจ้างตรวจสอบประวัติการทำงาน อายุ เพศ ซึ่งดังกล่าวหากเราไม่ได้บังคับและคุณต้องการลบสามารถเข้าไปดำเนินการแก้ไขประวัติส่วนบุคคลของคุณได้หรือหากมีคำถามสงสัยโปรดติดต่อเรา</p>
+                        <h2 style="font-size:xx-large"><?= $texts['privacy_policy_head'] ?></h2>
+                        <p><?= $texts['policy_data'] ?></p>
                     </div>
                 </div>
             </section>
@@ -43,6 +56,7 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <script src="js/language.js"></script>
 
 </body>
 
