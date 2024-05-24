@@ -8,7 +8,7 @@ function delete_data(education_code, level) {
         6: texts.md,
         7: texts.dd
     };
-    const levelText = levelMap[level] || 'ไม่ระบุ';
+    const levelText = levelMap[level] || '';
     Swal.fire({
         title: levelText,
         text: texts.want_delete,
@@ -33,35 +33,15 @@ function delete_data(education_code, level) {
                     if (data.status === 'success') {
                         Swal.fire({
                             icon: 'success',
-                            title: data.status.toUpperCase(),
-                            text: data.message
+                            title: texts.success,
                         })
                             .then(function () {
                                 location.reload();
                             });
-                    } else if (data.status === 'error') {
+                    } else {
                         Swal.fire({
                             icon: 'error',
-                            title: data.status.toUpperCase(),
-                            text: data.message
-                        })
-                            .then(function () {
-                                location.reload();
-                            });
-                    } else if (data.status === 'bad_request') {
-                        Swal.fire({
-                            icon: 'error',
-                            title: data.status.toUpperCase(),
-                            text: data.message
-                        })
-                            .then(function () {
-                                location.reload();
-                            });
-                    } else if (data.status === 'unauthorized') {
-                        Swal.fire({
-                            icon: 'error',
-                            title: data.status.toUpperCase(),
-                            text: data.message
+                            title: texts.error,
                         })
                             .then(function () {
                                 location.reload();

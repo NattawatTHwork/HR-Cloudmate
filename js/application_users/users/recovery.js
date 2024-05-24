@@ -21,17 +21,12 @@ document.getElementById('recovery').addEventListener('submit', function (event) 
             if (data.status === 'success') {
                 Swal.fire({
                     icon: 'success',
-                    title: data.status.toUpperCase(),
-                    text: data.message
+                    title: texts.success,
                 })
                     .then(function () {
-                        // Create a form element
                         const form = document.createElement('form');
-                        // Set the method to POST
                         form.method = 'POST';
-                        // Set the action to the target URL
                         form.action = 'reset_password.php';
-                        // Create an input element for each key-value pair in jsonData
                         Object.keys(jsonData).forEach(key => {
                             const input = document.createElement('input');
                             input.type = 'hidden';
@@ -39,34 +34,13 @@ document.getElementById('recovery').addEventListener('submit', function (event) 
                             input.value = jsonData[key];
                             form.appendChild(input);
                         });
-                        // Append the form to the document body
                         document.body.appendChild(form);
-                        // Submit the form
                         form.submit();
                     });
-            } else if (data.status === 'error') {
+            } else {
                 Swal.fire({
                     icon: 'error',
-                    title: data.status.toUpperCase(),
-                    text: data.message
-                })
-                    .then(function () {
-                        location.reload();
-                    });
-            } else if (data.status === 'bad_request') {
-                Swal.fire({
-                    icon: 'error',
-                    title: data.status.toUpperCase(),
-                    text: data.message
-                })
-                    .then(function () {
-                        location.reload();
-                    });
-            } else if (data.status === 'unauthorized') {
-                Swal.fire({
-                    icon: 'error',
-                    title: data.status.toUpperCase(),
-                    text: data.message
+                    title: texts.error,
                 })
                     .then(function () {
                         location.reload();

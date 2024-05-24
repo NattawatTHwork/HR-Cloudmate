@@ -26,39 +26,18 @@ document.getElementById('create_data_form').addEventListener('submit', function(
                 return response.json();
             })
             .then(data => {
-                console.log(data)
                 if (data.status === 'success') {
                     Swal.fire({
                         icon: 'success',
-                        title: data.status.toUpperCase(),
-                        text: data.message
+                        title: texts.success,
                     })
                         .then(function () {
                             location.reload();
                         });
-                } else if (data.status === 'error') {
+                } else {
                     Swal.fire({
                         icon: 'error',
-                        title: data.status.toUpperCase(),
-                        text: data.message
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
-                } else if (data.status === 'bad_request') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: data.status.toUpperCase(),
-                        text: data.message
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
-                } else if (data.status === 'unauthorized') {
-                    Swal.fire({
-                        icon: 'error',
-                        title: data.status.toUpperCase(),
-                        text: data.message
+                        title: texts.error,
                     })
                         .then(function () {
                             location.reload();

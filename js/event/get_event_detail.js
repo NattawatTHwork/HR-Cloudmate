@@ -31,20 +31,30 @@ if (token && role == 'member') {
 async function displayCards(datas) {
     document.getElementById('event_name').innerText = datas[0].event_name;
     document.getElementById('event_detail').innerText = datas[0].event_detail;
-    document.getElementById('event_date').innerText = datas[0].event_date;
-    document.getElementById('event_date_to').innerText = datas[0].event_date_to;
+    document.getElementById('event_date').innerText = new Date(datas[0].event_date).toLocaleDateString(texts.format, { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('event_date_to').innerText = new Date(datas[0].event_date_to).toLocaleDateString(texts.format, { year: 'numeric', month: 'long', day: 'numeric' });
 
     let cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
     await datas.forEach(data => {
+
+        const dateMonthFormatter = new Intl.DateTimeFormat(texts.format, { day: 'numeric', month: 'long' });
+        const formattedDateMonth = dateMonthFormatter.format(new Date(data.create_at));
+
+        const YearFormatter = new Intl.DateTimeFormat(texts.format, { year: 'numeric' });
+        const formattedYear = YearFormatter.format(new Date(data.create_at));
+
+        const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });
+        const formattedTime = TimeFormatter.format(new Date(data.create_at));
+
         let cardHtml = `
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">${data.title}</h5>
                         <p class="card-text"><strong>${texts.event_detail}:</strong> ${data.detail}</p>
-                        <p class="card-text"><strong>${texts.create_date}:</strong> ${data.create_at}</p>
+                        <p class="card-text"><strong>${texts.create_date}:</strong> ${formattedDateMonth + ' ' + formattedYear + texts.time + formattedTime + texts.na}</p>
                         <p class="card-text"><strong>${texts.progress}:</strong> ${data.percent} %</p>
                     </div>
                 </div>

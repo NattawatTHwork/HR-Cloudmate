@@ -48,7 +48,7 @@
     ?>
 
     <?php if ($_SESSION['language'] == 'th') { ?>
-      <script src="<?= $path ?>/components/th.js"></script>
+      <script src="<?= $path ?>/js/th.js"></script>
     <?php } else { ?>
-      <script src="<?= $path ?>/components/en.js"></script>
+      <script src="<?= $path ?>/js/en.js"></script>
     <?php } ?>

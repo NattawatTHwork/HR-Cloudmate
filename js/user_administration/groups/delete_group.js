@@ -25,35 +25,15 @@ function delete_data(group_id, group_name) {
                     if (data.status === 'success') {
                         Swal.fire({
                             icon: 'success',
-                            title: data.status.toUpperCase(),
-                            text: data.message
+                            title: texts.success,
                         })
                             .then(function () {
                                 location.reload();
                             });
-                    } else if (data.status === 'error') {
+                    } else {
                         Swal.fire({
                             icon: 'error',
-                            title: data.status.toUpperCase(),
-                            text: data.message
-                        })
-                            .then(function () {
-                                location.reload();
-                            });
-                    } else if (data.status === 'bad_request') {
-                        Swal.fire({
-                            icon: 'error',
-                            title: data.status.toUpperCase(),
-                            text: data.message
-                        })
-                            .then(function () {
-                                location.reload();
-                            });
-                    } else if (data.status === 'unauthorized') {
-                        Swal.fire({
-                            icon: 'error',
-                            title: data.status.toUpperCase(),
-                            text: data.message
+                            title: texts.error,
                         })
                             .then(function () {
                                 location.reload();

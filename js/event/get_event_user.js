@@ -46,8 +46,8 @@ async function displayTables(datas) {
     for (const data of datas) {
         html += '<tr>';
         html += `<td>${data.event_name}</td>
-                <td>${data.event_date}</td>
-                <td>${data.event_date_to}</td>
+                <td>${new Date(data.event_date).toLocaleDateString(texts.format, { year: 'numeric', month: 'long', day: 'numeric' })}</td>
+                <td>${new Date(data.event_date_to).toLocaleDateString(texts.format, { year: 'numeric', month: 'long', day: 'numeric' })}</td>
                 <td>${data.percent}</td>
                 <td>
                     <button class="btn ${data.status == 'Inprogress' ? 'btn-danger' : 'btn-success'}">
@@ -71,8 +71,9 @@ async function displayTables(datas) {
     
     $(document).ready(function () {
         $('#datatables').DataTable({
-            "order": [[1, 'desc']]
-            // "scrollX": true
+            "order": [] // ไม่มีการเรียงลำดับโดยเริ่มต้น
+            // "order": [[1, 'desc']]  // เรียงตามแถวที่ 2
+            // "scrollX": true // ไม่ให้ over view
         });
     });
 }

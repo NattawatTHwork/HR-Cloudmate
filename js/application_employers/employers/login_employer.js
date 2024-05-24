@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Login successful",
+                        title: texts.success,
                         showConfirmButton: false,
                         timer: 1500
                     }).then(() => {
@@ -41,8 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 } else {
                     Swal.fire({
                         icon: 'error',
-                        title: data.status.toUpperCase(),
-                        text: data.message
+                        title: texts.error,
                     });
                 }
             })

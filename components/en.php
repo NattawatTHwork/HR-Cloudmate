@@ -159,5 +159,4 @@ return [
     'applications' => 'Applications',
     'entrepreneur_login' => 'Entrepreneur Sign In',
     'entrepreneur_register' => 'Entrepreneur Register',
-
 ];

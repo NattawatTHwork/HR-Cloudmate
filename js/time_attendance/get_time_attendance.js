@@ -59,7 +59,7 @@ async function displayTables(datas) {
         const dateFormatter = new Intl.DateTimeFormat(texts.format, { day: 'numeric', month: 'long' });
         const formattedDate = dateFormatter.format(date);
 
-        const dateFormatterYear = new Intl.DateTimeFormat('us-US', { year: 'numeric' });
+        const dateFormatterYear = new Intl.DateTimeFormat(texts.format, { year: 'numeric' });
         const formattedDateYear = dateFormatterYear.format(date);
 
         let dataForDay = datas.find(data => new Date(data.time_in).getDate() === day);
@@ -73,10 +73,10 @@ async function displayTables(datas) {
             //         <td></td>
             //         `;
             html += `<td>${formattedDate + ' ' + formattedDateYear}</td>`;
-            html += `<td>${new Date(dataForDay.time_in).toLocaleTimeString('th-TH')}</td>`;
+            html += `<td>${new Date(dataForDay.time_in).toLocaleTimeString(texts.format) + texts.na}</td>`;
 
             if (dataForDay.time_out) {
-                html += `<td>${new Date(dataForDay.time_out).toLocaleTimeString('th-TH')}</td>`;
+                html += `<td>${new Date(dataForDay.time_out).toLocaleTimeString(texts.format) + texts.na}</td>`;
             } else {
                 html += `<td></td>`;
             }

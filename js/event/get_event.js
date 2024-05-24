@@ -24,8 +24,8 @@ function view_data(event_id) {
 
         $("#event_name_view").val(datas.event_name);
         $("#event_detail_view").val(datas.event_detail);
-        $("#event_date_view").val(datas.event_date);
-        $("#event_date_to_view").val(datas.event_date_to);
+        $("#event_date_view").val(new Date(datas.event_date).toLocaleDateString(texts.format, { year: 'numeric', month: 'long', day: 'numeric' }));
+        $("#event_date_to_view").val(new Date(datas.event_date).toLocaleDateString(texts.format, { year: 'numeric', month: 'long', day: 'numeric' }));
         $("#percent_view").val(datas.percent);
         $("#status_view").val(datas.status);
         $("#view_data").modal("show");

@@ -159,5 +159,4 @@ return [
     'applications' => 'ใบสมัคร',
     'entrepreneur_login' => 'เข้าสู่ระบบผู้ประกอบการ',
     'entrepreneur_register' => 'ลงทะเบียนผู้ประกอบการ',
-
 ];

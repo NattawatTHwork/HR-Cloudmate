@@ -67,4 +67,6 @@ texts = {
     'name': 'Name',
     'gender': 'Gender',
     'tel': 'Phone Number',
+    'success': 'SUCCESS',
+    'error': 'ERROR',
 }

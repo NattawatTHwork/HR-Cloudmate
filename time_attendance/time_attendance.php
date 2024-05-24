@@ -49,9 +49,16 @@
                 $startYear = 2024;
                 $currentYear = date('Y');
                 $selectedYear = isset($_GET['year']) ? $_GET['year'] : $currentYear;
-                for ($year = $startYear; $year <= $startYear + 10; $year++) {
+                for ($year = $startYear; $year < $startYear + 20; $year++) {
                     $selected = ($year == $selectedYear) ? 'selected' : '';
-                    echo "<option value='$year' $selected>$year</option>";
+                    if (isset($_SESSION['language'])) {
+                        if ($_SESSION['language'] === 'en') {
+                            $year_show = $year;
+                        } else {
+                            $year_show = $year + 543;
+                        }
+                    };
+                    echo "<option value='$year' $selected>$year_show</option>";
                 }
                 ?>
             </select>

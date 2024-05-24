@@ -23,29 +23,15 @@ document.getElementById('reset_password').addEventListener('submit', function (e
             if (data.status === 'success') {
                 Swal.fire({
                     icon: 'success',
-                    title: data.status.toUpperCase(),
-                    text: data.message
+                    title: texts.success,
                 })
                     .then(function () {
                         window.location.href = 'login.php';
                     });
-            } else if (data.status === 'error') {
+            } else {
                 Swal.fire({
                     icon: 'error',
-                    title: data.status.toUpperCase(),
-                    text: data.message
-                })
-            } else if (data.status === 'bad_request') {
-                Swal.fire({
-                    icon: 'error',
-                    title: data.status.toUpperCase(),
-                    text: data.message
-                })
-            } else if (data.status === 'unauthorized') {
-                Swal.fire({
-                    icon: 'error',
-                    title: data.status.toUpperCase(),
-                    text: data.message
+                    title: texts.error,
                 })
             }
         })
