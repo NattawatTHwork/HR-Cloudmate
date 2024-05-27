@@ -15,10 +15,6 @@
     </form>
 </div>End Search Bar -->
 
-<?php
-// echo $lang;
-?>
-
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
 

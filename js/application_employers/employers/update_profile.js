@@ -24,6 +24,18 @@ function show_data(datas) {
     $("#firstname").val(datas.firstname);
     $("#lastname").val(datas.lastname);
     $("#phone_number").val(datas.phone_number);
+    $("#img_path").val(datas.img_path);
+    $("#showpic").attr("src", apiUrl + 'img/logo_employer/' + (datas.img_path ? datas.img_path : 'no_logo.jpg'));
+}
+
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#showpic').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
 }
 
 document.getElementById('update_profile_data_form').addEventListener('submit', function (event) {
@@ -31,25 +43,19 @@ document.getElementById('update_profile_data_form').addEventListener('submit', f
 
     if (token && role == 'employer') {
         const formData = new FormData(this);
-        const jsonData = {};
-        formData.forEach((value, key) => {
-            jsonData[key] = value;
-        });
-
-        console.log(jsonData)
 
         fetch(apiUrl + 'application/employers/update_profile.php', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
+                'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(jsonData)
+            body: formData
         })
             .then(response => {
                 return response.json();
             })
             .then(data => {
+                console.log(data);
                 if (data.status === 'success') {
                     Swal.fire({
                         icon: 'success',
