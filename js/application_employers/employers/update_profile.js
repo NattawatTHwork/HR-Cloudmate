@@ -55,7 +55,11 @@ document.getElementById('update_profile_data_form').addEventListener('submit', f
                 return response.json();
             })
             .then(data => {
-                console.log(data);
+                localStorage.setItem('firstname', data.firstname);
+                localStorage.setItem('lastname', data.lastname);
+                localStorage.setItem('employer_name_head', data.employer_name);
+                localStorage.setItem('image', data.img_path);
+
                 if (data.status === 'success') {
                     Swal.fire({
                         icon: 'success',

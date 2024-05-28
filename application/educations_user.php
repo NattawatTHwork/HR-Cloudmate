@@ -102,7 +102,6 @@
     <script src="../js/check_login.js"></script>
     <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
     <script src="../js/application/educations_user/get_education_user.js"></script>
     <script src="../js/application/educations_user/update_education.js"></script>
     <script src="../js/application/educations_user/delete_education.js"></script>

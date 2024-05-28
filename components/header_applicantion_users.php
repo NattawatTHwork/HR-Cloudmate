@@ -45,7 +45,7 @@
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
                     <li class="dropdown-header">
                         <h6 id="fullname_sub"></h6>
-                        <span id="username"></span>
+                        <span id="email_head"></span>
                     </li>
                     <li>
                         <hr class="dropdown-divider">

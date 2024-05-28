@@ -10,6 +10,3 @@ var payload = decodeURIComponent(
         .join("")
 );
 data_token = JSON.parse(payload);
-document.getElementById('username').textContent = data_token.username;
-document.getElementById('fullname').textContent = data_token.firstname + ' ' + data_token.lastname;
-document.getElementById('fullname_sub').textContent = data_token.firstname + ' ' + data_token.lastname;

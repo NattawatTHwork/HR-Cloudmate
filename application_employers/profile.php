@@ -62,6 +62,9 @@
                                         <input type="text" class="form-control" name="phone_number" id="phone_number" disabled>
                                     </div>
                                 </div>
+                                <div class="form-floating mb-3">
+                                    <img id="showpic" src="" class="rounded col-sm-12" style="cursor: pointer; width: 300px; display: block; margin: auto;">
+                                </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
                                         <a type="button" class="btn btn-primary" href="<?= $path ?>/application_employers/update_profile.php"><?= $texts['edit_profile'] ?></a>
@@ -85,7 +88,8 @@
     <script src="../js/check_login_application_employers.js"></script>
     <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
+    <script src="../js/application_employers/employers/get_employer_header.js"></script>
+    <script src="../js/application_employers/employers/get_employer_header.js"></script>
     <script src="../js/application_employers/employers/update_profile.js"></script>
 </body>
 

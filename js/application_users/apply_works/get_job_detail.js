@@ -56,18 +56,25 @@ async function displayCards(data) {
         let cardHtml = `
             <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${data.position}</h5>
-                        <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
-                        <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}:</strong> ${data.employer_name}</p>
-                        <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
-                        <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
-                        <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                        <p class="card-text"><strong>${texts.work_location}:</strong> ${data.work_location}</p>
-                        <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary}</p>
-                        <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
-                        <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
-                        <div class="text-center">
+                    <div class="card-body m-2">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="card-title">${data.position}</h5>
+                                <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
+                                <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}:</strong> ${data.employer_name}</p>
+                                <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
+                                <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
+                                <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
+                                <p class="card-text"><strong>${texts.work_location}:</strong> ${data.work_location}</p>
+                                <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary}</p>
+                                <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
+                                <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-end align-items-center">
+                                <img id="logoImage" src="${apiUrl + '/img/logo_employer/' + (data.img_path ? data.img_path : 'no_logo.jpg')}" class="card-img" alt="Logo" style="max-height: 250px; max-width: 250px;">
+                            </div>
+                        </div>       
+                        <div class="text-center mt-auto">
                             <button type="button" class="btn ${status_code ? 'btn-secondary' : 'btn-primary'}" onclick="apply_work('${data.job_code}', '${data.position}')" ${status_code ? 'disabled' : ''}>${status_code ? texts.applied_job : texts.apply_job}</button>
                         </div>
                     </div>

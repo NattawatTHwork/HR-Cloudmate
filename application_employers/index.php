@@ -123,7 +123,7 @@
     <script src="../js/check_login_application_employers.js"></script>
     <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
+    <script src="../js/application_employers/employers/get_employer_header.js"></script>
     <script src="../js/application_employers/index/jobs.js"></script>
     <script src="../js/application_employers/index/apply_works.js"></script>
 </body>

@@ -83,7 +83,6 @@
     <script src="../js/check_login.js"></script>
     <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
     <script src="../js/application/experiences_user/get_job_category_all.js"></script>
     <script src="../js/application/experiences_user/get_experience_user.js"></script>
     <script src="../js/application/experiences_user/update_experience.js"></script>

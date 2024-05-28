@@ -42,7 +42,7 @@
     <script src="../js/check_login_application_users.js"></script>
     <script src="../js/logout_application_users.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
+    <script src="../js/application_users/users/get_user_header.js"></script>
     <script src="../js/application_users/apply_works/get_job_detail.js"></script>
     <script src="../js/application_users/apply_works/create_apply_work.js"></script>
 </body>

@@ -157,7 +157,7 @@
     <script src="../js/check_login_application_users.js"></script>
     <script src="../js/logout_application_users.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
+    <script src="../js/application_users/users/get_user_header.js"></script>
     <script src="../js/application_users/referred_jobs/get_job_category_all.js"></script>
     <script src="../js/application_users/referred_jobs/get_referred_job_user.js"></script>
     <script src="../js/application_users/referred_jobs/create_referred_job.js"></script>

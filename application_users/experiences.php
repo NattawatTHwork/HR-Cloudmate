@@ -130,7 +130,7 @@
     <script src="../js/check_login_application_users.js"></script>
     <script src="../js/logout_application_users.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/api_url.js"></script>
+    <script src="../js/application_users/users/get_user_header.js"></script>
     <script src="../js/application_users/experiences/get_job_category_all.js"></script>
     <script src="../js/application_users/experiences/get_experience_user.js"></script>
     <script src="../js/application_users/experiences/create_experience.js"></script>
