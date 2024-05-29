@@ -39,26 +39,26 @@
                             <form id="update_profile_data_form">
                                 <input type="hidden" class="form-control" name="employer_code" id="employer_code" disabled>
                                 <div class="row mb-3">
-                                    <label for="employer_name" class="col-sm-2 col-form-label"><?= $texts['company'] ?>/<?= $texts['entrepreneur'] ?></label>
-                                    <div class="col-sm-10">
+                                    <label for="employer_name" class="col-sm-3 col-form-label"><?= $texts['company'] ?>/<?= $texts['entrepreneur'] ?></label>
+                                    <div class="col-sm-9">
                                         <input type="text" class="form-control" name="employer_name" id="employer_name" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="firstname" class="col-sm-2 col-form-label"><?= $texts['firstname'] ?></label>
-                                    <div class="col-sm-10">
+                                    <label for="firstname" class="col-sm-3 col-form-label"><?= $texts['firstname'] ?></label>
+                                    <div class="col-sm-9">
                                         <input type="text" class="form-control" name="firstname" id="firstname" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="lastname" class="col-sm-2 col-form-label"><?= $texts['lastname'] ?></label>
-                                    <div class="col-sm-10">
+                                    <label for="lastname" class="col-sm-3 col-form-label"><?= $texts['lastname'] ?></label>
+                                    <div class="col-sm-9">
                                         <input type="text" class="form-control" name="lastname" id="lastname" disabled>
                                     </div>
                                 </div>
                                 <div class="row mb-3">
-                                    <label for="phone_number" class="col-sm-2 col-form-label"><?= $texts['tel'] ?></label>
-                                    <div class="col-sm-10">
+                                    <label for="phone_number" class="col-sm-3 col-form-label"><?= $texts['tel'] ?></label>
+                                    <div class="col-sm-9">
                                         <input type="text" class="form-control" name="phone_number" id="phone_number" disabled>
                                     </div>
                                 </div>

@@ -52,7 +52,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourRepeatPassword" class="form-label"><?= $texts['confirm_paasword'] ?></label>
+                                            <label for="yourRepeatPassword" class="form-label"><?= $texts['confirm_password'] ?></label>
                                             <input type="password" name="employer_repeat_password" class="form-control" id="yourRepeatPassword" required>
                                             <div id="alertrepeatpassword" style="display: none; color: red;"><?= $texts['not_match'] ?></div>
                                         </div>

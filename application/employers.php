@@ -131,7 +131,7 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="1" selected><?= $texts['enable'] ?></option>
+                                    <option value="1"><?= $texts['enable'] ?></option>
                                     <option value="2"><?= $texts['on_hold'] ?></option>
                                     <option value="3"><?= $texts['disable'] ?></option>
                                 </select>
@@ -184,6 +184,7 @@
     <script src="../js/check_login.js"></script>
     <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
+    <script src="../js/user_administration/users/get_header.js"></script>
     <script src="../js/application/employers/get_employer_all.js"></script>
     <script src="../js/application/employers/get_employer.js"></script>
     <script src="../js/application/employers/update_employer.js"></script>

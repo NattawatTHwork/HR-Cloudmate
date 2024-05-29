@@ -218,6 +218,7 @@
     <script src="../js/check_login.js"></script>
     <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
+    <script src="../js/user_administration/users/get_header.js"></script>
     <script src="../js/application/users/get_user_all.js"></script>
     <script src="../js/application/users/get_user.js"></script>
     <script src="../js/application/users/update_user.js"></script>
