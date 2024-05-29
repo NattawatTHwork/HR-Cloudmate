@@ -62,6 +62,12 @@
                                         <input type="text" class="form-control" name="phone_number" id="phone_number" disabled>
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <label for="link_path" class="col-sm-3 col-form-label"><?= $texts['link_path'] ?></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="link_path" id="link_path" disabled>
+                                    </div>
+                                </div>
                                 <div class="form-floating mb-3">
                                     <img id="showpic" src="" class="rounded col-sm-12" style="cursor: pointer; width: 300px; display: block; margin: auto;">
                                 </div>
@@ -88,7 +94,6 @@
     <script src="../js/check_login_application_employers.js"></script>
     <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/application_employers/employers/get_employer_header.js"></script>
     <script src="../js/application_employers/employers/get_employer_header.js"></script>
     <script src="../js/application_employers/employers/update_profile.js"></script>
 </body>

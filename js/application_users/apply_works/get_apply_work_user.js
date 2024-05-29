@@ -42,18 +42,27 @@ async function displayCards(datas) {
         let cardHtml = `
             <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">${data.position}</h5>
-                        <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
-                        <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}</strong> ${data.employer_name}</p>
-                        <div id="additionalInfo_${data.apply_work_code}" style="display:none;">
-                            <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
-                            <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
-                            <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                            <p class="card-text"><strong>${texts.work_location}:</strong> ${data.work_location}</p>
-                            <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary}</p>
-                            <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
-                            <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
+                    <div class="card-body m-2">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h5 class="card-title">${data.position}</h5>
+                                <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
+                                <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}</strong> ${data.employer_name}</p>
+                                <div id="additionalInfo_${data.apply_work_code}" style="display:none;">
+                                    <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
+                                    <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
+                                    <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
+                                    <p class="card-text"><strong>${texts.work_location}:</strong> ${data.work_location}</p>
+                                    <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary}</p>
+                                    <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
+                                    <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 d-flex justify-content-end align-items-center">
+                                <a href="${data.link_path && data.link_path.startsWith('https') ? data.link_path : (data.link_path && data.link_path.includes('.') ? 'https://' + data.link_path : '#')}">
+                                    <img id="logoImage" src="${apiUrl+'/img/logo_employer/'+(data.img_path ? data.img_path : 'no_logo.jpg')}" class="card-img" alt="Logo" style="max-height: 150px; max-width: 150px;">
+                                <a>
+                            </div>
                         </div>
                         <div class="text-center">
                             <button type="button" class="btn btn-outline-secondary" onclick="toggleAdditionalInfo('additionalInfo_${data.apply_work_code}', this)">

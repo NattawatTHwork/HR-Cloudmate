@@ -32,7 +32,7 @@ async function displayTables(datas) {
 
         html += '<tr>';
         html += `<td>${data.username}</td>
-                <td>${data.firstname+' '+data.lastname}</td>
+                <td>${data.firstname + ' ' + data.lastname}</td>
                 <td>${data.group_name}</td>
                 <td>${formattedDateMonth + ' ' + formattedYear}</td>
                 <td>
@@ -46,11 +46,13 @@ async function displayTables(datas) {
                             ${texts.option}
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" onclick="view_data(${data.user_id})">${texts.view_data}</a></li>
-                            <li><a class="dropdown-item" onclick="update_data(${data.user_id})">${texts.edit}</a></li>
+                            <li><a class="dropdown-item" onclick="view_data(${data.user_id})">${texts.view_data}</a></li>`;
+                        if (data.username !== 'superadmin') {
+                            html += `<li><a class="dropdown-item" onclick="update_data(${data.user_id})">${texts.edit}</a></li>
                             <li><a class="dropdown-item" onclick="change_password('${data.user_id}')">${texts.change_password}</a></li>
-                            <li><a class="dropdown-item" onclick="delete_data('${data.user_id}', '${data.username}')">${texts.delete}</a></li>
-                        </ul>
+                            <li><a class="dropdown-item" onclick="delete_data('${data.user_id}', '${data.username}')">${texts.delete}</a></li>`;
+                        }
+                        html += `</ul>
                     </div>
                 </td>`;
         html += '</tr>';

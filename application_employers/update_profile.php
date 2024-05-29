@@ -62,6 +62,12 @@
                                         <input type="text" class="form-control" name="phone_number" id="phone_number" required>
                                     </div>
                                 </div>
+                                <div class="row mb-3">
+                                    <label for="link_path" class="col-sm-3 col-form-label"><?= $texts['link_path'] ?></label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" name="link_path" id="link_path" required>
+                                    </div>
+                                </div>
                                 <div class="form-floating mb-3">
                                     <img id="showpic" src="" class="rounded col-sm-12" onclick="document.getElementById('preimg').click();" style="cursor: pointer; width: 300px; display: block; margin: auto;">
                                     <input type="hidden" name="img_path" id="img_path" value="">

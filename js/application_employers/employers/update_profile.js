@@ -25,6 +25,7 @@ function show_data(datas) {
     $("#lastname").val(datas.lastname);
     $("#phone_number").val(datas.phone_number);
     $("#img_path").val(datas.img_path);
+    $("#link_path").val(datas.link_path);
     $("#showpic").attr("src", apiUrl + 'img/logo_employer/' + (datas.img_path ? datas.img_path : 'no_logo.jpg'));
 }
 
@@ -55,11 +56,6 @@ document.getElementById('update_profile_data_form').addEventListener('submit', f
                 return response.json();
             })
             .then(data => {
-                localStorage.setItem('firstname', data.firstname);
-                localStorage.setItem('lastname', data.lastname);
-                localStorage.setItem('employer_name_head', data.employer_name);
-                localStorage.setItem('image', data.img_path);
-
                 if (data.status === 'success') {
                     Swal.fire({
                         icon: 'success',
