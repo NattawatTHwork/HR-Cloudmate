@@ -69,4 +69,19 @@ texts = {
     'tel': 'Phone Number',
     'success': 'SUCCESS',
     'error': 'ERROR',
+    'job_application': 'Job Applications',
+
+    'post': 'Post',
+    'period': 'Period',
+    'posts': 'posts',
+    'month': 'months',
+    'apply_package': 'Apply Package',
+
+    'start_date': 'Start Date',
+    'end_date': 'End Date',
+    'remaining_amount': 'Remaining Amount',
+    'want_apply_package': 'Do you want to apply for a package?',
+    'accept': 'Accept',
+    'no_package': 'No Package',
+
 }

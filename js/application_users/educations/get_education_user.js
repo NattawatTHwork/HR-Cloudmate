@@ -42,7 +42,7 @@ async function displayCards(datas) {
             <div class="col-sm-12 col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">${texts.level}: ${level_class}</h5>
+                        <h5 class="card-title">${level_class}</h5>
                         <p class="card-text"><strong>${texts.school}:</strong> ${data.school}</p>
                         <p class="card-text"><strong>${texts.faculty}:</strong> ${data.faculty}</p>
                         <p class="card-text"><strong>${texts.major}:</strong> ${data.major}</p>

@@ -173,4 +173,10 @@ return [
     'i_apply_works_history_applicant' => 'You job application list.',
     'i_apply_works_detail_applicant' => 'Job description.',
     'link_path' => 'Website',
+    'my_package' => 'My Package',
+    'packages' => 'Packages',
+    'i_package_employer' => 'Package description.',
+    'i_my_package' => 'My package.',
+    'buy_package' => 'Buy Package',
+
 ];

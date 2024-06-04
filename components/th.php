@@ -173,4 +173,10 @@ return [
     'i_apply_works_history_applicant' => 'รายการสมัครงานของคุณ',
     'i_apply_works_detail_applicant' => 'รายละเอียดงาน',
     'link_path' => 'เว็บไซต์',
+    'my_package' => 'แพ็คเกจของฉัน',
+    'packages' => 'แพ็คเกจ',
+    'i_package_employer' => 'รายละเอียดแพ็คเกจ',
+    'i_my_package' => 'แพ็คเกจของฉัน',
+    'buy_package' => 'ซื้อแพ็คเกจ',
+
 ];

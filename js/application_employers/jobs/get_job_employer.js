@@ -53,7 +53,7 @@ async function displayCards(datas) {
             <div class="col-sm-12 col-md-6 mb-4">
                 <div class="card">
                     <div class="card-body">
-                    <h5 class="card-title">${texts.position}: ${data.position}</h5>
+                    <h5 class="card-title">${data.position}</h5>
                     <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
                     <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
                     <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>

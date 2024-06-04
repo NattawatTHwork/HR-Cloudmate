@@ -38,13 +38,12 @@ async function displayTables(datas) {
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" onclick="view_data('${data.employer_code}')">${texts.view_data}</a></li>
-                            <li><a class="dropdown-item" onclick="update_data('${data.employer_code}')">${texts.edit}</a></li>`;
-                            if (data.employer_code != 'cloudmate') {
-                                html += `<li><a class="dropdown-item" onclick="change_password('${data.employer_code}')">${texts.change_password}</a></li>
-                                <li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">${texts.delete}</a></li>`;
-                            }
-                            html += `<div class="dropdown-divider"></div>
+                            <li><a class="dropdown-item" onclick="update_data('${data.employer_code}')">${texts.edit}</a></li>
+                            <li><a class="dropdown-item" onclick="change_password('${data.employer_code}')">${texts.change_password}</a></li>
+                            <li><a class="dropdown-item" onclick="delete_data('${data.employer_code}', '${data.firstname} ${data.lastname}')">${texts.delete}</a></li>
+                            <div class="dropdown-divider"></div>
                             <li><a class="dropdown-item" href="jobs_employer.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">${texts.referred_job}</a></li>
+                            <li><a class="dropdown-item" href="apply_works_employer.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">${texts.job_application}</a></li>
                         </ul>
                     </div>
                 </td>`;
