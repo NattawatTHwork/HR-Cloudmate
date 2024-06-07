@@ -45,7 +45,7 @@ return [
     'lastname' => 'Last Name',
     'enable' => 'Enable',
     'on_hold' => 'On Hold',
-    'disable' => 'disable',
+    'disable' => 'Disable',
     'cancel' => 'Cancel',
     'save' => 'Save',
     'change_password' => 'Change Password',
@@ -178,5 +178,8 @@ return [
     'i_package_employer' => 'Package description.',
     'i_my_package' => 'My package.',
     'buy_package' => 'Buy Package',
+    'send_payment' => 'Send proof of payment.',
+    'i_send_payment' => 'Transfer the money and send proof of payment to the specified email address.',
+    'i_send_proof' => 'Once the payment is completed, please send the proof of payment to the email address.',
 
 ];

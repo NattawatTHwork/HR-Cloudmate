@@ -36,6 +36,10 @@
             </li>
 
             <li class="nav-item dropdown pe-3">
+                <span id="statusflag"></span>
+            </li>
+
+            <li class="nav-item dropdown pe-3">
 
                 <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
                     <img src="<?= $path ?>/assets/img/profile-img.jpg" id="image" alt="Profile" class="rounded-circle">
@@ -63,7 +67,7 @@
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="<?= $path ?>/application_employers/my_package.php">
-                            <i class="bi bi-gear"></i>
+                            <i class="bi bi-boxes"></i>
                             <span><?= $texts['my_package'] ?></span>
                         </a>
                     </li>
@@ -73,7 +77,7 @@
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="<?= $path ?>/application_employers/change_password_employer.php">
-                            <i class="bi bi-question-circle"></i>
+                            <i class="bi bi-gear"></i>
                             <span><?= $texts['change_password'] ?></span>
                         </a>
                     </li>

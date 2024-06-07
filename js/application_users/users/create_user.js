@@ -50,6 +50,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     }).then(() => {
                         window.location.href = 'login.php';
                     });
+                } else if (data.status === 'exist') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: texts.error,
+                        text: texts.exist
+                    });
                 } else {
                     Swal.fire({
                         icon: 'error',

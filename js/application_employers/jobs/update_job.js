@@ -10,7 +10,6 @@ function update_data(job_code) {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
                 show_data(data.data);
             })
             .catch(error => {
@@ -32,6 +31,11 @@ function update_data(job_code) {
         $("#salary_update").val(datas.salary);
         $("#description_update").val(datas.description);
         $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);
+        if (datas.statusflag === 'f' && data_status === false) {
+            $('#statusflag_update').prop('disabled', true);
+        } else {
+            $('#statusflag_update').prop('disabled', false); // Ensure it's enabled for other values
+        }
         $("#form_update_data").modal("show");
     }
 }

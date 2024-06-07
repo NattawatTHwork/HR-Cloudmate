@@ -103,7 +103,7 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_create" required>
-                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="t"><?= $texts['enable'] ?></option>
                                     <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
@@ -172,7 +172,7 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput">สถานะ</label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="t"><?= $texts['enable'] ?></option>
                                     <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
@@ -197,6 +197,7 @@
     <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/get_employer_header.js"></script>
     <script src="../js/application_employers/jobs/get_job_category_all.js"></script>
+    <script src="../js/application_employers/jobs/package_amount.js"></script>
     <script src="../js/application_employers/jobs/get_job_employer.js"></script>
     <script src="../js/application_employers/jobs/create_job.js"></script>
     <script src="../js/application_employers/jobs/update_job.js"></script>

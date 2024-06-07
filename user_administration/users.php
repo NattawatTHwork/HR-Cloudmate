@@ -106,8 +106,8 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag" required>
-                                    <option value="t" selected><?= $texts['not_match'] ?></option>
-                                    <option value="f"><?= $texts['not_match'] ?></option>
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>

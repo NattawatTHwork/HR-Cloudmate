@@ -38,6 +38,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     }).then(() => {
                         window.location.href = 'index.php';
                     });
+                } else if (data.status === 'disable') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: texts.error,
+                        text: texts.disable_login
+                    });
+                } else if (data.status === 'unauthorized') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: texts.error,
+                        text: texts.unauthorized
+                    });
                 } else {
                     Swal.fire({
                         icon: 'error',

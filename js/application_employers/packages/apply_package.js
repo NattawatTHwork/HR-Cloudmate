@@ -34,7 +34,7 @@ function apply_package(package_code, package, amount, period_month) {
                                 title: texts.success,
                             })
                                 .then(function () {
-                                    location.reload();
+                                    window.location.href = pathUrl + '/application_employers/package_payment.php';
                                 });
                         } else {
                             Swal.fire({

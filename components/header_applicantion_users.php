@@ -63,7 +63,7 @@
 
                     <!-- <li>
                     <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
-                        <i class="bi bi-gear"></i>
+                        <i class="bi bi-question-circle"></i>
                         <span>Account Settings</span>
                     </a>
                 </li>
@@ -73,7 +73,7 @@
 
                     <li>
                         <a class="dropdown-item d-flex align-items-center" href="<?= $path ?>/application_users/change_password_user.php">
-                            <i class="bi bi-question-circle"></i>
+                            <i class="bi bi-gear"></i>
                             <span><?= $texts['change_password'] ?></span>
                         </a>
                     </li>

@@ -29,8 +29,6 @@ document.addEventListener("DOMContentLoaded", function () {
             jsonData[key] = value;
         });
 
-        console.log(jsonData)
-
         fetch(apiUrl + 'application/employers/create_employer.php', {
             method: 'POST',
             headers: {
@@ -51,6 +49,12 @@ document.addEventListener("DOMContentLoaded", function () {
                         timer: 1500
                     }).then(() => {
                         window.location.href = 'login.php';
+                    });
+                } else if (data.status === 'exist') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: texts.error,
+                        text: texts.exist
                     });
                 } else {
                     Swal.fire({

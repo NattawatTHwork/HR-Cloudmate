@@ -34,6 +34,12 @@ document.getElementById('create_data_form').addEventListener('submit', function(
                         .then(function () {
                             location.reload();
                         });
+                } else if (data.status === 'exist') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: texts.error,
+                        text: texts.exist_username
+                    });
                 } else {
                     Swal.fire({
                         icon: 'error',
