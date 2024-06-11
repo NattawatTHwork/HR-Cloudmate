@@ -44,6 +44,20 @@
       </a>
     </li><!-- End Apply Work History Nav -->
 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/application_users/profile.php">
+        <i class="bi bi-grid"></i>
+        <span><?= $texts['my_profile'] ?></span>
+      </a>
+    </li><!-- End My Profile Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/application_users/change_password_user.php">
+        <i class="bi bi-grid"></i>
+        <span><?= $texts['change_password'] ?></span>
+      </a>
+    </li><!-- End Change Password Nav -->
+
   </ul>
 
 </aside><!-- End Sidebar-->

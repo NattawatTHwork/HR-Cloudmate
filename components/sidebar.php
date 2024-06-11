@@ -74,6 +74,13 @@
       </ul>
     </li><!-- End User Administration Nav -->
 
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/user_administration/change_password_user.php">
+        <i class="bi bi-grid"></i>
+        <span><?= $texts['change_password'] ?></span>
+      </a>
+    </li><!-- End Change Password Nav -->
+
   </ul>
 
 </aside><!-- End Sidebar-->

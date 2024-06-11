@@ -41,12 +41,23 @@
                             <h5 class="card-title text-center">บริษัท คลาวด์เมท จำกัด</h5>
                             <p class="card-text text-center">ธนาคารกสิกรไทย สาขา.บ้านแอนค์บียอนค์ ราชพฤกษ์</p>
                             <p class="card-text text-center">024-3-90158-8</p>
-                            <p class="card-text text-center"><?= $texts['i_send_proof'] ?> <strong><a href="mailto:x@x.com">x@x.com</a></strong>
+                            <p class="card-text text-center"><?= $texts['i_send_proof'] ?> <strong><a href="mailto:account@cloudmate-th.com">account@cloudmate-th.com</a></strong>
                                 <button class="btn" onclick="copyEmail()">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd" d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z" />
                                     </svg>
                                 </button>
+                            </p>
+                            <p class="card-text text-center"><?= $texts['question'] ?></p>
+                            <p class="card-text text-center">
+                                <strong>Facebook :</strong>
+                                <a href="https://www.facebook.com/profile.php?id=61559911192106" target="_blank">
+                                    CM MeJobs
+                                </a>
+                                <strong>| Line :</strong>
+                                <a href="https://line.me/R/ti/p/@160xfahn?ts=05161601&oat_content=url" target="_blank">
+                                    CM MeJobs
+                                </a>
                             </p>
                         </div>
                     </div>
@@ -64,23 +75,7 @@
     <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/get_employer_header.js"></script>
-    <!-- <script src="../js/application_employers/packages/get_employer_package.js"></script> -->
-    <script>
-        function copyEmail() {
-            const email = "x@x.com";
-            navigator.clipboard.writeText(email).then(function() {
-                Swal.fire({
-                    icon: 'success',
-                    title: texts.copied,
-                });
-            }, function(err) {
-                Swal.fire({
-                    icon: 'error',
-                    title: texts.error,
-                });
-            });
-        }
-    </script>
+    <script src="../js/application_employers/packages/copy_email.js"></script>
 </body>
 
 </html>

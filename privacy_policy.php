@@ -35,6 +35,17 @@
                     <div class="card-body p-4">
                         <h2 style="font-size:xx-large"><?= $texts['privacy_policy_head'] ?></h2>
                         <p><?= $texts['policy_data'] ?></p>
+                        <p class="card-text text-center"><?= $texts['question'] ?></p>
+                        <p class="card-text text-center">
+                            <strong>Facebook :</strong>
+                            <a href="https://www.facebook.com/profile.php?id=61559911192106" target="_blank">
+                                CM MeJobs
+                            </a>
+                            <strong>| Line :</strong>
+                            <a href="https://line.me/R/ti/p/@160xfahn?ts=05161601&oat_content=url" target="_blank">
+                                CM MeJobs
+                            </a>
+                        </p>
                     </div>
                 </div>
             </section>

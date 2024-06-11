@@ -87,5 +87,6 @@ texts = {
     'exist_username': 'Username already exists',
     'disable_login': 'This account is disabled or the account does not exist in the system.',
     'unauthorized': 'The username or password is incorrect.',
-  
+    'referred_job_user': 'Referred Job',
+
 }

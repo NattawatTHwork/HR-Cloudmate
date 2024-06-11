@@ -101,3 +101,5 @@
 </header><!-- End Header -->
 
 <script src="<?= $path ?>/js/language.js"></script>
+<?php
+include 'pdpa_popup.php';

@@ -110,7 +110,7 @@
                                         <div class="col-12">
                                             <div class="form-check">
                                                 <input class="form-check-input" name="pdpa" type="checkbox" value="true" id="acceptTerms" required>
-                                                <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../policy.php"><?= $texts['privacy_policy'] ?></a></label>
+                                                <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../privacy_policy.php"><?= $texts['privacy_policy'] ?></a></label>
                                             </div>
                                         </div>
                                         <div class="col-12">

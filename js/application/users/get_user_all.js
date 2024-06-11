@@ -42,7 +42,7 @@ async function displayTables(datas) {
                             <li><a class="dropdown-item" onclick="change_password('${data.user_code}')">${texts.change_password}</a></li>
                             <li><a class="dropdown-item" onclick="delete_data('${data.user_code}', '${data.firstname} ${data.lastname}')">${texts.delete}</a></li>
                             <div class="dropdown-divider"></div>
-                            <li><a class="dropdown-item" href="referred_jobs_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.referred_job}</a></li>
+                            <li><a class="dropdown-item" href="referred_jobs_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.referred_job_user}</a></li>
                             <li><a class="dropdown-item" href="educations_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.education}</a></li>
                             <li><a class="dropdown-item" href="experiences_user.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.experience}</a></li>
                         </ul>

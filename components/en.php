@@ -138,7 +138,7 @@ return [
     'edit_profile' => 'Edit Profile',
     'applicant_register' => 'Applicant Sign Up',
     'select' => 'Select',
-    'i_accept' => 'I accept',
+    'i_accept' => 'I consent to the collection of personal data and the right to access your personal data under the Personal Data Protection Act 2019. Please see more information in',
     'privacy_policy' => 'privacy policy.',
     'privacy_policy_head' => 'privacy policy',
     'have_account' => 'Do you already have an account?',
@@ -160,7 +160,7 @@ return [
     'applications' => 'Applications',
     'entrepreneur_login' => 'Entrepreneur Sign In',
     'entrepreneur_register' => 'Entrepreneur Register',
-    'policy_data' => 'Company requests permission to inform you and request your consent to the collection of personal data and rights to access your personal information under the Personal Data Protection Act B.E. 2562, which comes into effect on June 1, B.E. 2565. This may include, but is not limited to, name, address, telephone number, photograph, bank account, email, LINE ID, and health history, for the purpose of using the application, including the transmission of specific data for the employer to verify employment history, age, and gender. If we are not compliant and you wish to delete, you may proceed to amend your personal history. If you have any questions, please contact us.',
+    'policy_data' => 'The Company would like to inform you and request consent for the collection of personal data and the right to access your personal data under the Personal Data Protection Act 2019, which has been effective since 1 June 2022, in part. Entrepreneur, whether it be first and last name, email, telephone number, company name, picture, website link Applying for a package and job applications As for job applicants, whether it be name-surname, email, gender, date of birth. Telephone number, address, job required educational record Work experience and job applications In the purpose of using the application Including forwarding specific information to employers to check: name-surname, email address, telephone number, gender, work history and work experience As mentioned, if we are not required to do so and you want to delete it, you can go in and edit your personal history or if you have any questions, please contact us.',
     'select_img' => 'Select Image',    
     'i_jobs_employer' => 'You can manage job application information. This information is displayed for job applicants.',
     'i_apply_works_employer' => 'Job applicant information.',
@@ -181,5 +181,8 @@ return [
     'send_payment' => 'Send proof of payment.',
     'i_send_payment' => 'Transfer the money and send proof of payment to the specified email address.',
     'i_send_proof' => 'Once the payment is completed, please send the proof of payment to the email address.',
+    'cookies_accept' => 'This website uses cookies to give you the best experience. We use cookies and our privacy policy. Please see more information in ',
+    'accept' => 'Accept',
+    'question' => 'If you have any questions, please contact.',
 
 ];
