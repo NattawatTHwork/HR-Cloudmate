@@ -36,7 +36,7 @@ function view_data(user_code) {
 
         $("#email_view").val(datas.email);
         $("#fullname_view").val(datas.firstname+' '+datas.lastname);
-        $("#gender_view").val(datas.gender === 1 ? texts.male : datas.gender === 2 ? texts.female : texts.other);
+        $("#gender_view").val(datas.gender == 1 ? texts.male : datas.gender == 2 ? texts.female : texts.other);
         $("#birthday_view").val(formattedDateMonthBirthday + ' ' + formattedBirthday);
         $("#phone_number_view").val(datas.phone_number);
         $("#address_view").val(datas.user_address+' ต.'+datas.sub_district+' อ.'+datas.district+' จ.'+datas.province+' '+datas.zip_code);
