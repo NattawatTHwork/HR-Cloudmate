@@ -19,6 +19,7 @@ if (token && role == 'employer') {
 }
 
 function show_data(datas) {
+    // $("#changed_by").val(data_token.employer_code);
     $("#employer_code").val(datas.employer_code);
     $("#employer_name").val(datas.employer_name);
     $("#firstname").val(datas.firstname);
@@ -44,6 +45,8 @@ document.getElementById('update_profile_data_form').addEventListener('submit', f
 
     if (token && role == 'employer') {
         const formData = new FormData(this);
+        formData.append('changed_by', data_token.employer_code);
+
 
         fetch(apiUrl + 'application/employers/update_profile.php', {
             method: 'POST',

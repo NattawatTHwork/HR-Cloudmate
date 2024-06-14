@@ -38,6 +38,9 @@
                             <!-- General Form Elements -->
                             <form id="update_profile_data_form">
                                 <input type="hidden" class="form-control" name="employer_code" id="employer_code" required>
+                                <input type="hidden" name="action" value="update">
+                                <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
+                                <!-- <input type="hidden" name="changed_by"> -->
                                 <div class="row mb-3">
                                     <label for="employer_name" class="col-sm-3 col-form-label"><?= $texts['company'] ?>/<?= $texts['entrepreneur'] ?></label>
                                     <div class="col-sm-9">

@@ -40,6 +40,8 @@
 
                                     <!-- <form class="row g-3 needs-validation" novalidate method="POST" action=""> -->
                                     <form class="row g-3" method="POST" action="">
+                                        <input type="hidden" name="action" value="create">
+                                        <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                                         <div class="col-12">
                                             <label for="yourEmail" class="form-label"><?= $texts['email'] ?></label>
                                             <input type="email" name="email" class="form-control" id="yourEmail" required>

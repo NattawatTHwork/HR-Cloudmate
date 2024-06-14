@@ -34,8 +34,7 @@ document.getElementById('change_password_data_form').addEventListener('submit', 
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
-
-        console.log(jsonData)
+        jsonData['changed_by'] = data_token.user_id;
 
         fetch(apiUrl + 'application/employers/change_password_admin.php', {
             method: 'POST',

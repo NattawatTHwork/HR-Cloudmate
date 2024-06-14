@@ -108,6 +108,8 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="employer_code" id="employer_code_update" required>
+                            <input type="hidden" name="action" value="change_password">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['email'] ?></label>
                                 <input type="text" class="form-control" name="email" id="email_update" placeholder="<?= $texts['email'] ?>" required>
@@ -156,6 +158,8 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="employer_code" id="employer_code_change" required>
+                            <input type="hidden" name="action" value="change_password">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['new_password'] ?></label>
                                 <input type="text" class="form-control" name="new_password" id="new_password_change" placeholder="<?= $texts['new_password'] ?>" required>

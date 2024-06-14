@@ -8,6 +8,8 @@ document.getElementById('change_password_data_form').addEventListener('submit', 
             jsonData[key] = value;
         });
         jsonData['employer_code'] = data_token.employer_code;
+        jsonData['changed_by'] = data_token.employer_code;
+
 
         fetch(apiUrl + 'application/employers/change_password_employer.php', {
             method: 'POST',
