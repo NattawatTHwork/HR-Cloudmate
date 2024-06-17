@@ -38,6 +38,8 @@
                             <!-- General Form Elements -->
                             <form id="update_profile_data_form">
                                 <input type="hidden" class="form-control" name="user_code" id="user_code" required>
+                                <input type="hidden" name="action" value="update">
+                                <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                                 <div class="row mb-3">
                                     <label for="firstname" class="col-sm-2 col-form-label"><?= $texts['firstname'] ?></label>
                                     <div class="col-sm-10">

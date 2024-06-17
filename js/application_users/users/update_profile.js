@@ -41,6 +41,7 @@ document.getElementById('update_profile_data_form').addEventListener('submit', f
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
+        jsonData['changed_by'] = data_token.user_code;
 
         fetch(apiUrl + 'application/users/update_profile.php', {
             method: 'POST',

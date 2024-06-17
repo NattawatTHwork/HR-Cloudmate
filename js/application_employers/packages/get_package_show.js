@@ -36,7 +36,7 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>${texts.period}:</strong> ${data.period_month} ${texts.month}</p>
                         <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                         <div class="text-center">
-                            <button type="button" class="btn btn-primary" onclick="apply_package('${data.package_code}', '${data.package}', '${data.amount}', '${data.period_month}')">${texts.apply_package}</button>
+                            <button type="button" class="btn btn-primary" onclick="apply_package('${data.package_code}', '${data.package}', '${data.amount}', '${data.period_month}', '${data.price}')">${texts.apply_package}</button>
                         </div>
                     </div>
                 </div>

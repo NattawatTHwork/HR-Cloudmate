@@ -1,4 +1,6 @@
-function delete_data(referred_job_code, position) {
+async function delete_data(referred_job_code, position) {
+    const response = await fetch('https://api.ipify.org?format=json');
+    ip_address = await response.json();
     Swal.fire({
         title: position,
         text: texts.want_delete,
@@ -14,7 +16,12 @@ function delete_data(referred_job_code, position) {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ referred_job_code: referred_job_code })
+                body: JSON.stringify({ 
+                    referred_job_code: referred_job_code,
+                    action: 'delete',
+                    ip_address: ip_address['ip'],
+                    changed_by: data_token.user_id
+                 })
             })
                 .then(response => {
                     return response.json();

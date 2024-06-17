@@ -44,6 +44,8 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="job_code" id="job_code_update" required>
+                            <input type="hidden" name="action" value="update">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['position'] ?></label>
                                 <input type="text" class="form-control" name="position" id="position_update" placeholder="<?= $texts['position'] ?>" required>

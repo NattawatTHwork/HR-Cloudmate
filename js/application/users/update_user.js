@@ -46,6 +46,7 @@ document.getElementById('update_data_form').addEventListener('submit', function 
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
+        jsonData['changed_by'] = data_token.user_id;
 
         fetch(apiUrl + 'application/users/update_user.php', {
             method: 'POST',

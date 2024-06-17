@@ -1,10 +1,17 @@
-function apply_package(package_code, package, amount, period_month) {
+async function apply_package(package_code, package, amount, period_month, price) {
     if (token && role == 'employer') {
+        const response = await fetch('https://api.ipify.org?format=json');
+        ip_address = await response.json();
         const jsonData = {
             package_code: package_code,
             employer_code: data_token.employer_code,
             amount: amount,
-            period_month: period_month
+            period_month: period_month,
+            package: package,
+            price: price,
+            action: 'apply',
+            ip_address: ip_address['ip'],
+            changed_by: data_token.employer_code
         };
 
         Swal.fire({

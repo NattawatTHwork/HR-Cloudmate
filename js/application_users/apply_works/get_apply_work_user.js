@@ -11,7 +11,6 @@ if (token && role == 'applicant') {
         })
         .then(data => {
             if (data.status === 'success') {
-                console.log(data.data)
                 displayCards(data.data);
             }
         })

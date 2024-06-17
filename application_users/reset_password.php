@@ -48,6 +48,8 @@
                                     <form class="row g-3" method="POST" id="reset_password">
 
                                         <input type="hidden" name="email" class="form-control" id="email" value="<?= $_POST['email'] ?>" required>
+                                        <input type="hidden" name="action" value="reset_password">
+                                        <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
 
                                         <div class="col-12">
                                             <label for="recovery_code" class="form-label"><?= $texts['recovery_key'] ?></label>

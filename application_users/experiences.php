@@ -57,6 +57,8 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <input type="hidden" name="action" value="create">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['company_name'] ?></label>
                                 <input type="text" class="form-control" name="company_name" id="company_name_create" placeholder="<?= $texts['company_name'] ?>" required>
@@ -97,6 +99,8 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="experience_code" id="experience_code_update" required>
+                            <input type="hidden" name="action" value="update">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['company_name'] ?></label>
                                 <input type="text" class="form-control" name="company_name" id="company_name_update" placeholder="<?= $texts['company_name'] ?>" required>
@@ -113,13 +117,13 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                <option value="t" selected><?= $texts['enable'] ?></option>
-                                    <option value="f"><?= $texts['disable'] ?></option>                                
+                                    <option value="t" selected><?= $texts['enable'] ?></option>
+                                    <option value="f"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>
                         <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
                             <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
                         </div>
                     </form>

@@ -1,4 +1,17 @@
-function apply_work(job_code, position) {
+async function apply_work(job_code, position, job_category_code, salary) {
+    const response = await fetch('https://api.ipify.org?format=json');
+    ip_address = await response.json();
+    const jsonData = {
+        user_code: data_token.user_code,
+        job_code: job_code,
+        position: position,
+        job_category_code: job_category_code,
+        salary: salary,
+        action: 'apply_work',
+        ip_address: ip_address['ip'],
+        changed_by: data_token.user_code
+    };
+
     Swal.fire({
         title: position,
         text: texts.want_apply,
@@ -14,7 +27,7 @@ function apply_work(job_code, position) {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ user_code: data_token.user_code, job_code: job_code })
+                body: JSON.stringify(jsonData)
             })
                 .then(response => {
                     return response.json();

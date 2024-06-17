@@ -1,4 +1,6 @@
-function delete_data(education_code, level) {
+async function delete_data(education_code, level) {
+    const response = await fetch('https://api.ipify.org?format=json');
+    ip_address = await response.json();
     const levelMap = {
         1: texts.m3,
         2: texts.m6,
@@ -24,7 +26,12 @@ function delete_data(education_code, level) {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ education_code: education_code })
+                body: JSON.stringify({ 
+                    education_code: education_code,
+                    action: 'delete',
+                    ip_address: ip_address['ip'],
+                    changed_by: data_token.user_id
+                 })
             })
                 .then(response => {
                     return response.json();

@@ -44,6 +44,8 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="education_code" id="education_code_update" required>
+                            <input type="hidden" name="action" value="update">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['level'] ?></label>
                                 <select class="form-control" name="level" id="level_update" required>

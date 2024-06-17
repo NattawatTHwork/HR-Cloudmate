@@ -77,7 +77,7 @@ async function displayCards(data) {
                             </div>
                         </div>       
                         <div class="text-center mt-auto">
-                            <button type="button" class="btn ${status_code ? 'btn-secondary' : 'btn-primary'}" onclick="apply_work('${data.job_code}', '${data.position}')" ${status_code ? 'disabled' : ''}>${status_code ? texts.applied_job : texts.apply_job}</button>
+                            <button type="button" class="btn ${status_code ? 'btn-secondary' : 'btn-primary'}" onclick="apply_work('${data.job_code}', '${data.position}', '${data.job_category_code}', '${data.salary}')" ${status_code ? 'disabled' : ''}>${status_code ? texts.applied_job : texts.apply_job}</button>
                         </div>
                     </div>
                 </div>

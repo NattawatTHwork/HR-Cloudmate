@@ -38,6 +38,7 @@ document.getElementById('update_data_form').addEventListener('submit', function 
         formData.forEach((value, key) => {
             jsonData[key] = value;
         });
+        jsonData['changed_by'] = data_token.user_code;
 
         fetch(apiUrl + 'application/experiences/update_experience.php', {
             method: 'POST',

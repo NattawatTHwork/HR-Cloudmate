@@ -1,4 +1,6 @@
-function delete_data(user_code, fullname) {
+async function delete_data(user_code, fullname) {
+    const response = await fetch('https://api.ipify.org?format=json');
+    ip_address = await response.json();
     Swal.fire({
         title: fullname,
         text: texts.want_delete,
@@ -14,7 +16,12 @@ function delete_data(user_code, fullname) {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ user_code: user_code })
+                body: JSON.stringify({ 
+                    user_code: user_code,
+                    action: 'delete',
+                    ip_address: ip_address['ip'],
+                    changed_by: data_token.user_id
+                 })
             })
                 .then(response => {
                     return response.json();
