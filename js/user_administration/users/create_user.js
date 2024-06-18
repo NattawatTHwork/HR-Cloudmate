@@ -9,10 +9,12 @@ document.getElementById('create_data_form').addEventListener('submit', function(
         const repeatPassword = formData.get('user_repeat_password');
         if (password.length < 6) {
             document.getElementById('alertpassword').style.display = 'block';
+            buttonCreate.disabled = false;
             return;
         } else if (password !== repeatPassword) {
             document.getElementById('alertpassword').style.display = 'none';
             document.getElementById('alertrepeatpassword').style.display = 'block';
+            buttonCreate.disabled = false;
             return;
         }
         formData.append('personcode', data_token.username);

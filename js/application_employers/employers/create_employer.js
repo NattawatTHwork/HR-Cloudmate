@@ -19,10 +19,12 @@ document.addEventListener("DOMContentLoaded", function () {
         const repeatPassword = formData.get('employer_repeat_password');
         if (password.length < 6) {
             document.getElementById('alertpassword').style.display = 'block';
+            buttonRegister.disabled = false;
             return;
         } else if (password !== repeatPassword) {
             document.getElementById('alertpassword').style.display = 'none';
             document.getElementById('alertrepeatpassword').style.display = 'block';
+            buttonRegister.disabled = false;
             return;
         }
 

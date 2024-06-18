@@ -116,7 +116,7 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="user_code" id="user_code_update" required>
-                            <input type="hidden" name="action" value="change_password">
+                            <input type="hidden" name="action" value="update">
                             <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['email'] ?></label>

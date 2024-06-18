@@ -45,7 +45,7 @@ async function displayCards(datas) {
                             </div>
                             <div class="col-md-4 d-flex justify-content-end align-items-center">
                                 <a href="${data.link_path && data.link_path.startsWith('https') ? data.link_path : (data.link_path && data.link_path.includes('.') ? 'https://' + data.link_path : '#')}">
-                                    <img id="logoImage" src="${apiUrl+'/img/logo_employer/'+(data.img_path ? data.img_path : 'no_logo.jpg')}" class="card-img" alt="Logo" style="max-height: 150px; max-width: 150px;">
+                                    <img id="logoImage" src="${apiUrl+'img/logo_employer/'+(data.img_path ? data.img_path : 'no_logo.jpg')}" class="card-img" alt="Logo" style="max-height: 150px; max-width: 150px;">
                                 <a>
                             </div>
                         </div>
