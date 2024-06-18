@@ -1,5 +1,7 @@
 document.getElementById('create_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
+    const buttonCreate = document.getElementById('button_create');
+    buttonCreate.disabled = true; // Disable the button
 
     if (token) {
         const formData = new FormData(this);
@@ -42,6 +44,9 @@ document.getElementById('create_data_form').addEventListener('submit', function 
             })
             .catch(error => {
                 console.error('There was a problem with the update:', error);
+            })
+            .finally(() => {
+                buttonCreate.disabled = false; // Re-enable the button
             });
     } else {
         console.error('Token not found in local storage');

@@ -32,10 +32,13 @@ function update_data(user_id) {
 
 document.getElementById('update_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
+    const buttonChangePassword = document.getElementById('button_update');
+    buttonChangePassword.disabled = true; // Disable the button
 
     if (token) {
         const formData = new FormData(this);
         formData.append('personcode', data_token.username);
+        formData.append('changed_by', data_token.user_id);
 
         fetch(apiUrl + 'user_administration/users/update_user.php', {
             method: 'POST',
@@ -74,6 +77,9 @@ document.getElementById('update_data_form').addEventListener('submit', function 
             })
             .catch(error => {
                 console.error('There was a problem with the update:', error);
+            })
+            .finally(() => {
+                buttonChangePassword.disabled = false; // Re-enable the button
             });
     } else {
         console.error('Token not found in local storage');

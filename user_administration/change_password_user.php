@@ -37,6 +37,8 @@
 
                             <!-- General Form Elements -->
                             <form id="change_password_data_form">
+                                <input type="hidden" name="action" value="change_password">
+                                <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                                 <div class="row mb-3">
                                     <label for="old_password" class="col-sm-2 col-form-label"><?= $texts['old_password'] ?></label>
                                     <div class="col-sm-10">
@@ -57,7 +59,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary"><?= $texts['confirm_change_password'] ?></button>
+                                        <button type="submit" class="btn btn-primary" id="button_change_password"><?= $texts['confirm_change_password'] ?></button>
                                     </div>
                                 </div>
                             </form>

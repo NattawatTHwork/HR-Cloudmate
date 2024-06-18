@@ -59,7 +59,7 @@
                                             <p class="small mb-0"><a href="forget_password.php"><?= $texts['forget_password'] ?></a></p>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit"><?= $texts['login'] ?></button>
+                                            <button class="btn btn-primary w-100" type="submit" id="button_login"><?= $texts['login'] ?></button>
                                         </div>
                                         <div class="col-12">
                                             <p class="small mb-0"><?= $texts['not_account'] ?> <a href="register.php"><?= $texts['create_account'] ?></a></p>

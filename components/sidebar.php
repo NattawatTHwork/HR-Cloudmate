@@ -51,26 +51,26 @@
             <i class="bi bi-circle"></i><span><?= $texts['manage_user'] ?></span>
           </a>
         </li>
-        <li>
+        <!-- <li>
           <a href="<?= $path ?>/user_administration/groups.php">
             <i class="bi bi-circle"></i><span><?= $texts['manage_group'] ?></span>
           </a>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <a href="<?= $path ?>/user_administration/menus.php">
             <i class="bi bi-circle"></i><span><?= $texts['manage_menu'] ?></span>
           </a>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <a href="<?= $path ?>/user_administration/menus_group.php">
             <i class="bi bi-circle"></i><span><?= $texts['manage_menu_group'] ?></span>
           </a>
-        </li>
-        <li>
+        </li> -->
+        <!-- <li>
           <a href="<?= $path ?>/user_administration/menus_user.php">
             <i class="bi bi-circle"></i><span><?= $texts['manage_menu_user'] ?></span>
           </a>
-        </li>
+        </li> -->
       </ul>
     </li><!-- End User Administration Nav -->
 

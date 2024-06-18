@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     form.addEventListener('submit', function (event) {
         event.preventDefault();
+        const buttonRegister = document.getElementById('submitBtn');
+        buttonRegister.disabled = true; // Disable the button
 
         const formData = new FormData(form);
         const password = formData.get('user_password');
@@ -65,6 +67,9 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => {
                 console.error('There has been a problem with your fetch operation:', error);
+            })
+            .finally(() => {
+                buttonRegister.disabled = false; // Re-enable the button
             });
     });
 });

@@ -2,6 +2,8 @@
 
 document.getElementById('reset_password').addEventListener('submit', function (event) {
     event.preventDefault();
+    const buttonResetPassword = document.getElementById('button_reset_password');
+    buttonResetPassword.disabled = true; // Disable the button
 
     const formData = new FormData(this);
     const jsonData = {};
@@ -37,5 +39,8 @@ document.getElementById('reset_password').addEventListener('submit', function (e
         })
         .catch(error => {
             console.error('There was a problem with the update:', error);
+        })
+        .finally(() => {
+            buttonResetPassword.disabled = false; // Re-enable the button
         });
 });

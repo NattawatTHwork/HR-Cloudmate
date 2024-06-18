@@ -82,7 +82,7 @@
 
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
+                                        <button type="submit" class="btn btn-primary" id="button_update"><?= $texts['save'] ?></button>
                                     </div>
                                 </div>
                             </form>

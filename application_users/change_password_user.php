@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="row mb-3">
                                     <div class="text-center">
-                                        <button type="submit" class="btn btn-primary"><?= $texts['confirm_change_password'] ?></button>
+                                        <button type="submit" class="btn btn-primary" id="button_change_password"><?= $texts['confirm_change_password'] ?></button>
                                     </div>
                                 </div>
                             </form>

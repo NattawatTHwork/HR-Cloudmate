@@ -1,5 +1,7 @@
 document.getElementById('recovery').addEventListener('submit', function (event) {
     event.preventDefault();
+    const buttonForgetPassword = document.getElementById('button_forget_password');
+    buttonForgetPassword.disabled = true; // Disable the button
 
     const formData = new FormData(this);
     const jsonData = {};
@@ -49,5 +51,8 @@ document.getElementById('recovery').addEventListener('submit', function (event) 
         })
         .catch(error => {
             console.error('There was a problem with the update:', error);
+        })
+        .finally(() => {
+            buttonForgetPassword.disabled = false; // Re-enable the button
         });
 });

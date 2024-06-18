@@ -30,7 +30,7 @@
         <div class="d-sm-flex justify-content-end mb-2 row">
             <div class="col-sm-12 col-md-4">
                 <button type="button" class="btn btn-primary w-100 btn-block" data-bs-toggle="modal" data-bs-target="#form_create_data">
-                <?= $texts['add_user'] ?>
+                    <?= $texts['add_user'] ?>
                 </button>
             </div>
         </div>
@@ -76,6 +76,8 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <input type="hidden" name="action" value="create">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['username'] ?></label>
                                 <input type="text" class="form-control" name="username" id="username" placeholder="<?= $texts['username'] ?>" required>
@@ -113,7 +115,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
-                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
+                            <button type="submit" class="btn btn-primary" id="button_create"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -173,6 +175,8 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" class="form-control" name="user_id" id="user_id_update" required>
+                            <input type="hidden" name="action" value="update">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['username'] ?></label>
                                 <input type="text" class="form-control" name="username" id="username_update" placeholder="<?= $texts['username'] ?>" required>
@@ -200,7 +204,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
-                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
+                            <button type="submit" class="btn btn-primary" id="button_update"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>
@@ -217,6 +221,8 @@
                         </div>
                         <div class="modal-body">
                             <input type="hidden" name="user_id" id="user_id_change" required>
+                            <input type="hidden" name="action" value="change_password">
+                            <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['new_password'] ?></label>
                                 <input type="text" class="form-control" name="new_password" id="new_password_change" placeholder="<?= $texts['new_password'] ?>" required>
@@ -228,7 +234,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
-                            <button type="submit" class="btn btn-primary"><?= $texts['save'] ?></button>
+                            <button type="submit" class="btn btn-primary" id="button_change_password"><?= $texts['save'] ?></button>
                         </div>
                     </form>
                 </div>

@@ -49,7 +49,7 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100" type="submit"><?= $texts['req_key'] ?></button>
+                                            <button class="btn btn-primary w-100" type="submit" id="button_forget_password"><?= $texts['req_key'] ?></button>
                                         </div>
                                     </form>
 

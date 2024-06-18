@@ -41,6 +41,8 @@ function readURL(input) {
 
 document.getElementById('update_profile_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
+    const buttonUpdate = document.getElementById('button_update');
+    buttonUpdate.disabled = true; // Disable the button
 
     if (token && role == 'employer') {
         const formData = new FormData(this);
@@ -77,6 +79,9 @@ document.getElementById('update_profile_data_form').addEventListener('submit', f
             })
             .catch(error => {
                 console.error('There was a problem with the update:', error);
+            })
+            .finally(() => {
+                buttonUpdate.disabled = false; // Re-enable the button
             });
     } else {
         console.error('Token not found in local storage');

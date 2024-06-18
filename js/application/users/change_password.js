@@ -27,6 +27,8 @@ function change_password(user_code) {
 
 document.getElementById('change_password_data_form').addEventListener('submit', function (event) {
     event.preventDefault();
+    const buttonChangePassword = document.getElementById('button_change_password');
+    buttonChangePassword.disabled = true; // Disable the button
 
     if (token && role == 'member') {
         const formData = new FormData(this);
@@ -35,6 +37,26 @@ document.getElementById('change_password_data_form').addEventListener('submit', 
             jsonData[key] = value;
         });
         jsonData['changed_by'] = data_token.user_id;
+
+        if (jsonData['new_password'] !== jsonData['repeat_new_password']) {
+            Swal.fire({
+                icon: 'error',
+                title: texts.error,
+                text: texts.not_match,
+            });
+            buttonChangePassword.disabled = false;
+            return;
+        }
+
+        if (jsonData['new_password'].length < 6) {
+            Swal.fire({
+                icon: 'error',
+                title: texts.error,
+                text: texts.more_6,
+            });
+            buttonChangePassword.disabled = false;
+            return;
+        }
 
         fetch(apiUrl + 'application/users/change_password_admin.php', {
             method: 'POST',
@@ -68,6 +90,9 @@ document.getElementById('change_password_data_form').addEventListener('submit', 
             })
             .catch(error => {
                 console.error('There was a problem with the update:', error);
+            })
+            .finally(() => {
+                buttonChangePassword.disabled = false; // Re-enable the button
             });
     } else {
         console.error('Token not found in local storage');
