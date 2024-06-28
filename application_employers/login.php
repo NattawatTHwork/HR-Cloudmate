@@ -75,7 +75,7 @@
                                 <!-- You can delete the links only if you purchased the pro version. -->
                                 <!-- Licensing information: https://bootstrapmade.com/license/ -->
                                 <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                                <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
                             </div>
 
                         </div>
@@ -103,8 +103,12 @@
     <script src="<?= $path ?>/assets/js/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../js/token.js"></script>
+    <script type="text/javascript">
+        const token = "<?php echo isset($_SESSION['token']) ? $_SESSION['token'] : '' ?>";
+        const role = "<?php echo isset($_SESSION['role']) ? $_SESSION['role'] : '' ?>";
+    </script>
     <script src="../js/api_url.js"></script>
+    <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/login_employer.js"></script>
 
 </body>

@@ -1,8 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var token = localStorage.getItem('token');
-    var role = localStorage.getItem('role');
-    if (!token || role != 'employer') {
-        localStorage.clear();
+    if (!token || role !== 'employer') {
+        fetch(pathUrl + '/php/clear_session_token.php')
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    console.log('Session token cleared successfully.');
+                } else {
+                    console.error('Error clearing session token:', data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Fetch Error:', error);
+            });
         window.location.href = pathUrl + '/application_employers/login.php';
     }
 });

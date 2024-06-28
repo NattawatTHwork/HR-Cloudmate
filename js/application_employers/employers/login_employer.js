@@ -1,4 +1,4 @@
-if (token && role == 'employer') {
+if (token || role == 'employer') {
     window.location.href = pathUrl + '/application_employers/index.php';
 }
 
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         event.preventDefault();
         const buttonLogin = document.getElementById('button_login');
         buttonLogin.disabled = true; // Disable the button
-    
+
         const formData = new FormData(form);
         const jsonData = {};
 
@@ -29,16 +29,12 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 if (data.status === 'success') {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('role', 'employer');
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: texts.success,
-                        showConfirmButton: false,
-                        timer: 1500
-                    }).then(() => {
-                        window.location.href = 'index.php';
+                    return fetch(pathUrl + '/php/set_session_token.php', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ token: data.token, role: 'employer' })
                     });
                 } else if (data.status === 'disable') {
                     Swal.fire({
@@ -56,6 +52,27 @@ document.addEventListener("DOMContentLoaded", function () {
                     Swal.fire({
                         icon: 'error',
                         title: texts.error,
+                    });
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'session_set') {
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: texts.success,
+                        showConfirmButton: false,
+                        timer: 1500
+                    }).then(() => {
+                        window.location.href = 'index.php';
+                    });
+                } else {
+                    console.error('Session could not be set:', data.message);
+                    Swal.fire({
+                        icon: 'error',
+                        title: texts.error,
+                        text: 'Session could not be set.'
                     });
                 }
             })
