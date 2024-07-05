@@ -28,6 +28,7 @@
 <script type="text/javascript">
     const token = "<?php echo isset($_SESSION['token']) ? $_SESSION['token'] : '' ?>";
     const role = "<?php echo isset($_SESSION['role']) ? $_SESSION['role'] : '' ?>";
+    const language = "<?php echo isset($_SESSION['language']) ? $_SESSION['language'] : '' ?>";
 </script>
 <script src="<?= $path ?>/js/api_url.js"></script>
 <script src="<?= $path ?>/js/decode_jwt.js"></script>

@@ -27,8 +27,15 @@ function update_data(job_code) {
         $("#work_day_update").val(datas.work_day);
         $("#time_in_update").val(datas.time_in);
         $("#time_out_update").val(datas.time_out);
-        $("#work_location_update").val(datas.work_location);
-        $("#salary_update").val(datas.salary);
+        $('#work_location_code_dropdown_update option[value="' + datas.work_location + '"]').prop('selected', true);
+        if (datas.salary === 'agreed') {
+            $("#agreed_update").prop('checked', true);
+            $("#salary_update").val();
+            document.getElementById('salary_update').disabled = true;
+        } else {
+            $("#agreed_update").prop('checked', false);
+            $("#salary_update").val(datas.salary);
+        }
         $("#description_update").val(datas.description);
         $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);
         if (datas.statusflag === 'f' && data_status === false) {
@@ -52,6 +59,11 @@ document.getElementById('update_data_form').addEventListener('submit', function 
             jsonData[key] = value;
         });
         jsonData['changed_by'] = data_token.employer_code;
+
+        if (jsonData['agreed'] && jsonData['agreed'] == 'on') {
+            jsonData['salary'] = 'agreed';
+            delete jsonData['agreed'];
+        }
 
         fetch(apiUrl + 'application/jobs/update_job.php', {
             method: 'POST',

@@ -24,6 +24,13 @@
     </li><!-- End Apply Work Nav -->
 
     <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/application_employers/find_job_applicants.php">
+        <i class="bi bi-grid"></i>
+        <span><?= $texts['find_job_applicant'] ?></span>
+      </a>
+    </li><!-- End Find Job Applicants Nav -->
+
+    <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_employers/profile.php">
         <i class="bi bi-grid"></i>
         <span><?= $texts['my_profile'] ?></span>

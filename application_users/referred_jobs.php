@@ -83,7 +83,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <input type="text" class="form-control" name="work_location" id="work_location" placeholder="<?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_create" placeholder="<?= $texts['work_location'] ?>" required>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
@@ -138,7 +139,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
@@ -168,7 +170,9 @@
     <script src="../js/logout_application_users.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/application_users/users/get_user_header.js"></script>
+    <script src="../js/application_users/referred_jobs/function.js"></script>
     <script src="../js/application_users/referred_jobs/get_job_category_all.js"></script>
+    <script src="../js/application_users/referred_jobs/get_work_location_all.js"></script>
     <script src="../js/application_users/referred_jobs/get_referred_job_user.js"></script>
     <script src="../js/application_users/referred_jobs/create_referred_job.js"></script>
     <script src="../js/application_users/referred_jobs/update_referred_job.js"></script>

@@ -78,11 +78,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['salary'] ?></label>
-                                <input type="text" class="form-control" name="salary" id="salary_update" placeholder="<?= $texts['salary'] ?>" required>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input me-2" type="checkbox" name="agreed" id="agreed_update" onchange="toggleSalaryInputUpdate()">
+                                        <label class="form-check-label" for="agreed_update">ตามตกลง</label>
+                                    </div>
+                                    <input type="text" class="form-control" name="salary" id="salary_update" placeholder="<?= $texts['salary'] ?>" required pattern="^\d+(\.\d{1,2})?$">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
@@ -115,7 +122,9 @@
     <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/user_administration/users/get_header.js"></script>
+    <script src="../js/application/jobs/function.js"></script>
     <script src="../js/application/jobs/get_job_category_all.js"></script>
+    <script src="../js/application/jobs/get_work_location_all.js"></script>
     <script src="../js/application/jobs/get_job_employer.js"></script>
     <script src="../js/application/jobs/update_job.js"></script>
     <script src="../js/application/jobs/delete_job.js"></script>

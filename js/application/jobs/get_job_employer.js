@@ -46,8 +46,8 @@ async function displayCards(datas) {
             data.statusflag == 'f' ? texts.disable : '';
 
         let statusStyle = data.statusflag == 't' ? 'text-success' : 'text-danger';
-        
-        const currentDate = new Date().toISOString().slice(0,10);       
+
+        const currentDate = new Date().toISOString().slice(0, 10);
         const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });
         const timeIn = TimeFormatter.format(new Date(currentDate + 'T' + data.time_in));
         const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
@@ -61,8 +61,8 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
                         <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
                         <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                        <p class="card-text"><strong>${texts.work_location}:</strong> ${data.work_location}</p>
-                        <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary}</p>
+                        <p class="card-text"><strong>${texts.work_location}:</strong> ${language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                        <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
                         <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                         <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>
                         <div class="text-center">

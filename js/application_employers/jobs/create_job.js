@@ -12,6 +12,11 @@ document.getElementById('create_data_form').addEventListener('submit', function 
         });
         jsonData['changed_by'] = data_token.employer_code;
 
+        if (jsonData['agreed'] && jsonData['agreed'] == 'on') {
+            jsonData['salary'] = 'agreed';
+            delete jsonData['agreed'];
+        }
+
         fetch(apiUrl + 'application/jobs/create_job.php', {
             method: 'POST',
             headers: {

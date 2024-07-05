@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>หางาน | CM WORKFORCE</title>
+    <title>หาผู้สมัครงาน | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -16,16 +16,16 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../components/header_applicantion_users.php' ?>
+    <?php include_once '../components/header_applicantion_employers.php' ?>
 
     <!-- ======= Sidebar ======= -->
-    <?php include_once '../components/sidebar_application_users.php' ?>
+    <?php include_once '../components/sidebar_application_employers.php' ?>
 
     <main id="main" class="main">
 
         <div class="pagetitle d-flex justify-content-start align-items-center">
-            <h1 class="me-4"><?= $texts['find_job'] ?></h1>
-            <a type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?= $texts['i_apply_works_applicant'] ?>">
+            <h1 class="me-4"><?= $texts['find_job_applicant'] ?></h1>
+            <a type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="<?= $texts['i_find_job_applicant'] ?>">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
                     <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
@@ -81,15 +81,15 @@
     <?php include_once '../components/footer.php' ?>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script src="../js/check_login_application_users.js"></script>
-    <script src="../js/logout_application_users.js"></script>
+    <script src="../js/check_login_application_employers.js"></script>
+    <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
-    <script src="../js/application_users/users/get_user_header.js"></script>
-    <script src="../js/application_users/apply_works/get_salary.js"></script>
-    <script src="../js/application_users/apply_works/get_employment_type.js"></script>
-    <script src="../js/application_users/apply_works/get_job_category_all.js"></script>
-    <script src="../js/application_users/apply_works/get_work_location_all.js"></script>
-    <script src="../js/application_users/apply_works/get_job.js"></script>
+    <script src="../js/application_employers/employers/get_employer_header.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_salary.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_employment_type.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_job_category_all.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_work_location_all.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_job_applicant.js"></script>
 </body>
 
 </html>

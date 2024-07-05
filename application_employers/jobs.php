@@ -92,11 +92,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_create" placeholder="<?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_create" placeholder="<?= $texts['work_location'] ?>" required>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['salary'] ?></label>
-                                <input type="text" class="form-control" name="salary" id="salary_create" placeholder="<?= $texts['salary'] ?>" required>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input me-2" type="checkbox" name="agreed" id="agreed_create" onchange="toggleSalaryInputCreate()">
+                                        <label class="form-check-label" for="agreed_create">ตามตกลง</label>
+                                    </div>
+                                    <input type="text" class="form-control" name="salary" id="salary_create" placeholder="<?= $texts['salary'] ?>" required pattern="^\d+(\.\d{1,2})?$">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
@@ -163,11 +170,18 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="<?= $texts['work_location'] ?><?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['salary'] ?></label>
-                                <input type="text" class="form-control" name="salary" id="salary_update" placeholder="<?= $texts['salary'] ?>" required>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-text">
+                                        <input class="form-check-input me-2" type="checkbox" name="agreed" id="agreed_update" onchange="toggleSalaryInputUpdate()">
+                                        <label class="form-check-label" for="agreed_update">ตามตกลง</label>
+                                    </div>
+                                    <input type="text" class="form-control" name="salary" id="salary_update" placeholder="<?= $texts['salary'] ?>" required pattern="^\d+(\.\d{1,2})?$">
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
@@ -200,7 +214,9 @@
     <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/get_employer_header.js"></script>
+    <script src="../js/application_employers/jobs/function.js"></script>
     <script src="../js/application_employers/jobs/get_job_category_all.js"></script>
+    <script src="../js/application_employers/jobs/get_work_location_all.js"></script>
     <script src="../js/application_employers/jobs/package_amount.js"></script>
     <script src="../js/application_employers/jobs/get_job_employer.js"></script>
     <script src="../js/application_employers/jobs/create_job.js"></script>

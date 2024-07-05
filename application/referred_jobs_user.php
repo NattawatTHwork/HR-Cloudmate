@@ -70,7 +70,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <input type="text" class="form-control" name="work_location" id="work_location_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
@@ -100,7 +101,9 @@
     <script src="../js/logout.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/user_administration/users/get_header.js"></script>
+    <script src="../js/application/referred_jobs_user/function.js"></script>
     <script src="../js/application/referred_jobs_user/get_job_category_all.js"></script>
+    <script src="../js/application/referred_jobs_user/get_work_location_all.js"></script>
     <script src="../js/application/referred_jobs_user/get_referred_job_user.js"></script>
     <script src="../js/application/referred_jobs_user/update_referred_job.js"></script>
     <script src="../js/application/referred_jobs_user/delete_referred_job.js"></script>

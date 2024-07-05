@@ -31,13 +31,6 @@
     </li><!-- End Experiences Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="<?= $path ?>/application_users/apply_works.php">
-        <i class="bi bi-grid"></i>
-        <span><?= $texts['apply_job'] ?></span>
-      </a>
-    </li><!-- End Apply Work Nav -->
-
-    <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/apply_works_history.php">
         <i class="bi bi-grid"></i>
         <span><?= $texts['job_application_history'] ?></span>

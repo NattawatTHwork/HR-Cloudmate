@@ -184,5 +184,8 @@ return [
     'cookies_accept' => 'This website uses cookies to give you the best experience. We use cookies and our privacy policy. Please see more information in ',
     'accept' => 'Accept',
     'question' => 'If you have any questions, please contact.',
+    'agreed' => 'As agreed',
+    'find_job_applicant' => 'Find Job Applicants',
+    'i_find_job_applicant' => 'Find Job Applicants',
 
 ];

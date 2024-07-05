@@ -1,4 +1,4 @@
-if (token && role == 'applicant') {
+if (token && role == 'employer') {
     fetch(apiUrl + 'application/job_category/get_job_category_all.php', {
         method: 'GET',
         headers: {

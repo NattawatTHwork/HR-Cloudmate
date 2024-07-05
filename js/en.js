@@ -91,5 +91,7 @@ texts = {
     'unauthorized_password': 'The old password and the new password do not match.',
     'not_match': 'Password and password confirmation do not match.',
     'more_6': 'Password length must be more than 6 characters.',
+    'agreed': 'As agreed',
+    'baht': 'Baht',
 
 }

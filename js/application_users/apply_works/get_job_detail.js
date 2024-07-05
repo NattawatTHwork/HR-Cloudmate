@@ -65,8 +65,8 @@ async function displayCards(data) {
                                 <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
                                 <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
                                 <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                                <p class="card-text"><strong>${texts.work_location}:</strong> ${data.work_location}</p>
-                                <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary}</p>
+                                <p class="card-text"><strong>${texts.work_location}:</strong> ${language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                                <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : data.salary}</p>
                                 <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                                 <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                             </div>

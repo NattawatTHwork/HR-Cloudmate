@@ -43,23 +43,22 @@ async function displayCards(datas) {
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
-                    <h5 class="card-title">${data.position}</h5>
-                    <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
-                    <p class="card-text"><strong>${texts.name}:</strong> ${data.firstname} ${data.lastname}</p>
-                    <div id="additionalInfo_${data.apply_work_code}" style="display:none;">
-                        <p class="card-text"><strong>${texts.gender}:</strong> ${data.gender == 1 ? texts.male : data.gender == 2 ? texts.female : texts.other}</p>
-                        <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
-                        <p class="card-text"><strong>${texts.tel}:</strong> ${data.phone_number}</p>
-                        <p class="card-text"><strong>${texts.apply_date}:</strong> ${formattedDateMonth + ' ' + formattedYear + texts.time + formattedTime + texts.na}</p>
-                    </div>
-                    <div class="text-center">
-                        <button type="button" class="btn btn-outline-secondary" onclick="toggleAdditionalInfo('additionalInfo_${data.apply_work_code}', this)">
-                            <span class="arrow" style="transition: transform 0.3s ease;">${texts.view}</span>
-                        </button>                              
-                        <a type="button" class="btn btn-primary" href="educations.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.education}</a>
-                        <a type="button" class="btn btn-primary" href="experiences.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.experience}</a>
-                    </div>
-
+                        <h5 class="card-title">${data.position}</h5>
+                        <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
+                        <p class="card-text"><strong>${texts.name}:</strong> ${data.firstname} ${data.lastname}</p>
+                        <div id="additionalInfo_${data.apply_work_code}" style="display:none;">
+                            <p class="card-text"><strong>${texts.gender}:</strong> ${data.gender == 1 ? texts.male : data.gender == 2 ? texts.female : texts.other}</p>
+                            <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
+                            <p class="card-text"><strong>${texts.tel}:</strong> ${data.phone_number}</p>
+                            <p class="card-text"><strong>${texts.apply_date}:</strong> ${formattedDateMonth + ' ' + formattedYear + texts.time + formattedTime + texts.na}</p>
+                        </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-secondary" onclick="toggleAdditionalInfo('additionalInfo_${data.apply_work_code}', this)">
+                                <span class="arrow" style="transition: transform 0.3s ease;">${texts.view}</span>
+                            </button>                              
+                            <a type="button" class="btn btn-primary" href="educations.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.education}</a>
+                            <a type="button" class="btn btn-primary" href="experiences.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.experience}</a>
+                        </div>
                     </div>
                 </div>
             </div>`;

@@ -5,7 +5,7 @@ document.getElementById('searchButton').addEventListener('click', function () {
     const selectedSalaryStart = document.getElementById('select_salary_start').value;
     const selectedSalaryEnd = document.getElementById('select_salary_end').value;
 
-    let url = 'apply_works.php?';
+    let url = 'find_job_applicants.php?';
     const params = new URLSearchParams();
 
     if (selectedJobCategory) {
@@ -38,8 +38,8 @@ const salary_end = urlParams.get('salary_end') || '';
 fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end);
 
 function fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end) {
-    if (token && role === 'applicant') {
-        const url = new URL(apiUrl + 'application/jobs/get_job_by_job_category.php');
+    if (token && role === 'employer') {
+        const url = new URL(apiUrl + 'application/referred_jobs/get_job_applicant.php');
         const params = {
             job_category_code,
             work_location_code,
@@ -89,20 +89,19 @@ async function displayCards(datas) {
             <div class="col-sm-12">
                 <div class="card d-flex flex-column">
                     <div class="card-body m-2">
-                        <div class="row">
-                            <div class="col-md-8">
-                                <h5 class="card-title">${data.position}</h5>
-                                <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
-                                <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}:</strong> ${data.employer_name}</p>
-                            </div>
-                            <div class="col-md-4 d-flex justify-content-end align-items-center">
-                                <a href="${data.link_path && data.link_path.startsWith('https') ? data.link_path : (data.link_path && data.link_path.includes('.') ? 'https://' + data.link_path : '#')}">
-                                    <img id="logoImage" src="${apiUrl + 'img/logo_employer/' + (data.img_path ? data.img_path : 'no_logo.jpg')}" class="card-img" alt="Logo" style="max-height: 150px; max-width: 150px;">
-                                <a>
-                            </div>
+                        <h5 class="card-title">${data.position}</h5>
+                        <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
+                        <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
+                        <div id="additionalInfo_${data.referred_job_code}" style="display:none;">
+                            <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
+                            <p class="card-text"><strong>${texts.work_location}:</strong> ${language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                            <p class="card-text"><strong>${texts.expect_salary}:</strong> ${Number(data.expect_salary).toLocaleString() + ' ' + texts.baht}</p>
+                            <p class="card-text"><strong>${texts.tel}:</strong> ${data.phone_number}</p>
                         </div>
-                        <div class="text-center mt-auto">
-                            <a type="button" class="btn btn-primary" href="${pathUrl}/application_users/apply_work_detail.php?job_code=${data.job_code}")">${texts.view_detail}</a>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-outline-secondary" onclick="toggleAdditionalInfo('additionalInfo_${data.referred_job_code}', this)">
+                                <span class="arrow" style="transition: transform 0.3s ease;">${texts.view}</span>
+                            </button>                              
                         </div>
                     </div>
                 </div>
@@ -110,4 +109,18 @@ async function displayCards(datas) {
 
         cardContainer.innerHTML += cardHtml;
     });
+}
+
+function toggleAdditionalInfo(elementId, button) {
+    let additionalInfo = document.getElementById(elementId);
+    let arrow = button.querySelector('.arrow');
+    if (additionalInfo.style.display === "none") {
+        additionalInfo.style.display = "block";
+        arrow.innerHTML = texts.hide;
+        arrow.style.transform = "rotate(180deg)";
+    } else {
+        additionalInfo.style.display = "none";
+        arrow.innerHTML = texts.view;
+        arrow.style.transform = "rotate(0deg)";
+    }
 }
