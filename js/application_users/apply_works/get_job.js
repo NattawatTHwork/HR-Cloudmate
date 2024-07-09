@@ -111,3 +111,5 @@ async function displayCards(datas) {
         cardContainer.innerHTML += cardHtml;
     });
 }
+
+console.log(token)
