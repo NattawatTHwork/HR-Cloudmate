@@ -1,22 +1,26 @@
-if (token && role == 'employer') {
-    fetch(apiUrl + 'application/job_category/get_job_category_all.php', {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'employer') {
+            fetch(apiUrl + 'application/job_category/get_job_category_all.php', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${mySession.token}`
+                }
+            })
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    displaySelectJobCategory(data.data);
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        } else {
+            console.error('Token not found in local storage');
         }
     })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            displaySelectJobCategory(data.data);
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-} else {
-    console.error('Token not found in local storage');
-}
+    .catch(error => console.error('Error fetching session token:', error));
 
 function displaySelectJobCategory(datas) {
     const selectJobCategory = document.getElementById('select_job_category');

@@ -1,22 +1,26 @@
-if (token && role == 'employer') {
-    fetch(apiUrl + 'application/employers/get_employer.php?employer_code=' + data_token.employer_code, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'employer') {
+            fetch(apiUrl + 'application/employers/get_employer.php?employer_code=' + mySession.employer_code, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${mySession.token}`
+                }
+            })
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    show_data(data.data);
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        } else {
+            console.error('Token not found in local storage');
         }
     })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            show_data(data.data);
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-} else {
-    console.error('Token not found in local storage');
-}
+    .catch(error => console.error('Error fetching session token:', error));
 
 function show_data(datas) {
     $("#employer_code").val(datas.employer_code);
@@ -44,46 +48,50 @@ document.getElementById('update_profile_data_form').addEventListener('submit', f
     const buttonUpdate = document.getElementById('button_update');
     buttonUpdate.disabled = true; // Disable the button
 
-    if (token && role == 'employer') {
-        const formData = new FormData(this);
-        formData.append('changed_by', data_token.employer_code);
+    getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'employer') {
+                const formData = new FormData(this);
+                formData.append('changed_by', mySession.employer_code);
 
-        fetch(apiUrl + 'application/employers/update_profile.php', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
-            body: formData
+                fetch(apiUrl + 'application/employers/update_profile.php', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`
+                    },
+                    body: formData
+                })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status === 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: texts.success,
+                            })
+                                .then(function () {
+                                    window.location.href = 'profile.php';
+                                });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: texts.error,
+                            })
+                                .then(function () {
+                                    location.reload();
+                                });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the update:', error);
+                    })
+                    .finally(() => {
+                        buttonUpdate.disabled = false; // Re-enable the button
+                    });
+            } else {
+                console.error('Token not found in local storage');
+            }
         })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    Swal.fire({
-                        icon: 'success',
-                        title: texts.success,
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: texts.error,
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
-                }
-            })
-            .catch(error => {
-                console.error('There was a problem with the update:', error);
-            })
-            .finally(() => {
-                buttonUpdate.disabled = false; // Re-enable the button
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
+        .catch(error => console.error('Error fetching session token:', error));
 });

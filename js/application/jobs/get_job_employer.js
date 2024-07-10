@@ -1,27 +1,31 @@
-if (token && role == 'member') {
-    const urlParams = new URLSearchParams(window.location.search);
-    const employer_code = urlParams.get('employer_code');
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'member') {
+            const urlParams = new URLSearchParams(window.location.search);
+            const employer_code = urlParams.get('employer_code');
 
-    fetch(apiUrl + 'application/jobs/get_job_employer.php?employer_code=' + employer_code, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`
+            fetch(apiUrl + 'application/jobs/get_job_employer.php?employer_code=' + employer_code, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${mySession.token}`
+                }
+            })
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    displayCards(data.data, mySession);
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        } else {
+            console.error('Token not found in local storage');
         }
     })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            displayCards(data.data);
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-} else {
-    console.error('Token not found in local storage');
-}
+    .catch(error => console.error('Error fetching session token:', error));
 
-async function displayCards(datas) {
+async function displayCards(datas, mySession) {
     const urlParams = new URLSearchParams(window.location.search);
     const status = urlParams.get('status');
 
@@ -61,7 +65,7 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
                         <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
                         <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                        <p class="card-text"><strong>${texts.work_location}:</strong> ${language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                        <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
                         <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
                         <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                         <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>

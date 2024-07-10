@@ -1,8 +1,10 @@
-if (token && role == 'employer') {
-    fetch(apiUrl + 'application/work_location/get_work_location_all.php?language=' + language, {
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'employer') {
+    fetch(apiUrl + 'application/work_location/get_work_location_all.php?language=' + mySession.language, {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${mySession.token}`
         }
     })
         .then(response => {
@@ -17,6 +19,8 @@ if (token && role == 'employer') {
 } else {
     console.error('Token not found in local storage');
 }
+})
+.catch(error => console.error('Error fetching session token:', error));
 
 function displaySelectWorkLocation(datas) {
     const selectWorkLocation = document.getElementById('select_work_location');

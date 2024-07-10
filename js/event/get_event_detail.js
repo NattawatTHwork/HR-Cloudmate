@@ -1,31 +1,34 @@
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'member') {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('event_id') && urlParams.has('personal_id')) {
+                const event_id = urlParams.get('event_id');
+                const personal_id = urlParams.get('personal_id');
 
-if (token && role == 'member') {
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.has('event_id') && urlParams.has('personal_id')) {
-        const event_id = urlParams.get('event_id');
-        const personal_id = urlParams.get('personal_id');
-
-        fetch(apiUrl + 'event/get_event_detail.php?event_id=' + event_id + '&personal_id=' + personal_id, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
-        })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    displayCards(data.data);
-                }
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    }
-} else {
-    console.error('Token not found in local storage');
-}
+                fetch(apiUrl + 'event/get_event_detail.php?event_id=' + event_id + '&personal_id=' + personal_id, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`
+                    },
+                })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status === 'success') {
+                            displayCards(data.data);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            }
+        } else {
+            console.error('Token not found in local storage');
+        }
+    })
+    .catch(error => console.error('Error fetching session token:', error));
 
 
 async function displayCards(datas) {

@@ -1,24 +1,28 @@
 function update_data(job_code) {
-    if (token && role == 'member') {
-        fetch(apiUrl + 'application/jobs/get_job.php?job_code=' + job_code, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
+    getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'member') {
+                fetch(apiUrl + 'application/jobs/get_job.php?job_code=' + job_code, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`
+                    }
+                })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        console.log(data);
+                        show_data(data.data);
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            } else {
+                console.error('Token not found in local storage');
             }
         })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                console.log(data);
-                show_data(data.data);
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
+        .catch(error => console.error('Error fetching session token:', error));
 
     function show_data(datas) {
         $("#job_code_update").val(datas.job_code);
@@ -48,56 +52,60 @@ document.getElementById('update_data_form').addEventListener('submit', function 
     const buttonUpdate = document.getElementById('button_update');
     buttonUpdate.disabled = true; // Disable the button
 
-    if (token && role == 'member') {
-        const formData = new FormData(this);
-        const jsonData = {};
-        formData.forEach((value, key) => {
-            jsonData[key] = value;
-        });
-        jsonData['changed_by'] = data_token.user_id;
+    getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'member') {
+                const formData = new FormData(this);
+                const jsonData = {};
+                formData.forEach((value, key) => {
+                    jsonData[key] = value;
+                });
+                jsonData['changed_by'] = mySession.user_id;
 
-        if (jsonData['agreed'] && jsonData['agreed'] == 'on') {
-            jsonData['salary'] = 'agreed';
-            delete jsonData['agreed'];
-        }
-
-        fetch(apiUrl + 'application/jobs/update_job.php', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(jsonData)
-        })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    Swal.fire({
-                        icon: 'success',
-                        title: texts.success,
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: texts.error,
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
+                if (jsonData['agreed'] && jsonData['agreed'] == 'on') {
+                    jsonData['salary'] = 'agreed';
+                    delete jsonData['agreed'];
                 }
-            })
-            .catch(error => {
-                console.error('There was a problem with the update:', error);
-            })
-            .finally(() => {
-                buttonUpdate.disabled = false; // Re-enable the button
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
+
+                fetch(apiUrl + 'application/jobs/update_job.php', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status === 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: texts.success,
+                            })
+                                .then(function () {
+                                    location.reload();
+                                });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: texts.error,
+                            })
+                                .then(function () {
+                                    location.reload();
+                                });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the update:', error);
+                    })
+                    .finally(() => {
+                        buttonUpdate.disabled = false; // Re-enable the button
+                    });
+            } else {
+                console.error('Token not found in local storage');
+            }
+        })
+        .catch(error => console.error('Error fetching session token:', error));
 });

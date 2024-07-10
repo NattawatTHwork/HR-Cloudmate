@@ -38,43 +38,47 @@ const salary_end = urlParams.get('salary_end') || '';
 fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end);
 
 function fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end) {
-    if (token && role === 'employer') {
-        const url = new URL(apiUrl + 'application/referred_jobs/get_job_applicant.php');
-        const params = {
-            job_category_code,
-            work_location_code,
-            employment_type,
-            salary_start,
-            salary_end
-        };
+    getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'employer') {
+                const url = new URL(apiUrl + 'application/referred_jobs/get_job_applicant.php');
+                const params = {
+                    job_category_code,
+                    work_location_code,
+                    employment_type,
+                    salary_start,
+                    salary_end
+                };
 
-        Object.keys(params).forEach(key => {
-            if (params[key]) {
-                url.searchParams.append(key, params[key]);
-            }
-        });
+                Object.keys(params).forEach(key => {
+                    if (params[key]) {
+                        url.searchParams.append(key, params[key]);
+                    }
+                });
 
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                displayCards(data.data);
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            displayCards(data.data, mySession);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            } else {
+                console.error('Token not found in local storage or role is not applicant');
             }
         })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-    } else {
-        console.error('Token not found in local storage or role is not applicant');
-    }
+        .catch(error => console.error('Error fetching session token:', error));
 }
 
-async function displayCards(datas) {
+async function displayCards(datas, mySession) {
     let cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
@@ -94,7 +98,7 @@ async function displayCards(datas) {
                         <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                         <div id="additionalInfo_${data.referred_job_code}" style="display:none;">
                             <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
-                            <p class="card-text"><strong>${texts.work_location}:</strong> ${language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                            <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
                             <p class="card-text"><strong>${texts.expect_salary}:</strong> ${Number(data.expect_salary).toLocaleString() + ' ' + texts.baht}</p>
                         </div>
                         <div class="text-center">

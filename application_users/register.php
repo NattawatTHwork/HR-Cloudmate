@@ -17,6 +17,20 @@
 
     <main>
         <div class="container">
+            <div class="d-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown pe-3">
+                        <a id="languageDropdown" class="nav-link d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?= $_SESSION['language'] == 'th' ? 'ไทย' : 'English' ?>
+                            <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="list-style-type: none;">
+                            <li><a id="lang-th" class="dropdown-item" href="#">ไทย</a></li>
+                            <li><a id="lang-en" class="dropdown-item" href="#">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
@@ -43,34 +57,34 @@
                                         <input type="hidden" name="action" value="create">
                                         <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                                         <div class="col-12">
-                                            <label for="yourEmail" class="form-label"><?= $texts['email'] ?></label>
+                                            <label for="yourEmail" class="form-label">*<?= $texts['email'] ?></label>
                                             <input type="email" name="email" class="form-control" id="yourEmail" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label"><?= $texts['password'] ?></label>
+                                            <label for="yourPassword" class="form-label">*<?= $texts['password'] ?></label>
                                             <input type="password" name="user_password" class="form-control" id="yourPassword" required>
                                             <div id="alertpassword" style="display: none; color: red;"><?= $texts['more_6'] ?></div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourRepeatPassword" class="form-label"><?= $texts['confirm_password'] ?></label>
+                                            <label for="yourRepeatPassword" class="form-label">*<?= $texts['confirm_password'] ?></label>
                                             <input type="password" name="user_repeat_password" class="form-control" id="yourRepeatPassword" required>
                                             <div id="alertrepeatpassword" style="display: none; color: red;"><?= $texts['not_match'] ?></div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourFirstname" class="form-label"><?= $texts['firstname'] ?></label>
+                                            <label for="yourFirstname" class="form-label">*<?= $texts['firstname'] ?></label>
                                             <input type="text" name="firstname" class="form-control" id="yourFirstname" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourLastname" class="form-label"><?= $texts['lastname'] ?></label>
+                                            <label for="yourLastname" class="form-label">*<?= $texts['lastname'] ?></label>
                                             <input type="text" name="lastname" class="form-control" id="yourLastname" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="genderSelect" class="form-label"><?= $texts['gender'] ?></label>
+                                            <label for="genderSelect" class="form-label">*<?= $texts['gender'] ?></label>
                                             <select class="form-select" id="genderSelect" name="gender" required>
                                                 <option value=""><?= $texts['select'] ?></option>
                                                 <option value="1"><?= $texts['male'] ?></option>
@@ -80,39 +94,39 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="birthdayInput" class="form-label"><?= $texts['birthday'] ?></label>
+                                            <label for="birthdayInput" class="form-label">*<?= $texts['birthday'] ?></label>
                                             <input type="date" name="birthday" class="form-control" id="birthdayInput" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPhoneNumber" class="form-label"><?= $texts['tel'] ?></label>
+                                            <label for="yourPhoneNumber" class="form-label">*<?= $texts['tel'] ?></label>
                                             <input type="text" name="phone_number" class="form-control" id="yourPhoneNumber" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourAddress" class="form-label"><?= $texts['address'] ?></label>
+                                            <label for="yourAddress" class="form-label">*<?= $texts['address'] ?></label>
                                             <input type="text" name="user_address" class="form-control" id="yourAddress" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourSubDistrict" class="form-label"><?= $texts['sub_district'] ?></label>
+                                            <label for="yourSubDistrict" class="form-label">*<?= $texts['sub_district'] ?></label>
                                             <input type="text" name="sub_district" class="form-control" id="yourSubDistrict" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourDistrict" class="form-label"><?= $texts['district'] ?></label>
+                                            <label for="yourDistrict" class="form-label">*<?= $texts['district'] ?></label>
                                             <input type="text" name="district" class="form-control" id="yourDistrict" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourProvince" class="form-label"><?= $texts['province'] ?></label>
+                                            <label for="yourProvince" class="form-label">*<?= $texts['province'] ?></label>
                                             <input type="text" name="province" class="form-control" id="yourProvince" required>
                                         </div>
                                         <div class="col-12">
-                                            <label for="yourZipCode" class="form-label"><?= $texts['zip_code'] ?></label>
+                                            <label for="yourZipCode" class="form-label">*<?= $texts['zip_code'] ?></label>
                                             <input type="text" name="zip_code" class="form-control" id="yourZipCode" required>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
                                                 <input class="form-check-input" name="pdpa" type="checkbox" value="true" id="acceptTerms" required>
-                                                <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../privacy_policy.php"><?= $texts['privacy_policy'] ?></a></label>
+                                                <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../privacy_policy.php" data-bs-toggle="modal" data-bs-target="#privacy_policy"><?= $texts['privacy_policy'] ?></a></label>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -140,6 +154,24 @@
 
             </section>
 
+            <div class="modal fade" id="privacy_policy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="create_data_form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['privacy_policy_head'] ?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <?= $texts['policy_data'] ?>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
         </div>
     </main><!-- End #main -->
 
@@ -162,7 +194,7 @@
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/application_users/users/create_user.js"></script>
-
+    <script src="../js/language.js"></script>
 
 </body>
 

@@ -106,12 +106,9 @@
     <script src="assets/js/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script type="text/javascript">
-        const token = "<?php echo isset($_SESSION['token']) ? $_SESSION['token'] : '' ?>";
-        const role = "<?php echo isset($_SESSION['role']) ? $_SESSION['role'] : '' ?>";
-    </script>
     <script src="js/token.js"></script>
     <script src="js/api_url.js"></script>
+    <script src="js/get_session_token.js"></script>
     <script src="js/auth/login.js"></script>
 
 </body>

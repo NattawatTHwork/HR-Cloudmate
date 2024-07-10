@@ -1,6 +1,7 @@
 async function delete_data(education_code, level) {
     const response = await fetch('https://api.ipify.org?format=json');
     ip_address = await response.json();
+    const mySession = await getSessionToken();
     const levelMap = {
         1: texts.m3,
         2: texts.m6,
@@ -23,14 +24,14 @@ async function delete_data(education_code, level) {
             fetch(apiUrl + 'application/educations/delete_education.php', {
                 method: 'POST',
                 headers: {
-                    'Authorization': `Bearer ${token}`,
+                    'Authorization': `Bearer ${mySession.token}`,
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ 
                     education_code: education_code,
                     action: 'delete',
                     ip_address: ip_address['ip'],
-                    changed_by: data_token.user_code
+                    changed_by: mySession.user_code
                  })
             })
                 .then(response => {

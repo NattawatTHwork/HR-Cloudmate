@@ -1,11 +1,13 @@
-if (token && role == 'employer') {
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'employer') {
     const urlParams = new URLSearchParams(window.location.search);
     const user_code = urlParams.get('user_code');
 
     fetch(apiUrl + 'application/experiences/get_experience_employer.php?user_code=' + user_code, {
         method: 'GET',
         headers: {
-            'Authorization': `Bearer ${token}`
+            'Authorization': `Bearer ${mySession.token}`
         }
     })
         .then(response => {
@@ -20,6 +22,8 @@ if (token && role == 'employer') {
 } else {
     console.error('Token not found in local storage');
 }
+})
+.catch(error => console.error('Error fetching session token:', error));
 
 async function displayCards(datas) {
     let cardContainer = document.getElementById('cardContainer');

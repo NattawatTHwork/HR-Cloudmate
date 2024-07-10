@@ -5,35 +5,41 @@ if (urlParams.has('job_code')) {
 }
 
 function fetchData(job_code) {
-    if (token && role == 'applicant') {
-        fetch(apiUrl + 'application/jobs/get_job.php?job_code=' + job_code, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
+    getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'applicant') {
+                fetch(apiUrl + 'application/jobs/get_job.php?job_code=' + job_code, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`
+                    },
+                })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status === 'success') {
+                            displayCards(data.data);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            } else {
+                console.error('Token not found in local storage');
+            }
         })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    displayCards(data.data);
-                }
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
+        .catch(error => console.error('Error fetching session token:', error));
 }
 
 async function displayCards(data) {
     try {
-        const response = await fetch(apiUrl + 'application/apply_works/get_status_apply_work.php?user_code=' + data_token.user_code + '&job_code=' + data.job_code, {
+        const mySession = await getSessionToken();
+
+        const response = await fetch(apiUrl + 'application/apply_works/get_status_apply_work.php?user_code=' + mySession.user_code + '&job_code=' + data.job_code, {
             method: 'GET',
             headers: {
-                'Authorization': `Bearer ${token}`
+                'Authorization': `Bearer ${mySession.token}`
             },
         });
         const status = await response.json();
@@ -65,8 +71,8 @@ async function displayCards(data) {
                                 <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
                                 <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
                                 <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                                <p class="card-text"><strong>${texts.work_location}:</strong> ${language == 'th' ? data.work_location_th : data.work_location_en}</p>
-                                <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : data.salary}</p>
+                                <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                                <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
                                 <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                                 <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                             </div>

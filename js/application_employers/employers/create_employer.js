@@ -1,6 +1,10 @@
-if (token && role == 'employer') {
-    window.location.href = pathUrl + '/application_employers/index.php';
-}
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role == 'employer') {
+            window.location.href = pathUrl + '/application_employers/index.php';
+        }
+    })
+    .catch(error => console.error('Error fetching session token:', error));
 
 document.getElementById("acceptTerms").addEventListener("change", function () {
     document.getElementById("submitBtn").disabled = !this.checked;

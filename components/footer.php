@@ -1,6 +1,6 @@
 <footer id="footer" class="footer">
     <div class="copyright">
-        &copy; Copyright <strong><span>CLOUDMATE CO., LTD.</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>CLOUDMATE CO., LTD.</span></strong> All Rights Reserved
     </div>
     <div class="credits">
         <!-- All the links in the footer should remain intact. -->
@@ -25,13 +25,8 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/2.0.0/js/dataTables.min.js"></script>
 
-<script type="text/javascript">
-    const token = "<?php echo isset($_SESSION['token']) ? $_SESSION['token'] : '' ?>";
-    const role = "<?php echo isset($_SESSION['role']) ? $_SESSION['role'] : '' ?>";
-    const language = "<?php echo isset($_SESSION['language']) ? $_SESSION['language'] : '' ?>";
-</script>
 <script src="<?= $path ?>/js/api_url.js"></script>
-<script src="<?= $path ?>/js/decode_jwt.js"></script>
+<script src="<?= $path ?>/js/get_session_token.js"></script>
 
 <!-- Template Main JS File -->
 <script src="<?= $path ?>/assets/js/main.js"></script>

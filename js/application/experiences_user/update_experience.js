@@ -1,23 +1,27 @@
 function update_data(experience_code) {
-    if (token && role == 'member') {
-        fetch(apiUrl + 'application/experiences/get_experience.php?experience_code=' + experience_code, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
+    getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'member') {
+                fetch(apiUrl + 'application/experiences/get_experience.php?experience_code=' + experience_code, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`
+                    }
+                })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        show_data(data.data);
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            } else {
+                console.error('Token not found in local storage');
             }
         })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                show_data(data.data);
-            })
-            .catch(error => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
+        .catch(error => console.error('Error fetching session token:', error));
 
     function show_data(datas) {
         $("#experience_code_update").val(datas.experience_code);
@@ -34,51 +38,55 @@ document.getElementById('update_data_form').addEventListener('submit', function 
     const buttonUpdate = document.getElementById('button_update');
     buttonUpdate.disabled = true; // Disable the button
 
-    if (token && role == 'member') {
-        const formData = new FormData(this);
-        const jsonData = {};
-        formData.forEach((value, key) => {
-            jsonData[key] = value;
-        });
-        jsonData['changed_by'] = data_token.user_id;
+    getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'member') {
+                const formData = new FormData(this);
+                const jsonData = {};
+                formData.forEach((value, key) => {
+                    jsonData[key] = value;
+                });
+                jsonData['changed_by'] = mySession.user_id;
 
-        fetch(apiUrl + 'application/experiences/update_experience.php', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(jsonData)
+                fetch(apiUrl + 'application/experiences/update_experience.php', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(jsonData)
+                })
+                    .then(response => {
+                        return response.json();
+                    })
+                    .then(data => {
+                        if (data.status === 'success') {
+                            Swal.fire({
+                                icon: 'success',
+                                title: texts.success,
+                            })
+                                .then(function () {
+                                    location.reload();
+                                });
+                        } else {
+                            Swal.fire({
+                                icon: 'error',
+                                title: texts.error,
+                            })
+                                .then(function () {
+                                    location.reload();
+                                });
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There was a problem with the update:', error);
+                    })
+                    .finally(() => {
+                        buttonUpdate.disabled = false; // Re-enable the button
+                    });
+            } else {
+                console.error('Token not found in local storage');
+            }
         })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                if (data.status === 'success') {
-                    Swal.fire({
-                        icon: 'success',
-                        title: texts.success,
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: texts.error,
-                    })
-                        .then(function () {
-                            location.reload();
-                        });
-                }
-            })
-            .catch(error => {
-                console.error('There was a problem with the update:', error);
-            })
-            .finally(() => {
-                buttonUpdate.disabled = false; // Re-enable the button
-            });
-    } else {
-        console.error('Token not found in local storage');
-    }
+        .catch(error => console.error('Error fetching session token:', error));
 });

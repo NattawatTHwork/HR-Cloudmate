@@ -1,6 +1,10 @@
-if (token || role == 'employer') {
-    window.location.href = pathUrl + '/application_employers/index.php';
-}
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role == 'employer') {
+            window.location.href = pathUrl + '/application_employers/index.php';
+        }
+    })
+    .catch(error => console.error('Error fetching session token:', error));
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector('form');
@@ -29,12 +33,24 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
                 if (data.status === 'success') {
+                    const payloadBase64 = data.token.split('.')[1];
+                    const data_token = JSON.parse(atob(payloadBase64));
+
+                    const postData = {
+                        token: data.token,
+                        role: 'employer'
+                    };
+
+                    for (const [key, value] of Object.entries(data_token)) {
+                        postData[key] = value;
+                    }
+
                     return fetch(pathUrl + '/php/set_session_token.php', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
                         },
-                        body: JSON.stringify({ token: data.token, role: 'employer' })
+                        body: JSON.stringify(postData)
                     });
                 } else if (data.status === 'disable') {
                     Swal.fire({

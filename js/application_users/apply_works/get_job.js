@@ -37,41 +37,45 @@ const salary_end = urlParams.get('salary_end') || '';
 
 fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end);
 
-function fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end) {
-    if (token && role === 'applicant') {
-        const url = new URL(apiUrl + 'application/jobs/get_job_by_job_category.php');
-        const params = {
-            job_category_code,
-            work_location_code,
-            employment_type,
-            salary_start,
-            salary_end
-        };
+async function fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end) {
+        getSessionToken()
+        .then(mySession => {
+            if (mySession.token && mySession.role === 'applicant') {
+                const url = new URL(apiUrl + 'application/jobs/get_job_by_job_category.php');
+                const params = {
+                    job_category_code,
+                    work_location_code,
+                    employment_type,
+                    salary_start,
+                    salary_end
+                };
 
-        Object.keys(params).forEach(key => {
-            if (params[key]) {
-                url.searchParams.append(key, params[key]);
-            }
-        });
+                Object.keys(params).forEach(key => {
+                    if (params[key]) {
+                        url.searchParams.append(key, params[key]);
+                    }
+                });
 
-        fetch(url, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${token}`
-            },
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success') {
-                displayCards(data.data);
+                fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${mySession.token}`
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.status === 'success') {
+                            displayCards(data.data);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('There has been a problem with your fetch operation:', error);
+                    });
+            } else {
+                console.error('Token not found in local storage or role is not applicant');
             }
         })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-    } else {
-        console.error('Token not found in local storage or role is not applicant');
-    }
+        .catch(error => console.error('Error fetching session token:', error));
 }
 
 async function displayCards(datas) {
@@ -111,5 +115,3 @@ async function displayCards(datas) {
         cardContainer.innerHTML += cardHtml;
     });
 }
-
-console.log(token)

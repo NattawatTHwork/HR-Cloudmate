@@ -1,22 +1,26 @@
-if (token) {
-    fetch(apiUrl + 'user_administration/users/get_user_all.php', {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'member') {
+            fetch(apiUrl + 'user_administration/users/get_user_all.php', {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${mySession.token}`
+                }
+            })
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    displayTables(data.data);
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        } else {
+            console.error('Token not found in local storage');
         }
     })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            displayTables(data.data);
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-} else {
-    console.error('Token not found in local storage');
-}
+    .catch(error => console.error('Error fetching session token:', error));
 
 async function displayTables(datas) {
     let html = '';
@@ -47,12 +51,12 @@ async function displayTables(datas) {
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" onclick="view_data(${data.user_id})">${texts.view_data}</a></li>`;
-                        if (data.username !== 'superadmin') {
-                            html += `<li><a class="dropdown-item" onclick="update_data(${data.user_id})">${texts.edit}</a></li>
+        if (data.username !== 'superadmin') {
+            html += `<li><a class="dropdown-item" onclick="update_data(${data.user_id})">${texts.edit}</a></li>
                             <li><a class="dropdown-item" onclick="change_password('${data.user_id}')">${texts.change_password}</a></li>
                             <li><a class="dropdown-item" onclick="delete_data('${data.user_id}', '${data.username}')">${texts.delete}</a></li>`;
-                        }
-                        html += `</ul>
+        }
+        html += `</ul>
                     </div>
                 </td>`;
         html += '</tr>';

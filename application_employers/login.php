@@ -17,6 +17,20 @@
 
     <main>
         <div class="container">
+        <div class="d-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown pe-3">
+                        <a id="languageDropdown" class="nav-link d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?= $_SESSION['language'] == 'th' ? 'ไทย' : 'English' ?>
+                            <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="list-style-type: none;">
+                            <li><a id="lang-th" class="dropdown-item" href="#">ไทย</a></li>
+                            <li><a id="lang-en" class="dropdown-item" href="#">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
@@ -103,13 +117,11 @@
     <script src="<?= $path ?>/assets/js/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script type="text/javascript">
-        const token = "<?php echo isset($_SESSION['token']) ? $_SESSION['token'] : '' ?>";
-        const role = "<?php echo isset($_SESSION['role']) ? $_SESSION['role'] : '' ?>";
-    </script>
     <script src="../js/api_url.js"></script>
+    <script src="../js/get_session_token.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/login_employer.js"></script>
+    <script src="../js/language.js"></script>
 
 </body>
 

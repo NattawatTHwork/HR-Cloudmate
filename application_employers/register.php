@@ -17,6 +17,20 @@
 
     <main>
         <div class="container">
+            <div class="d-flex justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown pe-3">
+                        <a id="languageDropdown" class="nav-link d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <?= $_SESSION['language'] == 'th' ? 'ไทย' : 'English' ?>
+                            <i class="bi bi-chevron-down ms-1"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown" style="list-style-type: none;">
+                            <li><a id="lang-th" class="dropdown-item" href="#">ไทย</a></li>
+                            <li><a id="lang-en" class="dropdown-item" href="#">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
             <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
                 <div class="container">
@@ -43,45 +57,45 @@
                                         <input type="hidden" name="action" value="create">
                                         <input type="hidden" name="ip_address" value="<?= $_SERVER['REMOTE_ADDR'] ?>">
                                         <div class="col-12">
-                                            <label for="yourEmail" class="form-label"><?= $texts['email'] ?></label>
+                                            <label for="yourEmail" class="form-label">*<?= $texts['email'] ?></label>
                                             <input type="email" name="email" class="form-control" id="yourEmail" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPassword" class="form-label"><?= $texts['password'] ?></label>
+                                            <label for="yourPassword" class="form-label">*<?= $texts['password'] ?></label>
                                             <input type="password" name="employer_password" class="form-control" id="yourPassword" required>
                                             <div id="alertpassword" style="display: none; color: red;"><?= $texts['more_6'] ?></div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourRepeatPassword" class="form-label"><?= $texts['confirm_password'] ?></label>
+                                            <label for="yourRepeatPassword" class="form-label">*<?= $texts['confirm_password'] ?></label>
                                             <input type="password" name="employer_repeat_password" class="form-control" id="yourRepeatPassword" required>
                                             <div id="alertrepeatpassword" style="display: none; color: red;"><?= $texts['not_match'] ?></div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourEmployerName" class="form-label"><?= $texts['company'] ?>/<?= $texts['entrepreneur'] ?></label>
+                                            <label for="yourEmployerName" class="form-label">*<?= $texts['company'] ?>/<?= $texts['entrepreneur'] ?></label>
                                             <input type="text" name="employer_name" class="form-control" id="yourEmployerName" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourFirstname" class="form-label"><?= $texts['firstname'] ?></label>
+                                            <label for="yourFirstname" class="form-label">*<?= $texts['firstname'] ?></label>
                                             <input type="text" name="firstname" class="form-control" id="yourFirstname" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourLastname" class="form-label"><?= $texts['lastname'] ?></label>
+                                            <label for="yourLastname" class="form-label">*<?= $texts['lastname'] ?></label>
                                             <input type="text" name="lastname" class="form-control" id="yourLastname" required>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPhoneNumber" class="form-label"><?= $texts['tel'] ?></label>
+                                            <label for="yourPhoneNumber" class="form-label">*<?= $texts['tel'] ?></label>
                                             <input type="text" name="phone_number" class="form-control" id="yourPhoneNumber" required>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
                                                 <input class="form-check-input" name="pdpa" type="checkbox" value="true" id="acceptTerms" required>
-                                                <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../privacy_policy.php"><?= $texts['privacy_policy'] ?></a></label>
+                                                <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../privacy_policy.php" data-bs-toggle="modal" data-bs-target="#privacy_policy"><?= $texts['privacy_policy'] ?></a></label>
                                             </div>
                                         </div>
                                         <div class="col-12">
@@ -109,6 +123,21 @@
 
             </section>
 
+            <div class="modal fade" id="privacy_policy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="create_data_form">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['privacy_policy_head'] ?></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <?= $texts['policy_data'] ?>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         </div>
     </main><!-- End #main -->
 
@@ -131,7 +160,7 @@
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/application_employers/employers/create_employer.js"></script>
-
+    <script src="../js/language.js"></script>
 
 </body>
 
