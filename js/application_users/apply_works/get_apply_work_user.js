@@ -1,28 +1,31 @@
-
-if (token && role == 'applicant') {
-    fetch(apiUrl + 'application/apply_works/get_apply_work_user.php?user_code=' + data_token.user_code, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${token}`
-        },
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role === 'applicant') {
+            fetch(apiUrl + 'application/apply_works/get_apply_work_user.php?user_code=' + mySession.user_code, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${mySession.token}`
+                },
+            })
+                .then(response => {
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.status === 'success') {
+                        displayCards(data.data, mySession);
+                    }
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                });
+        } else {
+            console.error('Token not found in local storage');
+        }
     })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            if (data.status === 'success') {
-                displayCards(data.data);
-            }
-        })
-        .catch(error => {
-            console.error('There has been a problem with your fetch operation:', error);
-        });
-} else {
-    console.error('Token not found in local storage');
-}
+    .catch(error => console.error('Error fetching session token:', error));
 
 
-async function displayCards(datas) {
+async function displayCards(datas, mySession) {
     let cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
@@ -51,7 +54,7 @@ async function displayCards(datas) {
                                     <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
                                     <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
                                     <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                                    <p class="card-text"><strong>${texts.work_location}:</strong> ${language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                                    <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
                                     <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
                                     <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                                     <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
@@ -59,7 +62,7 @@ async function displayCards(datas) {
                             </div>
                             <div class="col-md-4 d-flex justify-content-end align-items-center">
                                 <a href="${data.link_path && data.link_path.startsWith('https') ? data.link_path : (data.link_path && data.link_path.includes('.') ? 'https://' + data.link_path : '#')}">
-                                    <img id="logoImage" src="${apiUrl+'img/logo_employer/'+(data.img_path ? data.img_path : 'no_logo.jpg')}" class="card-img" alt="Logo" style="max-height: 150px; max-width: 150px;">
+                                    <img id="logoImage" src="${apiUrl + 'img/logo_employer/' + (data.img_path ? data.img_path : 'no_logo.jpg')}" class="card-img" alt="Logo" style="max-height: 150px; max-width: 150px;">
                                 <a>
                             </div>
                         </div>

@@ -12,7 +12,6 @@ function update_data(job_code) {
                         return response.json();
                     })
                     .then(data => {
-                        console.log(data);
                         show_data(data.data);
                     })
                     .catch(error => {
