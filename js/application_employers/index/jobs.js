@@ -24,6 +24,7 @@ getSessionToken()
 
 async function display_jobs(datas) {
     document.getElementById('all_jobs').textContent = datas.total_jobs || 0;
-    document.getElementById('active_jobs').textContent = datas.true_status_jobs || 0;
-    document.getElementById('inactive_jobs').textContent = datas.false_status_jobs || 0;
+    document.getElementById('active_jobs').textContent = datas.status_1_jobs || 0;
+    document.getElementById('on_hold_jobs').textContent = datas.status_2_jobs || 0;
+    document.getElementById('inactive_jobs').textContent = datas.status_3_jobs || 0;
 }

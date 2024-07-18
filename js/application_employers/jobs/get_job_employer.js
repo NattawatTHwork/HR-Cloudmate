@@ -39,12 +39,14 @@ async function displayCards(datas, mySession) {
 
         const urlParams = new URLSearchParams(window.location.search);
         const status = urlParams.get('status');
-
+        
         // Filter datas based on status
-        if (status === 'true') {
-            datas = datas.filter(data => data.statusflag === 't');
-        } else if (status === 'false') {
-            datas = datas.filter(data => data.statusflag === 'f');
+        if (status == 1) {
+            datas = datas.filter(data => data.statusflag == 1);
+        } else if (status == 2) {
+            datas = datas.filter(data => data.statusflag == 2);
+        } else if (status == 3) {
+            datas = datas.filter(data => data.statusflag == 3);
         }
 
         let cardContainer = document.getElementById('cardContainer');
@@ -52,10 +54,8 @@ async function displayCards(datas, mySession) {
 
         // Display cards
         for (let data of datas) {
-            let statusflag = data.statusflag === 't' ? texts.enable :
-                data.statusflag === 'f' ? texts.disable : '';
-
-            let statusStyle = data.statusflag === 't' ? 'text-success' : 'text-danger';
+            let statusflag = data.statusflag == 1 ? texts.enable : data.statusflag == 2 ? texts.on_hold : data.statusflag == 3 ? texts.disable : '';
+            let statusStyle = data.statusflag == 1 ? 'text-success' : data.statusflag == 2 ? 'text-warning' : data.statusflag == 3 ? 'text-danger' : '';
 
             const currentDate = new Date().toISOString().slice(0, 10);
             const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });

@@ -2,9 +2,9 @@ getSessionToken()
     .then(mySession => {
         if (mySession.token && mySession.role === 'member') {
             const urlParams = new URLSearchParams(window.location.search);
-            const employer_code = urlParams.get('employer_code');
+            const job_code = urlParams.get('job_code');
 
-            fetch(apiUrl + 'application/jobs/get_job_employer.php?employer_code=' + employer_code, {
+            fetch(apiUrl + 'application/jobs/get_job_approval.php?job_code=' + job_code + '&language=' + mySession.language, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${mySession.token}`
@@ -40,33 +40,22 @@ getSessionToken()
             const data = await response.json();
             const other_type_all = data.data;
     
-            const urlParams = new URLSearchParams(window.location.search);
-            const status = urlParams.get('status');
-    
-            // Filter datas based on status
-            if (status === 'true') {
-                datas = datas.filter(data => data.statusflag === 't');
-            } else if (status === 'false') {
-                datas = datas.filter(data => data.statusflag === 'f');
-            }
-    
             let cardContainer = document.getElementById('cardContainer');
             cardContainer.innerHTML = '';
     
             // Display cards
-            for (let data of datas) {
-                let statusflag = data.statusflag == 1 ? texts.enable : data.statusflag == 2 ? texts.on_hold : data.statusflag == 3 ? texts.disable : '';
-                let statusStyle = data.statusflag == 1 ? 'text-success' : data.statusflag == 2 ? 'text-warning' : data.statusflag == 3 ? 'text-danger' : '';
+                let statusflag = datas.statusflag == 1 ? texts.enable : datas.statusflag == 2 ? texts.on_hold : datas.statusflag == 3 ? texts.disable : '';
+                let statusStyle = datas.statusflag == 1 ? 'text-success' : datas.statusflag == 2 ? 'text-warning' : datas.statusflag == 3 ? 'text-danger' : '';
         
                 const currentDate = new Date().toISOString().slice(0, 10);
                 const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });
-                const timeIn = TimeFormatter.format(new Date(currentDate + 'T' + data.time_in));
-                const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
+                const timeIn = TimeFormatter.format(new Date(currentDate + 'T' + datas.time_in));
+                const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + datas.time_out));
     
                 let otherTypes = '';
                 if (other_type_all) {
                     other_type_all.forEach(type_all => {
-                        const types = data.other_type.split(',');
+                        const types = datas.other_type.split(',');
                         if (types.includes(type_all.other_type_code)) {
                             otherTypes += `<input type="checkbox" disabled checked> ${type_all.other_type}<br>`;
                         } else {
@@ -103,32 +92,31 @@ getSessionToken()
                     }
                 };
     
-                const workDays = convertWorkDays(data.work_day, mySession.language);
+                const workDays = convertWorkDays(datas.work_day, mySession.language);
     
                 let cardHtml = `
                         <div class="col-sm-12 col-md-6 mb-4">
                             <div class="card">
                                 <div class="card-body">
-                                <h5 class="card-title">${data.position}</h5>
-                                <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
-                                <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language === 'th' ? data.employment_type_th : data.employment_type_en}</p>
+                                <h5 class="card-title">${datas.position}</h5>
+                                <p class="card-text"><strong>${texts.job_category}:</strong> ${datas.job_category}</p>
+                                <p class="card-text"><strong>${texts.employment_type}:</strong> ${datas.employment_type}</p>
                                 <p class="card-text"><strong>${texts.work_day}:</strong> ${workDays}</p>
                                 <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                                <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language === 'th' ? data.work_location_th : data.work_location_en}</p>
-                                <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary === 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
-                                <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
+                                <p class="card-text"><strong>${texts.work_location}:</strong> ${datas.work_location}</p>
+                                <p class="card-text"><strong>${texts.salary}:</strong> ${datas.salary === 'agreed' ? texts.agreed : Number(datas.salary).toLocaleString() + ' ' + texts.baht}</p>
+                                <p class="card-text"><strong>${texts.description}:</strong> ${datas.description}</p>
                                 <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>
                                 <p class="card-text">${otherTypes}</p>
                                 <div class="text-center">
-                                    <button type="button" class="btn btn-warning" onclick="update_data('${data.job_code}')">${texts.edit}</button>
-                                    <button type="button" class="btn btn-danger" onclick="delete_data('${data.job_code}', '${data.position}')">${texts.delete}</button>
+                                    <button type="button" class="btn btn${datas.statusflag != 1 ? '-outline' : ''}-success" onclick="change_status('${datas.job_code}','1')">${texts.enable}</button>
+                                    <button type="button" class="btn btn${datas.statusflag != 2 ? '-outline' : ''}-warning" onclick="change_status('${datas.job_code}','2')">${texts.on_hold}</button>
+                                    <button type="button" class="btn btn${datas.statusflag != 3 ? '-outline' : ''}-danger" onclick="change_status('${datas.job_code}','3')">${texts.disable}</button>
                                 </div>
                                 </div>
                             </div>
                         </div>`;
-    
                 cardContainer.innerHTML += cardHtml;
-            }
         } catch (error) {
             console.error('Error displaying cards:', error);
         }

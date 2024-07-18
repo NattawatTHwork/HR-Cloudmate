@@ -100,4 +100,7 @@ texts = {
   'thursday': 'พฤหัสบดี',
   'friday': 'ศุกร์',
   'saturday': 'เสาร์',
+  'change_status': 'เปลี่ยนสถานะ',
+  'want_statusflag': 'คุณต้องการเปลี่ยนสถานะใช่ไหม',
+
 };

@@ -48,7 +48,7 @@ function update_data(job_code) {
         }
         $("#description_update").val(datas.description);
         $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);
-        if (datas.statusflag === 'f' && data_status === false) {
+        if (datas.statusflag === '3' && data_status === false) {
             $('#statusflag_update').prop('disabled', true);
         } else {
             $('#statusflag_update').prop('disabled', false); // Ensure it's enabled for other values
@@ -91,7 +91,6 @@ function update_data(job_code) {
     }
     
     $('#form_update_data').on('hidden.bs.modal', function (e) {
-        console.log('Modal has been hidden');
         clearModalData();
     });    
 }

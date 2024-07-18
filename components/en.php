@@ -195,4 +195,5 @@ return [
     "thursday" => "Thursday",
     "friday" => "Friday",
     "saturday" => "Saturday",
+    "job_approval" => "Jobs Approval",
 ];

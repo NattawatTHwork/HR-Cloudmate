@@ -195,4 +195,5 @@ return [
     "thursday" => "พฤหัสบดี",
     "friday" => "ศุกร์",
     "saturday" => "เสาร์",
+    "job_approval" => "การอนุมัติงาน",
 ];

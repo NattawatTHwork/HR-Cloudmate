@@ -108,8 +108,8 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="t" selected><?= $texts['enable'] ?></option>
-                                    <option value="f"><?= $texts['disable'] ?></option>
+                                    <option value="2"><?= $texts['on_hold'] ?></option>
+                                    <option value="3"><?= $texts['disable'] ?></option>
                                 </select>
                             </div>
                         </div>

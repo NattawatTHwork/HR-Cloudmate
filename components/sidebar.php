@@ -42,6 +42,29 @@
     </li><!-- End Application Nav -->
 
     <li class="nav-item">
+      <a class="nav-link collapsed" data-bs-target="#job_approval-nav" data-bs-toggle="collapse" href="#">
+        <i class="bi bi-journal-text"></i><span><?= $texts['job_approval'] ?></span><i class="bi bi-chevron-down ms-auto"></i>
+      </a>
+      <ul id="job_approval-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
+        <li>
+          <a href="<?= $path ?>/application/jobs_approval_enable.php">
+            <i class="bi bi-circle"></i><span><?= $texts['enable'] ?></span>
+          </a>
+        </li>
+        <li>
+          <a href="<?= $path ?>/application/jobs_approval_on_hold.php">
+            <i class="bi bi-circle"></i><span><?= $texts['on_hold'] ?></span>
+          </a>
+        </li>
+        <li>
+          <a href="<?= $path ?>/application/jobs_approval_disable.php">
+            <i class="bi bi-circle"></i><span><?= $texts['disable'] ?></span>
+          </a>
+        </li>
+      </ul>
+    </li><!-- End Jobs Approval Nav -->
+
+    <li class="nav-item">
       <a class="nav-link collapsed" data-bs-target="#user_admintration-nav" data-bs-toggle="collapse" href="#">
         <i class="bi bi-journal-text"></i><span><?= $texts['user_administration'] ?></span><i class="bi bi-chevron-down ms-auto"></i>
       </a>
