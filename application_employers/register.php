@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
-                                                <input class="form-check-input" name="pdpa" type="checkbox" value="true" id="acceptTerms" required>
+                                                <input class="form-check-input" name="privacy_policy" type="checkbox" value="" id="acceptTerms" required>
                                                 <label class="form-check-label" for="acceptTerms"><?= $texts['i_accept'] ?> <a href="../privacy_policy.php" data-bs-toggle="modal" data-bs-target="#privacy_policy"><?= $texts['privacy_policy'] ?></a></label>
                                             </div>
                                         </div>
@@ -124,20 +124,21 @@
             </section>
 
             <div class="modal fade" id="privacy_policy" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <form id="create_data_form">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"><?= $texts['privacy_policy_head'] ?></h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <?= $texts['policy_data'] ?>
-                        </div>
-                    </form>
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form id="create_data_form">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel"><?= $texts['privacy_policy_head'] ?></h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body" id="modal_privacy_policy">
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
+
         </div>
     </main><!-- End #main -->
 
@@ -157,10 +158,13 @@
     <script src="<?= $path ?>/assets/js/main.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
-    <script src="../js/application_employers/employers/create_employer.js"></script>
+    <script src="../js/get_session_token.js"></script>
     <script src="../js/language.js"></script>
+    <script src="../js/get_last_privacy_policy.js"></script>
+    <script src="../js/application_employers/employers/create_employer.js"></script>
 
 </body>
 

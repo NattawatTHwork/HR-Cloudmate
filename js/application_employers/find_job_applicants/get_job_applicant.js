@@ -15,7 +15,7 @@ document.getElementById('searchButton').addEventListener('click', function () {
         params.append('work_location_code', selectedWorkLocation);
     }
     if (selectedEmploymentType) {
-        params.append('employment_type', selectedEmploymentType);
+        params.append('employment_type_code', selectedEmploymentType);
     }
     if (selectedSalaryStart) {
         params.append('salary_start', selectedSalaryStart);
@@ -31,13 +31,13 @@ document.getElementById('searchButton').addEventListener('click', function () {
 const urlParams = new URLSearchParams(window.location.search);
 const job_category_code = urlParams.get('job_category_code') || '';
 const work_location_code = urlParams.get('work_location_code') || '';
-const employment_type = urlParams.get('employment_type') || '';
+const employment_type_code = urlParams.get('employment_type_code') || '';
 const salary_start = urlParams.get('salary_start') || '';
 const salary_end = urlParams.get('salary_end') || '';
 
-fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end);
+fetchData(job_category_code, work_location_code, employment_type_code, salary_start, salary_end);
 
-function fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end) {
+function fetchData(job_category_code, work_location_code, employment_type_code, salary_start, salary_end) {
     getSessionToken()
         .then(mySession => {
             if (mySession.token && mySession.role === 'employer') {
@@ -45,7 +45,7 @@ function fetchData(job_category_code, work_location_code, employment_type, salar
                 const params = {
                     job_category_code,
                     work_location_code,
-                    employment_type,
+                    employment_type_code,
                     salary_start,
                     salary_end
                 };
@@ -83,12 +83,6 @@ async function displayCards(datas, mySession) {
     cardContainer.innerHTML = '';
 
     await datas.forEach(data => {
-        let employment_type = data.employment_type == 1 ? 'Full Time' :
-            data.employment_type == 2 ? 'Freelance' :
-                data.employment_type == 3 ? 'Part Time' :
-                    data.employment_type == 4 ? 'Tainee' :
-                        '';
-
         let cardHtml = `
             <div class="col-sm-12">
                 <div class="card d-flex flex-column">
@@ -97,7 +91,7 @@ async function displayCards(datas, mySession) {
                         <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
                         <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                         <div id="additionalInfo_${data.referred_job_code}" style="display:none;">
-                            <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
+                            <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language == 'th' ? data.employment_type_th : data.employment_type_en}</p>
                             <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
                             <p class="card-text"><strong>${texts.expect_salary}:</strong> ${Number(data.expect_salary).toLocaleString() + ' ' + texts.baht}</p>
                         </div>

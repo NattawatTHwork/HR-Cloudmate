@@ -17,7 +17,9 @@ document.getElementById('create_data_form').addEventListener('submit', function 
                 if (jsonData['agreed'] && jsonData['agreed'] == 'on') {
                     jsonData['salary'] = 'agreed';
                     delete jsonData['agreed'];
+                    delete jsonData['other_type_create[]'];
                 }
+                delete jsonData['work_day_create'];
 
                 fetch(apiUrl + 'application/jobs/create_job.php', {
                     method: 'POST',

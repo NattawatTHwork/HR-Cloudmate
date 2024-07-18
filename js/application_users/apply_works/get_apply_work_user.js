@@ -29,17 +29,75 @@ async function displayCards(datas, mySession) {
     let cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
-    await datas.forEach(data => {
-        let employment_type = data.employment_type == 1 ? 'Full Time' :
-            data.employment_type == 2 ? 'Freelance' :
-                data.employment_type == 3 ? 'Part Time' :
-                    data.employment_type == 4 ? 'Tainee' :
-                        '';
+    let OtherType_All;
+    try {
+        let response = await fetch(apiUrl + 'application/other_type/get_other_type_all.php?language=' + mySession.language, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${mySession.token}`
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        let result = await response.json();
+        OtherType_All = result.data;
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+        return; // Exit the function if there's an error
+    }
 
+    await datas.forEach(data => {
         const currentDate = new Date().toISOString().slice(0, 10);
         const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });
         const timeIn = TimeFormatter.format(new Date(currentDate + 'T' + data.time_in));
         const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
+
+        let OtherType_Data = [];
+        if (data.other_type) {
+            OtherType_Data = data.other_type.split(',');
+        }
+
+        let ShowOtherType = [];
+        OtherType_All.forEach(all => {
+            OtherType_Data.forEach(data => {
+                if (all.other_type_code === data) {
+                    ShowOtherType.push([all.other_type_code, all.other_type]);
+                }
+            });
+        });
+
+        let otherTypesHtml = ShowOtherType.map(type => `<span class="badge text-bg-${type['0'] == 'OT000003' ? 'danger' : 'primary'} btn-sm">${type['1']}</span>`).join(' ');
+
+        // Function to convert work day numbers to day names
+        const getDayName = (dayNumber, language) => {
+            const dayNames = {
+                'th': ['อาทิตย์', 'จันทร์', 'อังคาร', 'พุธ', 'พฤหัสบดี', 'ศุกร์', 'เสาร์'],
+                'en': ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+            };
+            return dayNames[language][dayNumber - 1];
+        };
+
+        // Function to convert work day string to day names string
+        const convertWorkDays = (workDaysString, language) => {
+            const days = workDaysString.split(',').map(Number);
+            days.sort((a, b) => a - b);
+
+            // Check for specific sequences
+            if (days.join(',') === '2,3,4') {
+                return language === 'th' ? 'จันทร์ - พุธ' : 'Monday - Wednesday';
+            } else if (days.join(',') === '2,3,4,5') {
+                return language === 'th' ? 'จันทร์ - พฤหัสบดี' : 'Monday - Thursday';
+            } else if (days.join(',') === '2,3,4,5,6') {
+                return language === 'th' ? 'จันทร์ - ศุกร์' : 'Monday - Friday';
+            } else if (days.join(',') === '2,3,4,5,6,7') {
+                return language === 'th' ? 'จันทร์ - เสาร์' : 'Monday - Saturday';
+            } else {
+                return days.map(day => getDayName(day, language)).join(', ');
+            }
+        };
+
+        const workDays = convertWorkDays(data.work_day, mySession.language);
 
         let cardHtml = `
             <div class="col-sm-12">
@@ -51,13 +109,14 @@ async function displayCards(datas, mySession) {
                                 <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
                                 <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}</strong> ${data.employer_name}</p>
                                 <div id="additionalInfo_${data.apply_work_code}" style="display:none;">
-                                    <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
-                                    <p class="card-text"><strong>${texts.work_day}:</strong> ${data.work_day}</p>
+                                    <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language == 'th' ? data.employment_type_th : data.employment_type_en}</p>
+                                    <p class="card-text"><strong>${texts.work_day}:</strong> ${workDays}</p>
                                     <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
                                     <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
                                     <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
                                     <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                                     <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
+                                    <p class="card-text">${otherTypesHtml}</p>
                                 </div>
                             </div>
                             <div class="col-md-4 d-flex justify-content-end align-items-center">

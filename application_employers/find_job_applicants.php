@@ -51,10 +51,6 @@
                     <label class="col-2"><?= $texts['employment_type'] ?></label>
                     <select class="form-select me-2 col" id="select_employment_type">
                         <option value="">-- <?= $texts['employment_type'] ?> --</option>
-                        <option value="1">Full Time</option>
-                        <option value="2">Freelance</option>
-                        <option value="3">Part Time</option>
-                        <option value="4">Tainee</option>
                     </select>
                 </div>
                 <div class="row mb-4">
@@ -86,9 +82,9 @@
     <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/get_employer_header.js"></script>
     <script src="../js/application_employers/find_job_applicants/get_salary.js"></script>
-    <script src="../js/application_employers/find_job_applicants/get_employment_type.js"></script>
     <script src="../js/application_employers/find_job_applicants/get_job_category_all.js"></script>
     <script src="../js/application_employers/find_job_applicants/get_work_location_all.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_employment_type_all.js"></script>
     <script src="../js/application_employers/find_job_applicants/get_job_applicant.js"></script>
 </body>
 

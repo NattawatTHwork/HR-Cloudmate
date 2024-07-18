@@ -57,16 +57,21 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['employment_type'] ?></label>
-                                <select class="form-control" name="employment_type" id="employment_type_update" placeholder="<?= $texts['employment_type'] ?>" required>
-                                    <option value="1" selected>Full Time</option>
-                                    <option value="2">Freelance</option>
-                                    <option value="3">Part Time</option>
-                                    <option value="4">Tainee</option>
+                                <select class="form-control" name="employment_type" id="employment_type_code_dropdown_update" required>
                                 </select>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['work_day'] ?></label>
-                                <input type="text" class="form-control" name="work_day" id="work_day_update" placeholder="<?= $texts['work_day'] ?>" required>
+                                <div>
+                                    <label><input type="checkbox" name="work_day_update" value="1"> <?= $texts['sunday'] ?></label>
+                                    <label><input type="checkbox" name="work_day_update" value="2"> <?= $texts['monday'] ?></label>
+                                    <label><input type="checkbox" name="work_day_update" value="3"> <?= $texts['tuesday'] ?></label>
+                                    <label><input type="checkbox" name="work_day_update" value="4"> <?= $texts['wednesday'] ?></label>
+                                    <label><input type="checkbox" name="work_day_update" value="5"> <?= $texts['thursday'] ?></label>
+                                    <label><input type="checkbox" name="work_day_update" value="6"> <?= $texts['friday'] ?></label>
+                                    <label><input type="checkbox" name="work_day_update" value="7"> <?= $texts['saturday'] ?></label>
+                                </div>
+                                <input type="hidden" id="work_day_update_hidden" name="work_day">
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['time_in'] ?></label>
@@ -93,7 +98,12 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
-                                <textarea class="form-control" name="description" id="description_update" placeholder="<?= $texts['description'] ?>" required></textarea>
+                                <textarea class="form-control" name="description" id="description_update" placeholder="<?= $texts['description'] ?>"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput"><?= $texts['other_type'] ?></label>
+                                <div id="other_type_update"></div>
+                                <input type="hidden" id="other_type_update_hidden" name="other_type">
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
@@ -125,6 +135,8 @@
     <script src="../js/application/jobs/function.js"></script>
     <script src="../js/application/jobs/get_job_category_all.js"></script>
     <script src="../js/application/jobs/get_work_location_all.js"></script>
+    <script src="../js/application/jobs/get_employment_type_all.js"></script>
+    <script src="../js/application/jobs/get_other_type_all.js"></script>
     <script src="../js/application/jobs/get_job_employer.js"></script>
     <script src="../js/application/jobs/update_job.js"></script>
     <script src="../js/application/jobs/delete_job.js"></script>

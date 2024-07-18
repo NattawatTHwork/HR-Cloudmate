@@ -93,5 +93,11 @@ texts = {
     'more_6': 'Password length must be more than 6 characters.',
     'agreed': 'As agreed',
     'baht': 'Baht',
-
+    'sunday': 'Sunday',
+    'monday': 'Monday',
+    'tuesday': 'Tuesday',
+    'wednesday': 'Wednesday',
+    'thursday': 'Thursday',
+    'friday': 'Friday',
+    'saturday': 'Saturday',
 }

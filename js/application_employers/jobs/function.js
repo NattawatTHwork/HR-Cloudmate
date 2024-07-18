@@ -34,3 +34,23 @@ document.getElementById('salary_update').addEventListener('input', function() {
         this.value = '';
     }
 });
+
+document.querySelectorAll('input[name="work_day_create"]').forEach(function (checkbox) {
+    checkbox.addEventListener('change', function () {
+        var selectedDays = [];
+        document.querySelectorAll('input[name="work_day_create"]:checked').forEach(function (checkedBox) {
+            selectedDays.push(checkedBox.value);
+        });
+        document.getElementById('work_day_create_hidden').value = selectedDays.join(',');
+    });
+});
+
+document.querySelectorAll('input[name="work_day_update"]').forEach(function (checkbox) {
+    checkbox.addEventListener('change', function () {
+        var selectedDays = [];
+        document.querySelectorAll('input[name="work_day_update"]:checked').forEach(function (checkedBox) {
+            selectedDays.push(checkedBox.value);
+        });
+        document.getElementById('work_day_update_hidden').value = selectedDays.join(',');
+    });
+});

@@ -70,11 +70,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['employment_type'] ?></label>
-                                <select class="form-control" name="employment_type" id="employment_type" required>
-                                    <option value="1" selected>Full Time</option>
-                                    <option value="2">Freelance</option>
-                                    <option value="3">Part Time</option>
-                                    <option value="4">Tainee</option>
+                                <select class="form-control" name="employment_type" id="employment_type_code_dropdown_create" required>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -126,11 +122,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['employment_type'] ?></label>
-                                <select class="form-control" name="employment_type" id="employment_type_update" required>
-                                    <option value="1" selected>Full Time</option>
-                                    <option value="2">Freelance</option>
-                                    <option value="3">Part Time</option>
-                                    <option value="4">Tainee</option>
+                                <select class="form-control" name="employment_type" id="employment_type_code_dropdown_update" required>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -173,6 +165,7 @@
     <script src="../js/application_users/referred_jobs/function.js"></script>
     <script src="../js/application_users/referred_jobs/get_job_category_all.js"></script>
     <script src="../js/application_users/referred_jobs/get_work_location_all.js"></script>
+    <script src="../js/application_users/referred_jobs/get_employment_type_all.js"></script>
     <script src="../js/application_users/referred_jobs/get_referred_job_user.js"></script>
     <script src="../js/application_users/referred_jobs/create_referred_job.js"></script>
     <script src="../js/application_users/referred_jobs/update_referred_job.js"></script>

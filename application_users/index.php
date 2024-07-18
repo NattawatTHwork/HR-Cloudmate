@@ -51,10 +51,6 @@
                     <label class="col-2"><?= $texts['employment_type'] ?></label>
                     <select class="form-select me-2 col" id="select_employment_type">
                         <option value="">-- <?= $texts['employment_type'] ?> --</option>
-                        <option value="1">Full Time</option>
-                        <option value="2">Freelance</option>
-                        <option value="3">Part Time</option>
-                        <option value="4">Tainee</option>
                     </select>
                 </div>
                 <div class="row mb-4">
@@ -64,6 +60,10 @@
                     <label class="col-1 text-center"> - </label>
                     <select class="form-select me-2 col" id="select_salary_end">
                     </select>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-2"><?= $texts['other_type'] ?></label>
+                    <div class="me-2 col" id="checkbox_other_type"></div>
                 </div>
                 <button type="submit" id="searchButton" class="btn btn-primary w-100"><?= $texts['search_button'] ?></button>
             </div>
@@ -86,9 +86,10 @@
     <script src="../js/token.js"></script>
     <script src="../js/application_users/users/get_user_header.js"></script>
     <script src="../js/application_users/apply_works/get_salary.js"></script>
-    <script src="../js/application_users/apply_works/get_employment_type.js"></script>
     <script src="../js/application_users/apply_works/get_job_category_all.js"></script>
     <script src="../js/application_users/apply_works/get_work_location_all.js"></script>
+    <script src="../js/application_users/apply_works/get_employment_type_all.js"></script>
+    <script src="../js/application_users/apply_works/get_other_type_all.js"></script>
     <script src="../js/application_users/apply_works/get_job.js"></script>
 </body>
 

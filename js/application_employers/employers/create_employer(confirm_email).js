@@ -1,0 +1,109 @@
+getSessionToken()
+    .then(mySession => {
+        if (mySession.token && mySession.role == 'employer') {
+            window.location.href = pathUrl + '/application_employers/index.php';
+        }
+    })
+    .catch(error => console.error('Error fetching session token:', error));
+
+document.getElementById("acceptTerms").addEventListener("change", function () {
+    document.getElementById("submitBtn").disabled = !this.checked;
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const buttonRegister = document.getElementById('submitBtn');
+        buttonRegister.disabled = true; // Disable the button
+
+        const formData = new FormData(form);
+        const password = formData.get('employer_password');
+        const repeatPassword = formData.get('employer_repeat_password');
+        if (password.length < 6) {
+            document.getElementById('alertpassword').style.display = 'block';
+            buttonRegister.disabled = false;
+            return;
+        } else if (password !== repeatPassword) {
+            document.getElementById('alertpassword').style.display = 'none';
+            document.getElementById('alertrepeatpassword').style.display = 'block';
+            buttonRegister.disabled = false;
+            return;
+        }
+
+        const jsonData = {};
+        formData.forEach(function (value, key) {
+            jsonData[key] = value;
+        });
+
+        fetch(apiUrl + 'application/employers/send_confirm_code.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: jsonData['email'] })
+        })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                if (data.status === 'exist') {
+                    Swal.fire({
+                        icon: 'error',
+                        title: texts.error,
+                        text: texts.exist
+                    });
+
+                } else if (data.status === 'success') {
+                    $("#confirm_code_modal").modal("show");
+                }
+                buttonRegister.disabled = false; // Re-enable the button
+            })
+            .catch(error => {
+                console.error('There has been a problem with your fetch operation:', error);
+            })
+
+
+        // fetch(apiUrl + 'application/employers/create_employer.php', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(jsonData)
+        // })
+        //     .then(response => {
+        //         return response.json();
+        //     })
+        //     .then(data => {
+        //         if (data.status === 'success') {
+        //             Swal.fire({
+        //                 position: "center",
+        //                 icon: "success",
+        //                 title: texts.success,
+        //                 showConfirmButton: false,
+        //                 timer: 1500
+        //             }).then(() => {
+        //                 window.location.href = 'login.php';
+        //             });
+        //         } else if (data.status === 'exist') {
+        //             Swal.fire({
+        //                 icon: 'error',
+        //                 title: texts.error,
+        //                 text: texts.exist
+        //             });
+        //         } else {
+        //             Swal.fire({
+        //                 icon: 'error',
+        //                 title: texts.error,
+        //             });
+        //         }
+        //     })
+        //     .catch(error => {
+        //         console.error('There has been a problem with your fetch operation:', error);
+        //     })
+        //     .finally(() => {
+        //         buttonRegister.disabled = false; // Re-enable the button
+        //     });
+    });
+});

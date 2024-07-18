@@ -28,7 +28,7 @@ function update_data(referred_job_code) {
         $("#referred_job_code_update").val(datas.referred_job_code);
         $("#position_update").val(datas.position);
         $('#job_category_code_dropdown_update option[value="' + datas.job_category_code + '"]').prop('selected', true);
-        $('#employment_type_update option[value="' + datas.employment_type + '"]').prop('selected', true);
+        $('#employment_type_code_dropdown_update option[value="' + datas.employment_type + '"]').prop('selected', true);
         $("#expect_salary_update").val(datas.expect_salary);
         $('#work_location_code_dropdown_update option[value="' + datas.work_location + '"]').prop('selected', true);
         $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>ลงทะเบียนผู้สมัครงาน | CM WORKFORCE</title>
+    <title>ลงทะเบียนผู้ประกอบการ | CM WORKFORCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -49,7 +49,7 @@
                                 <div class="card-body">
 
                                     <div class="pt-4 pb-2">
-                                        <h5 class="card-title text-center pb-0 fs-4"><?= $texts['applicant_register'] ?></h5>
+                                        <h5 class="card-title text-center pb-0 fs-4"><?= $texts['entrepreneur_register'] ?></h5>
                                     </div>
 
                                     <!-- <form class="row g-3 needs-validation" novalidate method="POST" action=""> -->
@@ -63,14 +63,19 @@
 
                                         <div class="col-12">
                                             <label for="yourPassword" class="form-label">*<?= $texts['password'] ?></label>
-                                            <input type="password" name="user_password" class="form-control" id="yourPassword" required>
+                                            <input type="password" name="employer_password" class="form-control" id="yourPassword" required>
                                             <div id="alertpassword" style="display: none; color: red;"><?= $texts['more_6'] ?></div>
                                         </div>
 
                                         <div class="col-12">
                                             <label for="yourRepeatPassword" class="form-label">*<?= $texts['confirm_password'] ?></label>
-                                            <input type="password" name="user_repeat_password" class="form-control" id="yourRepeatPassword" required>
+                                            <input type="password" name="employer_repeat_password" class="form-control" id="yourRepeatPassword" required>
                                             <div id="alertrepeatpassword" style="display: none; color: red;"><?= $texts['not_match'] ?></div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label for="yourEmployerName" class="form-label">*<?= $texts['company'] ?>/<?= $texts['entrepreneur'] ?></label>
+                                            <input type="text" name="employer_name" class="form-control" id="yourEmployerName" required>
                                         </div>
 
                                         <div class="col-12">
@@ -84,44 +89,8 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="genderSelect" class="form-label">*<?= $texts['gender'] ?></label>
-                                            <select class="form-select" id="genderSelect" name="gender" required>
-                                                <option value=""><?= $texts['select'] ?></option>
-                                                <option value="1"><?= $texts['male'] ?></option>
-                                                <option value="2"><?= $texts['female'] ?></option>
-                                                <option value="3"><?= $texts['other'] ?></option>
-                                            </select>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <label for="birthdayInput" class="form-label">*<?= $texts['birthday'] ?></label>
-                                            <input type="date" name="birthday" class="form-control" id="birthdayInput" required>
-                                        </div>
-
-                                        <div class="col-12">
                                             <label for="yourPhoneNumber" class="form-label">*<?= $texts['tel'] ?></label>
                                             <input type="text" name="phone_number" class="form-control" id="yourPhoneNumber" required>
-                                        </div>
-
-                                        <div class="col-12">
-                                            <label for="yourAddress" class="form-label">*<?= $texts['address'] ?></label>
-                                            <input type="text" name="user_address" class="form-control" id="yourAddress" required>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="yourSubDistrict" class="form-label">*<?= $texts['sub_district'] ?></label>
-                                            <input type="text" name="sub_district" class="form-control" id="yourSubDistrict" required>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="yourDistrict" class="form-label">*<?= $texts['district'] ?></label>
-                                            <input type="text" name="district" class="form-control" id="yourDistrict" required>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="yourProvince" class="form-label">*<?= $texts['province'] ?></label>
-                                            <input type="text" name="province" class="form-control" id="yourProvince" required>
-                                        </div>
-                                        <div class="col-12">
-                                            <label for="yourZipCode" class="form-label">*<?= $texts['zip_code'] ?></label>
-                                            <input type="text" name="zip_code" class="form-control" id="yourZipCode" required>
                                         </div>
                                         <div class="col-12">
                                             <div class="form-check">
@@ -169,7 +138,29 @@
                     </div>
                 </div>
             </div>
-        </div>
+
+            <div class="modal fade" id="confirm_code_modal" tabindex="-1" aria-labelledby="codeVerificationLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form id="code_verification_form">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="codeVerificationLabel">ยืนยันโค้ด</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="mb-3">
+                                    <label for="confirm_code" class="form-label">กรอกโค้ดที่ได้รับจากอีเมล</label>
+                                    <input type="text" class="form-control" id="confirm_code" name="confirm_code" required>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ยกเลิก</button> -->
+                                <button type="submit" class="btn btn-primary">ยืนยัน</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </main><!-- End #main -->
@@ -196,7 +187,7 @@
     <script src="../js/get_session_token.js"></script>
     <script src="../js/language.js"></script>
     <script src="../js/get_last_privacy_policy.js"></script>
-    <script src="../js/application_users/users/create_user.js"></script>
+    <script src="../js/application_employers/employers/create_employer.js"></script>
 
 </body>
 

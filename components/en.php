@@ -161,7 +161,7 @@ return [
     'entrepreneur_login' => 'Entrepreneur Sign In',
     'entrepreneur_register' => 'Entrepreneur Register',
     'policy_data' => 'The Company would like to inform you and request consent for the collection of personal data and the right to access your personal data under the Personal Data Protection Act 2019, which has been effective since 1 June 2022, in part. Entrepreneur, whether it be first and last name, email, telephone number, company name, picture, website link Applying for a package and job applications As for job applicants, whether it be name-surname, email, gender, date of birth. Telephone number, address, job required educational record Work experience and job applications In the purpose of using the application Including forwarding specific information to employers to check: name-surname, email address, telephone number, gender, work history and work experience As mentioned, if we are not required to do so and you want to delete it, you can go in and edit your personal history or if you have any questions, please contact us.',
-    'select_img' => 'Select Image',    
+    'select_img' => 'Select Image',
     'i_jobs_employer' => 'You can manage job application information. This information is displayed for job applicants.',
     'i_apply_works_employer' => 'Job applicant information.',
     'i_educations_employer' => 'Educational background of the job applicant.',
@@ -187,5 +187,12 @@ return [
     'agreed' => 'As agreed',
     'find_job_applicant' => 'Find Job Applicants',
     'i_find_job_applicant' => 'Find Job Applicants',
-
+    'other_type' => 'Other Type',
+    "sunday" => "Sunday",
+    "monday" => "Monday",
+    "tuesday" => "Tuesday",
+    "wednesday" => "Wednesday",
+    "thursday" => "Thursday",
+    "friday" => "Friday",
+    "saturday" => "Saturday",
 ];

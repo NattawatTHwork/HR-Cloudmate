@@ -187,5 +187,12 @@ return [
     'agreed' => 'ตามตกลง',
     'find_job_applicant' => 'ค้นหาผู้สมัครงาน',
     'i_find_job_applicant' => 'ค้นหาผู้สมัครงาน',
-
+    'other_type' => 'ประเภทอื่น',
+    "sunday" => "อาทิตย์",
+    "monday" => "จันทร์",
+    "tuesday" => "อังคาร",
+    "wednesday" => "พุธ",
+    "thursday" => "พฤหัสบดี",
+    "friday" => "ศุกร์",
+    "saturday" => "เสาร์",
 ];

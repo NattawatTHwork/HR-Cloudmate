@@ -4,8 +4,10 @@ document.getElementById('searchButton').addEventListener('click', function () {
     const selectedEmploymentType = document.getElementById('select_employment_type').value;
     const selectedSalaryStart = document.getElementById('select_salary_start').value;
     const selectedSalaryEnd = document.getElementById('select_salary_end').value;
+    const checkboxes = document.querySelectorAll('#checkbox_other_type input[type="checkbox"]:checked');
+    const selectedOtherTypes = Array.from(checkboxes).map(checkbox => checkbox.value);
 
-    let url = 'apply_works.php?';
+    let url = 'index.php?';
     const params = new URLSearchParams();
 
     if (selectedJobCategory) {
@@ -15,13 +17,16 @@ document.getElementById('searchButton').addEventListener('click', function () {
         params.append('work_location_code', selectedWorkLocation);
     }
     if (selectedEmploymentType) {
-        params.append('employment_type', selectedEmploymentType);
+        params.append('employment_type_code', selectedEmploymentType);
     }
     if (selectedSalaryStart) {
         params.append('salary_start', selectedSalaryStart);
     }
     if (selectedSalaryEnd) {
         params.append('salary_end', selectedSalaryEnd);
+    }
+    if (selectedOtherTypes.length > 0) {
+        params.append('other_type_code', selectedOtherTypes.join(','));
     }
 
     window.location.href = url + params.toString();
@@ -31,23 +36,25 @@ document.getElementById('searchButton').addEventListener('click', function () {
 const urlParams = new URLSearchParams(window.location.search);
 const job_category_code = urlParams.get('job_category_code') || '';
 const work_location_code = urlParams.get('work_location_code') || '';
-const employment_type = urlParams.get('employment_type') || '';
+const employment_type_code = urlParams.get('employment_type_code') || '';
 const salary_start = urlParams.get('salary_start') || '';
 const salary_end = urlParams.get('salary_end') || '';
+const other_type_code = urlParams.get('other_type_code') || '';
 
-fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end);
+fetchData(job_category_code, work_location_code, employment_type_code, salary_start, salary_end, other_type_code);
 
-async function fetchData(job_category_code, work_location_code, employment_type, salary_start, salary_end) {
-        getSessionToken()
+async function fetchData(job_category_code, work_location_code, employment_type_code, salary_start, salary_end, other_type_code) {
+    getSessionToken()
         .then(mySession => {
             if (mySession.token && mySession.role === 'applicant') {
                 const url = new URL(apiUrl + 'application/jobs/get_job_by_job_category.php');
                 const params = {
                     job_category_code,
                     work_location_code,
-                    employment_type,
+                    employment_type_code,
                     salary_start,
-                    salary_end
+                    salary_end,
+                    other_type_code
                 };
 
                 Object.keys(params).forEach(key => {
@@ -65,7 +72,7 @@ async function fetchData(job_category_code, work_location_code, employment_type,
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === 'success') {
-                            displayCards(data.data);
+                            displayCards(data.data, mySession);
                         }
                     })
                     .catch(error => {
@@ -78,16 +85,44 @@ async function fetchData(job_category_code, work_location_code, employment_type,
         .catch(error => console.error('Error fetching session token:', error));
 }
 
-async function displayCards(datas) {
+async function displayCards(datas, mySession) {
     let cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
-    await datas.forEach(data => {
-        let employment_type = data.employment_type == 1 ? 'Full Time' :
-            data.employment_type == 2 ? 'Freelance' :
-                data.employment_type == 3 ? 'Part Time' :
-                    data.employment_type == 4 ? 'Tainee' :
-                        '';
+    let OtherType_All;
+    try {
+        let response = await fetch(apiUrl + 'application/other_type/get_other_type_all.php?language=' + mySession.language, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${mySession.token}`
+            }
+        });
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        let result = await response.json();
+        OtherType_All = result.data;
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+        return; // Exit the function if there's an error
+    }
+
+    await datas.forEach(data => {        
+        let OtherType_Data = [];
+        if (data.other_type) {
+            OtherType_Data = data.other_type.split(',');
+        }
+        
+        let ShowOtherType = [];
+        OtherType_All.forEach(all => {
+            OtherType_Data.forEach(data => {
+                if (all.other_type_code === data) {
+                    ShowOtherType.push([all.other_type_code, all.other_type]);
+                }
+            });
+        });
+
+        let otherTypesHtml = ShowOtherType.map(type => `<span class="badge text-bg-${type['0'] == 'OT000003' ? 'danger' : 'primary'} btn-sm">${type['1']}</span>`).join(' ');
 
         let cardHtml = `
             <div class="col-sm-12">
@@ -96,8 +131,9 @@ async function displayCards(datas) {
                         <div class="row">
                             <div class="col-md-8">
                                 <h5 class="card-title">${data.position}</h5>
-                                <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
+                                <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language == 'th' ? data.employment_type_th : data.employment_type_en}</p>
                                 <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}:</strong> ${data.employer_name}</p>
+                                <p class="card-text">${otherTypesHtml}</p>
                             </div>
                             <div class="col-md-4 d-flex justify-content-end align-items-center">
                                 <a href="${data.link_path && data.link_path.startsWith('https') ? data.link_path : (data.link_path && data.link_path.includes('.') ? 'https://' + data.link_path : '#')}">

@@ -25,8 +25,6 @@ getSessionToken()
             cardContainer.innerHTML = '';
 
             await datas.forEach(data => {
-                let employment_type = data.employment_type == 1 ? 'Full Time' : data.employment_type == 2 ? 'Freelance' : data.employment_type == 3 ? 'Part Time' : 'Trainee';
-
                 let statusflag = data.statusflag == 't' ? texts.enable :
                     data.statusflag == 'f' ? texts.disable : '';
 
@@ -38,7 +36,7 @@ getSessionToken()
                     <div class="card-body">
                         <h5 class="card-title">${data.position}</h5>
                         <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
-                        <p class="card-text"><strong>${texts.employment_type}:</strong> ${employment_type}</p>
+                        <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language == 'th' ? data.employment_type_th : data.employment_type_en}</p>
                         <p class="card-text"><strong>${texts.expect_salary}:</strong> ${Number(data.expect_salary).toLocaleString() + ' ' + texts.baht}</p>
                         <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
                         <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>
