@@ -8,7 +8,7 @@ function fetchData(job_code) {
     getSessionToken()
         .then(mySession => {
             if (mySession.token && mySession.role === 'applicant') {
-                fetch(apiUrl + 'application/jobs/get_job.php?job_code=' + job_code, {
+                fetch(apiUrl + 'application/jobs/get_job_detail.php?job_code=' + job_code, {
                     method: 'GET',
                     headers: {
                         'Authorization': `Bearer ${mySession.token}`

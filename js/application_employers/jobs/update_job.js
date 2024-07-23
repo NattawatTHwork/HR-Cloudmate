@@ -24,7 +24,6 @@ function update_data(job_code) {
         .catch(error => console.error('Error fetching session token:', error));
 
     function show_data(datas) {
-        console.log(datas)
         $("#job_code_update").val(datas.job_code);
         $("#position_update").val(datas.position);
         $('#job_category_code_dropdown_update option[value="' + datas.job_category_code + '"]').prop('selected', true);

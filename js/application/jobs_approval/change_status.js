@@ -21,7 +21,7 @@ async function change_status(job_code, statusflag) {
                 body: JSON.stringify({
                     job_code: job_code,
                     statusflag: statusflag,
-                    action: 'delete',
+                    action: 'change_status',
                     ip_address: ip_address['ip'],
                     changed_by: mySession.user_id
                 })
@@ -30,6 +30,7 @@ async function change_status(job_code, statusflag) {
                     return response.json();
                 })
                 .then(data => {
+                    console.log(data)
                     if (data.status === 'success') {
                         Swal.fire({
                             icon: 'success',

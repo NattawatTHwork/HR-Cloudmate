@@ -64,14 +64,24 @@ getSessionToken()
                 const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
     
                 let otherTypes = '';
+                // if (other_type_all) {
+                //     other_type_all.forEach(type_all => {
+                //         const types = data.other_type.split(',');
+                //         if (types.includes(type_all.other_type_code)) {
+                //             otherTypes += `<input type="checkbox" disabled checked> ${type_all.other_type}<br>`;
+                //         } else {
+                //             otherTypes += `<input type="checkbox" disabled> ${type_all.other_type}<br>`;
+                //         }
+                //     });
+                // }
                 if (other_type_all) {
                     other_type_all.forEach(type_all => {
-                        const types = data.other_type.split(',');
-                        if (types.includes(type_all.other_type_code)) {
-                            otherTypes += `<input type="checkbox" disabled checked> ${type_all.other_type}<br>`;
-                        } else {
-                            otherTypes += `<input type="checkbox" disabled> ${type_all.other_type}<br>`;
+                        isChecked = '';
+                        if (data.other_type) {
+                            const types = data.other_type.split(',');
+                            isChecked = types.includes(type_all.other_type_code) ? 'checked' : '';
                         }
+                        otherTypes += `<input type="checkbox" disabled ${isChecked}> ${type_all.other_type}<br>`;
                     });
                 }
     

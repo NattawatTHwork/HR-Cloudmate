@@ -137,6 +137,7 @@
     <script src="../js/application/jobs/get_work_location_all.js"></script>
     <script src="../js/application/jobs/get_employment_type_all.js"></script>
     <script src="../js/application/jobs/get_other_type_all.js"></script>
+    <script src="../js/application/jobs/package_amount.js"></script>
     <script src="../js/application/jobs/get_job_employer.js"></script>
     <script src="../js/application/jobs/update_job.js"></script>
     <script src="../js/application/jobs/delete_job.js"></script>

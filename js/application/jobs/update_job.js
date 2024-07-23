@@ -128,7 +128,6 @@ document.getElementById('update_data_form').addEventListener('submit', function 
                         return response.json();
                     })
                     .then(data => {
-                        console.log(data)
                         if (data.status === 'success') {
                             Swal.fire({
                                 icon: 'success',
