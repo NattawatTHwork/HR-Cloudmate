@@ -17,6 +17,13 @@
     </li><!-- End Referred Jobs Nav -->
 
     <li class="nav-item">
+      <a class="nav-link collapsed" href="<?= $path ?>/application_users/resume.php">
+        <i class="bi bi-grid"></i>
+        <span><?= $texts['resume'] ?></span>
+      </a>
+    </li><!-- End Resume Nav -->
+
+    <li class="nav-item">
       <a class="nav-link collapsed" href="<?= $path ?>/application_users/educations.php">
         <i class="bi bi-grid"></i>
         <span><?= $texts['education'] ?></span>

@@ -39,6 +39,7 @@ getSessionToken()
                         <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language == 'th' ? data.employment_type_th : data.employment_type_en}</p>
                         <p class="card-text"><strong>${texts.expect_salary}:</strong> ${Number(data.expect_salary).toLocaleString() + ' ' + texts.baht}</p>
                         <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                        <p class="card-text"><strong>${texts.description}:</strong> ${data.description ? data.description : ''}</p>
                         <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>
                         <div class="text-center">
                             <button type="button" class="btn btn-warning" onclick="update_data('${data.referred_job_code}')">${texts.edit}</button>

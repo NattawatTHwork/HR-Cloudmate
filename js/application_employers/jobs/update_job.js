@@ -47,11 +47,12 @@ function update_data(job_code) {
         }
         $("#description_update").val(datas.description);
         $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);
-        if (datas.statusflag === '3' && data_status === false) {
-            $('#statusflag_update').prop('disabled', true);
-        } else {
-            $('#statusflag_update').prop('disabled', false); // Ensure it's enabled for other values
-        }
+        $("#statusflag_update2").val(datas.statusflag);
+        // if (datas.statusflag === '3' && data_status === false) {
+        //     $('#statusflag_update').prop('disabled', true);
+        // } else {
+        //     $('#statusflag_update').prop('disabled', false); // Ensure it's enabled for other values
+        // }
         $("#other_type_update_hidden").val(datas.other_type);
         if (datas.other_type) {
             const selectedOtherTypes = datas.other_type.split(',');
@@ -116,6 +117,11 @@ document.getElementById('update_data_form').addEventListener('submit', function 
                 }
                 delete jsonData['work_day_update'];
 
+                if (!jsonData['statusflag']) {
+                    jsonData['statusflag'] = jsonData['statusflag_update2']
+                }
+                delete jsonData['statusflag_update2'];
+
                 fetch(apiUrl + 'application/jobs/update_job.php', {
                     method: 'POST',
                     headers: {
@@ -128,7 +134,6 @@ document.getElementById('update_data_form').addEventListener('submit', function 
                         return response.json();
                     })
                     .then(data => {
-                        console.log(data)
                         if (data.status === 'success') {
                             Swal.fire({
                                 icon: 'success',

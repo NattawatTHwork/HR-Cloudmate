@@ -1,20 +1,43 @@
-async function get_job_applicant(statusflag_data) {
-    if (statusflag_data.data.statusflag == 1) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const job_category_code = urlParams.get('job_category_code') || '';
-        const work_location_code = urlParams.get('work_location_code') || '';
-        const employment_type_code = urlParams.get('employment_type_code') || '';
-        const salary_start = urlParams.get('salary_start') || '';
-        const salary_end = urlParams.get('salary_end') || '';
-        fetchData_enable(job_category_code, work_location_code, employment_type_code, salary_start, salary_end);
-    } else if (statusflag_data.data.statusflag == 2) {
-        const urlParams = new URLSearchParams(window.location.search);
-        const job_category_code = urlParams.get('job_category_code') || '';
-        fetchData_on_hold(job_category_code);
-    }
-}
+document.getElementById('searchButton').addEventListener('click', function () {
+    const selectedJobCategory = document.getElementById('select_job_category').value;
+    const selectedWorkLocation = document.getElementById('select_work_location').value;
+    const selectedEmploymentType = document.getElementById('select_employment_type').value;
+    const selectedSalaryStart = document.getElementById('select_salary_start').value;
+    const selectedSalaryEnd = document.getElementById('select_salary_end').value;
 
-function fetchData_enable(job_category_code, work_location_code, employment_type_code, salary_start, salary_end) {
+    let url = 'find_job_applicants.php?';
+    const params = new URLSearchParams();
+
+    if (selectedJobCategory) {
+        params.append('job_category_code', selectedJobCategory);
+    }
+    if (selectedWorkLocation) {
+        params.append('work_location_code', selectedWorkLocation);
+    }
+    if (selectedEmploymentType) {
+        params.append('employment_type_code', selectedEmploymentType);
+    }
+    if (selectedSalaryStart) {
+        params.append('salary_start', selectedSalaryStart);
+    }
+    if (selectedSalaryEnd) {
+        params.append('salary_end', selectedSalaryEnd);
+    }
+
+    window.location.href = url + params.toString();
+});
+
+
+const urlParams = new URLSearchParams(window.location.search);
+const job_category_code = urlParams.get('job_category_code') || '';
+const work_location_code = urlParams.get('work_location_code') || '';
+const employment_type_code = urlParams.get('employment_type_code') || '';
+const salary_start = urlParams.get('salary_start') || '';
+const salary_end = urlParams.get('salary_end') || '';
+
+fetchData(job_category_code, work_location_code, employment_type_code, salary_start, salary_end);
+
+function fetchData(job_category_code, work_location_code, employment_type_code, salary_start, salary_end) {
     getSessionToken()
         .then(mySession => {
             if (mySession.token && mySession.role === 'employer') {
@@ -42,7 +65,7 @@ function fetchData_enable(job_category_code, work_location_code, employment_type
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === 'success') {
-                            displayCards_enable(data.data, mySession);
+                            displayCards(data.data, mySession);
                         }
                     })
                     .catch(error => {
@@ -55,7 +78,7 @@ function fetchData_enable(job_category_code, work_location_code, employment_type
         .catch(error => console.error('Error fetching session token:', error));
 }
 
-async function displayCards_enable(datas, mySession) {
+async function displayCards(datas, mySession) {
     let cardContainer = document.getElementById('cardContainer');
     cardContainer.innerHTML = '';
 
@@ -97,58 +120,4 @@ function toggleAdditionalInfo(elementId, button) {
         arrow.innerHTML = texts.view;
         arrow.style.transform = "rotate(0deg)";
     }
-}
-
-function fetchData_on_hold(job_category_code) {
-    getSessionToken()
-        .then(mySession => {
-            if (mySession.token && mySession.role === 'employer') {
-                const url = new URL(apiUrl + 'application/referred_jobs/get_job_applicant_on_hold.php');
-                const params = { job_category_code };
-
-                Object.keys(params).forEach(key => {
-                    if (params[key]) {
-                        url.searchParams.append(key, params[key]);
-                    }
-                });
-
-                fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${mySession.token}`
-                    },
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'success') {
-                            displayCards_on_hold(data.data);
-                        }
-                    })
-                    .catch(error => {
-                        console.error('There has been a problem with your fetch operation:', error);
-                    });
-            } else {
-                console.error('Token not found in local storage or role is not applicant');
-            }
-        })
-        .catch(error => console.error('Error fetching session token:', error));
-}
-
-async function displayCards_on_hold(datas) {
-    let cardContainer = document.getElementById('cardContainer');
-    cardContainer.innerHTML = '';
-
-    await datas.forEach(data => {
-        let cardHtml = `
-            <div class="col-sm-12">
-                <div class="card d-flex flex-column">
-                    <div class="card-body m-2">
-                        <h5 class="card-title">${data.job_category}</h5>
-                        <p class="card-text"><strong>${texts.required_quantity}:</strong> ${data.num_applicants + ' ' + texts.position}</p>
-                    </div>
-                </div>
-            </div>`;
-
-        cardContainer.innerHTML += cardHtml;
-    });
 }

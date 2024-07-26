@@ -46,6 +46,7 @@ return [
     'enable' => 'เปิดใช้งาน',
     'on_hold' => 'รอดำเนินการ',
     'disable' => 'ปิดใช้งาน',
+    'waiting_check' => 'รอตรวจสอบ',
     'cancel' => 'ยกเลิก',
     'save' => 'บันทึก',
     'change_password' => 'เปลี่ยนรหัสผ่าน',
@@ -196,4 +197,11 @@ return [
     "friday" => "ศุกร์",
     "saturday" => "เสาร์",
     "job_approval" => "การอนุมัติงาน",
+    "resume" => "ประวัติย่อ (Resume)",
+    "i_resume" => "ประวัติย่อ (Resume)",
+    "manage_resume" => "จัดการประวัติย่อ (Manage Resume)",
+    "upload_resume" => "อัพโหลดประวัติย่อ (Resume)",
+    "choose_PDF" => "*อัพโหลดได้เฉพาะไฟล์ PDF",
+    "upload" => "อัพโหลด",
+
 ];

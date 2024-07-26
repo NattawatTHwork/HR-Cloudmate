@@ -48,6 +48,10 @@ async function displayCards(data) {
                     <p class="card-text"><strong>${texts.end_date}:</strong> ${data.end_date}</p>
                     <p class="card-text"><strong>${texts.remaining_amount}:</strong> ${data.amount} ${texts.posts}</p>
                     <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
+                    <div class="text-center">
+                        <a type="button" class="btn btn-primary" href="${pathUrl}/application_employers/package_payment.php">${texts.payment}</a>
+                        <button type="button" class="btn btn-danger" onclick="cancel_package('${data.package}')">${texts.cancel_package}</button>
+                    </div>
                 </div>
             </div>
         </div>`;

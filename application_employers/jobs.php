@@ -119,13 +119,6 @@
                                 <div id="other_type_create"></div>
                                 <input type="hidden" id="other_type_create_hidden" name="other_type">
                             </div>
-                            <!-- <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
-                                <select class="form-control" name="statusflag" id="statusflag_create" required>
-                                    <option value="t"><?= $texts['enable'] ?></option>
-                                    <option value="f"><?= $texts['disable'] ?></option>
-                                </select>
-                            </div> -->
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><?= $texts['cancel'] ?></button>
@@ -210,9 +203,10 @@
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
-                                    <option value="2"><?= $texts['on_hold'] ?></option>
+                                    <option value="2"><?= $texts['waiting_check'] ?></option>
                                     <option value="3"><?= $texts['disable'] ?></option>
                                 </select>
+                                <input type="hidden" name="statusflag_update2" id="statusflag_update2" value="">
                             </div>
                         </div>
                         <div class="modal-footer">

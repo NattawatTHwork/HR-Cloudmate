@@ -1,4 +1,3 @@
-data_status = true;
 getSessionToken()
     .then(mySession => {
         if (mySession.token && mySession.role === 'employer') {
@@ -13,9 +12,7 @@ getSessionToken()
                 })
                 .then(data => {
                     if (!data.status_data) {
-                        document.getElementById('statusflag_create').value = 'f';
-                        document.getElementById('statusflag_create').disabled = true;
-                        data_status = data.status_data;
+                        document.getElementById('statusflag_update').disabled = true;
                     }
                 })
                 .catch(error => {

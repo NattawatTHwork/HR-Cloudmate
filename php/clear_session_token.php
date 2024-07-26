@@ -5,8 +5,7 @@ header('Content-Type: application/json');
 // ตรวจสอบว่ามี session token หรือไม่
 if (isset($_SESSION['token']) || isset($_SESSION['role'])) {
     // ลบ session token
-    unset($_SESSION['token']);
-    unset($_SESSION['role']);
+    session_destroy();
     
     // เซ็ต status เป็น success แสดงว่าลบ session สำเร็จ
     echo json_encode(array('status' => 'success'));

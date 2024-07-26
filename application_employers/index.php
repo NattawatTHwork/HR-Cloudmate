@@ -33,7 +33,7 @@
                 <div class="col-lg-12">
                     <div class="row">
 
-                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php">
+                        <a class="col-xxl-3 col-md-12" href="<?= $path ?>/application_employers/jobs.php">
                             <div class="card info-card sales-card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $texts['all'] ?> <span>| <?= $texts['job'] ?></span></h5>
@@ -50,7 +50,7 @@
                             </div>
                         </a>
 
-                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=1">
+                        <a class="col-xxl-3 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=1">
                             <div class="card info-card revenue-card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $texts['active'] ?> <span>| <?= $texts['job'] ?></span></h5>
@@ -67,7 +67,7 @@
                             </div>
                         </a>
 
-                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=2">
+                        <a class="col-xxl-3 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=2">
                             <div class="card info-card customers-card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $texts['on_hold'] ?> <span>| <?= $texts['job'] ?></span></h5>
@@ -84,7 +84,7 @@
                             </div>
                         </a>
 
-                        <a class="col-xxl-4 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=3">
+                        <a class="col-xxl-3 col-md-12" href="<?= $path ?>/application_employers/jobs.php?status=3">
                             <div class="card info-card red-card">
                                 <div class="card-body">
                                     <h5 class="card-title"><?= $texts['inactive'] ?> <span>| <?= $texts['job'] ?></span></h5>

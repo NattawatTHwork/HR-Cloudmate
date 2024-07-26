@@ -52,6 +52,7 @@ async function displayCards(datas) {
                             <p class="card-text"><strong>${texts.gender}:</strong> ${data.gender == 1 ? texts.male : data.gender == 2 ? texts.female : texts.other}</p>
                             <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                             <p class="card-text"><strong>${texts.tel}:</strong> ${data.phone_number}</p>
+                            <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                             <p class="card-text"><strong>${texts.apply_date}:</strong> ${formattedDateMonth + ' ' + formattedYear + texts.time + formattedTime + texts.na}</p>
                         </div>
                         <div class="text-center">
@@ -60,6 +61,7 @@ async function displayCards(datas) {
                             </button>                              
                             <a type="button" class="btn btn-primary" href="educations.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.education}</a>
                             <a type="button" class="btn btn-primary" href="experiences.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.experience}</a>
+                            <a type="button" class="btn btn-primary" href="resume.php?user_code=${data.user_code}&fullname=${data.firstname}%20${data.lastname}">${texts.resume}</a>
                         </div>
                     </div>
                 </div>

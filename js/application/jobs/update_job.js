@@ -47,11 +47,12 @@ function update_data(job_code) {
         }
         $("#description_update").val(datas.description);
         $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);
-        if (datas.statusflag === '3' && data_status === false) {
-            $('#statusflag_update').prop('disabled', true);
-        } else {
-            $('#statusflag_update').prop('disabled', false); // Ensure it's enabled for other values
-        }
+        $("#statusflag_update2").val(datas.statusflag);
+        // if (datas.statusflag === '3' && data_status === false) {
+        //     $('#statusflag_update').prop('disabled', true);
+        // } else {
+        //     $('#statusflag_update').prop('disabled', false); // Ensure it's enabled for other values
+        // }
         $("#other_type_update_hidden").val(datas.other_type);
         if (datas.other_type) {
             const selectedOtherTypes = datas.other_type.split(',');
@@ -107,7 +108,7 @@ document.getElementById('update_data_form').addEventListener('submit', function 
                 formData.forEach((value, key) => {
                     jsonData[key] = value;
                 });
-                jsonData['changed_by'] = mySession.employer_code;
+                jsonData['changed_by'] = mySession.user_id;
 
                 if (jsonData['agreed'] && jsonData['agreed'] == 'on') {
                     jsonData['salary'] = 'agreed';
@@ -115,6 +116,11 @@ document.getElementById('update_data_form').addEventListener('submit', function 
                     delete jsonData['other_type_update[]'];
                 }
                 delete jsonData['work_day_update'];
+
+                if (!jsonData['statusflag']) {
+                    jsonData['statusflag'] = jsonData['statusflag_update2']
+                }
+                delete jsonData['statusflag_update2'];
 
                 fetch(apiUrl + 'application/jobs/update_job.php', {
                     method: 'POST',

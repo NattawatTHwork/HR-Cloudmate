@@ -84,7 +84,9 @@ async function displayCards(datas, mySession) {
             days.sort((a, b) => a - b);
 
             // Check for specific sequences
-            if (days.join(',') === '2,3,4') {
+            if (days.join(',') === '1,2,3,4,5,6,7') {
+                return language === 'th' ? 'ทุกวัน' : 'Everyday';
+            } else if (days.join(',') === '2,3,4') {
                 return language === 'th' ? 'จันทร์ - พุธ' : 'Monday - Wednesday';
             } else if (days.join(',') === '2,3,4,5') {
                 return language === 'th' ? 'จันทร์ - พฤหัสบดี' : 'Monday - Thursday';

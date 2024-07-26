@@ -64,16 +64,6 @@ getSessionToken()
                 const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
     
                 let otherTypes = '';
-                // if (other_type_all) {
-                //     other_type_all.forEach(type_all => {
-                //         const types = data.other_type.split(',');
-                //         if (types.includes(type_all.other_type_code)) {
-                //             otherTypes += `<input type="checkbox" disabled checked> ${type_all.other_type}<br>`;
-                //         } else {
-                //             otherTypes += `<input type="checkbox" disabled> ${type_all.other_type}<br>`;
-                //         }
-                //     });
-                // }
                 if (other_type_all) {
                     other_type_all.forEach(type_all => {
                         isChecked = '';
@@ -100,7 +90,9 @@ getSessionToken()
                     days.sort((a, b) => a - b);
     
                     // Check for specific sequences
-                    if (days.join(',') === '2,3,4') {
+                    if (days.join(',') === '1,2,3,4,5,6,7') {
+                        return language === 'th' ? 'ทุกวัน' : 'Everyday';
+                    } else if (days.join(',') === '2,3,4') {
                         return language === 'th' ? 'จันทร์ - พุธ' : 'Monday - Wednesday';
                     } else if (days.join(',') === '2,3,4,5') {
                         return language === 'th' ? 'จันทร์ - พฤหัสบดี' : 'Monday - Thursday';

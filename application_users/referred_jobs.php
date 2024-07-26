@@ -83,6 +83,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
+                                <textarea class="form-control" name="description" id="description_create" placeholder="<?= $texts['description'] ?>"></textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag" required>
                                     <option value="t" selected><?= $texts['enable'] ?></option>
@@ -133,6 +137,10 @@
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
                                 <select class="form-control" name="work_location" id="work_location_code_dropdown_update" placeholder="<?= $texts['work_location'] ?>" required>
                                 </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
+                                <textarea class="form-control" name="description" id="description_update" placeholder="<?= $texts['description'] ?>"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>

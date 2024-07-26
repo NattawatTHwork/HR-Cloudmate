@@ -1,4 +1,3 @@
-data_status = true;
 const urlParams = new URLSearchParams(window.location.search);
 employer_code = urlParams.get('employer_code');
 getSessionToken()
@@ -15,9 +14,7 @@ getSessionToken()
                 })
                 .then(data => {
                     if (!data.status_data) {
-                        document.getElementById('statusflag_create').value = 'f';
-                        document.getElementById('statusflag_create').disabled = true;
-                        data_status = data.status_data;
+                        document.getElementById('statusflag_update').disabled = true;
                     }
                 })
                 .catch(error => {

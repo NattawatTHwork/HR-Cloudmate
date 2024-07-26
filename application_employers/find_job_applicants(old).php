@@ -34,8 +34,34 @@
         </div><!-- End Page Title -->
 
         <div class="card pt-4">
-            <div class="card-body m-2" id="select_role">
-
+            <div class="card-body m-2">
+                <div class="row mb-4">
+                    <label class="col-2"><?= $texts['job_category'] ?></label>
+                    <select class="form-select me-2 col" id="select_job_category">
+                        <option value="">-- <?= $texts['select_job_category'] ?> --</option>
+                    </select>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-2"><?= $texts['work_location'] ?></label>
+                    <select class="form-select me-2 col" id="select_work_location">
+                        <option value="">-- <?= $texts['work_location'] ?> --</option>
+                    </select>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-2"><?= $texts['employment_type'] ?></label>
+                    <select class="form-select me-2 col" id="select_employment_type">
+                        <option value="">-- <?= $texts['employment_type'] ?> --</option>
+                    </select>
+                </div>
+                <div class="row mb-4">
+                    <label class="col-2"><?= $texts['salary'] ?></label>
+                    <select class="form-select me-2 col" id="select_salary_start">
+                    </select>
+                    <label class="col-1 text-center"> - </label>
+                    <select class="form-select me-2 col" id="select_salary_end">
+                    </select>
+                </div>
+                <button type="submit" id="searchButton" class="btn btn-primary w-100"><?= $texts['search_button'] ?></button>
             </div>
         </div>
 
@@ -55,9 +81,11 @@
     <script src="../js/logout_application_employers.js"></script>
     <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/get_employer_header.js"></script>
-    <script src="../js/application_employers/find_job_applicants/option.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_salary.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_job_category_all.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_work_location_all.js"></script>
+    <script src="../js/application_employers/find_job_applicants/get_employment_type_all.js"></script>
     <script src="../js/application_employers/find_job_applicants/get_job_applicant.js"></script>
-
 </body>
 
 </html>
