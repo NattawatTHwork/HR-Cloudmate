@@ -116,5 +116,8 @@ texts = {
   'required_quantity': 'จำนวนที่ต้องการ',
   'apply_package_detail': '*สมัครแพ็คเก็จเพื่อการค้นหาผู้ที่ต้องการงานที่ละเอียดขึ้น',
   'payment': 'ชำระเงิน',
+  'apply_packages': 'การสมัครแพ็คเก็จ',
+  'approve': 'อนุมัติ',
+  'disapprove': 'ไม่อนุมัติ',
 
 };

@@ -32,7 +32,7 @@ async function displayTables(datas) {
                 <td>${data.phone_number}</td>
                 <td>
                     <button class="btn ${data.statusflag == 1 ? 'btn-success' : data.statusflag == 2 ? 'btn-warning' : 'btn-danger'}">
-                        ${data.statusflag == 1 ? texts.enable : data.statusflag == 2 ? texts.on_hold : texts.disble}
+                        ${data.statusflag == 1 ? texts.enable : data.statusflag == 2 ? texts.on_hold : texts.disable}
                     </button>
                 </td>
                 <td>
@@ -49,6 +49,7 @@ async function displayTables(datas) {
                             <li><a class="dropdown-item" href="jobs_employer.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">${texts.referred_job}</a></li>
                             <li><a class="dropdown-item" href="apply_works_employer.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">${texts.job_application}</a></li>
                             <li><a class="dropdown-item" href="employer_package.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">${texts.packages}</a></li>
+                            <li><a class="dropdown-item" href="apply_package.php?employer_code=${data.employer_code}&fullname=${data.firstname}%20${data.lastname}">${texts.apply_packages}</a></li>
                         </ul>
                     </div>
                 </td>`;

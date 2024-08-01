@@ -203,5 +203,9 @@ return [
     'upload_resume' => 'Upload Resume',
     'choose_PDF' => '*Only PDF files can be uploaded.',
     'upload' => 'Upload',
+    'apply_packages' => 'Apply Package',
+    'approve' => 'Approve',
+    'disapprove' => 'Disapprove',
+    'approval' => 'Approval',
 
 ];

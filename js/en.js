@@ -116,4 +116,8 @@ texts = {
     'required_quantity': 'Required quantity',
     'apply_package_detail': '*Subscribe to a package for more detailed job seeker searches.',
     'payment': 'Payment',
+    'apply_packages': 'Apply Package',
+    'approve': 'Approve',
+    'disapprove': 'Disapprove',
+
 }

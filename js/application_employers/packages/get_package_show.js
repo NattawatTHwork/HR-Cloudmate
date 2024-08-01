@@ -1,7 +1,7 @@
 getSessionToken()
     .then(mySession => {
         if (mySession.token && mySession.role === 'employer') {
-            fetch(apiUrl + 'application/packages/get_package_show.php', {
+            fetch(apiUrl + 'application/packages/get_package_show.php?employer_code=' + mySession.employer_code, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${mySession.token}`
@@ -11,23 +11,9 @@ getSessionToken()
                     return response.json();
                 })
                 .then(data => {
-                    fetch(apiUrl + 'application/packages/get_employer_package_trial.php?employer_code=' + mySession.employer_code, {
-                        method: 'GET',
-                        headers: {
-                            'Authorization': `Bearer ${mySession.token}`
-                        }
-                    })
-                        .then(response => {
-                            return response.json();
-                        })
-                        .then(data_trial => {
-                            if (data.status === 'success') {
-                                displayCards(data.data, data_trial.data.package_code, data_trial.data.trial, mySession);
-                            }
-                        })
-                        .catch(error => {
-                            console.error('There has been a problem with your fetch operation:', error);
-                        });
+                    if (data.status === 'success') {
+                        displayCards(data.data, data.trial.package_code, data.trial.trial, data.statusflag.statusflag, data.status_approved.status_approved);
+                    }
                 })
                 .catch(error => {
                     console.error('There has been a problem with your fetch operation:', error);
@@ -38,26 +24,25 @@ getSessionToken()
     })
     .catch(error => console.error('Error fetching session token:', error));
 
-    async function displayCards(datas, package_code, trial, mySession) {
+    async function displayCards(datas, package_code, trial, statusflag, status_approved) {
         let cardContainer = document.getElementById('cardContainer');
         cardContainer.innerHTML = '';
-    
-        const response = await fetch(apiUrl + 'application/employers/get_employer_header.php?employer_code=' + mySession.employer_code, {
-            method: 'GET',
-            headers: {
-                'Authorization': `Bearer ${mySession.token}`
-            },
-        });
-    
-        const statusflag_data = await response.json();
+        console.log(status_approved);
     
         // สร้างและแสดงบัตรทั้งหมด
         datas.forEach(data => {
-            let disableAll = package_code && statusflag_data.data.statusflag == 2;
+            let disableApprove = status_approved === 'f';
+            let disableAll = package_code && statusflag == 2;
             let disableSingle = trial === 't' && data.package_code === 'PK000001';
-            let isDisabled = disableAll || disableSingle;
+            let disableNotPackage = package_code && data.package_code != package_code;
+            let isDisabled = disableAll || disableSingle || disableNotPackage || disableApprove;
             let buttonClass = isDisabled ? 'btn-secondary' : 'btn-primary';
-    
+            console.log(disableApprove)
+            console.log(disableAll)
+            console.log(disableSingle)
+            console.log(disableNotPackage)
+            console.log('----')
+
             let cardHtml = `
                 <div class="col-sm-12">
                     <div class="card">

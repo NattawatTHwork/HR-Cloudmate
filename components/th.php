@@ -203,5 +203,9 @@ return [
     "upload_resume" => "อัพโหลดประวัติย่อ (Resume)",
     "choose_PDF" => "*อัพโหลดได้เฉพาะไฟล์ PDF",
     "upload" => "อัพโหลด",
+    'apply_packages' => 'การสมัครแพ็คเก็จ',
+    'approve' => 'อนุมัติ',
+    'disapprove' => 'ไม่อนุมัติ',
+    'approval' => 'การอนุมัติ',
 
 ];
