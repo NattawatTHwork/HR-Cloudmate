@@ -4,7 +4,7 @@ return [
     'time_attendance' => 'เวลาเข้า-ออกงาน',
     'job_activity' => 'กิจกรรม',
     'application' => 'การสมัครงาน',
-    'user_administration' => 'ผู้ดูแล',
+    'user_administration' => 'ผู้ดูแลระบบ',
     'entrepreneurs_all' => 'ผู้ประกอบการทั้งหมด',
     'entrepreneurs_enable' => 'ผู้ประกอบการที่เปิดใช้งาน',
     'entrepreneurs_on_hold' => 'ผู้ประกอบการที่รอดำเนินการ',
@@ -133,6 +133,7 @@ return [
     'req_key' => 'ขอรหัสกู้คืนรหัสผ่าน',
     'recommended_job' => 'งานแนะนำ',
     'applicant_login' => 'เข้าสู่ระบบผู้สมัครงาน',
+    'admin_login' => 'เข้าสู่ระบบผู้ดูแลระบบ',
     'not_account' => 'คุณยังไม่มีบัญชีใช่ไหม',
     'create_account' => 'สร้างบัญชี',
     'profile' => 'ข้อมูลส่วนตัว',
@@ -207,5 +208,7 @@ return [
     'approve' => 'อนุมัติ',
     'disapprove' => 'ไม่อนุมัติ',
     'approval' => 'การอนุมัติ',
+    'manage_admin' => 'จัดการผู้ดูแลระบบ',
+    'add_admin' => 'เพิ่มผู้ดูแลระบบ',
 
 ];

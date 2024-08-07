@@ -70,6 +70,10 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
+                                <textarea class="form-control" name="description" id="description_update" placeholder="<?= $texts['description'] ?>"></textarea>
+                            </div>
+                            <div class="form-group">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
                                     <option value="t" selected><?= $texts['enable'] ?></option>
@@ -95,7 +99,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/check_login.js"></script>
     <script src="../js/logout.js"></script>
-    <script src="../js/token.js"></script>
     <script src="../js/user_administration/users/get_header.js"></script>
     <script src="../js/application/referred_jobs_user/function.js"></script>
     <script src="../js/application/referred_jobs_user/get_job_category_all.js"></script>

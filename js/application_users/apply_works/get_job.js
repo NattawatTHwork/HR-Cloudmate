@@ -134,6 +134,7 @@ async function displayCards(datas, mySession) {
                                 <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language == 'th' ? data.employment_type_th : data.employment_type_en}</p>
                                 <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}:</strong> ${data.employer_name}</p>
                                 <p class="card-text">${otherTypesHtml}</p>
+                                <p class="card-text text-secondary"><strong>${texts.visitor}:</strong> ${data.view_count} ${texts.times}</p>
                             </div>
                             <div class="col-md-4 d-flex justify-content-end align-items-center">
                                 <a href="${data.link_path && data.link_path.startsWith('https') ? data.link_path : (data.link_path && data.link_path.includes('.') ? 'https://' + data.link_path : '#')}">

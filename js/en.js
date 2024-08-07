@@ -119,5 +119,6 @@ texts = {
     'apply_packages': 'Apply Package',
     'approve': 'Approve',
     'disapprove': 'Disapprove',
-
+    'visitor': 'Number of visitors',
+    'times': 'Times',
 }

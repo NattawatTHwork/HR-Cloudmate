@@ -91,6 +91,7 @@ async function displayCards(data) {
                     'Authorization': `Bearer ${mySession.token}`
                 }
             });
+            
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -137,6 +138,7 @@ async function displayCards(data) {
                                 <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                                 <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                                 <p class="card-text">${otherTypesHtml}</p>
+                                <p class="card-text text-secondary"><strong>${texts.visitor}:</strong> ${data.view_count} ${texts.times}</p>
                             </div>
                             <div class="col-md-4 d-flex justify-content-end align-items-center">
                                 <a href="${data.link_path && data.link_path.startsWith('https') ? data.link_path : (data.link_path && data.link_path.includes('.') ? 'https://' + data.link_path : '#')}">

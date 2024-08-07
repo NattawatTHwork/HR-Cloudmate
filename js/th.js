@@ -119,5 +119,7 @@ texts = {
   'apply_packages': 'การสมัครแพ็คเก็จ',
   'approve': 'อนุมัติ',
   'disapprove': 'ไม่อนุมัติ',
+  'visitor': 'จำนวนผู้เข้าชม',
+  'times': 'ครั้ง',
 
 };

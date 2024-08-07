@@ -133,6 +133,7 @@ return [
     'req_key' => 'Request Recovery Key',
     'recommended_job' => 'Recommended Jobs',
     'applicant_login' => 'Applicant Sign In',
+    'admin_login' => 'Admin Sign In',
     'not_account' => "You don't have an account yet?",
     'create_account' => 'Create account.',
     'profile' => 'Profile',
@@ -207,5 +208,7 @@ return [
     'approve' => 'Approve',
     'disapprove' => 'Disapprove',
     'approval' => 'Approval',
+    'manage_admin' => 'Manage Admin',
+    'add_admin' => 'Add Admin',
 
 ];

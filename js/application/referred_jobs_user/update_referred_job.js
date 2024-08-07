@@ -30,6 +30,7 @@ function update_data(referred_job_code) {
         $('#employment_type_code_dropdown_update option[value="' + datas.employment_type + '"]').prop('selected', true);
         $("#expect_salary_update").val(datas.expect_salary);
         $('#work_location_code_dropdown_update option[value="' + datas.work_location + '"]').prop('selected', true);
+        $("#description_update").val(datas.description);
         $('#statusflag_update option[value="' + datas.statusflag + '"]').prop('selected', true);
         $("#form_update_data").modal("show");
     }

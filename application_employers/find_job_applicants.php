@@ -16,7 +16,7 @@
 <body>
 
     <!-- ======= Header ======= -->
-    <?php include_once '../components/header_applicantion_employers.php' ?>
+    <?php include_once '../components/header_application_employers.php' ?>
 
     <!-- ======= Sidebar ======= -->
     <?php include_once '../components/sidebar_application_employers.php' ?>
@@ -53,7 +53,6 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="../js/check_login_application_employers.js"></script>
     <script src="../js/logout_application_employers.js"></script>
-    <script src="../js/token.js"></script>
     <script src="../js/application_employers/employers/get_employer_header.js"></script>
     <script src="../js/application_employers/find_job_applicants/option.js"></script>
     <script src="../js/application_employers/find_job_applicants/get_job_applicant.js"></script>

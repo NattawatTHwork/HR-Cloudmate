@@ -159,7 +159,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="../js/token.js"></script>
     <script src="../js/api_url.js"></script>
     <script src="../js/get_session_token.js"></script>
     <script src="../js/language.js"></script>

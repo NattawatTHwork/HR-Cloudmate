@@ -121,6 +121,7 @@ async function displayCards(datas, mySession) {
                             <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                             <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>
                             <p class="card-text">${otherTypes}</p>
+                            <p class="card-text text-secondary"><strong>${texts.visitor}:</strong> ${data.view_count} ${texts.times}</p>
                             <div class="text-center">
                                 <button type="button" class="btn btn-warning" onclick="update_data('${data.job_code}')">${texts.edit}</button>
                                 <button type="button" class="btn btn-danger" onclick="delete_data('${data.job_code}', '${data.position}')">${texts.delete}</button>
