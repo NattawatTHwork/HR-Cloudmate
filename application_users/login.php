@@ -17,7 +17,7 @@
 
     <main>
         <div class="container">
-        <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-end">
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown pe-3">
                         <a id="languageDropdown" class="nav-link d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

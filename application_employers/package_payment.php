@@ -52,11 +52,11 @@
                             <p class="card-text text-center">
                                 <strong>Facebook :</strong>
                                 <a href="https://www.facebook.com/profile.php?id=61559911192106" target="_blank">
-                                    CM MeJobs
+                                    CMJobs
                                 </a>
                                 <strong>| Line :</strong>
                                 <a href="https://line.me/R/ti/p/@160xfahn?ts=05161601&oat_content=url" target="_blank">
-                                    CM MeJobs
+                                    CMJobs
                                 </a>
                             </p>
                         </div>
