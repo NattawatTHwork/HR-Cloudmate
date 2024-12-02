@@ -210,5 +210,6 @@ return [
     'approval' => 'การอนุมัติ',
     'manage_admin' => 'จัดการผู้ดูแลระบบ',
     'add_admin' => 'เพิ่มผู้ดูแลระบบ',
+    'manage_part_time_applicant' => 'จัดการผู้สมัครงาน Part Time',
 
 ];

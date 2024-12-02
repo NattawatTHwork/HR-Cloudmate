@@ -210,5 +210,6 @@ return [
     'approval' => 'Approval',
     'manage_admin' => 'Manage Admin',
     'add_admin' => 'Add Admin',
+    'manage_part_time_applicant' => 'Manage Part Time Applicants',
 
 ];

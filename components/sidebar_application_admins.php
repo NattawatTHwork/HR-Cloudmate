@@ -24,6 +24,11 @@
             <i class="bi bi-circle"></i><span><?= $texts['manage_applicant'] ?></span>
           </a>
         </li>
+        <li>
+          <a href="<?= $path ?>/application_admins/part_time_users.php">
+            <i class="bi bi-circle"></i><span><?= $texts['manage_part_time_applicant'] ?></span>
+          </a>
+        </li>
       </ul>
     </li><!-- End Application Nav -->
 
