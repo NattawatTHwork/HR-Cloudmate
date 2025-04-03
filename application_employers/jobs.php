@@ -64,18 +64,19 @@
                                 <label for="formGroupExampleInput"><?= $texts['position'] ?></label>
                                 <input type="text" class="form-control" name="position" id="position_create" placeholder="<?= $texts['position'] ?>" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['job_category'] ?></label>
                                 <select class="form-control" name="job_category_code" id="job_category_code_dropdown_create" placeholder="<?= $texts['job_category'] ?>" required>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['employment_type'] ?></label>
                                 <select class="form-control" name="employment_type" id="employment_type_code_dropdown_create" placeholder="<?= $texts['employment_type'] ?>" required>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['work_day'] ?></label>
+                                <label><input type="checkbox" name="work_day_create" value="0" id="work_day_create_unspecified"> <?= $texts['not_specified'] ?></label>
                                 <div>
                                     <label><input type="checkbox" name="work_day_create" value="1"> <?= $texts['sunday'] ?></label>
                                     <label><input type="checkbox" name="work_day_create" value="2"> <?= $texts['monday'] ?></label>
@@ -87,20 +88,20 @@
                                 </div>
                                 <input type="hidden" id="work_day_create_hidden" name="work_day">
                             </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['time_in'] ?></label>
-                                <input type="time" class="form-control" name="time_in" id="time_in_create" placeholder="<?= $texts['time_in'] ?>" required>
+                            <div class="form-group mt-3">
+                                <label for="formGroupExampleInput"><?= $texts['time_in'] ?> <input type="checkbox" id="unspecified_time_create"> <?= $texts['not_specified'] ?></label>
+                                <input type="time" class="form-control" name="time_in" id="time_in_create" placeholder="<?= $texts['time_in'] ?>">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['time_out'] ?></label>
-                                <input type="time" class="form-control" name="time_out" id="time_out_create" placeholder="<?= $texts['time_out'] ?>" required>
+                                <input type="time" class="form-control" name="time_out" id="time_out_create" placeholder="<?= $texts['time_out'] ?>">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <select class="form-control" name="work_location" id="work_location_code_dropdown_create" placeholder="<?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_create" placeholder="<?= $texts['work_location'] ?>">
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['salary'] ?></label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-text">
@@ -110,11 +111,11 @@
                                     <input type="text" class="form-control" name="salary" id="salary_create" placeholder="<?= $texts['salary'] ?>" required pattern="^\d+(\.\d{1,2})?$">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
                                 <textarea class="form-control" name="description" id="description_create" placeholder="<?= $texts['description'] ?>"></textarea>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['other_type'] ?></label>
                                 <div id="other_type_create"></div>
                                 <input type="hidden" id="other_type_create_hidden" name="other_type">
@@ -145,18 +146,19 @@
                                 <label for="formGroupExampleInput"><?= $texts['position'] ?></label>
                                 <input type="text" class="form-control" name="position" id="position_update" placeholder="<?= $texts['position'] ?>" required>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['job_category'] ?></label>
                                 <select class="form-control" name="job_category_code" id="job_category_code_dropdown_update" placeholder="<?= $texts['job_category'] ?>" required>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['employment_type'] ?></label>
                                 <select class="form-control" name="employment_type" id="employment_type_code_dropdown_update" required>
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['work_day'] ?></label>
+                                <label><input type="checkbox" name="work_day_update" value="0" id="work_day_update_unspecified"> <?= $texts['not_specified'] ?></label>
                                 <div>
                                     <label><input type="checkbox" name="work_day_update" value="1"> <?= $texts['sunday'] ?></label>
                                     <label><input type="checkbox" name="work_day_update" value="2"> <?= $texts['monday'] ?></label>
@@ -168,20 +170,20 @@
                                 </div>
                                 <input type="hidden" id="work_day_update_hidden" name="work_day">
                             </div>
-                            <div class="form-group">
-                                <label for="formGroupExampleInput"><?= $texts['time_in'] ?></label>
-                                <input type="time" class="form-control" name="time_in" id="time_in_update" placeholder="<?= $texts['time_in'] ?>" required>
+                            <div class="form-group mt-3">
+                                <label for="formGroupExampleInput"><?= $texts['time_in'] ?> <input type="checkbox" id="unspecified_time_update"> <?= $texts['not_specified'] ?></label>
+                                <input type="time" class="form-control" name="time_in" id="time_in_update" placeholder="<?= $texts['time_in'] ?>">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['time_out'] ?></label>
-                                <input type="time" class="form-control" name="time_out" id="time_out_update" placeholder="<?= $texts['time_out'] ?>" required>
+                                <input type="time" class="form-control" name="time_out" id="time_out_update" placeholder="<?= $texts['time_out'] ?>">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['work_location'] ?></label>
-                                <select class="form-control" name="work_location" id="work_location_code_dropdown_update" placeholder="<?= $texts['work_location'] ?>" required>
+                                <select class="form-control" name="work_location" id="work_location_code_dropdown_update" placeholder="<?= $texts['work_location'] ?>">
                                 </select>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['salary'] ?></label>
                                 <div class="input-group mb-3">
                                     <div class="input-group-text">
@@ -191,16 +193,16 @@
                                     <input type="text" class="form-control" name="salary" id="salary_update" placeholder="<?= $texts['salary'] ?>" required pattern="^\d+(\.\d{1,2})?$">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['description'] ?></label>
                                 <textarea class="form-control" name="description" id="description_update" placeholder="<?= $texts['description'] ?>"></textarea>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['other_type'] ?></label>
                                 <div id="other_type_update"></div>
                                 <input type="hidden" id="other_type_update_hidden" name="other_type">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-3">
                                 <label for="formGroupExampleInput"><?= $texts['status'] ?></label>
                                 <select class="form-control" name="statusflag" id="statusflag_update" required>
                                     <option value="2"><?= $texts['waiting_check'] ?></option>

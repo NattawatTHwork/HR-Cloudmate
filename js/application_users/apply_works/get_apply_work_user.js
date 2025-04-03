@@ -50,8 +50,19 @@ async function displayCards(datas, mySession) {
     await datas.forEach(data => {
         const currentDate = new Date().toISOString().slice(0, 10);
         const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });
-        const timeIn = TimeFormatter.format(new Date(currentDate + 'T' + data.time_in));
-        const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
+        const timeIn = datas.time_in
+            ? TimeFormatter.format(new Date(currentDate + 'T' + datas.time_in))
+            : 'ไม่ระบุ';
+        const timeOut = datas.time_out
+            ? TimeFormatter.format(new Date(currentDate + 'T' + datas.time_out))
+            : 'ไม่ระบุ';
+
+        let timeInOut = '';
+        if (datas.time_in && datas.time_out) {
+            timeInOut = timeIn + ' - ' + timeOut + ' ' + texts.na;
+        } else {
+            timeInOut = texts.not_specified;
+        }
 
         let OtherType_Data = [];
         if (data.other_type) {
@@ -94,6 +105,8 @@ async function displayCards(datas, mySession) {
                 return language === 'th' ? 'จันทร์ - ศุกร์' : 'Monday - Friday';
             } else if (days.join(',') === '2,3,4,5,6,7') {
                 return language === 'th' ? 'จันทร์ - เสาร์' : 'Monday - Saturday';
+            } else if (days.join(',') === '0') {
+                return texts.not_specified;
             } else {
                 return days.map(day => getDayName(day, language)).join(', ');
             }
@@ -113,8 +126,13 @@ async function displayCards(datas, mySession) {
                                 <div id="additionalInfo_${data.apply_work_code}" style="display:none;">
                                     <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language == 'th' ? data.employment_type_th : data.employment_type_en}</p>
                                     <p class="card-text"><strong>${texts.work_day}:</strong> ${workDays}</p>
-                                    <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                                    <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language == 'th' ? data.work_location_th : data.work_location_en}</p>
+                                    <p class="card-text"><strong>${texts.work_time}:</strong> ${timeInOut}</p>
+                                    <p class="card-text">
+                                        <strong>${texts.work_location}:</strong> 
+                                        ${mySession.language == 'th' 
+                                            ? (data.work_location_th ?? texts.not_specified) 
+                                            : (data.work_location_en ?? texts.not_specified)}
+                                    </p>
                                     <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary == 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
                                     <p class="card-text"><strong>${texts.email}:</strong> ${data.email}</p>
                                     <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>

@@ -29,7 +29,7 @@ async function displayTables(datas) {
         html += `<td>${data.position}</td>
                 <td>${data.job_category}</td>
                 <td>${data.employer_name}</td>
-                <td>${data.work_location}</td>
+                <td>${data.work_location ?? texts.not_specified}</td>
                 <td>${data.salary === 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</td>
                 <td>
                     <a class="btn btn-warning" href="job_approval_view.php?job_code=${data.job_code}">

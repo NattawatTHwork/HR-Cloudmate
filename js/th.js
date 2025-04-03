@@ -121,5 +121,5 @@ texts = {
   'disapprove': 'ไม่อนุมัติ',
   'visitor': 'จำนวนผู้เข้าชม',
   'times': 'ครั้ง',
-
+  'not_specified': 'ไม่ระบุ',
 };

@@ -13,13 +13,18 @@ getSessionToken()
             .then(data => {
                 const selectUpdate = document.getElementById('work_location_code_dropdown_update');
 
+                const emptyOptionUpdate = document.createElement('option');
+                emptyOptionUpdate.value = '';
+                emptyOptionUpdate.text = texts.not_specified;
+                selectUpdate.appendChild(emptyOptionUpdate);
+
                 data.data.forEach(work_location => {
                     const option = document.createElement('option');
                     option.value = work_location.work_location_code;
                     option.text = work_location.work_location;
 
                     if (work_location.work_location_code === 'PV000001') {
-                        selectUpdate.insertBefore(option, selectUpdate.firstChild);
+                        selectUpdate.insertBefore(option, selectUpdate.children[1]);
                     } else {
                         selectUpdate.appendChild(option);
                     }

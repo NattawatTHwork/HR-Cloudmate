@@ -49,15 +49,25 @@ async function displayCards(datas, mySession) {
 
         const currentDate = new Date().toISOString().slice(0, 10);
         const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });
-        const timeIn = TimeFormatter.format(new Date(currentDate + 'T' + datas.time_in));
-        const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + datas.time_out));
+        const timeIn = datas.time_in
+            ? TimeFormatter.format(new Date(currentDate + 'T' + datas.time_in))
+            : 'ไม่ระบุ';
+        const timeOut = datas.time_out
+            ? TimeFormatter.format(new Date(currentDate + 'T' + datas.time_out))
+            : 'ไม่ระบุ';
 
-        
+        let timeInOut = '';
+        if (datas.time_in && datas.time_out) {
+            timeInOut = timeIn + ' - ' + timeOut + ' ' + texts.na;
+        } else {
+            timeInOut = texts.not_specified;
+        }
+
         let OtherType_Data = [];
         if (datas.other_type) {
             OtherType_Data = datas.other_type.split(',');
         }
-        
+
         let ShowOtherType = [];
         other_type_all.forEach(all => {
             OtherType_Data.forEach(data => {
@@ -67,7 +77,7 @@ async function displayCards(datas, mySession) {
             });
         });
 
-        let otherTypesHtml = ShowOtherType.map(type => `<span class="badge text-bg-${type['0'] == 'OT000003' ? 'danger' : 'primary'} btn-sm">${type['1']}</span>`).join(' ');        
+        let otherTypesHtml = ShowOtherType.map(type => `<span class="badge text-bg-${type['0'] == 'OT000003' ? 'danger' : 'primary'} btn-sm">${type['1']}</span>`).join(' ');
 
         // Function to convert work day numbers to day names
         const getDayName = (dayNumber, language) => {
@@ -94,6 +104,8 @@ async function displayCards(datas, mySession) {
                 return language === 'th' ? 'จันทร์ - ศุกร์' : 'Monday - Friday';
             } else if (days.join(',') === '2,3,4,5,6,7') {
                 return language === 'th' ? 'จันทร์ - เสาร์' : 'Monday - Saturday';
+            } else if (days.join(',') === '0') {
+                return texts.not_specified;
             } else {
                 return days.map(day => getDayName(day, language)).join(', ');
             }
@@ -110,8 +122,8 @@ async function displayCards(datas, mySession) {
                                 <p class="card-text"><strong>${texts.company}/${texts.entrepreneur}:</strong> ${datas.employer_name}</p>
                                 <p class="card-text"><strong>${texts.employment_type}:</strong> ${datas.employment_type}</p>
                                 <p class="card-text"><strong>${texts.work_day}:</strong> ${workDays}</p>
-                                <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                                <p class="card-text"><strong>${texts.work_location}:</strong> ${datas.work_location}</p>
+                                <p class="card-text"><strong>${texts.work_time}:</strong> ${timeInOut}</p>
+                                <p class="card-text"><strong>${texts.work_location}:</strong> ${datas.work_location ?? texts.not_specified}</p>
                                 <p class="card-text"><strong>${texts.salary}:</strong> ${datas.salary === 'agreed' ? texts.agreed : Number(datas.salary).toLocaleString() + ' ' + texts.baht}</p>
                                 <p class="card-text"><strong>${texts.email}:</strong> ${datas.email}</p>
                                 <p class="card-text"><strong>${texts.description}:</strong> ${datas.description}</p>

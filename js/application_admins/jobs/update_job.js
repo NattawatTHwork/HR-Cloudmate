@@ -28,14 +28,38 @@ function update_data(job_code) {
         $("#position_update").val(datas.position);
         $('#job_category_code_dropdown_update option[value="' + datas.job_category_code + '"]').prop('selected', true);
         $('#employment_type_code_dropdown_update option[value="' + datas.employment_type + '"]').prop('selected', true);
+        // Work Day
         $("#work_day_update_hidden").val(datas.work_day);
         const workDays = datas.work_day.split(',');
-        // Checking checkboxes based on the values in workDays array
-        workDays.forEach(day => {
-            $(`input[name='work_day_update'][value='${day}']`).prop('checked', true);
-        });
-        $("#time_in_update").val(datas.time_in);
-        $("#time_out_update").val(datas.time_out);
+
+        // เช็ค "ไม่ระบุ" และ disable ช่องอื่น ถ้า work_day == '0'
+        if (workDays.includes("0")) {
+            $("#work_day_update_unspecified").prop('checked', true);
+            $("input[name='work_day_update']").each(function () {
+                if ($(this).val() !== "0") {
+                    $(this).prop('checked', false);
+                    $(this).prop('disabled', true);
+                }
+            });
+        } else {
+            // กรณีระบุวันทำงาน
+            $("input[name='work_day_update']").prop('disabled', false);
+            workDays.forEach(day => {
+                $(`input[name='work_day_update'][value='${day}']`).prop('checked', true);
+            });
+            $("#work_day_update_unspecified").prop('checked', false);
+        }
+
+        // Time In / Time Out
+        if (!datas.time_in && !datas.time_out) {
+            $("#time_in_update").val('').prop('disabled', true);
+            $("#time_out_update").val('').prop('disabled', true);
+            $("#unspecified_time_update").prop('checked', true);
+        } else {
+            $("#time_in_update").val(datas.time_in).prop('disabled', false);
+            $("#time_out_update").val(datas.time_out).prop('disabled', false);
+            $("#unspecified_time_update").prop('checked', false);
+        }
         $('#work_location_code_dropdown_update option[value="' + datas.work_location + '"]').prop('selected', true);
         if (datas.salary === 'agreed') {
             $("#agreed_update").prop('checked', true);

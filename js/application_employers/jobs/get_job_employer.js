@@ -40,7 +40,7 @@ async function displayCards(datas, mySession) {
 
         const urlParams = new URLSearchParams(window.location.search);
         const status = urlParams.get('status');
-        
+
         // Filter datas based on status
         if (status == 1) {
             datas = datas.filter(data => data.statusflag == 1);
@@ -59,9 +59,21 @@ async function displayCards(datas, mySession) {
             let statusStyle = data.statusflag == 1 ? 'text-success' : data.statusflag == 2 ? 'text-warning' : data.statusflag == 3 ? 'text-danger' : '';
 
             const currentDate = new Date().toISOString().slice(0, 10);
-            const TimeFormatter = new Intl.DateTimeFormat(texts.format, { hour: 'numeric', minute: 'numeric' });
-            const timeIn = TimeFormatter.format(new Date(currentDate + 'T' + data.time_in));
-            const timeOut = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
+
+            let timeInText = '';
+            let timeOutText = '';
+            if (data.time_in && data.time_out) {
+                const TimeFormatter = new Intl.DateTimeFormat(texts.format, {
+                    hour: 'numeric',
+                    minute: 'numeric'
+                });
+                timeInText = TimeFormatter.format(new Date(currentDate + 'T' + data.time_in));
+                timeOutText = TimeFormatter.format(new Date(currentDate + 'T' + data.time_out));
+            } else {
+                // ถ้าไม่มีเวลาให้ใช้ข้อความไม่ระบุ
+                timeInText = mySession.language === 'th' ? 'ไม่ระบุเวลา' : 'Unspecified time';
+                timeOutText = '';
+            }            
 
             let otherTypes = '';
             if (other_type_all) {
@@ -100,6 +112,8 @@ async function displayCards(datas, mySession) {
                     return language === 'th' ? 'จันทร์ - ศุกร์' : 'Monday - Friday';
                 } else if (days.join(',') === '2,3,4,5,6,7') {
                     return language === 'th' ? 'จันทร์ - เสาร์' : 'Monday - Saturday';
+                } else if (days.join(',') === '0') {
+                    return language === 'th' ? 'ไม่ระบุวันทำงาน' : 'Unspecified work day';
                 } else {
                     return days.map(day => getDayName(day, language)).join(', ');
                 }
@@ -115,8 +129,13 @@ async function displayCards(datas, mySession) {
                             <p class="card-text"><strong>${texts.job_category}:</strong> ${data.job_category}</p>
                             <p class="card-text"><strong>${texts.employment_type}:</strong> ${mySession.language === 'th' ? data.employment_type_th : data.employment_type_en}</p>
                             <p class="card-text"><strong>${texts.work_day}:</strong> ${workDays}</p>
-                            <p class="card-text"><strong>${texts.work_time}:</strong> ${timeIn} - ${timeOut} ${texts.na}</p>
-                            <p class="card-text"><strong>${texts.work_location}:</strong> ${mySession.language === 'th' ? data.work_location_th : data.work_location_en}</p>
+                            <p class="card-text"><strong>${texts.work_time}:</strong> ${timeInText}${timeOutText ? ' - ' + timeOutText : ''}</p>
+                            <p class="card-text">
+                            <strong>${texts.work_location}:</strong> 
+                            ${mySession.language === 'th'
+                                                ? (data.work_location_th ? data.work_location_th : 'ไม่ระบุสถานที่ทำงาน')
+                                                : (data.work_location_en ? data.work_location_en : 'Unspecified work location')}
+                            </p>
                             <p class="card-text"><strong>${texts.salary}:</strong> ${data.salary === 'agreed' ? texts.agreed : Number(data.salary).toLocaleString() + ' ' + texts.baht}</p>
                             <p class="card-text"><strong>${texts.description}:</strong> ${data.description}</p>
                             <p class="card-text"><strong>${texts.status}:</strong> <span class="${statusStyle}">${statusflag}</span></p>

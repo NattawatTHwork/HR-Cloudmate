@@ -121,4 +121,5 @@ texts = {
     'disapprove': 'Disapprove',
     'visitor': 'Number of visitors',
     'times': 'Times',
+    'not_specified': 'Unspecified',
 }
